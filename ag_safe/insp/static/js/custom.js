@@ -243,10 +243,13 @@ $('#inspection_form').validate({
                         data: {draft_id:draft_id, csrfmiddlewaretoken:csrfmiddlewaretoken},
                         success: function(response){
                             if(response){
+                                $('.modal-body').before('<form>');
                                 $('.modal-body').prepend(response.draft_html);
                                 $('.draft-save-btn').attr('data-id',insp_id);
                                 $('.draft-save-btn').attr('data-name',response.draft_slug);
                                 $('.draft-save-btn').attr('data-draftname',response.draft_name);
+                                $('input[name="draft_slug"]').val(response.draft_slug);
+                                $('input[name="draft_insp_id"]').val(insp_id/9304);
                                 $('#exampleModalCenter').css('display','block');
                                 $('#exampleModalCenter').addClass('show');
                             }
@@ -267,7 +270,7 @@ $('#inspection_form').validate({
 
 // DRAFT SAVE
 
-$('body').on('click','.draft-save-btn',function(){
+$('body').on('click','.draft-save-btns',function(){
     $("input").each(function(){
         $(this).attr("value", $(this).val());
 	    var $input = $( this );

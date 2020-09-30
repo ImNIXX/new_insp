@@ -1,13 +1,15 @@
 from django.core.files import File
 from django.core.serializers import json
 from django.http import HttpResponse, JsonResponse
-from ..models import Inspections, Type
+from ..models import Inspections, Type, CompressedGasCylinder, DraftTables
+from ..forms import DraftForm
 from datetime import date
 import os
 import os.path
 import time
 from pathlib import Path
 from django.conf import settings
+from django.apps import apps
 
 # INSPECTION INSERT
 
@@ -181,5 +183,23 @@ def insp_filter(request):
     type = request.POST.get('type', None)
     filter_data = {'operating_area': operating_area, 'facility': facility, 'location': location, 'category': category, 'type': type}
     asd = list(dict.fromkeys(filter_data))
-    print(asd)
     return HttpResponse('Hello')
+
+
+# DRAFT FORM SAVE IN DATABASE
+
+def insert_draft_form(request):
+    aaa = request.POST.get
+    length_count = len(request.POST)
+    # for x in request.POST:
+    #     asd = aaa(x, None)
+    form = DraftForm(request.POST)
+    form.save()
+    draft_slug = aaa('draft_slug', None)
+    draft_table = DraftTables.objects.get(draft_name=draft_slug)
+    table_name = draft_table.table_name
+    Model = apps.get_model('insp',table_name)
+    date = aaa('date', None)
+    # abc = Model(date=date, inspection_id=1)
+    # abc.save()
+    return HttpResponse(request)

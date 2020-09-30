@@ -243,7 +243,6 @@
 												<button type="submit" class="main-content-inner-box-export-btn" style="outline: none;">Create</button>
 												<button type="reset" class="outline_button" style="outline: none;">Reset</button>
 											</div>
-
 										</div>
 									</form>
 								</div>
@@ -459,13 +458,17 @@
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
+		<form action="insert-draft-form/" method="POST">
+			<input type="hidden" value="" name="draft_slug">
+			<input type="hidden" value="" name="inspection_id">
       <div class="modal-body">
         {% csrf_token %}
       </div>
       <div class="modal-footer">
 		  <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-		  <button type="button" class="btn btn-primary draft-save-btn" data-id="">Save changes</button>
+		  <button type="submit" class="btn btn-primary draft-save-btn" data-id="">Save changes</button>
 	  </div>
+		</form>
     </div>
   </div>
 </div>
