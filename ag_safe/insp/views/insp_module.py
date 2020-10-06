@@ -2,7 +2,6 @@ from django.core.files import File
 from django.core.serializers import json
 from django.http import HttpResponse, JsonResponse
 from ..models import Inspections, Type, CompressedGasCylinder, DraftTables
-from ..forms import DraftForm
 from datetime import date
 import os
 import os.path
@@ -72,7 +71,7 @@ def update_inspection(request):
 # DRAFT DATA
 
 
-def drafts(request):
+def drafts_show(request):
     draft_id = request.POST.get('draft_id', None)
     draft_data = Type.objects.get(id=draft_id)
     draft_html = {'draft_name': draft_data.type, 'draft_html': draft_data.draft_html, 'draft_slug': draft_data.type_slug}
@@ -185,21 +184,3 @@ def insp_filter(request):
     asd = list(dict.fromkeys(filter_data))
     return HttpResponse('Hello')
 
-
-# DRAFT FORM SAVE IN DATABASE
-
-def insert_draft_form(request):
-    aaa = request.POST.get
-    length_count = len(request.POST)
-    # for x in request.POST:
-    #     asd = aaa(x, None)
-    form = DraftForm(request.POST)
-    form.save()
-    draft_slug = aaa('draft_slug', None)
-    draft_table = DraftTables.objects.get(draft_name=draft_slug)
-    table_name = draft_table.table_name
-    Model = apps.get_model('insp',table_name)
-    date = aaa('date', None)
-    # abc = Model(date=date, inspection_id=1)
-    # abc.save()
-    return HttpResponse(request)

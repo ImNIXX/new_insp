@@ -249,7 +249,7 @@ $('#inspection_form').validate({
                                 $('.draft-save-btn').attr('data-name',response.draft_slug);
                                 $('.draft-save-btn').attr('data-draftname',response.draft_name);
                                 $('input[name="draft_slug"]').val(response.draft_slug);
-                                $('input[name="draft_insp_id"]').val(insp_id/9304);
+                                $('.modal-content input[name="inspection_id"]').val(insp_id/9304);
                                 $('#exampleModalCenter').css('display','block');
                                 $('#exampleModalCenter').addClass('show');
                             }
