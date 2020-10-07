@@ -269,7 +269,7 @@
 														<tr class="ins_draft_{% widthratio ins_data.id 1 9304 %}">
 															<td>{{ ins_data.datetime|date:'d-M-Y' }}</td>
 															<td><a class="ins_draft_title">{{ ins_data.title }}</a></td>
-															<td class="draft_name"><a target="_blank" href="/media/insp_draft_dir/{{ session_dir }}/{{ ins_data.draft_slug }}">{{ ins_data.draft_name }}</a></td>
+															<td class="draft_name"><a target="_blank" href="view-draft?insp_val={{ins_data.id}}&draft_name={{ins_data.draft_slug}}">{{ ins_data.draft_name }}</a></td>
 														</tr>
 														<tr>
 															<td colspan="3" class="p-0">

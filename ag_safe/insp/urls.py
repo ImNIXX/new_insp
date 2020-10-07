@@ -20,10 +20,11 @@ urlpatterns = [
     path('update-inspection/', views.update_inspection, name="update-inspection"),
     # DELETE INSPECTION
     path('del-insp/', views.delete_inspection, name="del-insp"),
-    # DRAFT FORM INSERT
+    # DRAFT
     path('inspection-draft/', views.drafts_show, name="inspection-draft"),
     path('insert-draft/', views.insert_draft, name="insert-draft"),
     path('insert-draft-form/', views.insert_draft_form, name="insert-draft-form"),
+    path('view-draft', views.view_draft, name="view-draft"),
     # DRAFT FORM UPDATE
     path('update-draft/', views.update_draft, name="update-draft"),
     # APPROVE INSPECTION

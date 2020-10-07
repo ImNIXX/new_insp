@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" type="text/css" href="/static/css/draft_style.css"><link rel="stylesheet" type="text/css" href="/static/css/style.css">
+{% for a in data.unit_type %}
+{{a}}
+{% endfor %}
+<div class="header-top">
+    <div class="container-category">
+        <div class="header-inner">
+            <div class="logo">logo</div>
+            <div class="right-contant">
+                <div class="field-wrap"><label>Alberta See Processor – </label><input type="text" name="plants_name" placeholder="Plants Name" value="{{data.plants_name}}" /> </div>
+                <p>Aerial Work Platform (AWP) Pre-Use Inspection Checklist and Operator Qualification Form</p>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="AWP-form RCA-form-pdf">
+    <div class="container-category">
+        <div class="ABSP-form-block">
+            <div class="top-link">
+                <h2>Aerial Work Platform (AWP) Pre-Use Inspection Checklist and Operator Qualification Form</h2>
+            </div>
+            <table>
+                <tr>
+                    <td>
+                        <div class="field-wrap"> <label>Date:</label> <input type="text" name="date" value=""/> </div>
+                    </td>
+                    <td>
+                        <div class="field-wrap"> <label>Aerial device ID#:</label> <input type="text" name="device_id" value=""/> </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <label>Unit type:</label>
+                        <div class="single-line-checkbox"> <label> <input type="checkbox" name="unit_type" value="Scissor Lift">Scissor Lift</label> </div>
+                        <div class="single-line-checkbox"> <label> <input type="checkbox" name="unit_type" value="Bucket Truck">Bucket Truck</label> </div>
+                        <div class="single-line-checkbox"> <label> <input type="checkbox" name="unit_type" value="Telescopic Boom">Telescopic Boom</label> </div>
+                        <div class="single-line-checkbox"> <label> <input type="checkbox" name="unit_type" value="Other">Other</label> </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <div class="field-wrap"> <label>Location of Use:</label> <input type="text" name="location" value=""/> </div>
+                    </td>
+                </tr>
+            </table>
+            <table class="inspection-tbl responsive-tbl radio-checkbox">
+                <thead>
+                    <tr>
+                        <th colspan="2">INSPECTION ITEMS AND DESCRIPTION</th>
+                        <th>Yes</th>
+                        <th>No</th>
+                        <th>N/A</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>Brakes are operating properly</td>
+                        <td> <input type="radio" name="brakes" value="yes"> </td>
+                        <td> <input type="radio" name="brakes" value="no"> </td>
+                        <td> <input type="radio" name="brakes" value="N/A"> </td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>Controls are lABSPlled and legible</td>
+                        <td> <input type="radio" name="controls" value="yes"> </td>
+                        <td> <input type="radio" name="controls" value="no"> </td>
+                        <td> <input type="radio" name="controls" value="N/A"> </td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>Emergency controls are operating properly</td>
+                        <td> <input type="radio" name="emergency" value="yes"> </td>
+                        <td> <input type="radio" name="emergency" value="no"> </td>
+                        <td> <input type="radio" name="emergency" value="N/A"> </td>
+                    </tr>
+                    <tr>
+                        <td>4</td>
+                        <td>Lower operating controls successfully override the upper controls</td>
+                        <td> <input type="radio" name="lower" value="yes"> </td>
+                        <td> <input type="radio" name="lower" value="no"> </td>
+                        <td> <input type="radio" name="lower" value="N/A"> </td>
+                    </tr>
+                    <tr>
+                        <td>5</td>
+                        <td>Both upper and lower controls are adequately guarded to prevent inadvertent operation</td>
+                        <td> <input type="radio" name="both_controls" value="yes"> </td>
+                        <td> <input type="radio" name="both_controls" value="no"> </td>
+                        <td> <input type="radio" name="both_controls" value="N/A"> </td>
+                    </tr>
+                    <tr>
+                        <td>6</td>
+                        <td>Any defective welds or damaged control cables</td>
+                        <td> <input type="radio" name="defective" value="yes"> </td>
+                        <td> <input type="radio" name="defective" value="no"> </td>
+                        <td> <input type="radio" name="defective" value="N/A"> </td>
+                    </tr>
+                    <tr>
+                        <td>7</td>
+                        <td>Fuel systems and hydraulic systems have no leaks on the ground</td>
+                        <td> <input type="radio" name="hydraulic" value="yes"> </td>
+                        <td> <input type="radio" name="hydraulic" value="no"> </td>
+                        <td> <input type="radio" name="hydraulic" value="N/A"> </td>
+                    </tr>
+                    <tr>
+                        <td>8</td>
+                        <td>Handrails and supports are in place and in good condition</td>
+                        <td> <input type="radio" name="handrails" value="yes"> </td>
+                        <td> <input type="radio" name="handrails" value="no"> </td>
+                        <td> <input type="radio" name="handrails" value="N/A"> </td>
+                    </tr>
+                    <tr>
+                        <td>9</td>
+                        <td>Basket anchor point in place and in good condition</td>
+                        <td> <input type="radio" name="basket" value="yes"> </td>
+                        <td> <input type="radio" name="basket" value="no"> </td>
+                        <td> <input type="radio" name="basket" value="N/A"> </td>
+                    </tr>
+                    <tr>
+                        <td>10</td>
+                        <td>Muffler and exhaust pipes in place and in good condition</td>
+                        <td> <input type="radio" name="exhaust" value="yes"> </td>
+                        <td> <input type="radio" name="exhaust" value="no"> </td>
+                        <td> <input type="radio" name="exhaust" value="N/A"> </td>
+                    </tr>
+                    <tr>
+                        <td>11</td>
+                        <td>Outriggers freely slide and no defects</td>
+                        <td> <input type="radio" name="outriggers" value="yes"> </td>
+                        <td> <input type="radio" name="outriggers" value="no"> </td>
+                        <td> <input type="radio" name="outriggers" value="N/A"> </td>
+                    </tr>
+                    <tr>
+                        <td>12</td>
+                        <td>Tires and wheels are properly inflated and in good condition</td>
+                        <td> <input type="radio" name="tires" value="yes"> </td>
+                        <td> <input type="radio" name="tires" value="no"> </td>
+                        <td> <input type="radio" name="tires" value="N/A"> </td>
+                    </tr>
+                    <tr>
+                        <td>13</td>
+                        <td>Floors and landings are clean and in good condition</td>
+                        <td> <input type="radio" name="landings" value="yes"> </td>
+                        <td> <input type="radio" name="landings" value="no"> </td>
+                        <td> <input type="radio" name="landings" value="N/A"> </td>
+                    </tr>
+                    <tr>
+                        <td>14</td>
+                        <td>Oil levels, hydraulic level, fuel level, coolant level adequate</td>
+                        <td> <input type="radio" name="coolant" value="yes"> </td>
+                        <td> <input type="radio" name="coolant" value="no"> </td>
+                        <td> <input type="radio" name="coolant" value="N/A"> </td>
+                    </tr>
+                    <tr>
+                        <td>15</td>
+                        <td>Battery is charged</td>
+                        <td> <input type="radio" name="charged" value="yes"> </td>
+                        <td> <input type="radio" name="charged" value="no"> </td>
+                        <td> <input type="radio" name="charged" value="N/A"> </td>
+                    </tr>
+                    <tr>
+                        <td>16</td>
+                        <td>Motion alarms are operating</td>
+                        <td> <input type="radio" name="alarms" value="yes"> </td>
+                        <td> <input type="radio" name="alarms" value="no"> </td>
+                        <td> <input type="radio" name="alarms" value="N/A"> </td>
+                    </tr>
+                    <tr>
+                        <td>17</td>
+                        <td>Drive controls function properly and are properly applied</td>
+                        <td> <input type="radio" name="Drive" value="yes"> </td>
+                        <td> <input type="radio" name="Drive" value="no"> </td>
+                        <td> <input type="radio" name="Drive" value="N/A"> </td>
+                    </tr>
+                    <tr>
+                        <td>18</td>
+                        <td>Safety warning decals are in place and legible</td>
+                        <td> <input type="radio" name="legible" value="yes"> </td>
+                        <td> <input type="radio" name="legible" value="no"> </td>
+                        <td> <input type="radio" name="legible" value="N/A"> </td>
+                    </tr>
+                    <tr>
+                        <td>19</td>
+                        <td>Limit switches are properly functioning</td>
+                        <td> <input type="radio" name="switches" value="yes"> </td>
+                        <td> <input type="radio" name="switches" value="no"> </td>
+                        <td> <input type="radio" name="switches" value="N/A"> </td>
+                    </tr>
+                    <tr>
+                        <td>20</td>
+                        <td>Operators manual is with the unit</td>
+                        <td> <input type="radio" name="Operators" value="yes"> </td>
+                        <td> <input type="radio" name="Operators" value="no"> </td>
+                        <td> <input type="radio" name="Operators" value="N/A"> </td>
+                    </tr>
+                    <tr>
+                        <td colspan="5">
+                            <div class="field-wrap"> <label>Comments or Additional Requirements:</label> <input type="text" name="first_name" value=""/> </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td colspan="3">
+                            <div class="field-wrap">
+                                <label>
+                                    <h4>Warning</h4>
+                                	<p>Do not use the equipment if any of the above items fail the inspection.</p>
+                                </label>
+                            </div>
+                        </td>
+                        <td></td>
+                    </tr>
+                </tbody>
+            </table>
+            <table>
+                <tr>
+                    <td>
+                        <div class="field-wrap"> <label>Supervisor Name:</label> <input type="text" name="supervisor_name" value=""/> </div>
+                    </td>
+                    <td>
+                        <div class="field-wrap"> <label>Operator printed name and signature:</label> <input type="text" name="printed_name" value=""/> </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2" class="td-heading">&nbsp;</td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <div class="field-wrap"> <label>Operator Name:</label> <input type="text" name="operat_name" value=""/> </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <div class="field-wrap"> <label>Employed by:</label> <input type="text" name="emp_by" value=""/> </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <div class="field-wrap"> <label>AWP training provided for (equipment make and model):</label> <input type="text" name="AWP" value=""/> </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2" class="td-heading">QUALIFICATIONS REQUIRMENTS</td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <p>The following requirements have been confirmed for this operation:</p>
+                        <ul>
+                            <li>Has the required physical and mental abilities to operate the equipment</li>
+                            <li>Has reviewed and demonstrates an understanding of operator's manual, including operating restrictions and hazards</li>
+                            <li>Has reviewed site safety rules and procedures (i.e.: work in the vicinity of power lines)</li>
+                            <li>Understands all phases of setting up and operating the unit</li>
+                            <li>Has received and successfully completed specific written and/or hands-on training and instruction on the equipment to be operated</li>
+                            <li>Has demonstrated proficiency in the safe operation of the AWP to be used</li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2"> <label>Comments or Additional Requirements</label> <textarea name="comments"></textarea> </td>
+                </tr>
+                <tr>
+                    <td colspan="2" class="inside-tbl-td">
+                        <table class="inside-tbl border-tbl">
+                            <tr>
+                                <td style="width: 50%">
+                                    <div class="field-wrap"> <label>Employer/trainer representative name:</label> <input type="text" name="representative_name" value=""/> </div>
+                                </td>
+                                <td>
+                                    <div class="field-wrap"> <label>Signature:</label> <input type="text" name="emp_sign" value=""/> </div>
+                                </td>
+                                <td>
+                                    <div class="field-wrap"> <label>Date:</label> <input type="text" name="emp_date" value=""/> </div>
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</div>
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<script type="text/javascript" src="/static/js/draft.js"></script>
+
+</body>
+</html>
