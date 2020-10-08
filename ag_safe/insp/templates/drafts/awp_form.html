@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+{% load custom_tags %}
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -7,9 +8,6 @@
 <body>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <link rel="stylesheet" type="text/css" href="/static/css/draft_style.css"><link rel="stylesheet" type="text/css" href="/static/css/style.css">
-{% for a in data.unit_type %}
-{{a}}
-{% endfor %}
 <div class="header-top">
     <div class="container-category">
         <div class="header-inner">
@@ -30,24 +28,48 @@
             <table>
                 <tr>
                     <td>
-                        <div class="field-wrap"> <label>Date:</label> <input type="text" name="date" value=""/> </div>
+                        <div class="field-wrap"> <label>Date:</label> <input type="text" value="{{data.date}}" name="date"/> </div>
                     </td>
                     <td>
-                        <div class="field-wrap"> <label>Aerial device ID#:</label> <input type="text" name="device_id" value=""/> </div>
+                        <div class="field-wrap"> <label>Aerial device ID#:</label> <input type="text" name="device_id" value="{{data.device_id}}"/> </div>
                     </td>
                 </tr>
                 <tr>
                     <td colspan="2">
                         <label>Unit type:</label>
-                        <div class="single-line-checkbox"> <label> <input type="checkbox" name="unit_type" value="Scissor Lift">Scissor Lift</label> </div>
-                        <div class="single-line-checkbox"> <label> <input type="checkbox" name="unit_type" value="Bucket Truck">Bucket Truck</label> </div>
-                        <div class="single-line-checkbox"> <label> <input type="checkbox" name="unit_type" value="Telescopic Boom">Telescopic Boom</label> </div>
-                        <div class="single-line-checkbox"> <label> <input type="checkbox" name="unit_type" value="Other">Other</label> </div>
+                        <div class="single-line-checkbox"> <label>
+                            {% if data.unit_type|get_string_as_list|match_value:"Scissor Lift" %}
+                                <input type="checkbox" name="unit_type" value="Scissor Lift" checked>
+                            {% else %}
+                                <input type="checkbox" name="unit_type" value="Scissor Lift" >
+                            {% endif %}
+                            Scissor Lift</label> </div>
+                        <div class="single-line-checkbox"> <label>
+                            {% if checkbox_val|match_value:"Bucket Truck" %}
+                                <input type="checkbox" name="unit_type" value="Bucket Truck" checked>
+                            {% else %}
+                                <input type="checkbox" name="unit_type" value="Bucket Truck" >
+                            {% endif %}
+                            Bucket Truck</label> </div>
+                        <div class="single-line-checkbox"> <label>
+                            {% if checkbox_val|match_value:"Telescopic Boom" %}
+                                <input type="checkbox" name="unit_type" value="Telescopic Boom" checked>
+                            {% else %}
+                                <input type="checkbox" name="unit_type" value="Telescopic Boom" >
+                            {% endif %}
+                            Telescopic Boom</label> </div>
+                        <div class="single-line-checkbox"> <label>
+                            {% if data.unit_type|get_string_as_list|match_value:"Other" %}
+                                <input type="checkbox" name="unit_type" value="Other" checked>
+                            {% else %}
+                                <input type="checkbox" name="unit_type" value="Other" >
+                            {% endif %}
+                            Other</label> </div>
                     </td>
                 </tr>
                 <tr>
                     <td colspan="2">
-                        <div class="field-wrap"> <label>Location of Use:</label> <input type="text" name="location" value=""/> </div>
+                        <div class="field-wrap"> <label>Location of Use:</label> <input type="text" name="location" value="{{data.location}}"/> </div>
                     </td>
                 </tr>
             </table>
@@ -64,142 +86,142 @@
                     <tr>
                         <td>1</td>
                         <td>Brakes are operating properly</td>
-                        <td> <input type="radio" name="brakes" value="yes"> </td>
-                        <td> <input type="radio" name="brakes" value="no"> </td>
-                        <td> <input type="radio" name="brakes" value="N/A"> </td>
+                        <td> <input type="radio" name="brakes" value="yes" {{ data.brakes|radio_three:"yes" }} > </td>
+                        <td> <input type="radio" name="brakes" value="no" {{ data.brakes|radio_three:"no" }}> </td>
+                        <td> <input type="radio" name="brakes" value="N/A" {{ data.brakes|radio_three:"N/A" }}> </td>
                     </tr>
                     <tr>
                         <td>2</td>
                         <td>Controls are lABSPlled and legible</td>
-                        <td> <input type="radio" name="controls" value="yes"> </td>
-                        <td> <input type="radio" name="controls" value="no"> </td>
-                        <td> <input type="radio" name="controls" value="N/A"> </td>
+                        <td> <input type="radio" name="controls" value="yes" {{ data.controls|radio_three:"yes" }}> </td>
+                        <td> <input type="radio" name="controls" value="no" {{ data.controls|radio_three:"no" }}> </td>
+                        <td> <input type="radio" name="controls" value="N/A" {{ data.controls|radio_three:"N/A" }}> </td>
                     </tr>
                     <tr>
                         <td>3</td>
                         <td>Emergency controls are operating properly</td>
-                        <td> <input type="radio" name="emergency" value="yes"> </td>
-                        <td> <input type="radio" name="emergency" value="no"> </td>
-                        <td> <input type="radio" name="emergency" value="N/A"> </td>
+                        <td> <input type="radio" name="emergency" value="yes" {{ data.emergency|radio_three:"yes" }}> </td>
+                        <td> <input type="radio" name="emergency" value="no" {{ data.emergency|radio_three:"no" }}> </td>
+                        <td> <input type="radio" name="emergency" value="N/A" {{ data.emergency|radio_three:"N/A" }}> </td>
                     </tr>
                     <tr>
                         <td>4</td>
                         <td>Lower operating controls successfully override the upper controls</td>
-                        <td> <input type="radio" name="lower" value="yes"> </td>
-                        <td> <input type="radio" name="lower" value="no"> </td>
-                        <td> <input type="radio" name="lower" value="N/A"> </td>
+                        <td> <input type="radio" name="lower" value="yes" {{ data.lower|radio_three:"yes" }}> </td>
+                        <td> <input type="radio" name="lower" value="no" {{ data.lower|radio_three:"no" }}> </td>
+                        <td> <input type="radio" name="lower" value="N/A" {{ data.lower|radio_three:"N/A" }}> </td>
                     </tr>
                     <tr>
                         <td>5</td>
                         <td>Both upper and lower controls are adequately guarded to prevent inadvertent operation</td>
-                        <td> <input type="radio" name="both_controls" value="yes"> </td>
-                        <td> <input type="radio" name="both_controls" value="no"> </td>
-                        <td> <input type="radio" name="both_controls" value="N/A"> </td>
+                        <td> <input type="radio" name="both_controls" value="yes" {{ data.both_controls|radio_three:"yes" }}> </td>
+                        <td> <input type="radio" name="both_controls" value="no" {{ data.both_controls|radio_three:"no" }}> </td>
+                        <td> <input type="radio" name="both_controls" value="N/A" {{ data.both_controls|radio_three:"N/A" }}> </td>
                     </tr>
                     <tr>
                         <td>6</td>
                         <td>Any defective welds or damaged control cables</td>
-                        <td> <input type="radio" name="defective" value="yes"> </td>
-                        <td> <input type="radio" name="defective" value="no"> </td>
-                        <td> <input type="radio" name="defective" value="N/A"> </td>
+                        <td> <input type="radio" name="defective" value="yes" {{ data.defective|radio_three:"yes" }}> </td>
+                        <td> <input type="radio" name="defective" value="no" {{ data.defective|radio_three:"no" }}> </td>
+                        <td> <input type="radio" name="defective" value="N/A" {{ data.defective|radio_three:"N/A" }}> </td>
                     </tr>
                     <tr>
                         <td>7</td>
                         <td>Fuel systems and hydraulic systems have no leaks on the ground</td>
-                        <td> <input type="radio" name="hydraulic" value="yes"> </td>
-                        <td> <input type="radio" name="hydraulic" value="no"> </td>
-                        <td> <input type="radio" name="hydraulic" value="N/A"> </td>
+                        <td> <input type="radio" name="hydraulic" value="yes" {{ data.hydraulic|radio_three:"yes" }}> </td>
+                        <td> <input type="radio" name="hydraulic" value="no" {{ data.hydraulic|radio_three:"no" }}> </td>
+                        <td> <input type="radio" name="hydraulic" value="N/A" {{ data.hydraulic|radio_three:"N/A" }}> </td>
                     </tr>
                     <tr>
                         <td>8</td>
                         <td>Handrails and supports are in place and in good condition</td>
-                        <td> <input type="radio" name="handrails" value="yes"> </td>
-                        <td> <input type="radio" name="handrails" value="no"> </td>
-                        <td> <input type="radio" name="handrails" value="N/A"> </td>
+                        <td> <input type="radio" name="handrails" value="yes" {{ data.handrails|radio_three:"yes" }}> </td>
+                        <td> <input type="radio" name="handrails" value="no" {{ data.handrails|radio_three:"no" }}> </td>
+                        <td> <input type="radio" name="handrails" value="N/A" {{ data.handrails|radio_three:"N/A" }}> </td>
                     </tr>
                     <tr>
                         <td>9</td>
                         <td>Basket anchor point in place and in good condition</td>
-                        <td> <input type="radio" name="basket" value="yes"> </td>
-                        <td> <input type="radio" name="basket" value="no"> </td>
-                        <td> <input type="radio" name="basket" value="N/A"> </td>
+                        <td> <input type="radio" name="basket" value="yes" {{ data.basket|radio_three:"yes" }}> </td>
+                        <td> <input type="radio" name="basket" value="no" {{ data.basket|radio_three:"no" }}> </td>
+                        <td> <input type="radio" name="basket" value="N/A" {{ data.basket|radio_three:"N/A" }}> </td>
                     </tr>
                     <tr>
                         <td>10</td>
                         <td>Muffler and exhaust pipes in place and in good condition</td>
-                        <td> <input type="radio" name="exhaust" value="yes"> </td>
-                        <td> <input type="radio" name="exhaust" value="no"> </td>
-                        <td> <input type="radio" name="exhaust" value="N/A"> </td>
+                        <td> <input type="radio" name="exhaust" value="yes" {{ data.exhaust|radio_three:"yes" }}> </td>
+                        <td> <input type="radio" name="exhaust" value="no" {{ data.exhaust|radio_three:"no" }}> </td>
+                        <td> <input type="radio" name="exhaust" value="N/A" {{ data.exhaust|radio_three:"N/A" }}> </td>
                     </tr>
                     <tr>
                         <td>11</td>
                         <td>Outriggers freely slide and no defects</td>
-                        <td> <input type="radio" name="outriggers" value="yes"> </td>
-                        <td> <input type="radio" name="outriggers" value="no"> </td>
-                        <td> <input type="radio" name="outriggers" value="N/A"> </td>
+                        <td> <input type="radio" name="outriggers" value="yes" {{ data.outriggers|radio_three:"yes" }}> </td>
+                        <td> <input type="radio" name="outriggers" value="no" {{ data.outriggers|radio_three:"no" }}> </td>
+                        <td> <input type="radio" name="outriggers" value="N/A" {{ data.outriggers|radio_three:"N/A" }}> </td>
                     </tr>
                     <tr>
                         <td>12</td>
                         <td>Tires and wheels are properly inflated and in good condition</td>
-                        <td> <input type="radio" name="tires" value="yes"> </td>
-                        <td> <input type="radio" name="tires" value="no"> </td>
-                        <td> <input type="radio" name="tires" value="N/A"> </td>
+                        <td> <input type="radio" name="tires" value="yes" {{ data.tires|radio_three:"yes" }}> </td>
+                        <td> <input type="radio" name="tires" value="no" {{ data.tires|radio_three:"no" }}> </td>
+                        <td> <input type="radio" name="tires" value="N/A" {{ data.tires|radio_three:"N/A" }}> </td>
                     </tr>
                     <tr>
                         <td>13</td>
                         <td>Floors and landings are clean and in good condition</td>
-                        <td> <input type="radio" name="landings" value="yes"> </td>
-                        <td> <input type="radio" name="landings" value="no"> </td>
-                        <td> <input type="radio" name="landings" value="N/A"> </td>
+                        <td> <input type="radio" name="landings" value="yes" {{ data.landings|radio_three:"yes" }}> </td>
+                        <td> <input type="radio" name="landings" value="no" {{ data.landings|radio_three:"no" }}> </td>
+                        <td> <input type="radio" name="landings" value="N/A" {{ data.landings|radio_three:"N/A" }}> </td>
                     </tr>
                     <tr>
                         <td>14</td>
                         <td>Oil levels, hydraulic level, fuel level, coolant level adequate</td>
-                        <td> <input type="radio" name="coolant" value="yes"> </td>
-                        <td> <input type="radio" name="coolant" value="no"> </td>
-                        <td> <input type="radio" name="coolant" value="N/A"> </td>
+                        <td> <input type="radio" name="coolant" value="yes" {{ data.coolant|radio_three:"yes" }}> </td>
+                        <td> <input type="radio" name="coolant" value="no" {{ data.coolant|radio_three:"no" }}> </td>
+                        <td> <input type="radio" name="coolant" value="N/A" {{ data.coolant|radio_three:"N/A" }}> </td>
                     </tr>
                     <tr>
                         <td>15</td>
                         <td>Battery is charged</td>
-                        <td> <input type="radio" name="charged" value="yes"> </td>
-                        <td> <input type="radio" name="charged" value="no"> </td>
-                        <td> <input type="radio" name="charged" value="N/A"> </td>
+                        <td> <input type="radio" name="charged" value="yes" {{ data.charged|radio_three:"yes" }}> </td>
+                        <td> <input type="radio" name="charged" value="no" {{ data.charged|radio_three:"no" }}> </td>
+                        <td> <input type="radio" name="charged" value="N/A" {{ data.charged|radio_three:"N/A" }}> </td>
                     </tr>
                     <tr>
                         <td>16</td>
                         <td>Motion alarms are operating</td>
-                        <td> <input type="radio" name="alarms" value="yes"> </td>
-                        <td> <input type="radio" name="alarms" value="no"> </td>
-                        <td> <input type="radio" name="alarms" value="N/A"> </td>
+                        <td> <input type="radio" name="alarms" value="yes" {{ data.alarms|radio_three:"yes" }}> </td>
+                        <td> <input type="radio" name="alarms" value="no" {{ data.alarms|radio_three:"no" }}> </td>
+                        <td> <input type="radio" name="alarms" value="N/A" {{ data.alarms|radio_three:"N/A" }}> </td>
                     </tr>
                     <tr>
                         <td>17</td>
                         <td>Drive controls function properly and are properly applied</td>
-                        <td> <input type="radio" name="Drive" value="yes"> </td>
-                        <td> <input type="radio" name="Drive" value="no"> </td>
-                        <td> <input type="radio" name="Drive" value="N/A"> </td>
+                        <td> <input type="radio" name="Drive" value="yes" {{ data.Drive|radio_three:"yes" }}> </td>
+                        <td> <input type="radio" name="Drive" value="no" {{ data.Drive|radio_three:"no" }}> </td>
+                        <td> <input type="radio" name="Drive" value="N/A" {{ data.Drive|radio_three:"N/A" }}> </td>
                     </tr>
                     <tr>
                         <td>18</td>
                         <td>Safety warning decals are in place and legible</td>
-                        <td> <input type="radio" name="legible" value="yes"> </td>
-                        <td> <input type="radio" name="legible" value="no"> </td>
-                        <td> <input type="radio" name="legible" value="N/A"> </td>
+                        <td> <input type="radio" name="legible" value="yes" {{ data.legible|radio_three:"yes" }}> </td>
+                        <td> <input type="radio" name="legible" value="no" {{ data.legible|radio_three:"no" }}> </td>
+                        <td> <input type="radio" name="legible" value="N/A" {{ data.legible|radio_three:"N/A" }}> </td>
                     </tr>
                     <tr>
                         <td>19</td>
                         <td>Limit switches are properly functioning</td>
-                        <td> <input type="radio" name="switches" value="yes"> </td>
-                        <td> <input type="radio" name="switches" value="no"> </td>
-                        <td> <input type="radio" name="switches" value="N/A"> </td>
+                        <td> <input type="radio" name="switches" value="yes" {{ data.switches|radio_three:"yes" }}> </td>
+                        <td> <input type="radio" name="switches" value="no" {{ data.switches|radio_three:"no" }}> </td>
+                        <td> <input type="radio" name="switches" value="N/A" {{ data.switches|radio_three:"N/A" }}> </td>
                     </tr>
                     <tr>
                         <td>20</td>
                         <td>Operators manual is with the unit</td>
-                        <td> <input type="radio" name="Operators" value="yes"> </td>
-                        <td> <input type="radio" name="Operators" value="no"> </td>
-                        <td> <input type="radio" name="Operators" value="N/A"> </td>
+                        <td> <input type="radio" name="Operators" value="yes" {{ data.Operators|radio_three:"yes" }}> </td>
+                        <td> <input type="radio" name="Operators" value="no" {{ data.Operators|radio_three:"no" }}> </td>
+                        <td> <input type="radio" name="Operators" value="N/A" {{ data.Operators|radio_three:"N/A" }}> </td>
                     </tr>
                     <tr>
                         <td colspan="5">
@@ -223,10 +245,10 @@
             <table>
                 <tr>
                     <td>
-                        <div class="field-wrap"> <label>Supervisor Name:</label> <input type="text" name="supervisor_name" value=""/> </div>
+                        <div class="field-wrap"> <label>Supervisor Name:</label> <input type="text" name="supervisor_name" value="{{data.supervisor_name}}"/> </div>
                     </td>
                     <td>
-                        <div class="field-wrap"> <label>Operator printed name and signature:</label> <input type="text" name="printed_name" value=""/> </div>
+                        <div class="field-wrap"> <label>Operator printed name and signature:</label> <input type="text" name="printed_name" value="{{data.printed_name}}"/> </div>
                     </td>
                 </tr>
                 <tr>
@@ -234,17 +256,17 @@
                 </tr>
                 <tr>
                     <td colspan="2">
-                        <div class="field-wrap"> <label>Operator Name:</label> <input type="text" name="operat_name" value=""/> </div>
+                        <div class="field-wrap"> <label>Operator Name:</label> <input type="text" name="operat_name" value="{{data.operat_name}}"/> </div>
                     </td>
                 </tr>
                 <tr>
                     <td colspan="2">
-                        <div class="field-wrap"> <label>Employed by:</label> <input type="text" name="emp_by" value=""/> </div>
+                        <div class="field-wrap"> <label>Employed by:</label> <input type="text" name="emp_by" value="{{data.emp_by}}"/> </div>
                     </td>
                 </tr>
                 <tr>
                     <td colspan="2">
-                        <div class="field-wrap"> <label>AWP training provided for (equipment make and model):</label> <input type="text" name="AWP" value=""/> </div>
+                        <div class="field-wrap"> <label>AWP training provided for (equipment make and model):</label> <input type="text" name="AWP" value="{{data.AWP}}"/> </div>
                     </td>
                 </tr>
                 <tr>
@@ -264,20 +286,20 @@
                     </td>
                 </tr>
                 <tr>
-                    <td colspan="2"> <label>Comments or Additional Requirements</label> <textarea name="comments"></textarea> </td>
+                    <td colspan="2"> <label>Comments or Additional Requirements</label> <textarea name="comments">{{data.comments}}</textarea> </td>
                 </tr>
                 <tr>
                     <td colspan="2" class="inside-tbl-td">
                         <table class="inside-tbl border-tbl">
                             <tr>
                                 <td style="width: 50%">
-                                    <div class="field-wrap"> <label>Employer/trainer representative name:</label> <input type="text" name="representative_name" value=""/> </div>
+                                    <div class="field-wrap"> <label>Employer/trainer representative name:</label> <input type="text" name="representative_name" value="{{data.representative_name}}"/> </div>
                                 </td>
                                 <td>
-                                    <div class="field-wrap"> <label>Signature:</label> <input type="text" name="emp_sign" value=""/> </div>
+                                    <div class="field-wrap"> <label>Signature:</label> <input type="text" name="emp_sign" value="{{data.emp_sign}}"/> </div>
                                 </td>
                                 <td>
-                                    <div class="field-wrap"> <label>Date:</label> <input type="text" name="emp_date" value=""/> </div>
+                                    <div class="field-wrap"> <label>Date:</label> <input type="text" name="emp_date" value="{{data.emp_date}}"/> </div>
                                 </td>
                             </tr>
                         </table>

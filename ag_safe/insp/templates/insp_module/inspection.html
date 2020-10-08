@@ -253,8 +253,15 @@
 							<div class="main-content-inner-boxes">
 								<div class="main-content-inner-box-filter">
 									<h2 class="main-content-inner-box-filter-heading">DRAFT</h2>
+									{% if messages %}
+									  	<div class="error_messages">
+											{% for message in messages %}
+										  		<p class="bg-success draft-success-msg text-white">{{ message }}</p>
+											{% endfor %}
+									  	</div>
+									{% endif %}
 									<div class="row">
-										<div class="col-md-12 inspection_input">
+										<div class="col-md-12 inspection_input mt-2">
 											<div class="table-responsive">
 												<table class="table table-bordered">
 													<thead>

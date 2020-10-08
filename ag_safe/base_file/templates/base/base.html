@@ -13,62 +13,84 @@
 	<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
 </head>
 <body>
-<nav class="hero-anime">
-	<div class="navigation-wrap bg-light start-header start-style">
-		<div class="container">
-			<div class="row">
-				<div class="col-12">
-					<nav class="navbar navbar-expand-md navbar-light">
-						<a class="navbar-brand" href=""><img src="{%static 'images/logo.png' %}" alt=""></a>
-						<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-							<span class="navbar-toggler-icon"></span>
-						</button>
-						<div class="collapse navbar-collapse" id="navbarSupportedContent">
-							<ul class="navbar-nav ml-auto py-4 py-md-0">
-								<li class="nav-item pl-4 pl-md-0 ml-0 ml-md-4 active">
-									<a class="nav-link" href="#">Home</a>
-								</li>
-								<li class="nav-item pl-4 pl-md-0 ml-0 ml-md-4">
-									<a class="nav-link" href="#">About</a>
-								</li>
-								<li class="nav-item pl-4 pl-md-0 ml-0 ml-md-4">
-									<a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Product & Services</a>
-									<div class="dropdown-menu">
-										<a class="dropdown-item" href="#">Customized Solutions</a>
-										<a class="dropdown-item" href="#">Online Modules Access</a>
-										<a class="dropdown-item" href="#">Field Training & Workshops</a>
-									</div>
-								</li>
-								<li class="nav-item pl-4 pl-md-0 ml-0 ml-md-4">
-									<a class="nav-link" href="#">Contact Us</a>
-								</li>
-								<li class="nav-item pl-4 pl-md-0 ml-0 ml-md-4">
-									<a class="nav-link" href="#">Blog</a>
-								</li>
-								<li class="nav-item pl-4 pl-md-0 ml-0 ml-md-4">
-									<a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Modules</a>
-									<div class="dropdown-menu">
-										<a class="dropdown-item" href="#">Inspections</a>
-										<a class="dropdown-item" href="#">MOC</a>
-									</div>
-								</li>
-								{% if session_username %}
-								<li class="nav-item pl-4 pl-md-0 ml-0 ml-md-4">
-									<a class="nav-link" href="{% url 'user-logout' %}">Logout</a>
-								</li>
-								{% else %}
-								<li class="nav-item pl-4 pl-md-0 ml-0 ml-md-4">
-									<a class="nav-link" href="{% url 'login' %}">Login</a>
-								</li>
-								{% endif %}
-							</ul>
+<!--<nav class="hero-anime">-->
+<!--	<div class="navigation-wrap bg-light start-header start-style">-->
+<!--		<div class="container">-->
+<!--			<div class="row">-->
+<!--				<div class="col-12">-->
+<!--					<nav class="navbar navbar-expand-md navbar-light">-->
+<!--						<a class="navbar-brand" href=""><img src="{%static 'images/logo.png' %}" alt=""></a>-->
+<!--						<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">-->
+<!--							<span class="navbar-toggler-icon"></span>-->
+<!--						</button>-->
+<!--						<div class="collapse navbar-collapse" id="navbarSupportedContent">-->
+<!--							<ul class="navbar-nav ml-auto py-4 py-md-0">-->
+<!--								<li class="nav-item pl-4 pl-md-0 ml-0 ml-md-4 active">-->
+<!--									<a class="nav-link" href="#">Home</a>-->
+<!--								</li>-->
+<!--								<li class="nav-item pl-4 pl-md-0 ml-0 ml-md-4">-->
+<!--									<a class="nav-link" href="#">About</a>-->
+<!--								</li>-->
+<!--								<li class="nav-item pl-4 pl-md-0 ml-0 ml-md-4">-->
+<!--									<a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Product & Services</a>-->
+<!--									<div class="dropdown-menu">-->
+<!--										<a class="dropdown-item" href="#">Customized Solutions</a>-->
+<!--										<a class="dropdown-item" href="#">Online Modules Access</a>-->
+<!--										<a class="dropdown-item" href="#">Field Training & Workshops</a>-->
+<!--									</div>-->
+<!--								</li>-->
+<!--								<li class="nav-item pl-4 pl-md-0 ml-0 ml-md-4">-->
+<!--									<a class="nav-link" href="#">Contact Us</a>-->
+<!--								</li>-->
+<!--								<li class="nav-item pl-4 pl-md-0 ml-0 ml-md-4">-->
+<!--									<a class="nav-link" href="#">Blog</a>-->
+<!--								</li>-->
+<!--								<li class="nav-item pl-4 pl-md-0 ml-0 ml-md-4">-->
+<!--									<a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Modules</a>-->
+<!--									<div class="dropdown-menu">-->
+<!--										<a class="dropdown-item" href="#">Inspections</a>-->
+<!--										<a class="dropdown-item" href="#">MOC</a>-->
+<!--									</div>-->
+<!--								</li>-->
+<!--								{% if session_username %}-->
+<!--								<li class="nav-item pl-4 pl-md-0 ml-0 ml-md-4">-->
+<!--									<a class="nav-link" href="{% url 'user-logout' %}">Logout</a>-->
+<!--								</li>-->
+<!--								{% else %}-->
+<!--								<li class="nav-item pl-4 pl-md-0 ml-0 ml-md-4">-->
+<!--									<a class="nav-link" href="{% url 'login' %}">Login</a>-->
+<!--								</li>-->
+<!--								{% endif %}-->
+<!--							</ul>-->
+<!--						</div>-->
+<!--					</nav>-->
+<!--				</div>-->
+<!--			</div>-->
+<!--		</div>-->
+<!--	</div>-->
+<!--</nav>-->
+<nav class="nav_bar">
+	<div class="container">
+		<div class="row">
+			<div class="col-12">
+				<div class="nav-logo-block float-left">
+					<img src="{%static 'images/logo.png' %}" class="nav-logo">
+				</div>
+				<div class="nav-right-block float-right">
+					<div class="form-row align-items-center mr-3">
+						<div class="col-auto my-1">
+							<select class="custom-select mr-sm-2" id="choose-module">
+								<option selected>Choose Module</option>
+								<option value="https://insp.safetyerudite.com/">Inspection</option>
+								<option value="2">MOC</option>
+							</select>
 						</div>
-					</nav>
+					</div>
+					<a href="{% url 'user-logout' %}">Logout</a>
 				</div>
 			</div>
 		</div>
-	</div>
-</nav>
+	</nav>
 <section class="header">
 	<div class="container">
 		<div class="header-content-container">

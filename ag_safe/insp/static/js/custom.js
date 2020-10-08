@@ -547,6 +547,21 @@ $('body').on('change','.filter-insp',function(){
         });
 })
 
+$(document).ready(function(){
+   if($('.draft-success-msg')[0]){
+        $('.draft_tab').click();
+        $('html, body').animate({
+            scrollTop: $('.draft-success-msg').offset().top
+        }, 1000);
+   }
+})
+
+document.getElementById("choose-module").onchange = function() {
+    if (this.selectedIndex!==0) {
+        window.location.href = this.value;
+    }
+};
+
 
 // SELECT OPTION
 

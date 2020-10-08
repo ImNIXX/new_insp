@@ -1,5 +1,5 @@
 from django.http import HttpResponse
-import os
+from django.contrib import messages
 from django.shortcuts import render, redirect
 from ..models import Inspections, Type, CompressedGasCylinder, AccidentInvestigationRCAForm, AWPForm, ConfinedSpaceAuthorization, ConfinedSpaceEntry, DailyExcavation, DailyMaintenance, EarthmovingEquipment, EmergencyRescue, EnergizedElectrical, EmergencyEvacuation, EquipmentDeficiency, EquipmentInspection, EquipmentOperator, EyewashStation, FormalSite, FirstAid, FireExtinguisher, GasTest, GasMonitor, GeneralService, GenericSafe, IndustrialForklift, LocationofFirst, LossTimeInjury, MaintenanceRecord, ManagementofChange, MobileEquipment, MonthlyOffice, NewEmployee, QuarterlyOxygen, PersonalLock, PortableLadder, SkidSteer, ShopOffice, SafetyStatistics, ScaffoldInspection, SpotInspection, SubcontractorAcknowledgment, SubcontractorOrientation, TruckDeficiency, UserFitness, VehicleInspection, VehicleInspectionLog, VendorTruck, DraftTables
 
@@ -2488,7 +2488,7 @@ def vendor_truck(request):
     return HttpResponse('HELLO')
 
 
-functions = { "accident_investigation_rca_form": accident_investigation_rca_form, "awp_form": awp_form, "compressed_gas_cylinder": compressed_gas_cylinder, "confined_space_authorization": confined_space_authorization, "confined_space_entry": confined_space_entry, "daily_excavation": daily_excavation, "daily_maintenance": daily_maintenance, "earth_moving_equipment": earth_moving_equipment, "emergency_evacuation": emergency_evacuation, "emergency_rescue": emergency_rescue, "energized_electrical": energized_electrical, "equipment_deficiency": equipment_deficiency, "equipment_inspection": equipment_inspection, "equipment_operator": equipment_operator, "eyewash_station": eyewash_station, "fire_extinguisher": fire_extinguisher, "first_aid": first_aid, "formal_site": formal_site, "gas_monitor": gas_monitor, "gas_test": gas_test, "general_service": general_service, "generic_safe": generic_safe, "industrial_forklift": industrial_forklift, "location_of_first": location_of_first, "loss_time_injury": loss_time_injury, "maintenance_record": maintenance_record, "management_of_change": management_of_change, "mobile_equipment": mobile_equipment, "monthly_office": monthly_office, "new_employee": new_employee, "personal_lock": personal_lock, "portable_ladder": portable_ladder, "quarterly_oxygen": quarterly_oxygen, "safety_statistics": safety_statistics, "scaffold_inspection": scaffold_inspection, "shop_office": shop_office, "skid_steer": skid_steer, "spot_inspection": spot_inspection, "subcontractor_acknowledgment": subcontractor_acknowledgment, "subcontractor_orientation": subcontractor_orientation, "truck_deficiency": truck_deficiency, "user_fitness": user_fitness, "vehicle_inspection": vehicle_inspection, "vehicle_inspection_log": vehicle_inspection_log, "vendor_truck": vendor_truck}
+functions = {"accident_investigation_rca_form": accident_investigation_rca_form, "awp_form": awp_form, "compressed_gas_cylinder": compressed_gas_cylinder, "confined_space_authorization": confined_space_authorization, "confined_space_entry": confined_space_entry, "daily_excavation": daily_excavation, "daily_maintenance": daily_maintenance, "earth_moving_equipment": earth_moving_equipment, "emergency_evacuation": emergency_evacuation, "emergency_rescue": emergency_rescue, "energized_electrical": energized_electrical, "equipment_deficiency": equipment_deficiency, "equipment_inspection": equipment_inspection, "equipment_operator": equipment_operator, "eyewash_station": eyewash_station, "fire_extinguisher": fire_extinguisher, "first_aid": first_aid, "formal_site": formal_site, "gas_monitor": gas_monitor, "gas_test": gas_test, "general_service": general_service, "generic_safe": generic_safe, "industrial_forklift": industrial_forklift, "location_of_first": location_of_first, "loss_time_injury": loss_time_injury, "maintenance_record": maintenance_record, "management_of_change": management_of_change, "mobile_equipment": mobile_equipment, "monthly_office": monthly_office, "new_employee": new_employee, "personal_lock": personal_lock, "portable_ladder": portable_ladder, "quarterly_oxygen": quarterly_oxygen, "safety_statistics": safety_statistics, "scaffold_inspection": scaffold_inspection, "shop_office": shop_office, "skid_steer": skid_steer, "spot_inspection": spot_inspection, "subcontractor_acknowledgment": subcontractor_acknowledgment, "subcontractor_orientation": subcontractor_orientation, "truck_deficiency": truck_deficiency, "user_fitness": user_fitness, "vehicle_inspection": vehicle_inspection, "vehicle_inspection_log": vehicle_inspection_log, "vendor_truck": vendor_truck}
 
 
 def insert_draft_form(request):
@@ -2496,21 +2496,29 @@ def insert_draft_form(request):
     draft_slug = request.POST.get('draft_slug', None)
     inspection_id = request.POST.get('inspection_id', None)
     draft_name = Type.objects.get(type_slug=draft_slug)
-    Inspections.objects.filter(id=inspection_id).update(draft_slug=draft_slug,draft_name=draft_name.type)
+    Inspections.objects.filter(id=inspection_id).update(draft_slug=draft_slug, draft_name=draft_name.type)
     func_name = DraftTables.objects.get(draft_name=draft_slug)
     aaa = func_name.draft_func_name
     functions[aaa](request)
-    # return redirect('home-page')
-    return HttpResponse('dsad')
+    messages.success(request, 'Drafts inserted successfully')
+    return redirect('home-page')
+    # return HttpResponse('dsad')
 
 
 def view_draft(request):
     # abc = os.environ.get('PATH_INFO')
     drafts_data = {}
     insp_id = request.GET.get('insp_val')
-    draft_slug = request.GET.get('draft_slug')
+    draft_slug = request.GET.get('draft_name')
     drafts_data['data'] = AWPForm.objects.get(inspection_id=insp_id)
-    print(drafts_data['data'].unit_type[0])
+    # json_data = eval(draft_data.unit_type)
+    # drafts_data['data'] = list(draft_data)
+    drafts_data['checkbox_val'] = eval(drafts_data['data'].unit_type)
+    # abcd = drafts_data['checkbox_val'].get('Scissor Lift')
+    # print(abcd)
     # drafts = Type.objects.get(id=2)
     # drafts_data.append(drafts.draft_html)
-    return render(request, 'drafts/awp_form.html', drafts_data)
+    draft_page = DraftTables.objects.get(draft_name=draft_slug)
+    draft_page_name = 'drafts/'+draft_page.draft_func_name+'.html'
+    print(draft_page_name)
+    return render(request, draft_page_name, drafts_data)

@@ -134,14 +134,14 @@ def delete_inspection(request):
     inspection_id = int(inspection_id) / 9304
     ins_data = Inspections.objects.get(id=inspection_id)
     if ins_data.approve != 'true':
-        ins_dir = ins_data.draft_directory
-        draft_name = ins_data.draft_slug
-        draft_file = settings.MEDIA_ROOT + "/insp_draft_dir/"+ins_dir+"/"+draft_name
-        my_file = Path(draft_file)
-        if my_file.is_file():
-            os.remove(draft_file)
+        # ins_dir = ins_data.draft_directory
+        # draft_name = ins_data.draft_slug
+        # draft_file = settings.MEDIA_ROOT + "/insp_draft_dir/"+ins_dir+"/"+draft_name
+        # my_file = Path(draft_file)
+        # if my_file.is_file():
+        #     os.remove(draft_file)
         del_data = Inspections.objects.filter(id=inspection_id).delete()
-        if del_data[0] == 1:
+        if del_data:
             return HttpResponse('1')
         else:
             return HttpResponse('0')
