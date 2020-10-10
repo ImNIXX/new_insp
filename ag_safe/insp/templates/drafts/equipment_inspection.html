@@ -1,0 +1,205 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" type="text/css" href="/static/css/draft_style.css">
+<link rel="stylesheet" type="text/css" href="/static/css/style.css">
+<div class="header-top">
+    <div class="container-category">
+        <div class="header-inner">
+            <div class="logo">logo</div>
+            <div class="right-contant">
+                <div class="field-wrap"><label>Alberta See Processor – </label><input type="text" value="{{data.plants_name}}" name="plants_name" placeholder="Plants Name" /> </div>
+                <p>Equipment Inspection Form</p>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="AWP-form RCA-form-pdf">
+    <div class="container-category">
+        <div class="ABSP-form-block">
+            <div class="top-link">
+                <h2>Equipment Inspection Form</h2>
+            </div>
+            <table class="inside-tbl input-bt-br">
+                <tr>
+                    <td></td>
+                    <td class="tbold">
+                        <div class="field-wrap"><label>Date: </label><input type="text" value="{{data.date}}" name="date"></div>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="tbold">
+                        <div class="field-wrap"><label>Vehicle #:</label><input type="text" value="{{data.vehicle}}" name="vehicle"></div>
+                    </td>
+                    <td class="tbold">
+                        <div class="field-wrap"><label>Odometer Reading:</label><input type="text" value="{{data.odometer}}" name="odometer"></div>
+                    </td>
+                </tr>
+            </table>
+            <div class="tbl-scroll">
+                <table class="responsive-tbl">
+                    <tr>
+                        <td class="td-heading">Area Inspected</td>
+                        <td class="td-heading">Satisfactory</td>
+                        <td class="td-heading">Needs Improvement</td>
+                        <td class="td-heading">Comments</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="field-wrap"><label>Exterior Cleanliness/ Condition</label></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{data.extcle_satis}}" name="extcle_satis"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{data.extcle_need_impro}}" name="extcle_need_impro"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{data.extcle_comment}}" name="extcle_comment"></div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="field-wrap"><label>Interior Cleanliness/ Condition</label></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{data.intcle_satis}}" name="intcle_satis"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{data.intcle_need_impro}}" name="intcle_need_impro"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{data.intcle_comment}}" name="intcle_comment"></div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="field-wrap"><label>Tracks</label></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{data.tracks_satis}}" name="tracks_satis"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{data.tracks_need_impro}}" name="tracks_need_impro"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{data.tracks_comment}}" name="tracks_comment"></div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="field-wrap"><label>Windshield</label></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{data.winds_satis}}" name="winds_satis"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{data.winds_need_impro}}" name="winds_need_impro"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{data.winds_comment}}" name="winds_comment"></div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="field-wrap"><label>Windshield Wiper Fluid</label></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{data.wind_wiper_satis}}" name="wind_wiper_satis"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{data.wind_wiper_need_impro}}" name="wind_wiper_need_impro"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{data.wind_wiper_comment}}" name="wind_wiper_comment"></div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="field-wrap"><label>All Lights (Brake, Signal, Reflectors etc.)</label></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{data.all_light_satis}}" name="all_light_satis"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{data.all_light_need_impro}}" name="all_light_need_impro"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{data.all_light_comment}}" name="all_light_comment"></div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="field-wrap"><label>Horn & Switches</label></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{data.horn_satis}}" name="horn_satis"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{data.horn_need_impro}}" name="horn_need_impro"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{data.horn_comment}}" name="horn_comment"></div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="field-wrap"><label>Fuel</label></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{data.fuel_satis}}" name="fuel_satis"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{data.fuel_need_impro}}" name="fuel_need_impro"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{data.fuel_comment}}" name="fuel_comment"></div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="field-wrap"><label>Oil</label></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{data.oil_satis}}" name="oil_satis"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{data.oil_need_impro}}" name="oil_need_impro"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{data.oil_comment}}" name="oil_comment"></div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="field-wrap"><label>Documentation, Insurance & Registration</label></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{data.doc_satis}}" name="doc_satis"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{data.doc_need_impro}}" name="doc_need_impro"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{data.doc_comment}}" name="doc_comment"></div>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <p><i>Note: Please complete the <b>Equipment Deficiency Report Form</b> for any/all deficiencies and submit to management ASAP.</i></p>
+            <table class="inside-tbl input-bt-br">
+                <tr>
+                    <td colspan="2"><label class="full-label">Comments:</label><textarea name="des_comment">{{data.des_comment}}</textarea></td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="field-wrap"><label>Inspected By (Print):</label><input type="text" value="{{data.insp_by}}" name="insp_by"></div>
+                    </td>
+                    <td>
+                        <div class="field-wrap"><label>Signature:</label><input type="text" value="{{data.sign}}" name="sign"></div>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</div>
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<script type="text/javascript" src="/static/js/draft.js"></script>

@@ -1,0 +1,291 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" type="text/css" href="/static/css/draft_style.css">
+<link rel="stylesheet" type="text/css" href="/static/css/style.css">
+<div class="header-top">
+    <div class="container-category">
+        <div class="header-inner">
+            <div class="logo">logo</div>
+            <div class="right-contant">
+                <div class="field-wrap"> <label>Alberta See Processor – </label> <input type="text" value="{{data.plants_name}}" name="plants_name" placeholder="Plants Name"/> </div>
+                <p>New Employee Orientation Checklist</p>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="AWP-form RCA-form-pdf">
+    <div class="container-category">
+        <div class="ABSP-form-block">
+            <div class="top-link">
+                <h2>New Employee Orientation Checklist</h2>
+            </div>
+            <table class="bb-tbl">
+                <tr>
+                    <td>
+                        <div class="field-wrap"> <label>Date:</label> <input type="text" value="{{data.date}}" name="date"> </div>
+                    </td>
+                    <td>
+                        <div class="field-wrap"> <label>Employee Name:</label> <input type="text" value="{{data.emp_name}}" name="emp_name"> </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <div class="field-wrap"> <label>Address:</label> <input type="text" value="{{data.addr}}" name="addr"> </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="field-wrap"> <label>Cell #:</label> <input type="text" value="{{data.cell}}" name="cell"> </div>
+                    </td>
+                    <td>
+                        <div class="field-wrap"> <label>Email address:</label> <input type="text" value="{{data.email_addr}}" name="email_addr"> </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <div class="field-wrap"> <label>Emergency Contact Name:</label> <input type="text" value="{{data.emergency_contact}}" name="emergency_contact"> </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <div class="field-wrap"> <label>Phone Numbe:</label> <input type="text" value="{{data.phone_num}}" name="phone_num"> </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="field-wrap"> <label>Hire Date:</label> <input type="text" value="{{data.hire_date}}" name="hire_date"> </div>
+                    </td>
+                    <td>
+                        <div class="field-wrap"> <label>Position:</label> <input type="text" value="{{data.position}}" name="position"> </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="field-wrap"> <label>Supervisor:</label> <input type="text" value="{{data.supervisor}}" name="supervisor"> </div>
+                    </td>
+                    <td>
+                        <div class="field-wrap"> <label>Probation End Date (3mos):</label> <input type="text" value="{{data.probation_end_date}}" name="probation_end_date"> </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <div class="field-wrap"> <label>Previous Experience:</label> <input type="text" value="{{data.pre_exp}}" name="pre_exp"> </div>
+                    </td>
+                </tr>
+            </table>
+            <div class="tbl-scroll">
+                <table class="tbl-text-left responsive-tbl">
+                    <tr>
+                        <td class="td-heading">Topic Covered</td>
+                        <td class="td-heading">Done</td>
+                        <td class="td-heading">N/A</td>
+                        <td class="td-heading">Topic Covered</td>
+                        <td class="td-heading">Done</td>
+                        <td class="td-heading">N/A</td>
+                    </tr>
+                    <tr>
+                        <td>Company Safety Policy</td>
+                        <td>
+                            <div class="field-wrap"> <input type="text" value="{{data.done_company}}" name="done_company"> </div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"> <input type="text" value="{{data.na_company}}" name="na_company"> </div>
+                        </td>
+                        <td>OH&S Awareness</td>
+                        <td>
+                            <div class="field-wrap"> <input type="text" value="{{data.done_awarness}}" name="done_awarness"> </div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"> <input type="text" value="{{data.na_awarness}}" name="na_awarness"> </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Employee Responsibilities</td>
+                        <td>
+                            <div class="field-wrap"> <input type="text" value="{{data.done_emp_resp}}" name="done_emp_resp"> </div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"> <input type="text" value="{{data.na_emp_resp}}" name="na_emp_resp"> </div>
+                        </td>
+                        <td>Safety Meetings</td>
+                        <td>
+                            <div class="field-wrap"> <input type="text" value="{{data.done_safety}}" name="done_safety"> </div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"> <input type="text" value="{{data.na_safety}}" name="na_safety"> </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Safe Work Practices</td>
+                        <td>
+                            <div class="field-wrap"> <input type="text" value="{{data.done_safe_work}}" name="done_safe_work"> </div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"> <input type="text" value="{{data.na_safe_work}}" name="na_safe_work"> </div>
+                        </td>
+                        <td>Emergency Numbers</td>
+                        <td>
+                            <div class="field-wrap"> <input type="text" value="{{data.done_emer_num}}" name="done_emer_num"> </div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"> <input type="text" value="{{data.na_emer_num}}" name="na_emer_num"> </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Housekeeping</td>
+                        <td>
+                            <div class="field-wrap"> <input type="text" value="{{data.done_house}}" name="done_house"> </div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"> <input type="text" value="{{data.na_house}}" name="na_house"> </div>
+                        </td>
+                        <td>Emergency Response Plan</td>
+                        <td>
+                            <div class="field-wrap"> <input type="text" value="{{data.done_emer_plan}}" name="done_emer_plan"> </div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"> <input type="text" value="{{data.na_emer_plan}}" name="na_emer_plan"> </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Working Alone Procedure</td>
+                        <td>
+                            <div class="field-wrap"> <input type="text" value="{{data.done_work_alone}}" name="done_work_alone"> </div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"> <input type="text" value="{{data.na_work_alone}}" name="na_work_alone"> </div>
+                        </td>
+                        <td>Inspections/Hazard Assessments</td>
+                        <td>
+                            <div class="field-wrap"> <input type="text" value="{{data.done_insp}}" name="done_insp"> </div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"> <input type="text" value="{{data.na_insp}}" name="na_insp"> </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Right to Refuse Unsafe Work</td>
+                        <td>
+                            <div class="field-wrap"> <input type="text" value="{{data.done_right}}" name="done_right"> </div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"> <input type="text" value="{{data.na_right}}" name="na_right"> </div>
+                        </td>
+                        <td>Specific Hazards Pertaining to the Worker’s Job</td>
+                        <td>
+                            <div class="field-wrap"> <input type="text" value="{{data.done_hazards}}" name="done_hazards"> </div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"> <input type="text" value="{{data.na_hazards}}" name="na_hazards"> </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>General Safety Rules</td>
+                        <td>
+                            <div class="field-wrap"> <input type="text" value="{{data.done_general}}" name="done_general"> </div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"> <input type="text" value="{{data.na_general}}" name="na_general"> </div>
+                        </td>
+                        <td>Discipline/Enforcement</td>
+                        <td>
+                            <div class="field-wrap"> <input type="text" value="{{data.done_disc}}" name="done_disc"> </div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"> <input type="text" value="{{data.na_disc}}" name="na_disc"> </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Personal Protective Equipment</td>
+                        <td>
+                            <div class="field-wrap"> <input type="text" value="{{data.done_personal}}" name="done_personal"> </div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"> <input type="text" value="{{data.na_personal}}" name="na_personal"> </div>
+                        </td>
+                        <td>WCB Policy Awareness</td>
+                        <td>
+                            <div class="field-wrap"> <input type="text" value="{{data.done_wcb}}" name="done_wcb"> </div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"> <input type="text" value="{{data.na_wcb}}" name="na_wcb"> </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Reporting/Investigating Incidents/Accidents/Occupational Illnesses</td>
+                        <td>
+                            <div class="field-wrap"> <input type="text" value="{{data.done_illn}}" name="done_illn"> </div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"> <input type="text" value="{{data.na_illn}}" name="na_illn"> </div>
+                        </td>
+                        <td>Safety Tickets Copied</td>
+                        <td>
+                            <div class="field-wrap"> <input type="text" value="{{data.done_tickets}}" name="done_tickets"> </div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"> <input type="text" value="{{data.na_tickets}}" name="na_tickets"> </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Drug & Alcohol Policy Reviewed</td>
+                        <td>
+                            <div class="field-wrap"> <input type="text" value="{{data.done_drug}}" name="done_drug"> </div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"> <input type="text" value="{{data.na_drug}}" name="na_drug"> </div>
+                        </td>
+                        <td>Resume</td>
+                        <td>
+                            <div class="field-wrap"> <input type="text" value="{{data.done_resume}}" name="done_resume"> </div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"> <input type="text" value="{{data.na_resume}}" name="na_resume"> </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>TD1 Federal & Provincial Form</td>
+                        <td>
+                            <div class="field-wrap"> <input type="text" value="{{data.done_form}}" name="done_form"> </div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"> <input type="text" value="{{data.na_form}}" name="na_form"> </div>
+                        </td>
+                        <td>Driving Abstract</td>
+                        <td>
+                            <div class="field-wrap"> <input type="text" value="{{data.done_driving}}" name="done_driving"> </div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"> <input type="text" value="{{data.na_driving}}" name="na_driving"> </div>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <p><b>Employee:</b>I have reviewed a copy of the above items marked and fully understand my responsibilities and the contents of this orientation.</p>
+            <table class="inside-tbl input-bt-br">
+                <tr>
+                    <td>
+                        <div class="field-wrap"> <label>Employee Signature:</label> <input type="text" value="{{data.emp_sign}}" name="emp_sign"> </div>
+                    </td>
+                    <td>
+                        <div class="field-wrap"> <label>Trainer Signature:</label> <input type="text" value="{{data.trainer_sign}}" name="trainer_sign"> </div>
+                    </td>
+                </tr>
+            </table>
+            <h4>ON-THE-JOB TRAINING</h4>
+            <p>Describe the On-The-Job Training that took place with the employee:</p>
+            <div class="field-wrap input-bt-br"> <textarea name="des_training"></textarea> </div><br>
+            <table class="inside-tbl input-bt-br">
+                <tr>
+                    <td>
+                        <div class="field-wrap"> <label>Duration of Training:</label> <input type="text" value="{{data.duration_training}}" name="duration_training"> </div>
+                    </td>
+                    <td>
+                        <div class="field-wrap"> <label>Trainer:</label> <input type="text" value="{{data.trainer}}" name="trainer"> </div>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</div>
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<script type="text/javascript" src="/static/js/draft.js"></script>

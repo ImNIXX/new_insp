@@ -1,0 +1,207 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" type="text/css" href="/static/css/draft_style.css">
+<link rel="stylesheet" type="text/css" href="/static/css/style.css">
+<div class="header-top">
+    <div class="container-category">
+        <div class="header-inner">
+            <div class="logo">logo</div>
+            <div class="right-contant">
+                <div class="field-wrap"><label>Alberta See Processor – </label><input type="text" value="{{data.plants_name}}" name="plants_name" placeholder="Plants Name" /> </div>
+                <p>Daily Excavation and Trench Inspection Report Form</p>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="AWP-form RCA-form-pdf">
+    <div class="container-category">
+        <div class="ABSP-form-block">
+            <div class="top-link">
+                <h2>Daily Excavation and Trench Inspection Report Form</h2>
+            </div>
+            <table class="tbl-mb">
+                <tr>
+                    <td colspan="3" class="tbold">Daily Excavation and Trench Inspection Report</td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="field-wrap"><label>DATE:</label> <input type="text" value="{{data.date}}" name="date"/> </div>
+                    </td>
+                    <td colspan="2">
+                        <div class="field-wrap"><label>AREA:</label> <input type="text" value="{{data.area}}" name="area"/> </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="field-wrap"><label>LOCATION:</label> <input type="text" value="{{data.location}}" name="location"/> </div>
+                    </td>
+                    <td>
+                        <div class="field-wrap"><label>Weather conditions:</label> <input type="text" value="{{data.weather}}" name="weather"/> </div>
+                    </td>
+                    <td>
+                        <div class="field-wrap"><label>RAINFALL IN PREVIOUS 24 HOURS:</label> <input type="text" value="{{data.rainfall}}" name="rainfall"/> </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="3">
+                        <div class="field-wrap"><label>AUTHORIZED PERSON / Supervisor:</label> <input type="text" value="{{data.authorized}}" name="authorized"/> </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="3">
+                        <div class="field-wrap"><label>Additional Information:</label> <input type="text" value="{{data.additional_info}}" name="additional_info"/> </div>
+                    </td>
+                </tr>
+            </table>
+            <table class="daily-excavation-tbl responsive-tbl tbl-mb">
+                <tr>
+                    <td colspan="2" class="td-heading" style="text-align: left;">INSPECT ALL OPEN TRENCHES AS PER THE FOLLOWING CRITERIA:</td>
+                    <td class="td-heading">Yes</td>
+                    <td class="td-heading">No</td>
+                    <td class="td-heading">N/A</td>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>Is the spoil pile located a proper distance from the excavation (min. 1 meter)?</td>
+                    <td><input type="radio" {{ data.spoil|radio_three:"yes" }} name="spoil" value="yes"></td>
+                    <td><input type="radio" {{ data.spoil|radio_three:"no" }} name="spoil" value="no"></td>
+                    <td><input type="radio" {{ data.spoil|radio_three:"N/A" }} name="spoil" value="N/A"></td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>Is there any tension cracks observed along the top of any slopes?</td>
+                    <td><input type="radio" {{ data.tension|radio_three:"yes" }} name="tension" value="yes"></td>
+                    <td><input type="radio" {{ data.tension|radio_three:"no" }} name="tension" value="no"></td>
+                    <td><input type="radio" {{ data.tension|radio_three:"N/A" }} name="tension" value="N/A"></td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>Is the trench slopes cut at the design angle of 45 degrees?</td>
+                    <td><input type="radio" {{ data.trench|radio_three:"yes" }} name="trench" value="yes"></td>
+                    <td><input type="radio" {{ data.trench|radio_three:"no" }} name="trench" value="no"></td>
+                    <td><input type="radio" {{ data.trench|radio_three:"N/A" }} name="trench" value="N/A"></td>
+                </tr>
+                <tr>
+                    <td>4</td>
+                    <td>Was there any water seepage noted in trench walls or bottom?</td>
+                    <td><input type="radio" {{ data.seepage|radio_three:"yes" }} name="seepage" value="yes"></td>
+                    <td><input type="radio" {{ data.seepage|radio_three:"no" }} name="seepage" value="no"></td>
+                    <td><input type="radio" {{ data.seepage|radio_three:"N/A" }} name="seepage" value="N/A"></td>
+                </tr>
+                <tr>
+                    <td>5</td>
+                    <td>Was the installation of the bracing system complete in accordance with design?</td>
+                    <td><input type="radio" {{ data.bracing|radio_three:"yes" }} name="bracing" value="yes"></td>
+                    <td><input type="radio" {{ data.bracing|radio_three:"no" }} name="bracing" value="no"></td>
+                    <td><input type="radio" {{ data.bracing|radio_three:"N/A" }} name="bracing" value="N/A"></td>
+                </tr>
+                <tr>
+                    <td>6</td>
+                    <td>Is there any evidence of caving or sloughing of soil since the last inspection?</td>
+                    <td><input type="radio" {{ data.caving|radio_three:"yes" }} name="caving" value="yes"></td>
+                    <td><input type="radio" {{ data.caving|radio_three:"no" }} name="caving" value="no"></td>
+                    <td><input type="radio" {{ data.caving|radio_three:"N/A" }} name="caving" value="N/A"></td>
+                </tr>
+                <tr>
+                    <td>7</td>
+                    <td>Were there any zones of unusually weak soils or materials not anticipated?</td>
+                    <td><input type="radio" {{ data.zones|radio_three:"yes" }} name="zones" value="yes"></td>
+                    <td><input type="radio" {{ data.zones|radio_three:"no" }} name="zones" value="no"></td>
+                    <td><input type="radio" {{ data.zones|radio_three:"N/A" }} name="zones" value="N/A"></td>
+                </tr>
+                <tr>
+                    <td>8</td>
+                    <td>Is there adequate egress ladders provided (within 8 meters / 25 feet of work) maximum 50 feet apart?</td>
+                    <td><input type="radio" {{ data.egress|radio_three:"yes" }} name="egress" value="yes"></td>
+                    <td><input type="radio" {{ data.egress|radio_three:"no" }} name="egress" value="no"></td>
+                    <td><input type="radio" {{ data.egress|radio_three:"N/A" }} name="egress" value="N/A"></td>
+                </tr>
+                <tr>
+                    <td>9</td>
+                    <td>Are trench box(s) certified? (If applicable)</td>
+                    <td><input type="radio" {{ data.certified|radio_three:"yes" }} name="certified" value="yes"></td>
+                    <td><input type="radio" {{ data.certified|radio_three:"no" }} name="certified" value="no"></td>
+                    <td><input type="radio" {{ data.certified|radio_three:"N/A" }} name="certified" value="N/A"></td>
+                </tr>
+                <tr>
+                    <td>10</td>
+                    <td>If shoring is used, is it properly secure?</td>
+                    <td><input type="radio" {{ data.shoring|radio_three:"yes" }} name="shoring" value="yes"></td>
+                    <td><input type="radio" {{ data.shoring|radio_three:"no" }} name="shoring" value="no"></td>
+                    <td><input type="radio" {{ data.shoring|radio_three:"N/A" }} name="shoring" value="N/A"></td>
+                </tr>
+                <tr>
+                    <td>11</td>
+                    <td>If shoring is used, is it the shoring of the correct type?</td>
+                    <td><input type="radio" {{ data.correct|radio_three:"yes" }} name="correct" value="yes"></td>
+                    <td><input type="radio" {{ data.correct|radio_three:"no" }} name="correct" value="no"></td>
+                    <td><input type="radio" {{ data.correct|radio_three:"N/A" }} name="correct" value="N/A"></td>
+                </tr>
+                <tr>
+                    <td>12</td>
+                    <td>Are the hydraulic shores pumped to the design pressure (if applicable)?</td>
+                    <td><input type="radio" {{ data.hydraulic|radio_three:"yes" }} name="hydraulic" value="yes"></td>
+                    <td><input type="radio" {{ data.hydraulic|radio_three:"no" }} name="hydraulic" value="no"></td>
+                    <td><input type="radio" {{ data.hydraulic|radio_three:"N/A" }} name="hydraulic" value="N/A"></td>
+                </tr>
+                <tr>
+                    <td>13</td>
+                    <td>Did shoring plan include an adequate safety factor to allow for specific equipment?</td>
+                    <td><input type="radio" {{ data.adequate|radio_three:"yes" }} name="adequate" value="yes"></td>
+                    <td><input type="radio" {{ data.adequate|radio_three:"no" }} name="adequate" value="no"></td>
+                    <td><input type="radio" {{ data.adequate|radio_three:"N/A" }} name="adequate" value="N/A"></td>
+                </tr>
+                <tr>
+                    <td>14</td>
+                    <td>Are barricades in place to keep traffic away from trenching operations?</td>
+                    <td><input type="radio" {{ data.barricades|radio_three:"yes" }} name="barricades" value="yes"></td>
+                    <td><input type="radio" {{ data.barricades|radio_three:"no" }} name="barricades" value="no"></td>
+                    <td><input type="radio" {{ data.barricades|radio_three:"N/A" }} name="barricades" value="N/A"></td>
+                </tr>
+                <tr>
+                    <td>15</td>
+                    <td>Are there trees, boulders or other hazards in the area?</td>
+                    <td><input type="radio" {{ data.boulders|radio_three:"yes" }} name="boulders" value="yes"></td>
+                    <td><input type="radio" {{ data.boulders|radio_three:"no" }} name="boulders" value="no"></td>
+                    <td><input type="radio" {{ data.boulders|radio_three:"N/A" }} name="boulders" value="N/A"></td>
+                </tr>
+                <tr>
+                    <td>16</td>
+                    <td>Are vibrations from equipment or traffic too close to trenching operations?</td>
+                    <td><input type="radio" {{ data.vibrations|radio_three:"yes" }} name="vibrations" value="yes"></td>
+                    <td><input type="radio" {{ data.vibrations|radio_three:"no" }} name="vibrations" value="no"></td>
+                    <td><input type="radio" {{ data.vibrations|radio_three:"N/A" }} name="vibrations" value="N/A"></td>
+                </tr>
+                <tr>
+                    <td>17</td>
+                    <td>Is a safety standby person required?</td>
+                    <td><input type="radio" {{ data.safety|radio_three:"yes" }} name="safety" value="yes"></td>
+                    <td><input type="radio" {{ data.safety|radio_three:"no" }} name="safety" value="no"></td>
+                    <td><input type="radio" {{ data.safety|radio_three:"N/A" }} name="safety" value="N/A"></td>
+                </tr>
+                <tr>
+                    <td>18</td>
+                    <td>Is a confined space entry permit required?</td>
+                    <td><input type="radio" {{ data.space|radio_three:"yes" }} name="space" value="yes"></td>
+                    <td><input type="radio" {{ data.space|radio_three:"no" }} name="space" value="no"></td>
+                    <td><input type="radio" {{ data.space|radio_three:"N/A" }} name="space" value="N/A"></td>
+                </tr>
+                <tr>
+                    <td colspan="5" class="inside-tbl-td">
+                        <table class="inside-tbl border-tbl">
+                            <tr>
+                                <td style="border-right: 1px solid #ccc">
+                                    <div class="field-wrap"><label>Supervisor Name:</label> <input type="text" value="{{data.supervisor_name}}" name="supervisor_name"/> </div>
+                                </td>
+                                <td>
+                                    <div class="field-wrap"><label>Signature:</label> <input type="text" value="{{data.sign}}" name="sign"/> </div>
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</div>
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<script type="text/javascript" src="/static/js/draft.js"></script>

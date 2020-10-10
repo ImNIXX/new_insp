@@ -1,0 +1,368 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" type="text/css" href="/static/css/draft_style.css">
+<link rel="stylesheet" type="text/css" href="/static/css/style.css">
+<div class="header-top">
+    <div class="container-category">
+        <div class="header-inner">
+            <div class="logo">logo</div>
+            <div class="right-contant">
+                <div class="field-wrap"> <label>Alberta See Processor – </label> <input type="text" value="{{data.plants_name}}" name="plants_name" placeholder="Plants Name"/> </div>
+                <p>Management of Change (MOC) Form</p>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="AWP-form RCA-form-pdf">
+    <div class="contant-top">
+        <div class="container-category">
+            <div class="top-link">
+                <h2>Management of Change (MOC) Form</h2>
+            </div>
+        </div>
+    </div>
+    <div class="container-category">
+        <div class="ABSP-form-block moc-form">
+            <p>MOC Number:</p>
+            <table class="lr-border-zero space-tbl responsive-tbl">
+                <tr>
+                    <td colspan="3" class="td-heading">Request For Change</td>
+                </tr>
+                <tr>
+                    <td colspan="3"></td>
+                </tr>
+                <tr>
+                    <td>1. Title of Proposed Change:</td>
+                    <td colspan="2">
+                        <div class="field-wrap"> <input type="text" value="{{data.title_change}}" name="title_change"> </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td rowspan="2">2. Requestor Name:</td>
+                    <td colspan="2">
+                        <div class="field-wrap"> <label>Who Requested the Change:</label> <input type="text" value="{{data.req_name}}" name="req_name"> </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <div class="field-wrap"> <label>Site:</label> <input type="text" value="{{data.req_site}}" name="req_site"> </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>3. Date of Request:</td>
+                    <td colspan="2">
+                        <div class="field-wrap"> <input type="text" value="{{data.req_date}}" name="req_date"> </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>4. Type of Change (check)</td>
+                    <td colspan="2">
+                        <div class="single-line-checkbox"><label> <input type="checkbox"  {{ data.type_change|get_string_as_list|match_value:"Business Porcess" }}
+ name="type_change" value="Business Porcess">Business Porcess </label></div>
+                        <div class="single-line-checkbox"><label> <input type="checkbox"  {{ data.type_change|get_string_as_list|match_value:"Technology" }}
+ name="type_change" value="Technology">Technology </label></div>
+                        <div class="single-line-checkbox"><label> <input type="checkbox"  {{ data.type_change|get_string_as_list|match_value:"Equipment" }}
+ name="type_change" value="Equipment">Equipment </label></div>
+                        <div class="single-line-checkbox"><label> <input type="checkbox"  {{ data.type_change|get_string_as_list|match_value:"Facility" }}
+ name="type_change" value="Facility">Facility </label></div>
+                        <div class="single-line-checkbox"><label> <input type="checkbox"  {{ data.type_change|get_string_as_list|match_value:"Chemical" }}
+ name="type_change" value="Chemical">Chemical </label></div>
+                        <div class="single-line-checkbox"><label> <input type="checkbox"  {{ data.type_change|get_string_as_list|match_value:"Other" }}
+ name="type_change" value="Other">Other </label></div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <ul>
+                            <li>If Other, provide details</li>
+                        </ul>
+                    </td>
+                    <td colspan="2">
+                        <div class="field-wrap"> <input type="text" value="{{data.other_type_change}}" name="other_type_change"> </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>5. Change Duration</td>
+                    <td>
+                        <div class="single-line-checkbox"><label> <input type="checkbox"  {{ data.change_dur|get_string_as_list|match_value:"Temporary" }}
+ name="change_dur" value="Temporary">Temporary </label></div>
+                    </td>
+                    <td>
+                        <div class="single-line-checkbox"><label> <input type="checkbox"  {{ data.change_dur|get_string_as_list|match_value:"Permanent" }}
+ name="change_dur" value="Permanent">Permanent </label></div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>6. Description of Proposed Change:</td>
+                    <td colspan="2">
+                        <div class="field-wrap"> <input type="text" value="{{data.des_change}}" name="des_change"> </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>7. Business Case for Change:</td>
+                    <td colspan="2">
+                        <div class="field-wrap"> <input type="text" value="{{data.business_change}}" name="business_change"> </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>8. Proposed start date:</td>
+                    <td colspan="2">
+                        <div class="field-wrap"> <label>Proposed end date:</label> <input type="text" value="{{data.proposed_start_date}}" name="proposed_start_date"> </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>9. Implications for not implementing proposed change:</td>
+                    <td colspan="2">
+                        <div class="field-wrap"> <input type="text" value="{{data.implement_change}}" name="implement_change"> </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>10. Identify risk exposure or lost business opportunities from failing to implement change</td>
+                    <td colspan="2">
+                        <div class="field-wrap"> <input type="text" value="{{data.identify_risk}}" name="identify_risk"> </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="3"></td>
+                </tr>
+                <tr>
+                    <td colspan="3" class="td-heading">Approvals To Plan</td>
+                </tr>
+                <tr>
+                    <td class="td-heading">Approver Name</td>
+                    <td class="td-heading">Signature</td>
+                    <td class="td-heading">Date</td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="field-wrap"> <input type="text" value="{{data.app_name_one}}" name="app_name_one"> </div>
+                    </td>
+                    <td>
+                        <div class="field-wrap"> <input type="text" value="{{data.sign_one}}" name="sign_one"> </div>
+                    </td>
+                    <td>
+                        <div class="field-wrap"> <input type="text" value="{{data.date_one}}" name="date_one"> </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="field-wrap"> <input type="text" value="{{data.app_name_two}}" name="app_name_two"> </div>
+                    </td>
+                    <td>
+                        <div class="field-wrap"> <input type="text" value="{{data.sign_two}}" name="sign_two"> </div>
+                    </td>
+                    <td>
+                        <div class="field-wrap"> <input type="text" value="{{data.date_two}}" name="date_two"> </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="field-wrap"> <input type="text" value="{{data.app_name_three}}" name="app_name_three"> </div>
+                    </td>
+                    <td>
+                        <div class="field-wrap"> <input type="text" value="{{data.sign_three}}" name="sign_three"> </div>
+                    </td>
+                    <td>
+                        <div class="field-wrap"> <input type="text" value="{{data.date_three}}" name="date_three"> </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="field-wrap"> <input type="text" value="{{data.app_name_four}}" name="app_name_four"> </div>
+                    </td>
+                    <td>
+                        <div class="field-wrap"> <input type="text" value="{{data.sign_four}}" name="sign_four"> </div>
+                    </td>
+                    <td>
+                        <div class="field-wrap"> <input type="text" value="{{data.date_four}}" name="date_four"> </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="field-wrap"> <input type="text" value="{{data.app_name_five}}" name="app_name_five"> </div>
+                    </td>
+                    <td>
+                        <div class="field-wrap"> <input type="text" value="{{data.sign_five}}" name="sign_five"> </div>
+                    </td>
+                    <td>
+                        <div class="field-wrap"> <input type="text" value="{{data.date_five}}" name="date_five"> </div>
+                    </td>
+                </tr>
+            </table>
+            <table class=" responsive-tbl lr-border-zero">
+                <tr>
+                    <td class="td-heading">Planning For the Change</td>
+                    <td class="td-heading">Yes</td>
+                    <td class="td-heading">No</td>
+                </tr>
+                <tr>
+                    <td>
+                        <p>11. Is a stakeholder impact assessment required? If yes, identify Stakeholders, the impact and how to manage the impact associated with this change?</p>
+                        <ul>
+                            <li>If Yes – Prepare Stakeholder Impact Assessment</li>
+                        </ul>
+                    </td>
+                    <td> <input type="radio"  {{ data.stakeholder|radio_three:"yes" }} value="yes" name="stakeholder"> </td>
+                    <td> <input type="radio"  {{ data.stakeholder|radio_three:"no" }} value="no" name="stakeholder"> </td>
+                </tr>
+                <tr>
+                    <td>
+                        <p>12. Are procedures required to be updated as a result of this change?</p>
+                        <ul>
+                            <li>If Yes – Is additional training on new procedures required before change?</li>
+                        </ul>
+                    </td>
+                    <td> <input type="radio"  {{ data.procedures|radio_three:"yes" }} value="yes" name="procedures"> </td>
+                    <td> <input type="radio"  {{ data.procedures|radio_three:"no" }} value="no" name="procedures"> </td>
+                </tr>
+                <tr>
+                    <td>
+                        <p>13. Are other business processes impacted and require updating based on change?</p>
+                        <ul>
+                            <li>If Yes – Review / Update and mitigate risks</li>
+                        </ul>
+                    </td>
+                    <td> <input type="radio"  {{ data.business|radio_three:"yes" }} value="yes" name="business"> </td>
+                    <td> <input type="radio"  {{ data.business|radio_three:"no" }} value="no" name="business"> </td>
+                </tr>
+                <tr>
+                    <td>
+                        <p>Is a detailed Risk Assessment or Consequence Analysis required for this Change?</p>
+                        <ul>
+                            <li>If Yes – Conduct detailed process risk assessment</li>
+                        </ul>
+                    </td>
+                    <td> <input type="radio"  {{ data.assessment|radio_three:"yes" }} value="yes" name="assessment"> </td>
+                    <td> <input type="radio"  {{ data.assessment|radio_three:"no" }} value="no" name="assessment"> </td>
+                </tr>
+                <tr>
+                    <td>
+                        <p>15. Does business process Information require updating as a result of this change?</p>
+                        <ul>
+                            <li>If Yes – Assign resources to update</li>
+                        </ul>
+                    </td>
+                    <td> <input type="radio"  {{ data.Information|radio_three:"yes" }} value="yes" name="Information"> </td>
+                    <td> <input type="radio"  {{ data.Information|radio_three:"no" }} value="no" name="Information"> </td>
+                </tr>
+                <tr>
+                    <td>
+                        <p>16. If the change includes new equipment, has the Mechanical Integrity and testing inspection requirements updated accordingly (e.g. equipment numbers obtained, PM schedule entered into SAP, spare parts, etc.)?</p>
+                    </td>
+                    <td> <input type="radio"  {{ data.includes|radio_three:"yes" }} value="yes" name="includes"> </td>
+                    <td> <input type="radio"  {{ data.includes|radio_three:"no" }} value="no" name="includes"> </td>
+                </tr>
+                <tr>
+                    <td>
+                        <p>17. Other impacts to Covered Process (if Yes, list)?</p>
+                        <ul>
+                            <li>List other impacts and mitigation actions</li>
+                        </ul>
+                    </td>
+                    <td> <input type="radio"  {{ data.Covered|radio_three:"yes" }} value="yes" name="Covered"> </td>
+                    <td> <input type="radio"  {{ data.Covered|radio_three:"no" }} value="no" name="Covered"> </td>
+                </tr>
+            </table>
+            <table class=" responsive-tbl lr-border-zero">
+                <tr>
+                    <td class="td-heading" colspan="3">Approval to Implement</td>
+                </tr>
+                <tr>
+                    <td class="td-heading">Approver Name</td>
+                    <td class="td-heading">Signature</td>
+                    <td class="td-heading">Date</td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="field-wrap"> <input type="text" value="{{data.app_name_six}}" name="app_name_six"> </div>
+                    </td>
+                    <td>
+                        <div class="field-wrap"> <input type="text" value="{{data.sign_six}}" name="sign_six"> </div>
+                    </td>
+                    <td>
+                        <div class="field-wrap"> <input type="text" value="{{data.date_six}}" name="date_six"> </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="field-wrap"> <input type="text" value="{{data.app_name_seven}}" name="app_name_seven"> </div>
+                    </td>
+                    <td>
+                        <div class="field-wrap"> <input type="text" value="{{data.sign_seven}}" name="sign_seven"> </div>
+                    </td>
+                    <td>
+                        <div class="field-wrap"> <input type="text" value="{{data.date_seven}}" name="date_seven"> </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="field-wrap"> <input type="text" value="{{data.app_name_eight}}" name="app_name_eight"> </div>
+                    </td>
+                    <td>
+                        <div class="field-wrap"> <input type="text" value="{{data.sign_eight}}" name="sign_eight"> </div>
+                    </td>
+                    <td>
+                        <div class="field-wrap"> <input type="text" value="{{data.date_eight}}" name="date_eight"> </div>
+                    </td>
+                </tr>
+            </table>
+            <table class=" responsive-tbl lr-border-zero">
+                <tr>
+                    <td colspan="2" class="td-heading">Implementing the Change</td>
+                    <td class="td-heading">Yes</td>
+                    <td class="td-heading">No</td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <p>18. Is training and communications completed with (list groups)</p>
+                        <ul>
+                            <li>If No – Schedule and complete</li>
+                        </ul>
+                    </td>
+                    <td> <input type="radio"  {{ data.communications|radio_three:"yes" }} value="yes" name="communications"> </td>
+                    <td> <input type="radio"  {{ data.communications|radio_three:"no" }} value="no" name="communications"> </td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <p>19. Pre-Startup Review Completed for the Change</p>
+                        <ul>
+                            <li>If No – Complete and address all corrective actions and deficiencies identified</li>
+                        </ul>
+                    </td>
+                    <td> <input type="radio"  {{ data.Startup|radio_three:"yes" }} value="yes" name="Startup"> </td>
+                    <td> <input type="radio"  {{ data.Startup|radio_three:"no" }} value="no" name="Startup"> </td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <p>20. List any other actions required as part of this change, the individual/group responsible & due date for completion</p>
+                    </td>
+                    <td> <input type="radio"  {{ data.required|radio_three:"yes" }} value="yes" name="required"> </td>
+                    <td> <input type="radio"  {{ data.required|radio_three:"no" }} value="no" name="required"> </td>
+                </tr>
+            </table>
+            <table class=" responsive-tbl lr-border-zero">
+                <tr>
+                    <td colspan="4" class="td-heading">MOC Review and Closeout</td>
+                </tr>
+                <tr>
+                    <td>MOC Closure (after follow up and action items are complete)</td>
+                    <td colspan="3">
+                        <div class="field-wrap"> <label>Comments/Findings:</label> <input type="text" value="{{data.comments}}" name="comments"> </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="field-wrap"> <label>Reviewer Name:</label> <input type="text" value="{{data.reviewer}}" name="reviewer"> </div>
+                    </td>
+                    <td>
+                        <div class="field-wrap"> <label>Signature:</label> <input type="text" value="{{data.sign}}" name="sign"> </div>
+                    </td>
+                    <td>
+                        <div class="field-wrap"> <label>Date Closed:</label> <input type="text" value="{{data.date_closed}}" name="date_closed"> </div>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</div>
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<script type="text/javascript" src="/static/js/draft.js"></script>

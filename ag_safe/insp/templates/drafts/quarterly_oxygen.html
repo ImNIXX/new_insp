@@ -1,0 +1,272 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" type="text/css" href="/static/css/draft_style.css">
+<link rel="stylesheet" type="text/css" href="/static/css/style.css">
+<div class="header-top">
+    <div class="container-category">
+        <div class="header-inner">
+            <div class="logo">logo</div>
+            <div class="right-contant">
+                <div class="field-wrap"><label>Alberta See Processor – </label><input type="text" value="{{data.plants_name}}" name="plants_name" placeholder="Plants Name" /> </div>
+                <p>Quarterly Oxygen / Fuel Equipment Inspection Checklist</p>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="AWP-form RCA-form-pdf">
+    <div class="container-category">
+        <div class="ABSP-form-block">
+            <div class="top-link">
+                <h2>Quarterly Oxygen / Fuel Equipment Inspection Checklist</h2>
+            </div>
+            <div class="tbl-scroll">
+                <table class="space-tbl center-checkbox tbl-mb responsive-tbl">
+                    <tr>
+                        <td colspan="4" class="tbold">QUARTERLY OXYGEN / FUEL EQUIPMENT INSPECTION CHECKLIST</td>
+                    </tr>
+                    <tr>
+                        <td class="td-heading">Regulators and Gauges</td>
+                        <td class="td-heading">Good</td>
+                        <td class="td-heading">Needs Repair</td>
+                        <td class="td-heading">N/A</td>
+                    </tr>
+                    <tr>
+                        <td><b>Are regulator compression nipples, nuts, gauges and regulator adjusting screws in good condition?</b></td>
+                        <td>
+                            <div class="single-line-checkbox"><label><input type="radio" {{ data.check_regulator|radio_three:"good" }} name="check_regulator" value="good"></label></div>
+                        </td>
+                        <td>
+                            <div class="single-line-checkbox"><label><input type="radio" {{ data.check_regulator|radio_three:"needs repair" }} name="check_regulator" value="needs repair"></label></div>
+                        </td>
+                        <td>
+                            <div class="single-line-checkbox"><label><input type="radio" {{ data.check_regulator|radio_three:"N/A" }} name="check_regulator" value="N/A"></label></div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><b>Are filter screens in the inlet nozzles?</b></td>
+                        <td>
+                            <div class="single-line-checkbox"><label><input type="radio" {{ data.check_screens|radio_three:"good" }} name="check_screens" value="good"></label></div>
+                        </td>
+                        <td>
+                            <div class="single-line-checkbox"><label><input type="radio" {{ data.check_screens|radio_three:"needs repair" }} name="check_screens" value="needs repair"></label></div>
+                        </td>
+                        <td>
+                            <div class="single-line-checkbox"><label><input type="radio" {{ data.check_screens|radio_three:"N/A" }} name="check_screens" value="N/A"></label></div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Follow the steps to test high pressure regulators:
+                            <ol>
+                                <li>Test the fuel gas and oxygen regulators with an inert gas</li>
+                                <li>Release regulator adjusting screw counterclockwise</li>
+                                <li>Open the cylinder valve and verify that the high pressure gauge is operating properly</li>
+                            </ol><b>Is the high pressure regulator leaking?</b></td>
+                        <td>
+                            <div class="single-line-checkbox"><label><input type="radio" {{ data.check_pressure|radio_three:"good" }} name="check_pressure" value="good"></label></div>
+                        </td>
+                        <td>
+                            <div class="single-line-checkbox"><label><input type="radio" {{ data.check_pressure|radio_three:"needs repair" }} name="check_pressure" value="needs repair"></label></div>
+                        </td>
+                        <td>
+                            <div class="single-line-checkbox"><label><input type="radio" {{ data.check_pressure|radio_three:"N/A" }} name="check_pressure" value="N/A"></label></div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Follow the steps to test low pressure regulators:
+                            <ol>
+                                <li>Block the outlet nozzle of the regulator using a plug or hose</li>
+                                <li>Adjust the regulator adjusting the screw clockwise until the low- pressure indicates a normal operating pressure</li>
+                                <li>Use soapy water to inspect regulator and gauge connections for leaks</li>
+                            </ol><b>Is the high pressure regulator leaking?</b></td>
+                        <td>
+                            <div class="single-line-checkbox"><label><input type="radio" {{ data.check_leaking|radio_three:"good" }} name="check_leaking" value="good"></label></div>
+                        </td>
+                        <td>
+                            <div class="single-line-checkbox"><label><input type="radio" {{ data.check_leaking|radio_three:"needs repair" }} name="check_leaking" value="needs repair"></label></div>
+                        </td>
+                        <td>
+                            <div class="single-line-checkbox"><label><input type="radio" {{ data.check_leaking|radio_three:"N/A" }} name="check_leaking" value="N/A"></label></div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Reopen the cylinder valve, and check the low-pressure gauge for any slight drop in pressure (needle creep) Gauge needle creep greater than 2 to 3 psi (14 to 20 kPa) indicates thatthe diaphragm is damaged<b>Is the cylinder valve damage?</b></td>
+                        <td>
+                            <div class="single-line-checkbox"><label><input type="radio" {{ data.check_cylinder|radio_three:"good" }} name="check_cylinder" value="good"></label></div>
+                        </td>
+                        <td>
+                            <div class="single-line-checkbox"><label><input type="radio" {{ data.check_cylinder|radio_three:"needs repair" }} name="check_cylinder" value="needs repair"></label></div>
+                        </td>
+                        <td>
+                            <div class="single-line-checkbox"><label><input type="radio" {{ data.check_cylinder|radio_three:"N/A" }} name="check_cylinder" value="N/A"></label></div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="4" class="td-heading">Hoses</td>
+                    </tr>
+                    <tr>
+                        <td>Visually inspect each length of hose for burns, worn areas, decay, and other defects<b>Hoses in good condition?</b></td>
+                        <td>
+                            <div class="single-line-checkbox"><label><input type="radio" {{ data.check_hose|radio_three:"good" }} name="check_hose" value="good"></label></div>
+                        </td>
+                        <td>
+                            <div class="single-line-checkbox"><label><input type="radio" {{ data.check_hose|radio_three:"needs repair" }} name="check_hose" value="needs repair"></label></div>
+                        </td>
+                        <td>
+                            <div class="single-line-checkbox"><label><input type="radio" {{ data.check_hose|radio_three:"N/A" }} name="check_hose" value="N/A"></label></div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Follow the steps to test hoses:
+                            <ol>
+                                <li>Pressurize each length of hose, and run it through a water vat to check for leaks</li>
+                                <li>Use inert gas or oil-free air for this test at a pressure sufficient to indicate leaks, typically between 15 and 80 psi (103 and 550 kPa)</li>
+                                <li>Any length of hose that cannot be tested in the water vat must be tested with soapy water</li><b>Hoses in good condition and not leaking?</b></ol>
+                        </td>
+                        <td>
+                            <div class="single-line-checkbox"><label><input type="radio" {{ data.check_hoses|radio_three:"good" }} name="check_hoses" value="good"></label></div>
+                        </td>
+                        <td>
+                            <div class="single-line-checkbox"><label><input type="radio" {{ data.check_hoses|radio_three:"needs repair" }} name="check_hoses" value="needs repair"></label></div>
+                        </td>
+                        <td>
+                            <div class="single-line-checkbox"><label><input type="radio" {{ data.check_hoses|radio_three:"N/A" }} name="check_hoses" value="N/A"></label></div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="4" class="td-heading">Combination Reverse-Flow Check Valves and Flame Arresters</td>
+                    </tr>
+                    <tr>
+                        <td>Visually inspect each check valve/arrester to verify that the inlet nozzle is free of oxidation, burns, and other defects. Any defects?</td>
+                        <td>
+                            <div class="single-line-checkbox"><label><input type="radio" {{ data.check_inspect|radio_three:"good" }} name="check_inspect" value="good"></label></div>
+                        </td>
+                        <td>
+                            <div class="single-line-checkbox"><label><input type="radio" {{ data.check_inspect|radio_three:"needs repair" }} name="check_inspect" value="needs repair"></label></div>
+                        </td>
+                        <td>
+                            <div class="single-line-checkbox"><label><input type="radio" {{ data.check_inspect|radio_three:"N/A" }} name="check_inspect" value="N/A"></label></div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Follow the steps to test valve seating:
+                            <ol>
+                                <li>Visually inspect each check valve/arrester by using reverse-flow pressure in the outlet nozzle to verify that the check valve is sealing</li>
+                                <li>Either blow through the unit or use an inert gas or oil-free air at a pressure between 1 and 10 psi (7 and 70 kPa), sufficient to close the check valve</li>
+                            </ol><b>Are check valves seating?</b></td>
+                        <td>
+                            <div class="single-line-checkbox"><label><input type="radio" {{ data.check_arrester|radio_three:"good" }} name="check_arrester" value="good"></label></div>
+                        </td>
+                        <td>
+                            <div class="single-line-checkbox"><label><input type="radio" {{ data.check_arrester|radio_three:"needs repair" }} name="check_arrester" value="needs repair"></label></div>
+                        </td>
+                        <td>
+                            <div class="single-line-checkbox"><label><input type="radio" {{ data.check_arrester|radio_three:"N/A" }} name="check_arrester" value="N/A"></label></div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="4" class="td-heading">Cutting torches and mixing chambers</td>
+                    </tr>
+                    <tr>
+                        <td><b>O-rings on the torch in good condition?</b></td>
+                        <td>
+                            <div class="single-line-checkbox"><label><input type="radio" {{ data.check_rings|radio_three:"good" }} name="check_rings" value="good"></label></div>
+                        </td>
+                        <td>
+                            <div class="single-line-checkbox"><label><input type="radio" {{ data.check_rings|radio_three:"needs repair" }} name="check_rings" value="needs repair"></label></div>
+                        </td>
+                        <td>
+                            <div class="single-line-checkbox"><label><input type="radio" {{ data.check_rings|radio_three:"N/A" }} name="check_rings" value="N/A"></label></div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><b>The seating surface in the mixing chamber in good condition?</b></td>
+                        <td>
+                            <div class="single-line-checkbox"><label><input type="radio" {{ data.check_chamber|radio_three:"good" }} name="check_chamber" value="good"></label></div>
+                        </td>
+                        <td>
+                            <div class="single-line-checkbox"><label><input type="radio" {{ data.check_chamber|radio_three:"needs repair" }} name="check_chamber" value="needs repair"></label></div>
+                        </td>
+                        <td>
+                            <div class="single-line-checkbox"><label><input type="radio" {{ data.check_chamber|radio_three:"N/A" }} name="check_chamber" value="N/A"></label></div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><b>The cutting tip seating surface in the torch head in good condition?</b></td>
+                        <td>
+                            <div class="single-line-checkbox"><label><input type="radio" {{ data.check_head|radio_three:"good" }} name="check_head" value="good"></label></div>
+                        </td>
+                        <td>
+                            <div class="single-line-checkbox"><label><input type="radio" {{ data.check_head|radio_three:"needs repair" }} name="check_head" value="needs repair"></label></div>
+                        </td>
+                        <td>
+                            <div class="single-line-checkbox"><label><input type="radio" {{ data.check_head|radio_three:"N/A" }} name="check_head" value="N/A"></label></div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><b>Test the complete system and follow the instructions for setting up the system, lighting the torch, and re-lighting the torch. Any defectives?</b></td>
+                        <td>
+                            <div class="single-line-checkbox"><label><input type="radio" {{ data.check_instructions|radio_three:"good" }} name="check_instructions" value="good"></label></div>
+                        </td>
+                        <td>
+                            <div class="single-line-checkbox"><label><input type="radio" {{ data.check_instructions|radio_three:"needs repair" }} name="check_instructions" value="needs repair"></label></div>
+                        </td>
+                        <td>
+                            <div class="single-line-checkbox"><label><input type="radio" {{ data.check_instructions|radio_three:"N/A" }} name="check_instructions" value="N/A"></label></div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="4" class="tcenter">Comments and Follow-up Action Items</td>
+                    </tr>
+                </table>
+            </div>
+            <table class="tbl-mt">
+                <tr>
+                    <td>Action Item</td>
+                    <td>Person Responsible</td>
+                    <td>Target Completion Date</td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="field-wrap"><input type="text" value="{{data.action}}" name="action"></div>
+                    </td>
+                    <td>
+                        <div class="field-wrap"><input type="text" value="{{data.person}}" name="person"></div>
+                    </td>
+                    <td>
+                        <div class="field-wrap"><input type="text" value="{{data.target}}" name="target"></div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="field-wrap"><input type="text" value="{{data.action_two}}" name="action_two"></div>
+                    </td>
+                    <td>
+                        <div class="field-wrap"><input type="text" value="{{data.person_two}}" name="person_two"></div>
+                    </td>
+                    <td>
+                        <div class="field-wrap"><input type="text" value="{{data.target_two}}" name="target_two"></div>
+                    </td>
+                </tr>
+            </table>
+            <table class="inside-tbl input-bt-br">
+                <tr>
+                    <td>
+                        <div class="field-wrap"><label>Date: (mm/dd/yy)</label><input type="text" value="{{data.date}}" name="date"></div>
+                    </td>
+                    <td>
+                        <div class="field-wrap"><label>Unit ID:</label><input type="text" value="{{data.unit_id}}" name="unit_id"></div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="field-wrap"><label>Inspector Name: (print)</label><input type="text" value="{{data.insp_name}}" name="insp_name"></div>
+                    </td>
+                    <td>
+                        <div class="field-wrap"><label>Signature:</label><input type="text" value="{{data.sign}}" name="sign"></div>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</div>
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<script type="text/javascript" src="/static/js/draft.js"></script>

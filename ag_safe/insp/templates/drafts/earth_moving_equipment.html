@@ -1,0 +1,566 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" type="text/css" href="/static/css/draft_style.css">
+<link rel="stylesheet" type="text/css" href="/static/css/style.css">
+<div class="header-top">
+    <div class="container-category">
+        <div class="header-inner">
+            <div class="logo">logo</div>
+            <div class="right-contant">
+                <div class="field-wrap"><label>Alberta See Processor – </label><input type="text" value="{{data.plants_name}}" name="plants_name" placeholder="Plants Name" /></div>
+                <p>Earthmoving Equipment Inspection Checklist Form</p>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="AWP-form RCA-form-pdf">
+    <div class="container-category">
+        <div class="ABSP-form-block">
+            <div class="top-link">
+                <h2>Earthmoving Equipment Inspection Checklist Form</h2>
+            </div>
+            <table>
+                <tr>
+                    <td class="td-heading" colspan="5">Earthmoving Equipment Inspection</td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <div class="field-wrap"><input type="text" value="{{data.equipment_name}}" name="equipment_name"  placeholder="Check equipment being inspected:" /></div>
+                    </td>
+                    <td>
+                        <div class="ABSP-checkbox"><label>Dump Truck <input type="checkbox" {{ data.equipment|get_string_as_list|match_value:"Dump Truck" }} name="equipment" value="Dump Truck"></label></div>
+                    </td>
+                    <td>
+                        <div class="ABSP-checkbox"><label>Front End Loader <input type="checkbox" {{ data.equipment|get_string_as_list|match_value:"Front End Loader" }} name="equipment" value="Front End Loader"></label></div>
+                    </td>
+                    <td>
+                        <div class="ABSP-checkbox"><label>Backhoe <input type="checkbox" {{ data.equipment|get_string_as_list|match_value:"Backhoe" }} name="equipment" value="Backhoe"></label></div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="ABSP-checkbox"><label>Bulldozer <input type="checkbox" {{ data.equipment|get_string_as_list|match_value:"Bulldozer" }} name="equipment" value="Bulldozer"></label></div>
+                    </td>
+                    <td>
+                        <div class="ABSP-checkbox"><label>Grader <input type="checkbox" {{ data.equipment|get_string_as_list|match_value:"Grader" }} name="equipment" value="Grader"></label></div>
+                    </td>
+                    <td colspan="2">
+                        <div class="field-wrap">
+                            <div class="ABSP-checkbox"><label>Other <input type="checkbox" {{ data.equipment|get_string_as_list|match_value:"Other" }} name="equipment" value="Other">(specify)</label></div>
+                            <input type="text" value="{{data.other_specify}}" name="other_specify">
+                        </div>
+                    </td>
+                    <td>
+                        <div class="field-wrap"><label>I.D. #:</label><input type="text" value="{{data.equipment_id}}" name="equipment_id"  /></div>
+                    </td>
+                </tr>
+            </table>
+            <div class="tbl-scroll">
+                <table class="mobile-equipment-tbl responsive-tbl">
+                    <tr>
+                        <td style="text-align: center;" class="td-heading" rowspan="2">ITEMS</td>
+                        <td class="td-heading" colspan="3">CONDITION</td>
+                        <td style="width: 25%" class="td-heading" rowspan="2">REMARKS</td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: center;" class="td-heading">Good</td>
+                        <td class="td-heading">Rejected</td>
+                        <td class="td-heading">N/A</td>
+                    </tr>
+                    <tr>
+                        <td>1. Access & Egress*</td>
+                        <td style="width: 10%">
+                            <div class="field-wrap"><input type="text" value="{{data.access_good}}" name="access_good"></div>
+                        </td>
+                        <td style="width: 10%">
+                            <div class="field-wrap"><input type="text" value="{{data.access_rejected}}" name="access_rejected"></div>
+                        </td>
+                        <td style="width: 10%">
+                            <div class="field-wrap"><input type="text" value="{{data.access_na}}" name="access_na"></div>
+                        </td>
+                        <td style="width: 10%">
+                            <div class="field-wrap"><input type="text" value="{{data.access_remarks}}" name="access_remarks"></div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>2. Backup Alarms*</td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{data.backup_good}}" name="backup_good"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{data.backup_rejected}}" name="backup_rejected"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{data.backup_na}}" name="backup_na"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{data.backup_remarks}}" name="backup_remarks"></div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>3 Excess slack in boom*</td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{data.excess_good}}" name="excess_good"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{data.excess_rejected}}" name="excess_rejected"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{data.excess_na}}" name="excess_na"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{data.excess_remarks}}" name="excess_remarks"></div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>4. Boom Pins*</td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{data.boom_good}}" name="boom_good"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{data.boom_rejected}}" name="boom_rejected"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{data.boom_na}}" name="boom_na"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{data.boom_remarks}}" name="boom_remarks"></div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>5. Brakes*</td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{data.brakes_good}}" name="brakes_good"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{data.brakes_rejected}}" name="brakes_rejected"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{data.brakes_na}}" name="brakes_na"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{data.brakes_remarks}}" name="brakes_remarks"></div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>6. Bulk Head Partition*</td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{data.bulk_good}}" name="bulk_good"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{data.bulk_rejected}}" name="bulk_rejected"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{data.bulk_na}}" name="bulk_na"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{data.bulk_remarks}}" name="bulk_remarks"></div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>7. Clutch*</td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{data.clutch_good}}" name="clutch_good"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{data.clutch_rejected}}" name="clutch_rejected"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{data.clutch_na}}" name="clutch_na"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{data.clutch_remarks}}" name="clutch_remarks"></div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>8. Cotter Pins/Hardened Pins*</td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{data.cotter_good}}" name="cotter_good"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{data.cotter_rejected}}" name="cotter_rejected"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{data.cotter_na}}" name="cotter_na"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{data.cotter_remarks}}" name="cotter_remarks"></div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>9. Cover</td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{data.cover_good}}" name="cover_good"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{data.cover_rejected}}" name="cover_rejected"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{data.cover_na}}" name="cover_na"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{data.cover_remarks}}" name="cover_remarks"></div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>10. Fire Extinguisher</td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{data.fire_good}}" name="fire_good"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{data.fire_rejected}}" name="fire_rejected"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{data.fire_na}}" name="fire_na"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{data.fire_remarks}}" name="fire_remarks"></div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>11. Frame and Body</td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{data.frames_good}}" name="frames_good"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{data.frames_rejected}}" name="frames_rejected"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{data.frames_na}}" name="frames_na"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{data.frames_remarks}}" name="frames_remarks"></div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>12. Fuel Systems*</td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{data.fuel_good}}" name="fuel_good"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{data.fuel_rejected}}" name="fuel_rejected"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{data.fuel_na}}" name="fuel_na"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{data.fuel_remarks}}" name="fuel_remarks"></div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>13. Glass*</td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{data.glass_good}}" name="glass_good"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{data.glass_rejected}}" name="glass_rejected"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{data.glass_na}}" name="glass_na"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{data.glass_remarks}}" name="glass_remarks"></div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>14. Guards*</td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{data.guards_good}}" name="guards_good"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{data.guards_rejected}}" name="guards_rejected"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{data.guards_na}}" name="guards_na"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{data.guards_remarks}}" name="guards_remarks"></div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>15. Horn*</td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{data.horn_good}}" name="horn_good"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{data.horn_rejected}}" name="horn_rejected"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{data.horn_na}}" name="horn_na"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{data.horn_remarks}}" name="horn_remarks"></div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>16. Hydraulic / Fuel System* (no leaks)</td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{data.hydraulic_good}}" name="hydraulic_good"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{data.hydraulic_rejected}}" name="hydraulic_rejected"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{data.hydraulic_na}}" name="hydraulic_na"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{data.hydraulic_remarks}}" name="hydraulic_remarks"></div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>17. Operator Controls LABSPlled</td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{data.operator_good}}" name="operator_good"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{data.operator_rejected}}" name="operator_rejected"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{data.operator_na}}" name="operator_na"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{data.operator_remarks}}" name="operator_remarks"></div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>18. Lights and Turn Signals</td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{data.lights_good}}" name="lights_good"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{data.lights_rejected}}" name="lights_rejected"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{data.lights_na}}" name="lights_na"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{data.lights_remarks}}" name="lights_remarks"></div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>19. Lugs</td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{data.lungs_good}}" name="lungs_good"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{data.lungs_rejected}}" name="lungs_rejected"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{data.lungs_na}}" name="lungs_na"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{data.lungs_remarks}}" name="lungs_remarks"></div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>20. Muffler & Exhaust Pipe*</td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{data.exhaust_good}}" name="exhaust_good"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{data.exhaust_rejected}}" name="exhaust_rejected"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{data.exhaust_na}}" name="exhaust_na"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{data.exhaust_remarks}}" name="exhaust_remarks"></div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>21. Muffler Guards*</td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{data.muffler_good}}" name="muffler_good"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{data.muffler_rejected}}" name="muffler_rejected"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{data.muffler_na}}" name="muffler_na"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{data.muffler_remarks}}" name="muffler_remarks"></div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>22. Outriggers*</td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{data.outriggers_good}}" name="outriggers_good"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{data.outriggers_rejected}}" name="outriggers_rejected"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{data.outriggers_na}}" name="outriggers_na"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{data.outriggers_remarks}}" name="outriggers_remarks"></div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>23. Parking Brakes*</td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{data.parking_good}}" name="parking_good"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{data.parking_rejected}}" name="parking_rejected"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{data.parking_na}}" name="parking_na"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{data.parking_remarks}}" name="parking_remarks"></div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>24. Platform Decking</td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{data.decking_good}}" name="decking_good"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{data.decking_rejected}}" name="decking_rejected"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{data.decking_na}}" name="decking_na"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{data.decking_remarks}}" name="decking_remarks"></div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>25. Positive Dump Bed Latch*</td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{data.positive_good}}" name="positive_good"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{data.positive_rejected}}" name="positive_rejected"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{data.positive_na}}" name="positive_na"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{data.positive_remarks}}" name="positive_remarks"></div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>26. Rear View and Side Mirrors (both)</td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{data.rear_good}}" name="rear_good"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{data.rear_rejected}}" name="rear_rejected"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{data.rear_na}}" name="rear_na"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{data.rear_remarks}}" name="rear_remarks"></div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>27. Rollover Protection*</td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{data.rollover_good}}" name="rollover_good"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{data.rollover_rejected}}" name="rollover_rejected"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{data.rollover_na}}" name="rollover_na"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{data.rollover_remarks}}" name="rollover_remarks"></div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>28. Seat Belts*</td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{data.belts_good}}" name="belts_good"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{data.belts_rejected}}" name="belts_rejected"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{data.belts_na}}" name="belts_na"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{data.belts_remarks}}" name="belts_remarks"></div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>29. Steering Mechanism*</td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{data.steering_good}}" name="steering_good"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{data.steering_rejected}}" name="steering_rejected"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{data.steering_na}}" name="steering_na"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{data.steering_remarks}}" name="steering_remarks"></div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>30. Tracks,Tires,Wheels*</td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{data.tires_good}}" name="tires_good"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{data.tires_rejected}}" name="tires_rejected"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{data.tires_na}}" name="tires_na"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{data.tires_remarks}}" name="tires_remarks"></div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>31. Windshield Wipers</td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{data.windshield_good}}" name="windshield_good"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{data.windshield_rejected}}" name="windshield_rejected"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{data.windshield_na}}" name="windshield_na"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{data.windshield_remarks}}" name="windshield_remarks"></div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>32. Steps and Grabs</td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{data.steps_good}}" name="steps_good"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{data.steps_rejected}}" name="steps_rejected"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{data.steps_na}}" name="steps_na"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{data.steps_remarks}}" name="steps_remarks"></div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="5">* Reject Items - Do not use the equipment,removed from service and request repairs.</td>
+                    </tr>
+                    <tr>
+                        <td colspan="4">
+                            <div class="field-wrap"><label>Inspected by</label><input type="text" value="{{data.inspected_by}}" name="inspected_by"  /></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><label>Date:</label><input type="text" value="{{data.date}}" name="date"  /></div>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<script type="text/javascript" src="/static/js/draft.js"></script>

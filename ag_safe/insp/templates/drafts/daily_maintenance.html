@@ -1,0 +1,436 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" type="text/css" href="/static/css/draft_style.css">
+<link rel="stylesheet" type="text/css" href="/static/css/style.css">
+<div class="header-top">
+    <div class="container-category">
+        <div class="header-inner">
+            <div class="logo">logo</div>
+            <div class="right-contant">
+                <div class="field-wrap"><label>Alberta See Processor – </label><input type="text" value="{{data.plants_name}}" name="plants_name" placeholder="Plants Name" /> </div>
+                <p>Daily Maintenance of Mobile Equipment</p>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="AWP-form RCA-form-pdf">
+    <div class="container-category">
+        <div class="ABSP-form-block">
+            <div class="top-link">
+                <h2>Daily Maintenance of Mobile Equipment</h2>
+            </div>
+            <table class="mobile-equipment-tbl">
+                <tr>
+                    <td class="td-heading" style="text-align: left;">Daily Maintenance Checks</td>
+                    <td class="td-heading">Condition</td>
+                    <td class="td-heading">Notes</td>
+                </tr>
+                <tr>
+                    <td class="tbold" colspan="3" style="text-align: left;">Before starting engine check the following:</td>
+                </tr>
+                <tr>
+                    <td>
+                        <ul>
+                            <li>All engine fluid levels (fuel, oils, coolant)</li>
+                        </ul>
+                    </td>
+                    <td>
+                        <div class="field-wrap"> <input type="text" value="{{data.engine_condition}}" name="engine_condition"/> </div>
+                    </td>
+                    <td>
+                        <div class="field-wrap"> <input type="text" value="{{data.engine_notes}}" name="engine_notes"/> </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <ul>
+                            <li>Battery electrolyte level</li>
+                        </ul>
+                    </td>
+                    <td>
+                        <div class="field-wrap"><input type="text" value="{{data.battery_condition}}" name="battery_condition"/></div>
+                    </td>
+                    <td>
+                        <div class="field-wrap"><input type="text" value="{{data.battery_notes}}" name="battery_notes"/></div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <ul>
+                            <li>Belts, radiator hoses (in place and not damaged or frayed)</li>
+                        </ul>
+                    </td>
+                    <td>
+                        <div class="field-wrap"><input type="text" value="{{data.belts_condition}}" name="belts_condition"/></div>
+                    </td>
+                    <td>
+                        <div class="field-wrap"><input type="text" value="{{data.belts_notes}}" name="belts_notes"/></div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <ul>
+                            <li>Bolts/mountings around engine (loose, cracks)</li>
+                        </ul>
+                    </td>
+                    <td>
+                        <div class="field-wrap"><input type="text" value="{{data.bolts_condition}}" name="bolts_condition"/></div>
+                    </td>
+                    <td>
+                        <div class="field-wrap"><input type="text" value="{{data.bolts_notes}}" name="bolts_notes"/></div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <ul>
+                            <li>Coolant and oil seals (leaks)</li>
+                        </ul>
+                    </td>
+                    <td>
+                        <div class="field-wrap"><input type="text" value="{{data.coolant_condition}}" name="coolant_condition"/></div>
+                    </td>
+                    <td>
+                        <div class="field-wrap"><input type="text" value="{{data.coolant_notes}}" name="coolant_notes"/></div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <ul>
+                            <li>Air cleaner, connections, filter, dust cover</li>
+                        </ul>
+                    </td>
+                    <td>
+                        <div class="field-wrap"><input type="text" value="{{data.cleaner_condition}}" name="cleaner_condition"/></div>
+                    </td>
+                    <td>
+                        <div class="field-wrap"><input type="text" value="{{data.cleaner_notes}}" name="cleaner_notes"/></div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <ul>
+                            <li>Drain cocks</li>
+                        </ul>
+                    </td>
+                    <td>
+                        <div class="field-wrap"><input type="text" value="{{data.drain_condition}}" name="drain_condition"/></div>
+                    </td>
+                    <td>
+                        <div class="field-wrap"><input type="text" value="{{data.drain_notes}}" name="drain_notes"/></div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <ul>
+                            <li>Evidence of vandalism</li>
+                        </ul>
+                    </td>
+                    <td>
+                        <div class="field-wrap"><input type="text" value="{{data.evidence_condition}}" name="evidence_condition"/></div>
+                    </td>
+                    <td>
+                        <div class="field-wrap"><input type="text" value="{{data.evidence_notes}}" name="evidence_notes"/></div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <ul>
+                            <li>Walkways, handrails and ladders</li>
+                        </ul>
+                    </td>
+                    <td>
+                        <div class="field-wrap"><input type="text" value="{{data.walkways_condition}}" name="walkways_condition"/></div>
+                    </td>
+                    <td>
+                        <div class="field-wrap"><input type="text" value="{{data.walkways_notes}}" name="walkways_notes"/></div>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="3" class="td-heading">After starting engine check the following:</td>
+                </tr>
+                <tr>
+                    <td colspan="3" class="td-heading">Engine</td>
+                </tr>
+                <tr>
+                    <td>
+                        <ul>
+                            <li>Oil pressure is normal</li>
+                        </ul>
+                    </td>
+                    <td>
+                        <div class="field-wrap"><input type="text" value="{{data.oil_pressure_condition}}" name="oil_pressure_condition"/></div>
+                    </td>
+                    <td>
+                        <div class="field-wrap"><input type="text" value="{{data.oil_pressure_notes}}" name="oil_pressure_notes"/></div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <ul>
+                            <li>Oil level is sufficient (if manufacturer recommends checking while engine is running)</li>
+                        </ul>
+                    </td>
+                    <td>
+                        <div class="field-wrap"><input type="text" value="{{data.oil_level_condition}}" name="oil_level_condition"/></div>
+                    </td>
+                    <td>
+                        <div class="field-wrap"><input type="text" value="{{data.oil_level_notes}}" name="oil_level_notes"/></div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <ul>
+                            <li>Temperature is normal</li>
+                        </ul>
+                    </td>
+                    <td>
+                        <div class="field-wrap"><input type="text" value="{{data.temp_condition}}" name="temp_condition"/></div>
+                    </td>
+                    <td>
+                        <div class="field-wrap"><input type="text" value="{{data.temp_notes}}" name="temp_notes"/></div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <ul>
+                            <li>Air cleaner is functioning properly as indicated by gauge or light</li>
+                        </ul>
+                    </td>
+                    <td>
+                        <div class="field-wrap"><input type="text" value="{{data.air_cleaner_condition}}" name="air_cleaner_condition"/></div>
+                    </td>
+                    <td>
+                        <div class="field-wrap"><input type="text" value="{{data.air_cleaner_notes}}" name="air_cleaner_notes"/></div>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="3" class="td-heading">Air and Hydraulic Systems</td>
+                </tr>
+                <tr>
+                    <td>
+                        <ul>
+                            <li>Pressure is correct for operation (if equipped with a gauge)</li>
+                        </ul>
+                    </td>
+                    <td>
+                        <div class="field-wrap"><input type="text" value="{{data.hydraulic_condition}}" name="hydraulic_condition"/></div>
+                    </td>
+                    <td>
+                        <div class="field-wrap"><input type="text" value="{{data.hydraulic_notes}}" name="hydraulic_notes"/></div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <ul>
+                            <li>Hoses have no cuts, abrasions or bulges and are tight and leak proof</li>
+                        </ul>
+                    </td>
+                    <td>
+                        <div class="field-wrap"><input type="text" value="{{data.hoses_condition}}" name="hoses_condition"/></div>
+                    </td>
+                    <td>
+                        <div class="field-wrap"><input type="text" value="{{data.hoses_notes}}" name="hoses_notes"/></div>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="3" class="td-heading">Hydraulic System</td>
+                </tr>
+                <tr>
+                    <td>
+                        <ul>
+                            <li>Oil level in hydraulic reservoir is normal</li>
+                        </ul>
+                    </td>
+                    <td>
+                        <div class="field-wrap"><input type="text" value="{{data.reservoir_condition}}" name="reservoir_condition"/></div>
+                    </td>
+                    <td>
+                        <div class="field-wrap"><input type="text" value="{{data.reservoir_notes}}" name="reservoir_notes"/></div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <ul>
+                            <li>There are no visible leaks in seals</li>
+                        </ul>
+                    </td>
+                    <td>
+                        <div class="field-wrap"><input type="text" value="{{data.seals_condition}}" name="seals_condition"/></div>
+                    </td>
+                    <td>
+                        <div class="field-wrap"><input type="text" value="{{data.seals_notes}}" name="seals_notes"/></div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <ul>
+                            <li>Filters are functioning properly as indicated by the gauge or warning light</li>
+                        </ul>
+                    </td>
+                    <td>
+                        <div class="field-wrap"><input type="text" value="{{data.filter_condition}}" name="filter_condition"/></div>
+                    </td>
+                    <td>
+                        <div class="field-wrap"><input type="text" value="{{data.filter_notes}}" name="filter_notes"/></div>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="3" class="td-heading">Tires</td>
+                </tr>
+                <tr>
+                    <td>
+                        <ul>
+                            <li>Check for cuts, abrasion, wear and adequate pressure</li>
+                        </ul>
+                    </td>
+                    <td>
+                        <div class="field-wrap"><input type="text" value="{{data.cuts_condition}}" name="cuts_condition"/></div>
+                    </td>
+                    <td>
+                        <div class="field-wrap"><input type="text" value="{{data.cuts_notes}}" name="cuts_notes"/></div>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="3" class="td-heading">Lights</td>
+                </tr>
+                <tr>
+                    <td>
+                        <ul>
+                            <li>All bulbs and fuses are intact and functional</li>
+                        </ul>
+                    </td>
+                    <td>
+                        <div class="field-wrap"><input type="text" value="{{data.light_condition}}" name="light_condition"/></div>
+                    </td>
+                    <td>
+                        <div class="field-wrap"><input type="text" value="{{data.light_notes}}" name="light_notes"/></div>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="3" class="td-heading">Crawler Tracks (where applicable)</td>
+                </tr>
+                <tr>
+                    <td>
+                        <ul>
+                            <li>Tracks are in good condition, adequate for terrain and the operation to be carried out</li>
+                        </ul>
+                    </td>
+                    <td>
+                        <div class="field-wrap"><input type="text" value="{{data.tracks_condition}}" name="tracks_condition"/></div>
+                    </td>
+                    <td>
+                        <div class="field-wrap"><input type="text" value="{{data.tracks_notes}}" name="tracks_notes"/></div>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="3" class="td-heading">Fastening Devices</td>
+                </tr>
+                <tr>
+                    <td>
+                        <ul>
+                            <li>Ensure there are no loose bolts/fasteners</li>
+                        </ul>
+                    </td>
+                    <td>
+                        <div class="field-wrap"><input type="text" value="{{data.fasteners_condition}}" name="fasteners_condition"/></div>
+                    </td>
+                    <td>
+                        <div class="field-wrap"><input type="text" value="{{data.fasteners_notes}}" name="fasteners_notes"/></div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <ul>
+                            <li>Ensure that boom pins and keepers are in place</li>
+                        </ul>
+                    </td>
+                    <td>
+                        <div class="field-wrap"><input type="text" value="{{data.pins_condition}}" name="pins_condition"/></div>
+                    </td>
+                    <td>
+                        <div class="field-wrap"><input type="text" value="{{data.pins_notes}}" name="pins_notes"/></div>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="3" class="td-heading">Guards</td>
+                </tr>
+                <tr>
+                    <td>
+                        <ul>
+                            <li>Visually check all guards to ensure that they are in place and functional</li>
+                        </ul>
+                    </td>
+                    <td>
+                        <div class="field-wrap"><input type="text" value="{{data.guards_condition}}" name="guards_condition"/></div>
+                    </td>
+                    <td>
+                        <div class="field-wrap"><input type="text" value="{{data.guards_notes}}" name="guards_notes"/></div>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="3" class="td-heading">Braking and Clutch System</td>
+                </tr>
+                <tr>
+                    <td>
+                        <ul>
+                            <li>Clutch does not slip</li>
+                        </ul>
+                    </td>
+                    <td>
+                        <div class="field-wrap"><input type="text" value="{{data.braking_condition}}" name="braking_condition"/></div>
+                    </td>
+                    <td>
+                        <div class="field-wrap"><input type="text" value="{{data.braking_notes}}" name="braking_notes"/></div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <ul>
+                            <li>Emergency and/or parking brakes are operational</li>
+                        </ul>
+                    </td>
+                    <td>
+                        <div class="field-wrap"><input type="text" value="{{data.emergency_condition}}" name="emergency_condition"/></div>
+                    </td>
+                    <td>
+                        <div class="field-wrap"><input type="text" value="{{data.emergency_notes}}" name="emergency_notes"/></div>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="3" class="td-heading">Steering</td>
+                </tr>
+                <tr>
+                    <td>
+                        <ul>
+                            <li>Check for correct alignment and no excessive slackness</li>
+                        </ul>
+                    </td>
+                    <td>
+                        <div class="field-wrap"><input type="text" value="{{data.steering_condition}}" name="steering_condition"/></div>
+                    </td>
+                    <td>
+                        <div class="field-wrap"><input type="text" value="{{data.steering_notes}}" name="steering_notes"/></div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <ul>
+                            <li>On crawler: both tracks will operate in the same direction; tracks can operate independently; tracks can move in opposite directions; and all tracks lock</li>
+                        </ul>
+                    </td>
+                    <td>
+                        <div class="field-wrap"><input type="text" value="{{data.crawler_condition}}" name="crawler_condition"/></div>
+                    </td>
+                    <td>
+                        <div class="field-wrap"><input type="text" value="{{data.crawler_notes}}" name="crawler_notes"/></div>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="3" class="td-heading">Maintain oil and grease as per Manufacturer’s instructions.</td>
+                </tr>
+            </table>
+            <p><i>Note: All documentation of daily maintenance checks will be found on the Vehicle and Equipment Inspection Forms within Thornton Electric Ltd maintenance and inspection program.</i></p>
+        </div>
+    </div>
+</div>
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<script type="text/javascript" src="/static/js/draft.js"></script>

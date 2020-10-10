@@ -1,0 +1,365 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" type="text/css" href="/static/css/draft_style.css">
+<link rel="stylesheet" type="text/css" href="/static/css/style.css">
+<div class="header-top">
+    <div class="container-category">
+        <div class="header-inner">
+            <div class="logo">logo</div>
+            <div class="right-contant">
+                <div class="field-wrap"><label>Alberta See Processor - </label><input type="text" value="{{data.plants_name}}" name="plants_name" placeholder="Plants Name"/></div>
+                <p>Emergency Rescue Plan</p>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="AWP-form RCA-form-pdf">
+    <div class="container-category">
+        <div class="ABSP-form-block">
+            <div class="top-link">
+                <h2>Emergency Rescue Plan</h2>
+            </div>
+            <table class="tbl-mb">
+                <tr>
+                    <td colspan="6" class="tbold">EMERGENCY RESCUE PLAN</td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <div class="field-wrap"><label>Permit #:</label><input type="text" value="{{data.permit}}" name="permit"/></div>
+                    </td>
+                    <td colspan="2">
+                        <div class="field-wrap"><label>Area:</label><input type="text" value="{{data.area}}" name="area"/></div>
+                    </td>
+                    <td colspan="2">
+                        <div class="field-wrap"><label>Equipment:</label><input type="text" value="{{data.equipment}}" name="equipment"/></div>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <div class="field-wrap"><label>Date developed</label><input type="text" value="{{data.date_develop}}" name="date_develop"/></div>
+                    </td>
+                    <td colspan="4">
+                        <div class="field-wrap"><label>Developed by:</label><input type="text" value="{{data.developed_by}}" name="developed_by"/></div>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="6"><label class="full-label">Location(site,specific location or reference point,attach map if required)</label><textarea name="des_location">{{data.des_location}} </textarea></td>
+                </tr>
+                <tr>
+                    <td colspan="6"><label>Identify roadways used to access location:</label><textarea name="des_identify">{{data.des_identify}} </textarea></td>
+                </tr>
+                <tr>
+                    <td colspan="6"><label>Description of access points(scaffolding,ladders etc.)</label><textarea name="des_access">{{data.des_access}} </textarea></td>
+                </tr>
+                <tr>
+                    <td colspan="6" class="td-heading">Access Information</td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="ABSP-checkbox"><label>Elevated<input type="checkbox" {{ data.access_info|get_string_as_list|match_value:"Elevated" }} value="Elevated" name="access_info"></label></div>
+                    </td>
+                    <td>
+                        <div class="ABSP-checkbox"><label>Round<input type="checkbox" {{ data.access_info|get_string_as_list|match_value:"Round" }} value="Round" name="access_info"></label></div>
+                    </td>
+                    <td>
+                        <div class="ABSP-checkbox"><label>Square<input type="checkbox" {{ data.access_info|get_string_as_list|match_value:"Square" }} value="Square" name="access_info"></label></div>
+                    </td>
+                    <td>
+                        <div class="ABSP-checkbox"><label>24" or less <input type="checkbox" {{ data.access_info|get_string_as_list|match_value:"less" }} value="less" name="access_info"> </label> </div>
+                    </td>
+                    <td>
+                        <div class="ABSP-checkbox"> <label>24" or greater<input type="checkbox" {{ data.access_info|get_string_as_list|match_value:"greater" }} value="greater" name="access_info"></label></div>
+                    </td>
+                    <td>
+                        <div class="ABSP-checkbox"><label>Congested<input type="checkbox" {{ data.access_info|get_string_as_list|match_value:"Congested" }} value="Congested" name="access_info"></label></div>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="6"><label>Description of work(to be completed at issuing time to supervisor)</label><textarea name="des_work">{{data.des_work}} </textarea></td>
+                </tr>
+                <tr>
+                    <td colspan="6"><label>Are there any hazards at the site?(Surface water,piping,exposed electrical,overhead lines etc.)</label><textarea name="des_hazards">{{data.des_hazards}} </textarea></td>
+                </tr>
+            </table>
+            <div class="tbl-scroll">
+                <table class="emergency-rescue-plan-tbl responsive-tbl tbl-mt tbl-mb">
+                    <tr>
+                        <td colspan="8" class="td-heading tcenter">Specialized Personal Protective Equipment and Emergency Rescue Equipment</td>
+                    </tr>
+                    <tr>
+                        <td class="td-heading tcenter">Specialized rescue equipment</td>
+                        <td class="td-heading">Yes</td>
+                        <td class="td-heading">No</td>
+                        <td class="td-heading">N/A</td>
+                        <td class="td-heading tcenter">Specialized rescue equipment</td>
+                        <td class="td-heading">Yes</td>
+                        <td class="td-heading">No</td>
+                        <td class="td-heading">N/A</td>
+                    </tr>
+                    <tr>
+                        <td>Site specific PPE</td>
+                        <td><input type="radio" {{ data.equipment_PPE|radio_three:"yes" }} name="equipment_PPE" value="yes"></td>
+                        <td><input type="radio" {{ data.equipment_PPE|radio_three:"no" }} name="equipment_PPE" value="no"></td>
+                        <td><input type="radio" {{ data.equipment_PPE|radio_three:"N/A" }} name="equipment_PPE" value="N/A"></td>
+                        <td>Horizontal retrieval system</td>
+                        <td><input type="radio" {{ data.equipment_horizontal|radio_three:"yes" }} name="equipment_horizontal" value="yes"></td>
+                        <td><input type="radio" {{ data.equipment_horizontal|radio_three:"no" }} name="equipment_horizontal" value="no"></td>
+                        <td><input type="radio" {{ data.equipment_horizontal|radio_three:"N/A" }} name="equipment_horizontal" value="N/A"></td>
+                    </tr>
+                    <tr>
+                        <td>Self-contained breathing apparatus</td>
+                        <td><input type="radio" {{ data.equipment_self|radio_three:"yes" }} name="equipment_self" value="yes"></td>
+                        <td><input type="radio" {{ data.equipment_self|radio_three:"no" }} name="equipment_self" value="no"></td>
+                        <td><input type="radio" {{ data.equipment_self|radio_three:"N/A" }} name="equipment_self" value="N/A"></td>
+                        <td>Vertical retrieval system</td>
+                        <td><input type="radio" {{ data.equipment_vertical|radio_three:"yes" }} name="equipment_vertical" value="yes"></td>
+                        <td><input type="radio" {{ data.equipment_vertical|radio_three:"no" }} name="equipment_vertical" value="no"></td>
+                        <td><input type="radio" {{ data.equipment_vertical|radio_three:"N/A" }} name="equipment_vertical" value="N/A"></td>
+                    </tr>
+                    <tr>
+                        <td>Supplied air breathing apparatus</td>
+                        <td><input type="radio" {{ data.equipment_supplied|radio_three:"yes" }} name="equipment_supplied" value="yes"></td>
+                        <td><input type="radio" {{ data.equipment_supplied|radio_three:"no" }} name="equipment_supplied" value="no"></td>
+                        <td><input type="radio" {{ data.equipment_supplied|radio_three:"N/A" }} name="equipment_supplied" value="N/A"></td>
+                        <td>Tripod with a retractable lifeline</td>
+                        <td><input type="radio" {{ data.equipment_tripod|radio_three:"yes" }} name="equipment_tripod" value="yes"></td>
+                        <td><input type="radio" {{ data.equipment_tripod|radio_three:"no" }} name="equipment_tripod" value="no"></td>
+                        <td><input type="radio" {{ data.equipment_tripod|radio_three:"N/A" }} name="equipment_tripod" value="N/A"></td>
+                    </tr>
+                    <tr>
+                        <td>Ropes(lifelines)</td>
+                        <td><input type="radio" {{ data.equipment_ropes|radio_three:"yes" }} name="equipment_ropes" value="yes"></td>
+                        <td><input type="radio" {{ data.equipment_ropes|radio_three:"no" }} name="equipment_ropes" value="no"></td>
+                        <td><input type="radio" {{ data.equipment_ropes|radio_three:"N/A" }} name="equipment_ropes" value="N/A"></td>
+                        <td>Stretcher/stokes</td>
+                        <td><input type="radio" {{ data.equipment_stokes|radio_three:"yes" }} name="equipment_stokes" value="yes"></td>
+                        <td><input type="radio" {{ data.equipment_stokes|radio_three:"no" }} name="equipment_stokes" value="no"></td>
+                        <td><input type="radio" {{ data.equipment_stokes|radio_three:"N/A" }} name="equipment_stokes" value="N/A"></td>
+                    </tr>
+                    <tr>
+                        <td>Fall protection harness</td>
+                        <td><input type="radio" {{ data.equipment_protection|radio_three:"yes" }} name="equipment_protection" value="yes"></td>
+                        <td><input type="radio" {{ data.equipment_protection|radio_three:"no" }} name="equipment_protection" value="no"></td>
+                        <td><input type="radio" {{ data.equipment_protection|radio_three:"N/A" }} name="equipment_protection" value="N/A"></td>
+                        <td>Gas detection/monitor</td>
+                        <td><input type="radio" {{ data.equipment_monitor|radio_three:"yes" }} name="equipment_monitor" value="yes"></td>
+                        <td><input type="radio" {{ data.equipment_monitor|radio_three:"no" }} name="equipment_monitor" value="no"></td>
+                        <td><input type="radio" {{ data.equipment_monitor|radio_three:"N/A" }} name="equipment_monitor" value="N/A"></td>
+                    </tr>
+                    <tr>
+                        <td>Confined space harness</td>
+                        <td><input type="radio" {{ data.equipment_space|radio_three:"yes" }} name="equipment_space" value="yes"></td>
+                        <td><input type="radio" {{ data.equipment_space|radio_three:"no" }} name="equipment_space" value="no"></td>
+                        <td><input type="radio" {{ data.equipment_space|radio_three:"N/A" }} name="equipment_space" value="N/A"></td>
+                        <td colspan="4">
+                            <div class="field-wrap"><label>Other:</label><input type="text" value="{{data.other_equipment}}" name="other_equipment"></div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="8"><label class="full-label">List specialized PPE if required:</label><textarea name="des_PPE">{{data.des_PPE} </textarea></td>
+                    </tr>
+                    <tr>
+                        <td colspan="8">
+                            <div class="field-wrap"><label>Emergency services/Emergency Dispatcher tel #:</label><input type="text" value="{{data.des_emergency}}" name="des_emergency"></div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="8">
+                            <div class="field-wrap"><label>Site Emergency phone #:</label><input type="text" value="{{data.site_emergency}}" name="site_emergency"></div>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <table class="emergency-rescue-tbl responsive-tbl tbl-mt tbl-mb">
+                <tr>
+                    <td class="border-zero"></td>
+                    <td class="border-zero">Summon emergency services as follows:</td>
+                </tr>
+                <tr>
+                    <td class="td-heading">Step</td>
+                    <td class="td-heading">Action</td>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>In the event of an emergency,worker(s)will summon help by sounding horn or other sounding device to stop work.</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>
+                        Caller identifies:
+                        <ul>
+                            <li>Who they are</li>
+                            <li>Emergency location</li>
+                            <li>Nature of emergency</li>
+                            <li>Casualties</li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>Caller to remain online for further instructions</td>
+                </tr>
+                <tr>
+                    <td>4</td>
+                    <td>
+                        Additional workers to provide assistance to:
+                        <ul>
+                            <li>Injured personnel</li>
+                            <li>Attempt a non-entry rescue if safe to do so and trained</li>
+                            <li>Direct emergency response personnel</li>
+                            <li>Secure incident scene including equipment and material</li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <td>5</td>
+                    <td>Emergency services to assess the situation,review this plan and establish procedures for rescue.</td>
+                </tr>
+                <tr>
+                    <td>6</td>
+                    <td>Emergency services assess the need for mutual aid if required.</td>
+                </tr>
+                <tr>
+                    <td class="border-zero"></td>
+                    <td class="border-zero">Summoning of emergency services is complete.</td>
+                </tr>
+                <tr>
+                    <td class="border-zero"></td>
+                    <td class="border-zero tbold">During an emergency secure the confined space as follows:</td>
+                </tr>
+                <tr>
+                    <td>Step</td>
+                    <td>Action</td>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>Secure scene and establish hot zone and warm zone,consider Security contractor for policing zones</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>Isolate and de-energized systems</td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>Gas test and continuous monitoring,CSV as required</td>
+                </tr>
+                <tr>
+                    <td>4</td>
+                    <td>Determine appropriate egress route</td>
+                </tr>
+                <tr>
+                    <td>5</td>
+                    <td>Consider the location of anchor points</td>
+                </tr>
+                <tr>
+                    <td>6</td>
+                    <td>Consider evacuating of the all confined space workers</td>
+                </tr>
+                <tr>
+                    <td class="border-zero"></td>
+                    <td class="border-zero">Confined space is now secure.</td>
+                </tr>
+            </table>
+            <table class="emergency-rescue-plan-tbl responsive-tbl tbl-mt">
+                <tr>
+                    <td class="td-heading">Additional Resources</td>
+                    <td class="td-heading">Comments</td>
+                </tr>
+                <tr>
+                    <td>Auxiliary emergency response personnel</td>
+                    <td>
+                        <div class="field-wrap"><input type="text" value="{{data.auxiliary}}" name="auxiliary"></div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Specialty personnel as requested by emergency services</td>
+                    <td>
+                        <div class="field-wrap"><input type="text" value="{{data.emergency}}" name="emergency"></div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Contractor(s)support as required(heavy equipment etc.)</td>
+                    <td>
+                        <div class="field-wrap"><input type="text" value="{{data.contractor}}" name="contractor"></div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>911 or Mutual Aid Support</td>
+                    <td>
+                        <div class="field-wrap"><input type="text" value="{{data.aid_support}}" name="aid_support"></div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Other:</td>
+                    <td>
+                        <div class="field-wrap"><input type="text" value="{{data.other_resources}}" name="other_resources"></div>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2" class="td-heading">Additional rescue information or specialized equipment required:</td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <div class="field-wrap"><textarea name="des_rescue">{{data.des_rescue}} </textarea></div>
+                    </td>
+                </tr>
+            </table>
+            <p class="tbold">Rescue Plan Approval:</p>
+            <p>Worksite supervisor:</p>
+            <table class="input-bt-br border-td inside-tbl">
+                <tr>
+                    <td>
+                        <div class="field-wrap"><label>Name:</label><input type="text" value="{{data.supervisor_name}}" name="supervisor_name"/></div>
+                    </td>
+                    <td>
+                        <div class="field-wrap"><label>Sign:</label><input type="text" value="{{data.supervisor_sign}}" name="supervisor_sign"/></div>
+                    </td>
+                    <td>
+                        <div class="field-wrap"><label>Date:</label><input type="text" value="{{data.supervisor_date}}" name="supervisor_date"/></div>
+                    </td>
+                </tr>
+            </table>
+            <p>Emergency Services Representative:</p>
+            <table class="input-bt-br border-td inside-tbl">
+                <tr>
+                    <td>
+                        <div class="field-wrap"><label>Name:</label><input type="text" value="{{data.emer_representative_name}}" name="emer_representative_name"/></div>
+                    </td>
+                    <td>
+                        <div class="field-wrap"><label>Sign:</label><input type="text" value="{{data.emer_representative_sign}}" name="emer_representative_sign"/></div>
+                    </td>
+                    <td>
+                        <div class="field-wrap"><label>Date:</label><input type="text" value="{{data.emer_representative_date}}" name="emer_representative_date"/></div>
+                    </td>
+                </tr>
+            </table>
+            <p>Confined Space Safety Watch:</p>
+            <table class="input-bt-br border-td inside-tbl">
+                <tr>
+                    <td>
+                        <div class="field-wrap"><label>Name:</label><input type="text" value="{{data.CSS_watch_name}}" name="CSS_watch_name"/></div>
+                    </td>
+                    <td>
+                        <div class="field-wrap"><label>Sign:</label><input type="text" value="{{data.CSS_watch_sign}}" name="CSS_watch_sign"/></div>
+                    </td>
+                    <td>
+                        <div class="field-wrap"><label>Date:</label><input type="text" value="{{data.CSS_watch_date}}" name="CSS_watch_date"/></div>
+                    </td>
+                </tr>
+            </table>
+            <p>HSE Representative:</p>
+            <table class="input-bt-br border-td inside-tbl">
+                <tr>
+                    <td>
+                        <div class="field-wrap"><label>Name:</label><input type="text" value="{{data.HSE_representative_name}}" name="HSE_representative_name"/></div>
+                    </td>
+                    <td>
+                        <div class="field-wrap"><label>Sign:</label><input type="text" value="{{data.HSE_representative_sign}}" name="HSE_representative_sign"/></div>
+                    </td>
+                    <td>
+                        <div class="field-wrap"><label>Date:</label><input type="text" value="{{data.HSE_representative_date}}" name="HSE_representative_date"/></div>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</div>

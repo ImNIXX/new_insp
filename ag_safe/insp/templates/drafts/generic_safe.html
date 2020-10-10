@@ -1,0 +1,611 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" type="text/css" href="/static/css/draft_style.css">
+<link rel="stylesheet" type="text/css" href="/static/css/style.css">
+<div class="header-top">
+    <div class="container-category">
+        <div class="header-inner">
+            <div class="logo">logo</div>
+            <div class="right-contant">
+                <div class="field-wrap"> <label>Alberta See Processor – </label> <input type="text"  value="{{data.plants_name}}" name="plants_name" value="{{ data.plants_name }}" placeholder="Plants Name"/> </div>
+                <p>Generic Safe Work Permit</p>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="AWP-form RCA-form-pdf">
+    <div class="contant-top">
+        <div class="container-category">
+            <div class="top-link">
+                <h2>Generic Safe Work Permit</h2>
+            </div>
+        </div>
+    </div>
+    <div class="container-category">
+        <div class="ABSP-form-block">
+            <table>
+                <tr>
+                    <td class="tbold">
+                        <div class="field-wrap"> <label>Permit #:</label> <input type="text" value="{{ data.plants_name }}" name="permit_title"> </div>
+                    </td>
+                    <td class="tbold tcenter">Safe Work Permit</td>
+                </tr>
+                <tr>
+                    <td colspan="2" class="td-heading">G. General Permit Information</td>
+                </tr>
+                <tr>
+                <td colspan="2"> <label class="tbold">Permit:</label>
+                        <div class="single-line-checkbox"><label> <input type="checkbox" value="Hot Work" {{ data.permits|get_string_as_list|match_value:"Hot Work" }} name="permits"> Hot Work </label></div>
+                        <div class="single-line-checkbox"><label> <input type="checkbox" value="Radiography" {{ data.permits|get_string_as_list|match_value:"Radiography" }} name="permits"> Radiography </label></div>
+                        <div class="single-line-checkbox"><label> <input type="checkbox" value="Confined Space Work" {{ data.permits|get_string_as_list|match_value:"Confined Space Work" }} name="permits"> Confined Space Work </label></div>
+                        <div class="single-line-checkbox"><label> <input type="checkbox" value="Equipment Isolations" {{ data.permits|get_string_as_list|match_value:"Equipment Isolations" }} name="permits"> Equipment Isolations </label></div>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <div class="single-line-checkbox"><label> <input type="checkbox"  value="Toxic Gases" {{ data.permits|get_string_as_list|match_value:"Toxic Gases" }} name="permits"> Toxic Gases </label></div>
+                        <div class="single-line-checkbox"><label> <input type="checkbox"  value="Pneumatic / Hydraulic Testing" {{ data.permits|get_string_as_list|match_value:"Pneumatic / Hydraulic Testing" }} name="permits"> Pneumatic / Hydraulic Testing </label></div>
+                        <div class="single-line-checkbox"><label> <input type="checkbox"  value="Ground Disturbance" {{ data.permits|get_string_as_list|match_value:"Ground Disturbance" }} name="permits"> Ground Disturbance – Attach Excavation Permit </label></div>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <div class="single-line-checkbox"><label> <input type="checkbox"  value="Crane Suspended Work Platform"{{ data.permits|get_string_as_list|match_value:"Crane Suspended Work Platform" }} name="permits"> Crane Suspended Work Platform – Attach Hoisting Permit </label></div>
+                        <div class="single-line-checkbox"><label> <input type="checkbox"  value="Work Near Hazardous" {{ data.permits|get_string_as_list|match_value:"Work Near Hazardous" }}  name="permits"> Work Near Hazardous or Critical Pipelines – Attach Mobile Equipment Permit </label></div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="field-wrap"> <label>Permit valid from (date/time):</label> <input type="text"  name="date_from" value="{{ data.date_from }}"> </div>
+                    </td>
+                    <td>
+                        <div class="field-wrap"> <label>Permit valid to (date/time):</label> <input type="text" name="date_to" value="{{ data.date_to }}"> </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="field-wrap"> <label>Location/ Equipment #:</label> <input type="text"  name="location" value="{{ data.location }}"> </div>
+                    </td>
+                    <td>
+                        <div class="field-wrap"> <label>Attach a completed copy of the FLHA to the permit</label> <input type="text"  " name="flha" value="{{ data.flha }}"> </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2"> <label class="full-label">Work description:</label> <textarea name="des_work">{{ data.des_work }}</textarea> </td>
+                </tr>
+            </table>
+            <table class="generic-safe">
+                <tr>
+                    <td colspan="3" class="td-heading tleft">H. Key Job Hazards</td>
+                </tr>
+                <tr>
+                    <td> <label>Underground Utilities</label>
+                        <div class="single-line-checkbox"><label>Yes <input type="radio"  {{ data.Utilities|radio_three:"yes" }}  value="yes" name="Utilities"> </label></div>
+                        <div class="single-line-checkbox"><label>N/A <input type="radio"  {{ data.Utilities|radio_three:"n/a" }}   value="n/a" name="Utilities"> </label></div>
+                    </td>
+                    <td> <label>Confined Space Activities</label>
+                        <div class="single-line-checkbox"><label>Yes <input type="radio"  {{ data.Activities|radio_three:"yes" }} value="yes" name="Activities"> </label></div>
+                        <div class="single-line-checkbox"><label>N/A <input type="radio"  {{ data.Activities|radio_three:"n/a" }} value="n/a" name="Activities"> </label></div>
+                    </td>
+                    <td> <label>Flammable Materials</label>
+                        <div class="single-line-checkbox"><label>Yes <input type="radio"  {{ data.Materials|radio_three:"yes" }} value="yes" name="Materials"> </label></div>
+                        <div class="single-line-checkbox"><label>N/A <input type="radio"  {{ data.Materials|radio_three:"n/a" }} value="n/a" name="Materials"> </label></div>
+                    </td>
+                </tr>
+                <tr>
+                    <td> <label>Overhead Power Lines</label>
+                        <div class="single-line-checkbox"><label>Yes <input type="radio"  {{ data.Lines|radio_three:"yes" }} value="yes" name="Lines"> </label></div>
+                        <div class="single-line-checkbox"><label>N/A <input type="radio"  {{ data.Lines|radio_three:"n/a" }} value="n/a" name="Lines"> </label></div>
+                    </td>
+                    <td> <label>Overhead Crane WOrk</label>
+                        <div class="single-line-checkbox"><label>Yes <input type="radio"  {{ data.Crane|radio_three:"yes" }} value="yes" name="Crane"> </label></div>
+                        <div class="single-line-checkbox"><label>N/A <input type="radio"  {{ data.Crane|radio_three:"n/a" }} value="n/a" name="Crane"> </label></div>
+                    </td>
+                    <td> <label>Hazardous Substances</label>
+                        <div class="single-line-checkbox"><label>Yes <input type="radio"  {{ data.Substances|radio_three:"yes" }} value="yes" name="Substances"> </label></div>
+                        <div class="single-line-checkbox"><label>N/A <input type="radio"  {{ data.Substances|radio_three:"n/a" }} value="n/a" name="Substances"> </label></div>
+                    </td>
+                </tr>
+                <tr>
+                    <td> <label>Congested Areas</label>
+                        <div class="single-line-checkbox"><label>Yes <input type="radio"  {{ data.Congested|radio_three:"yes" }} value="yes" name="Congested"> </label></div>
+                        <div class="single-line-checkbox"><label>N/A <input type="radio"  {{ data.Congested|radio_three:"n/a" }} value="n/a" name="Congested"> </label></div>
+                    </td>
+                    <td> <label>Pressurized Lines</label>
+                        <div class="single-line-checkbox"><label>Yes <input type="radio"  {{ data.Pressurized|radio_three:"yes" }} value="yes" name="Pressurized"> </label></div>
+                        <div class="single-line-checkbox"><label>N/A <input type="radio"  {{ data.Pressurized|radio_three:"n/a" }} value="n/a" name="Pressurized"> </label></div>
+                    </td>
+                    <td> <label>Radiation</label>
+                        <div class="single-line-checkbox"><label>Yes <input type="radio"  {{ data.Radiation|radio_three:"yes" }} value="yes" name="Radiation"> </label></div>
+                        <div class="single-line-checkbox"><label>N/A <input type="radio"  {{ data.Radiation|radio_three:"n/a" }} value="n/a" name="Radiation"> </label></div>
+                    </td>
+                </tr>
+                <tr>
+                    <td> <label>Excavation cave ins</label>
+                        <div class="single-line-checkbox"><label>Yes <input type="radio"  {{ data.Excavation|radio_three:"yes" }} value="yes" name="Excavation"> </label></div>
+                        <div class="single-line-checkbox"><label>N/A <input type="radio"  {{ data.Excavation|radio_three:"n/a" }} value="n/a" name="Excavation"> </label></div>
+                    </td>
+                    <td> <label>Heavy Equipment/traffic</label>
+                        <div class="single-line-checkbox"><label>Yes <input type="radio"  {{ data.Heavy|radio_three:"yes" }} value="yes" name="Heavy"> </label></div>
+                        <div class="single-line-checkbox"><label>N/A <input type="radio"  {{ data.Heavy|radio_three:"n/a" }} value="n/a" name="Heavy"> </label></div>
+                    </td>
+                    <td>
+                        <div class="field-wrap"> <label>Other:</label> <input type="text"  value="{{data.other_hazards}}" name="other_hazards"> </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="3" class="tleft td-heading">I. Job Hazard Controls</td>
+                </tr>
+                <tr>
+                    <td colspan="3" class="td-heading tleft">General Controls</td>
+                </tr>
+                <tr>
+                    <td> <label>Suitable access/egress</label>
+                        <div class="single-line-checkbox"><label>Yes <input type="radio"  {{ data.access|radio_three:"yes" }} value="yes" name="access"> </label></div>
+                        <div class="single-line-checkbox"><label>N/A <input type="radio"  {{ data.access|radio_three:"n/a" }} value="n/a" name="access"> </label></div>
+                    </td>
+                    <td>
+                        <div class="field-wrap"> <label>Safety Watch (specify):</label> <input type="text"  value="{{data.safety_watch}}" name="safety_watch"> </div>
+                    </td>
+                    <td> <label>Lighting</label>
+                        <div class="single-line-checkbox"><label>Yes <input type="radio"  {{ data.Lighting|radio_three:"yes" }} value="yes" name="Lighting"> </label></div>
+                        <div class="single-line-checkbox"><label>N/A <input type="radio"  {{ data.Lighting|radio_three:"n/a" }} value="n/a" name="Lighting"> </label></div>
+                    </td>
+                </tr>
+                <tr>
+                    <td> <label>Barricades and signs</label>
+                        <div class="single-line-checkbox"><label>Yes <input type="radio"  {{ data.Barricades|radio_three:"yes" }} value="yes" name="Barricades"> </label></div>
+                        <div class="single-line-checkbox"><label>N/A <input type="radio"  {{ data.Barricades|radio_three:"n/a" }} value="n/a" name="Barricades"> </label></div>
+                    </td>
+                    <td> <label>Fire extinguishers</label>
+                        <div class="single-line-checkbox"><label>Yes <input type="radio"  {{ data.extinguishers|radio_three:"yes" }} value="yes" name="extinguishers"> </label></div>
+                        <div class="single-line-checkbox"><label>N/A <input type="radio"  {{ data.extinguishers|radio_three:"n/a" }} value="n/a" name="extinguishers"> </label></div>
+                    </td>
+                    <td> <label>Drains sealed</label>
+                        <div class="single-line-checkbox"><label>Yes <input type="radio"  {{ data.sealed|radio_three:"yes" }} value="yes" name="sealed"> </label></div>
+                        <div class="single-line-checkbox"><label>N/A <input type="radio"  {{ data.sealed|radio_three:"n/a" }} value="n/a" name="sealed"> </label></div>
+                    </td>
+                </tr>
+                <tr>
+                    <td> <label>Lines flushed</label>
+                        <div class="single-line-checkbox"><label>Yes <input type="radio"  {{ data.flushed|radio_three:"yes" }} value="yes" name="flushed"> </label></div>
+                        <div class="single-line-checkbox"><label>N/A <input type="radio"  {{ data.flushed|radio_three:"n/a" }} value="n/a" name="flushed"> </label></div>
+                    </td>
+                    <td> <label>Vented / ventilated</label>
+                        <div class="single-line-checkbox"><label>Yes <input type="radio"  {{ data.ventilated|radio_three:"yes" }} value="yes" name="ventilated"> </label></div>
+                        <div class="single-line-checkbox"><label>N/A <input type="radio"  {{ data.ventilated|radio_three:"n/a" }} value="n/a" name="ventilated"> </label></div>
+                    </td>
+                    <td>
+                        <div class="field-wrap"> <label>Other:</label> <input type="text"  value="{{data.other_control}}" name="other_control"> </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="3" class="td-heading tleft">Personal Protective Equipment Controls</td>
+                </tr>
+                <tr>
+                    <td> <label>Face shield/goggles</label>
+                        <div class="single-line-checkbox"><label>Yes <input type="radio"  {{ data.goggles|radio_three:"yes" }} value="yes" name="goggles"> </label></div>
+                        <div class="single-line-checkbox"><label>N/A <input type="radio"  {{ data.goggles|radio_three:"n/a" }} value="n/a" name="goggles"> </label></div>
+                    </td>
+                    <td> <label>Fall protection</label>
+                        <div class="single-line-checkbox"><label>Yes <input type="radio"  {{ data.protection|radio_three:"yes" }} value="yes" name="protection"> </label></div>
+                        <div class="single-line-checkbox"><label>N/A <input type="radio"  {{ data.protection|radio_three:"n/a" }} value="n/a" name="protection"> </label></div>
+                    </td>
+                    <td> <label>Respiratory protection</label>
+                        <div class="single-line-checkbox"><label>Yes <input type="radio"  {{ data.Respiratory|radio_three:"yes" }} value="yes" name="Respiratory"> </label></div>
+                        <div class="single-line-checkbox"><label>N/A <input type="radio"  {{ data.Respiratory|radio_three:"n/a" }} value="n/a" name="Respiratory"> </label></div>
+                    </td>
+                </tr>
+                <tr>
+                    <td> <label>PVC / rubber gloves</label>
+                        <div class="single-line-checkbox"><label>Yes <input type="radio"  {{ data.rubber|radio_three:"yes" }} value="yes" name="rubber"> </label></div>
+                        <div class="single-line-checkbox"><label>N/A <input type="radio"  {{ data.rubber|radio_three:"n/a" }} value="n/a" name="rubber"> </label></div>
+                    </td>
+                    <td> <label>Hearing protection</label>
+                        <div class="single-line-checkbox"><label>Yes <input type="radio"  {{ data.Hearing|radio_three:"yes" }} value="yes" name="Hearing"> </label></div>
+                        <div class="single-line-checkbox"><label>N/A <input type="radio"  {{ data.Hearing|radio_three:"n/a" }} value="n/a" name="Hearing"> </label></div>
+                    </td>
+                    <td>
+                        <div class="field-wrap"> <label>Other:</label> <input type="text"  value="{{data.other_equip}}" name="other_equip"> </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="3" class="td-heading tleft">Equipment Isolations</td>
+                </tr>
+                <tr>
+                    <td> <label>Electrical</label>
+                        <div class="single-line-checkbox"><label>Yes <input type="radio"  {{ data.Electrical|radio_three:"yes" }} value="yes" name="Electrical"> </label></div>
+                        <div class="single-line-checkbox"><label>N/A <input type="radio"  {{ data.Electrical|radio_three:"n/a" }} value="n/a" name="Electrical"> </label></div>
+                    </td>
+                    <td>
+                        <div class="field-wrap"> <label>Isolation MasterCard#:</label> <input type="text"  value="{{data.mastercard}}" name="mastercard"> </div>
+                    </td>
+                    <td> <label>Mechanical</label>
+                        <div class="single-line-checkbox"><label>Yes <input type="radio"  {{ data.mec|radio_three:"yes" }} value="yes" name="mec"> </label></div>
+                        <div class="single-line-checkbox"><label>N/A <input type="radio"  {{ data.mec|radio_three:"n/a" }} value="n/a" name="mec"> </label></div>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="3" class="td-heading tleft">Confined Space Entry Controls</td>
+                </tr>
+                <tr>
+                    <td> <label>Entry log in place</label>
+                        <div class="single-line-checkbox"><label>Yes <input type="radio"  {{ data.Mechanical|radio_three:"yes" }} value="yes" name="Mechanical"> </label></div>
+                        <div class="single-line-checkbox"><label>N/A <input type="radio"  {{ data.Mechanical|radio_three:"n/a" }} value="n/a" name="Mechanical"> </label></div>
+                    </td>
+                    <td> <label>Rescue plan in place</label>
+                        <div class="single-line-checkbox"><label>Yes <input type="radio"  {{ data.Rescue|radio_three:"yes" }} value="yes" name="Rescue"> </label></div>
+                        <div class="single-line-checkbox"><label>N/A <input type="radio"  {{ data.Rescue|radio_three:"n/a" }} value="n/a" name="Rescue"> </label></div>
+                    </td>
+                    <td> <label>Emergency Response Equipment</label>
+                        <div class="single-line-checkbox"><label>Yes <input type="radio"  {{ data.Response|radio_three:"yes" }} value="yes" name="Response"> </label></div>
+                        <div class="single-line-checkbox"><label>N/A <input type="radio"  {{ data.Response|radio_three:"n/a" }} value="n/a" name="Response"> </label></div>
+                    </td>
+                </tr>
+                <tr>
+                    <td> <label>Communications in place</label>
+                        <div class="single-line-checkbox"><label>Yes <input type="radio"  {{ data.Communications|radio_three:"yes" }} value="yes" name="Communications"> </label></div>
+                        <div class="single-line-checkbox"><label>N/A <input type="radio"  {{ data.Communications|radio_three:"n/a" }} value="n/a" name="Communications"> </label></div>
+                    </td>
+                    <td> <label>Safety watch in place</label>
+                        <div class="single-line-checkbox"><label>Yes <input type="radio"  {{ data.Safety|radio_three:"yes" }} value="yes" name="Safety"> </label></div>
+                        <div class="single-line-checkbox"><label>N/A <input type="radio"  {{ data.Safety|radio_three:"yes" }} value="n/a" name="Safety"> </label></div>
+                    </td>
+                    <td>
+                        <div class="field-wrap"> <label>Other:</label> <input type="text"  value="{{data.other_confined}}" name="other_confined"> </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="3" class="tbold"> <label>Gas Tests:</label>
+                        <div class="single-line-checkbox"><label> <input type="checkbox"  {{ data.gas_test|get_string_as_list|match_value:"Periodic Gas Tests" }} value="Periodic Gas Tests" name="gas_test"> Periodic Gas Tests</label></div>
+                        <div class="single-line-checkbox"><label> <input type="checkbox"  {{ data.unit_type|get_string_as_list|match_value:"Continuous Gas Testing" }} value="Continuous Gas Testing" name="gas_test"> Continuous Gas Testing</label></div>
+                    </td>
+                </tr>
+            </table>
+            <div class="tbl-scroll">
+                <table class="responsive-tbl">
+                    <tr>
+                        <td class="tbold">Gas</td>
+                        <td class="tbold">Time</td>
+                        <td class="tbold">Result</td>
+                        <td class="tbold">Initials</td>
+                        <td class="tbold">Time</td>
+                        <td class="tbold">Result</td>
+                        <td class="tbold">Initials</td>
+                        <td class="tbold">Time</td>
+                        <td class="tbold">Result</td>
+                        <td class="tbold">Initials</td>
+                        <td class="tbold">Time</td>
+                        <td class="tbold">Result</td>
+                        <td class="tbold">Initials</td>
+                    </tr>
+                    <tr>
+                        <td>O2 (19.5 - 23.0%)</td>
+                        <td>
+                            <div class="field-wrap"> <input type="text"  value="{{data.time_one_o2}}" name="time_one_o2"> </div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"> <input type="text"  value="{{data.result_one_o2}}" name="result_one_o2"> </div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"> <input type="text"  value="{{data.initials_one_o2}}" name="initials_one_o2"> </div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"> <input type="text"  value="{{data.time_two_o2}}" name="time_two_o2"> </div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"> <input type="text"  value="{{data.result_two_o2}}" name="result_two_o2"> </div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"> <input type="text"  value="{{data.initials_two_o2}}" name="initials_two_o2"> </div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"> <input type="text"  value="{{data.time_three_o2}}" name="time_three_o2"> </div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"> <input type="text"  value="{{data.result_three_o2}}" name="result_three_o2"> </div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"> <input type="text"  value="{{data.initials_three_o2}}" name="initials_three_o2"> </div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"> <input type="text"  value="{{data.time_four_o2}}" name="time_four_o2"> </div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"> <input type="text"  value="{{data.result_four_o2}}" name="result_four_o2"> </div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"> <input type="text"  value="{{data.initials_four_o2}}" name="initials_four_o2"> </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>H2S</td>
+                        <td>
+                            <div class="field-wrap"> <input type="text"  value="{{data.time_one_h2s}}" name="time_one_h2s"> </div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"> <input type="text"  value="{{data.result_one_h2s}}" name="result_one_h2s"> </div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"> <input type="text"  value="{{data.initials_one_h2s}}" name="initials_one_h2s"> </div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"> <input type="text"  value="{{data.time_two_h2s}}" name="time_two_h2s"> </div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"> <input type="text"  value="{{data.result_two_h2s}}" name="result_two_h2s"> </div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"> <input type="text"  value="{{data.initials_two_h2s}}" name="initials_two_h2s"> </div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"> <input type="text"  value="{{data.time_three_h2s}}" name="time_three_h2s"> </div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"> <input type="text"  value="{{data.result_three_h2s}}" name="result_three_h2s"> </div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"> <input type="text"  value="{{data.initials_three_h2s}}" name="initials_three_h2s"> </div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"> <input type="text"  value="{{data.time_four_h2s}}" name="time_four_h2s"> </div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"> <input type="text"  value="{{data.result_four_h2s}}" name="result_four_h2s"> </div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"> <input type="text"  value="{{data.initials_four_h2s}}" name="initials_four_h2s"> </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>LEL</td>
+                        <td>
+                            <div class="field-wrap"> <input type="text"  value="{{data.time_one_lel}}" name="time_one_lel"> </div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"> <input type="text"  value="{{data.result_one_lel}}" name="result_one_lel"> </div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"> <input type="text"  value="{{data.initials_one_lel}}" name="initials_one_lel"> </div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"> <input type="text"  value="{{data.time_two_lel}}" name="time_two_lel"> </div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"> <input type="text"  value="{{data.result_two_lel}}" name="result_two_lel"> </div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"> <input type="text"  value="{{data.initials_two_lel}}" name="initials_two_lel"> </div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"> <input type="text"  value="{{data.time_three_lel}}" name="time_three_lel"> </div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"> <input type="text"  value="{{data.result_three_lel}}" name="result_three_lel"> </div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"> <input type="text"  value="{{data.initials_three_lel}}" name="initials_three_lel"> </div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"> <input type="text"  value="{{data.time_four_lel}}" name="time_four_lel"> </div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"> <input type="text"  value="{{data.result_four_lel}}" name="result_four_lel"> </div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"> <input type="text"  value="{{data.result_four_lel}}" name="initials_four_lel"> </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Other:</td>
+                        <td>
+                            <div class="field-wrap"> <input type="text"  value="{{data.time_one_other}}" name="time_one_other"> </div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"> <input type="text"  value="{{data.result_one_other}}" name="result_one_other"> </div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"> <input type="text"  value="{{data.initials_one_other}}" name="initials_one_other"> </div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"> <input type="text"  value="{{data.time_two_other}}" name="time_two_other"> </div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"> <input type="text"  value="{{data.result_two_other}}" name="result_two_other"> </div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"> <input type="text"  value="{{data.initials_two_other}}" name="initials_two_other"> </div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"> <input type="text"  value="{{data.time_three_other}}" name="time_three_other"> </div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"> <input type="text"  value="{{data.result_three_other}}" name="result_three_other"> </div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"> <input type="text"  value="{{data.initials_three_other name="initials_three_other"> </div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"> <input type="text"  value="{{data.time_four_other}}" name="time_four_other"> </div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"> <input type="text"  value="{{data.result_four_other}}" name="result_four_other"> </div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"> <input type="text"  value="{{data.initials_four_other}}" name="initials_four_other"> </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="13" class="td-heading tleft">J. Affected Workers</td>
+                    </tr>
+                    <tr>
+                        <td class="td-heading tleft" colspan="4">Name</td>
+                        <td class="td-heading tleft" colspan="3">Signed</td>
+                        <td class="td-heading tleft" colspan="3">Position</td>
+                        <td class="td-heading tleft" colspan="3">Date</td>
+                    </tr>
+                    <tr>
+                        <td colspan="4">
+                            <div class="field-wrap"> <input type="text"  value="{{data.aff_worker_name}}" name="aff_worker_name"> </div>
+                        </td>
+                        <td colspan="3">
+                            <div class="field-wrap"> <input type="text"  value="{{data.aff_worker_sign}}" name="aff_worker_sign"> </div>
+                        </td>
+                        <td colspan="3">
+                            <div class="field-wrap"> <input type="text"  value="{{data.aff_worker_position}}" name="aff_worker_position"> </div>
+                        </td>
+                        <td colspan="3">
+                            <div class="field-wrap"> <input type="text"  value="{{data.aff_worker_date}}" name="aff_worker_date"> </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="4">
+                            <div class="field-wrap"> <input type="text"  value="{{data.aff_worker_name_two}}" name="aff_worker_name_two"> </div>
+                        </td>
+                        <td colspan="3">
+                            <div class="field-wrap"> <input type="text"  value="{{data.aff_worker_sign_two}}" name="aff_worker_sign_two"> </div>
+                        </td>
+                        <td colspan="3">
+                            <div class="field-wrap"> <input type="text"  value="{{data.aff_worker_position_two}}" name="aff_worker_position_two"> </div>
+                        </td>
+                        <td colspan="3">
+                            <div class="field-wrap"> <input type="text"  value="{{data.aff_worker_date_two}}" name="aff_worker_date_two"> </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="4">
+                            <div class="field-wrap"> <input type="text"  value="{{data.aff_worker_name_three}}" name="aff_worker_name_three"> </div>
+                        </td>
+                        <td colspan="3">
+                            <div class="field-wrap"> <input type="text"  value="{{data.aff_worker_sign_three}}" name="aff_worker_sign_three"> </div>
+                        </td>
+                        <td colspan="3">
+                            <div class="field-wrap"> <input type="text"  value="{{data.aff_worker_position_three}}" name="aff_worker_position_three"> </div>
+                        </td>
+                        <td colspan="3">
+                            <div class="field-wrap"> <input type="text"  value="{{data.aff_worker_date_three}}" name="aff_worker_date_three"> </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="13" class="td-heading tleft">K. Permit Authorization / Acceptance</td>
+                    </tr>
+                    <tr>
+                        <td colspan="13">
+                            <p>I have read the precautions and understand requirements specified in this permit. I informed the permit issuer and identified all applicable isolations as being correct. I will inform workers under my control of their responsibilities
+                            under this permit.</p>
+                            <table class="inside-tbl input-bt-br">
+                                <tr>
+                                    <td>
+                                        <div class="field-wrap"> <label>Permit Receiver Name:</label> <input type="text"  value="{{data.auth_rec_name}}" name="auth_rec_name"> </div>
+                                    </td>
+                                    <td>
+                                        <div class="field-wrap"> <label>Signature:</label> <input type="text"  value="{{data.auth_rec_sign}}" name="auth_rec_sign"> </div>
+                                    </td>
+                                    <td>
+                                        <div class="field-wrap"> <label>Date/Time:</label> <input type="text"  value="{{data.auth_rec_date}}" name="auth_rec_date"> </div>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="13">
+                            <p>I have verified hazard controls are in place and explained hazards and controls for the job to the permit receiver.</p>
+                            <table class="inside-tbl input-bt-br">
+                                <tr>
+                                    <td>
+                                        <div class="field-wrap"> <label>Permit Issuer Name:</label> <input type="text"  value="{{data.auth_iss_name}}" name="auth_iss_name"> </div>
+                                    </td>
+                                    <td>
+                                        <div class="field-wrap"> <label>Signature:</label> <input type="text"  value="{{data.auth_iss_sign}}" name="auth_iss_sign"> </div>
+                                    </td>
+                                    <td>
+                                        <div class="field-wrap"> <label>Date/Time:</label> <input type="text"  value="{{data.auth_iss_date}}" name="auth_iss_date"> </div>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="13" class="td-heading tleft">L. Transfer of Permit Responsibilities</td>
+                    </tr>
+                    <tr>
+                        <td colspan="13">
+                            <p>The original permit receiver is unable to complete the conditions of this permit; this transfers the responsibility of this permit to the new permit receiver. I will inform workers under my control of their responsibilities under
+                            this permit.</p>
+                            <table class="inside-tbl input-bt-br">
+                                <tr>
+                                    <td>
+                                        <div class="field-wrap"> <label>Permit Receiver Name:</label> <input type="text"  value="{{data.trans_rec_name}}" name="trans_rec_name"> </div>
+                                    </td>
+                                    <td>
+                                        <div class="field-wrap"> <label>Signature:</label> <input type="text"  value="{{data.trans_rec_sign}}" name="trans_rec_sign"> </div>
+                                    </td>
+                                    <td>
+                                        <div class="field-wrap"> <label>Date/Time:</label> <input type="text"  value="{{data.trans_rec_date}}" name="trans_rec_date"> </div>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="13">
+                            <table class="inside-tbl input-bt-br">
+                                <tr>
+                                    <td>
+                                        <div class="field-wrap"> <label>Permit Issuer Name:</label> <input type="text"  value="{{data.trans_issu_name}}" name="trans_issu_name"> </div>
+                                    </td>
+                                    <td>
+                                        <div class="field-wrap"> <label>Signature:</label> <input type="text"  value="{{data.trans_issu_sign}}" name="trans_issu_sign"> </div>
+                                    </td>
+                                    <td>
+                                        <div class="field-wrap"> <label>Date/Time:</label> <input type="text"  value="{{data.trans_issu_date}}" name="trans_issu_date"> </div>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="13" class="td-heading tleft">M. Permit Close Out</td>
+                    </tr>
+                    <tr>
+                        <td colspan="13">
+                            <p>The work under this permit is complete or suspended. The area is clear of affected workers, associated equipment and materials and removed from the work area.</p>
+                            <table class="inside-tbl input-bt-br">
+                                <tr>
+                                    <td>
+                                        <div class="field-wrap"> <label>Permit Receiver Name:</label> <input type="text"  value="{{data.close_rec_name}}" name="close_rec_name"> </div>
+                                    </td>
+                                    <td>
+                                        <div class="field-wrap"> <label>Signature:</label> <input type="text"  value="{{data.close_rec_sign}}" name="close_rec_sign"> </div>
+                                    </td>
+                                    <td>
+                                        <div class="field-wrap"> <label>Date/Time:</label> <input type="text"  value="{{data.close_rec_date}}" name="close_rec_date"> </div>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="13">
+                            <table class="inside-tbl input-bt-br">
+                                <tr>
+                                    <td>
+                                        <div class="field-wrap"> <label>Permit Issuer Name:</label> <input type="text"  value="{{data.close_issu_name}}" name="close_issu_name"> </div>
+                                    </td>
+                                    <td>
+                                        <div class="field-wrap"> <label>Signature:</label> <input type="text"  value="{{data.close_issu_sign}}" name="close_issu_sign"> </div>
+                                    </td>
+                                    <td>
+                                        <div class="field-wrap"> <label>Date/Time:</label> <input type="text"  value="{{data.close_issu_date}}" name="close_issu_date"> </div>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<script type="text/javascript" src="/static/js/draft.js"></script>

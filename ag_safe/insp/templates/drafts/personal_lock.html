@@ -1,0 +1,202 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" type="text/css" href="/static/css/draft_style.css">
+<link rel="stylesheet" type="text/css" href="/static/css/style.css">
+<div class="header-top">
+    <div class="container-category">
+        <div class="header-inner">
+            <div class="logo">logo</div>
+            <div class="right-contant">
+                <div class="field-wrap"><label>Alberta See Processor – </label><input type="text" value="{{data.plants_name}}" name="plants_name" placeholder="Plants Name" /> </div>
+                <p>Personal Lock Removal Authorization Form</p>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="AWP-form RCA-form-pdf">
+    <div class="container-category">
+        <div class="ABSP-form-block">
+            <div class="top-link">
+                <h2>Personal Lock Removal Authorization Form</h2>
+            </div>
+            <table class="tbl-text-left">
+                <tr>
+                    <td colspan="2" class="tbold tcenter">PERSONAL LOCK REMOVAL AUTHORIZATION</td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <p><b>NOTE:</b>Attach and retain any reference documents related to the personal lock/tag to this form for filing.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="td-heading tleft" colspan="2">Employee and Equipment Information</td>
+                </tr>
+                <tr>
+                    <td>Employee Name: (Name on the lock to be removed)</td>
+                    <td>Equipment Name/ MasterCard No.</td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="field-wrap"><input type="text" value="{{data.emp_name}}" name="emp_name"></div>
+                    </td>
+                    <td>
+                        <div class="field-wrap"><input type="text" value="{{data.master_card}}" name="master_card"></div>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2">&nbsp;</td>
+                </tr>
+                <tr>
+                    <td class="td-heading tleft" colspan="2">Reason For Lock/Tag Removal</td>
+                </tr>
+                <tr>
+                    <td colspan="2">Why is it necessary to remove this lock/tag?</td>
+                </tr>
+                <tr>
+                    <td class="border-zero">
+                        <div class="single-line-checkbox"><label><input type="checkbox" {{ data.reason_tag|get_string_as_list|match_value:"Lost key" }} name="reason_tag" value="Lost key">Lost key</label></div>
+                    </td>
+                    <td class="border-zero">
+                        <div class="single-line-checkbox"><label><input type="checkbox" {{ data.reason_tag|get_string_as_list|match_value:"Lock owner has left the site and unavailable" }} name="reason_tag" value="Lock owner has left the site and unavailable">Lock owner has left the site and unavailable</label></div>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="border-zero">
+                        <div class="single-line-checkbox"><label><input type="checkbox" {{ data.reason_tag|get_string_as_list|match_value:"Safety" }} name="reason_tag" value="Safety">Safety</label></div>
+                    </td>
+                    <td class="border-zero">
+                        <table class="inside-tbl">
+                            <tr>
+                                <td>
+                                    <div class="single-line-checkbox"><label><input type="checkbox" {{ data.reason_tag|get_string_as_list|match_value:"Impact on other work" }} name="reason_tag" value="Impact on other work">Impact on other work</label></div>
+                                </td>
+                                <td>
+                                    <div class="single-line-checkbox"><label><input type="checkbox" {{ data.reason_tag|get_string_as_list|match_value:"OTHER" }} name="reason_tag" value="OTHER">OTHER</label></div>
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2"><label class="full-label">Details:</label><textarea name="des_reason_tag">{{data.des_reason_tag}}</textarea></td>
+                </tr>
+                <tr>
+                    <td class="td-heading" colspan="2">Employee Contact Details</td>
+                </tr>
+                <tr>
+                    <td colspan="2">&nbsp;</td>
+                </tr>
+                <tr>
+                    <td colspan="2"><label>Has the owner of this lock/tag left the site?</label>
+                        <div class="fright">
+                            <div class="single-line-checkbox"><label><input type="radio" {{ data.owner_site|radio_three:"Yes" }} name="owner_site" value="Yes">Yes</label></div>
+                            <div class="single-line-checkbox"><label><input type="radio" {{ data.owner_site|radio_three:"No" }} name="owner_site" value="No">No</label></div>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2" class="border-zero"><label>Have you tried to contact the owner of this lock/tag?</label>
+                        <div class="fright">
+                            <div class="single-line-checkbox"><label><input type="radio" {{ data.tried_contact|radio_three:"Yes" }} name="tried_contact" value="Yes">Yes</label></div>
+                            <div class="single-line-checkbox"><label><input type="radio" {{ data.tried_contact|radio_three:"No" }} name="tried_contact" value="No">No</label></div>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2" class="border-zero"><label class="full-label">Details:</label><textarea name="des_emp_contact">{{data.des_emp_contact}}</textarea></td>
+                </tr>
+                <tr>
+                    <td colspan="2">&nbsp;</td>
+                </tr>
+                <tr>
+                    <td class="td-heading tleft" colspan="2">Equipment Inspection Details</td>
+                </tr>
+                <tr>
+                    <td colspan="2" class="border-zero"><label>Has the equipment been thoroughly inspected and tested by a competent person?</label>
+                        <div class="fright">
+                            <div class="single-line-checkbox"><label><input type="radio" {{ data.equip_test|radio_three:"Yes" }} name="equip_test" value="Yes">Yes</label></div>
+                            <div class="single-line-checkbox"><label><input type="radio" {{ data.equip_test|radio_three:"No" }} name="equip_test" value="No">No</label></div>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2" class="border-zero"><label>Is it safe to remove the personal lock/tag and operate or return the equipment to service?</label>
+                        <div class="fright">
+                            <div class="single-line-checkbox"><label><input type="radio" {{ data.safe_to_remove|radio_three:"Yes" }} name="safe_to_remove" value="Yes">Yes</label></div>
+                            <div class="single-line-checkbox"><label><input type="radio" {{ data.safe_to_remove|radio_three:"No" }} name="safe_to_remove" value="No">No</label></div>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2"><label class="full-label">What are control measures in place to ensure the owner of the personal lock/tag cannot return to the equipment?</label><label class="full-label">Details:</label><textarea name="des_measures">{{data.des_measures}}</textarea></td>
+                </tr>
+                <tr>
+                    <td colspan="2" class="border-zero">I have inspected the equipment for safe operation prior to lock removal:</td>
+                </tr>
+                <tr>
+                    <td colspan="2" class="border-zero">
+                        <table class="inside-tbl">
+                            <tr>
+                                <td>
+                                    <div class="field-wrap"><label>Name</label><input type="text" value="{{data.equip_name}}" name="equip_name"></div>
+                                </td>
+                                <td>
+                                    <div class="field-wrap"><label>Signature</label><input type="text" value="{{data.equip_sign}}" name="equip_sign"></div>
+                                </td>
+                                <td>
+                                    <div class="field-wrap"><label>Date</label><input type="text" value="{{data.equip_date}}" name="equip_date"></div>
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2" class="td-heading tleft">Lock Removal Authorization</td>
+                </tr>
+                <tr>
+                    <td colspan="2" class="border-zero">
+                        <div class="field-wrap"><label>Authorization:</label><input type="text" value="{{data.authorization}}" name="authorization"></div>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2" class="border-zero">I have reviewed the status of the equipment and authorize the removal of the personal isolation</td>
+                </tr>
+                <tr>
+                    <td colspan="2" class="border-zero">
+                        <table class="inside-tbl">
+                            <tr>
+                                <td colspan="3">lock/tag</td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="field-wrap"><label>Supervisors Name:</label><input type="text" value="{{data.supervisor_name}}" name="supervisor_name"></div>
+                                </td>
+                                <td>
+                                    <div class="field-wrap"><label>Signature:</label><input type="text" value="{{data.lock_sign}}" name="lock_sign"></div>
+                                </td>
+                                <td>
+                                    <div class="field-wrap"><label>Date:</label><input type="text" value="{{data.lock_date}}" name="lock_date"></div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="3">ABSP construction</td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="field-wrap"><label>lead Name:</label><input type="text" value="{{data.lead_name}}" name="lead_name"></div>
+                                </td>
+                                <td>
+                                    <div class="field-wrap"><label>Signature:</label><input type="text" value="{{data.absp_sign}}" name="absp_sign"></div>
+                                </td>
+                                <td>
+                                    <div class="field-wrap"><label>Date:</label><input type="text" value="{{data.absp_date}}" name="absp_date"></div>
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</div>
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<script type="text/javascript" src="/static/js/draft.js"></script>

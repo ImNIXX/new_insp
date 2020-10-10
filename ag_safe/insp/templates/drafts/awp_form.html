@@ -38,32 +38,16 @@
                     <td colspan="2">
                         <label>Unit type:</label>
                         <div class="single-line-checkbox"> <label>
-                            {% if data.unit_type|get_string_as_list|match_value:"Scissor Lift" %}
-                                <input type="checkbox" name="unit_type" value="Scissor Lift" checked>
-                            {% else %}
-                                <input type="checkbox" name="unit_type" value="Scissor Lift" >
-                            {% endif %}
+                                <input type="checkbox" name="unit_type" value="Scissor Lift" {{ data.unit_type|get_string_as_list|match_value:"Scissor Lift" }}>
                             Scissor Lift</label> </div>
                         <div class="single-line-checkbox"> <label>
-                            {% if checkbox_val|match_value:"Bucket Truck" %}
-                                <input type="checkbox" name="unit_type" value="Bucket Truck" checked>
-                            {% else %}
-                                <input type="checkbox" name="unit_type" value="Bucket Truck" >
-                            {% endif %}
+                                <input type="checkbox" name="unit_type" value="Bucket Truck" {{ data.unit_type|get_string_as_list|match_value:"Bucket Truck" }}>
                             Bucket Truck</label> </div>
                         <div class="single-line-checkbox"> <label>
-                            {% if checkbox_val|match_value:"Telescopic Boom" %}
-                                <input type="checkbox" name="unit_type" value="Telescopic Boom" checked>
-                            {% else %}
-                                <input type="checkbox" name="unit_type" value="Telescopic Boom" >
-                            {% endif %}
+                                <input type="checkbox" name="unit_type" value="Telescopic Boom" {{ data.unit_type|get_string_as_list|match_value:"Telescopic Boom" }}>
                             Telescopic Boom</label> </div>
                         <div class="single-line-checkbox"> <label>
-                            {% if data.unit_type|get_string_as_list|match_value:"Other" %}
-                                <input type="checkbox" name="unit_type" value="Other" checked>
-                            {% else %}
-                                <input type="checkbox" name="unit_type" value="Other" >
-                            {% endif %}
+                                <input type="checkbox" name="unit_type" value="Other" {{ data.unit_type|get_string_as_list|match_value:"Other" }}>
                             Other</label> </div>
                     </td>
                 </tr>

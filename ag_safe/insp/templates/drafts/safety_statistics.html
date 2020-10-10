@@ -1,0 +1,463 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" type="text/css" href="/static/css/draft_style.css">
+<link rel="stylesheet" type="text/css" href="/static/css/style.css">
+<div class="header-top">
+    <div class="container-category">
+        <div class="header-inner">
+            <div class="logo">logo</div>
+            <div class="right-contant">
+                <div class="field-wrap"> <label>Alberta See Processor – </label> <input type="text" value="{{data.plants_name}}" name="plants_name" placeholder="Plants Name"/> </div>
+                <p>Safety Statistics Worksheet</p>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="AWP-form RCA-form-pdf">
+    <div class="container-category">
+        <div class="ABSP-form-block">
+            <div class="top-link">
+                <h2>Safety Statistics Worksheet</h2>
+            </div>
+            <table class="inside-tbl input-bt-br">
+                <tr>
+                    <td>
+                        <div class="field-wrap"> <label>Year</label> <input type="text" value="{{data.year}}" name="year"> </div>
+                    </td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+            </table>
+            <div class="tbl-scroll">
+                <table class="responsive-tbl" style="overflow: auto;">
+                    <tr>
+                        <td style="width: 10%"></td>
+                        <td># of Lost- Time Accidents</td>
+                        <td># of Lost Days</td>
+                        <td># of Medical Aid Accidents</td>
+                        <td># of Incidents (Near Miss)</td>
+                        <td># of Man Hrs. Worked</td>
+                        <td># of Vehicle Incidents/Accidents</td>
+                        <td># of # of Kms Traveled</td>
+                    </tr>
+                    <tr>
+                        <td>January</td>
+                        <td>
+                            <div class="field-wrap"> <input type="text" value="{{data.jan_lost_time}}" name="jan_lost_time"> </div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"> <input type="text" value="{{data.jan_lost_days}}" name="jan_lost_days"> </div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"> <input type="text" value="{{data.jan_aid_acc}}" name="jan_aid_acc"> </div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"> <input type="text" value="{{data.jan_incident}}" name="jan_incident"> </div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"> <input type="text" value="{{data.jan_worked}}" name="jan_worked"> </div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"> <input type="text" value="{{data.jan_vehicle_acc}}" name="jan_vehicle_acc"> </div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"> <input type="text" value="{{data.jan_travel}}" name="jan_travel"> </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>February</td>
+                        <td>
+                            <div class="field-wrap"> <input type="text" value="{{data.feb_lost_time}}" name="feb_lost_time"> </div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"> <input type="text" value="{{data.feb_lost_days}}" name="feb_lost_days"> </div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"> <input type="text" value="{{data.feb_aid_acc}}" name="feb_aid_acc"> </div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"> <input type="text" value="{{data.feb_incident}}" name="feb_incident"> </div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"> <input type="text" value="{{data.feb_worked}}" name="feb_worked"> </div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"> <input type="text" value="{{data.feb_vehicle_acc}}" name="feb_vehicle_acc"> </div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"> <input type="text" value="{{data.feb_travel}}" name="feb_travel"> </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>March</td>
+                        <td>
+                            <div class="field-wrap"> <input type="text" value="{{data.mar_lost_time}}" name="mar_lost_time"> </div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"> <input type="text" value="{{data.mar_lost_days}}" name="mar_lost_days"> </div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"> <input type="text" value="{{data.mar_aid_acc}}" name="mar_aid_acc"> </div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"> <input type="text" value="{{data.mar_incident}}" name="mar_incident"> </div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"> <input type="text" value="{{data.mar_worked}}" name="mar_worked"> </div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"> <input type="text" value="{{data.mar_vehicle_acc}}" name="mar_vehicle_acc"> </div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"> <input type="text" value="{{data.mar_travel}}" name="mar_travel"> </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>April</td>
+                        <td>
+                            <div class="field-wrap"> <input type="text" value="{{data.apr_lost_time}}" name="apr_lost_time"> </div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"> <input type="text" value="{{data.apr_lost_days}}" name="apr_lost_days"> </div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"> <input type="text" value="{{data.apr_aid_acc}}" name="apr_aid_acc"> </div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"> <input type="text" value="{{data.apr_incident}}" name="apr_incident"> </div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"> <input type="text" value="{{data.apr_worked}}" name="apr_worked"> </div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"> <input type="text" value="{{data.apr_vehicle_acc}}" name="apr_vehicle_acc"> </div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"> <input type="text" value="{{data.apr_travel}}" name="apr_travel"> </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>May</td>
+                        <td>
+                            <div class="field-wrap"> <input type="text" value="{{data.may_lost_time}}" name="may_lost_time"> </div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"> <input type="text" value="{{data.may_lost_days}}" name="may_lost_days"> </div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"> <input type="text" value="{{data.may_aid_acc}}" name="may_aid_acc"> </div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"> <input type="text" value="{{data.may_incident}}" name="may_incident"> </div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"> <input type="text" value="{{data.may_worked}}" name="may_worked"> </div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"> <input type="text" value="{{data.may_vehicle_acc}}" name="may_vehicle_acc"> </div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"> <input type="text" value="{{data.may_travel}}" name="may_travel"> </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>June</td>
+                        <td>
+                            <div class="field-wrap"> <input type="text" value="{{data.jun_lost_time}}" name="jun_lost_time"> </div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"> <input type="text" value="{{data.jun_lost_days}}" name="jun_lost_days"> </div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"> <input type="text" value="{{data.jun_aid_acc}}" name="jun_aid_acc"> </div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"> <input type="text" value="{{data.jun_incident}}" name="jun_incident"> </div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"> <input type="text" value="{{data.jun_worked}}" name="jun_worked"> </div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"> <input type="text" value="{{data.jun_vehicle_acc}}" name="jun_vehicle_acc"> </div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"> <input type="text" value="{{data.jun_travel}}" name="jun_travel"> </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>July</td>
+                        <td>
+                            <div class="field-wrap"> <input type="text" value="{{data.jul_lost_time}}" name="jul_lost_time"> </div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"> <input type="text" value="{{data.jul_lost_days}}" name="jul_lost_days"> </div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"> <input type="text" value="{{data.jul_aid_acc}}" name="jul_aid_acc"> </div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"> <input type="text" value="{{data.jul_incident}}" name="jul_incident"> </div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"> <input type="text" value="{{data.jul_worked}}" name="jul_worked"> </div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"> <input type="text" value="{{data.jul_vehicle_acc}}" name="jul_vehicle_acc"> </div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"> <input type="text" value="{{data.jul_travel}}" name="jul_travel"> </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>August</td>
+                        <td>
+                            <div class="field-wrap"> <input type="text" value="{{data.aug_lost_time}}" name="aug_lost_time"> </div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"> <input type="text" value="{{data.aug_lost_days}}" name="aug_lost_days"> </div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"> <input type="text" value="{{data.aug_aid_acc}}" name="aug_aid_acc"> </div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"> <input type="text" value="{{data.aug_incident}}" name="aug_incident"> </div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"> <input type="text" value="{{data.aug_worked}}" name="aug_worked"> </div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"> <input type="text" value="{{data.aug_vehicle_acc}}" name="aug_vehicle_acc"> </div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"> <input type="text" value="{{data.aug_travel}}" name="aug_travel"> </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>September</td>
+                        <td>
+                            <div class="field-wrap"> <input type="text" value="{{data.sep_lost_time}}" name="sep_lost_time"> </div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"> <input type="text" value="{{data.sep_lost_days}}" name="sep_lost_days"> </div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"> <input type="text" value="{{data.sep_aid_acc}}" name="sep_aid_acc"> </div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"> <input type="text" value="{{data.sep_incident}}" name="sep_incident"> </div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"> <input type="text" value="{{data.sep_worked}}" name="sep_worked"> </div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"> <input type="text" value="{{data.sep_vehicle_acc}}" name="sep_vehicle_acc"> </div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"> <input type="text" value="{{data.sep_travel}}" name="sep_travel"> </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>October</td>
+                        <td>
+                            <div class="field-wrap"> <input type="text" value="{{data.oct_lost_time}}" name="oct_lost_time"> </div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"> <input type="text" value="{{data.oct_lost_days}}" name="oct_lost_days"> </div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"> <input type="text" value="{{data.oct_aid_acc}}" name="oct_aid_acc"> </div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"> <input type="text" value="{{data.oct_incident}}" name="oct_incident"> </div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"> <input type="text" value="{{data.oct_worked}}" name="oct_worked"> </div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"> <input type="text" value="{{data.oct_vehicle_acc}}" name="oct_vehicle_acc"> </div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"> <input type="text" value="{{data.oct_travel}}" name="oct_travel"> </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>November</td>
+                        <td>
+                            <div class="field-wrap"> <input type="text" value="{{data.nov_lost_time}}" name="nov_lost_time"> </div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"> <input type="text" value="{{data.nov_lost_days}}" name="nov_lost_days"> </div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"> <input type="text" value="{{data.nov_aid_acc}}" name="nov_aid_acc"> </div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"> <input type="text" value="{{data.nov_incident}}" name="nov_incident"> </div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"> <input type="text" value="{{data.nov_worked}}" name="nov_worked"> </div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"> <input type="text" value="{{data.nov_vehicle_acc}}" name="nov_vehicle_acc"> </div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"> <input type="text" value="{{data.nov_travel}}" name="nov_travel"> </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>December</td>
+                        <td>
+                            <div class="field-wrap"> <input type="text" value="{{data.dec_lost_time}}" name="dec_lost_time"> </div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"> <input type="text" value="{{data.dec_lost_days}}" name="dec_lost_days"> </div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"> <input type="text" value="{{data.dec_aid_acc}}" name="dec_aid_acc"> </div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"> <input type="text" value="{{data.dec_incident}}" name="dec_incident"> </div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"> <input type="text" value="{{data.dec_worked}}" name="dec_worked"> </div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"> <input type="text" value="{{data.dec_vehicle_acc}}" name="dec_vehicle_acc"> </div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"> <input type="text" value="{{data.dec_travel}}" name="dec_travel"> </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>TOTAL</td>
+                        <td>
+                            <div class="field-wrap"> <input type="text" value="{{data.total_lost_time}}" name="total_lost_time"> </div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"> <input type="text" value="{{data.total_lost_days}}" name="total_lost_days"> </div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"> <input type="text" value="{{data.total_aid_acc}}" name="total_aid_acc"> </div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"> <input type="text" value="{{data.total_incident}}" name="total_incident"> </div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"> <input type="text" value="{{data.total_worked}}" name="total_worked"> </div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"> <input type="text" value="{{data.total_vehicle_acc}}" name="total_vehicle_acc"> </div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"> <input type="text" value="{{data.total_travel}}" name="total_travel"> </div>
+                        </td>
+                    </tr>
+                    <tr class="inside-tbl input-bt-br">
+                        <td></td>
+                        <td>
+                            <div class="field-wrap"> <label>Total # of Lost Time Accidents: </label> </div>
+                        </td>
+                        <td colspan="2">
+                            <div class="field-wrap"> <input type="text" value="{{data.ttl_lost_time}}" name="ttl_lost_time"> </div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"> <label>x200, 000=(A) </label> </div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"> <input type="text" value="{{data.result_A}}" name="result_A"> </div>
+                        </td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr class="inside-tbl input-bt-br">
+                        <td></td>
+                        <td></td>
+                        <td colspan="2">
+                            <div class="field-wrap"> <label>Divided by Total Number of Hour Worked </label> </div>
+                        </td>
+                        <td colspan="2">
+                            <div class="field-wrap"> <input type="text" value="{{data.ttl_hr_worked}}" name="ttl_hr_worked"> </div>
+                        </td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr class="inside-tbl input-bt-br">
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td colspan="2">
+                            <div class="field-wrap"> <label>=(B) </label> <input type="text" value="{{data.result_B}}" name="result_B"> </div>
+                        </td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr class="inside-tbl input-bt-br">
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td colspan="2">
+                            <div class="field-wrap"> <label>=</label> <input type="text" value="{{data.ttl_lost_time_result}}" name="ttl_lost_time_result"> </div>
+                        </td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr class="inside-tbl input-bt-br">
+                        <td></td>
+                        <td>
+                            <div class="field-wrap"> <label>Total # of Lost Days: </label> </div>
+                        </td>
+                        <td colspan="2">
+                            <div class="field-wrap"> <input type="text" value="{{data.ttl_lost_day}}" name="ttl_lost_day"> </div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"> <label>x200, 000=(C) </label> </div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"> <input type="text" value="{{data.result_C}}" name="result_C"> </div>
+                        </td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr class="inside-tbl input-bt-br">
+                        <td></td>
+                        <td></td>
+                        <td colspan="2">
+                            <div class="field-wrap"> <label>Divided by Total Number of Hour Worked </label> </div>
+                        </td>
+                        <td colspan="2">
+                            <div class="field-wrap"> <input type="text" value="{{data.ttl_hr_worked_day}}" name="ttl_hr_worked_day"> </div>
+                        </td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr class="inside-tbl input-bt-br">
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td colspan="2">
+                            <div class="field-wrap"> <label>=(D) </label> <input type="text" value="{{data.result_D}}" name="result_D"> </div>
+                        </td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr class="inside-tbl input-bt-br">
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td colspan="2">
+                            <div class="field-wrap"> <label>=</label> <input type="text" value="{{data.ttl_lost_day_result}}" name="ttl_lost_day_result"> </div>
+                        </td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<script type="text/javascript" src="/static/js/draft.js"></script>

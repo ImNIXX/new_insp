@@ -15,10 +15,10 @@ def match_value(obj, d):
     show = True
     for abc in obj:
         if abc == d:
-            show = True
+            show = 'checked'
             return show
         else:
-            show = False
+            show = ''
     return show
 
 

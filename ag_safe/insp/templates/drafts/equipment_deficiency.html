@@ -1,0 +1,90 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" type="text/css" href="/static/css/draft_style.css">
+<link rel="stylesheet" type="text/css" href="/static/css/style.css">
+<div class="header-top">
+    <div class="container-category">
+        <div class="header-inner">
+            <div class="logo">logo</div>
+            <div class="right-contant">
+                <div class="field-wrap"> <label>Alberta See Processor - </label> <input type="text" value="{{data.plants_name}}" name="plants_name" placeholder="Plants Name"/> </div>
+                <p>Equipment Deficiency Report</p>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="AWP-form RCA-form-pdf">
+    <div class="contant-top">
+        <div class="container-category">
+            <div class="top-link">
+                <h2>Equipment Deficiency Report</h2>
+            </div>
+        </div>
+    </div>
+    <div class="container-category">
+        <div class="ABSP-form-block">
+            <div class="tbl-scroll">
+                <table class="inside-tbl input-bt-br equipment-page">
+                    <tr>
+                        <td colspan="2">
+                            <div class="field-wrap"> <label>UNIT#:</label> <input type="text" value="{{data.unit}}" name="unit"> </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+                            <div class="field-wrap"> <label>DATE:</label> <input type="text" value="{{data.date}}" name="date"> </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+                            <div class="field-wrap"> <label>PLEASE LIST BELOW ANY TOOLS THAT ARE NOT WORKING PROPERLY AND REQUIRE REPLACEMENT OR REPAIRS AND HAND IN TO MANAGEMENT.</label> </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2"> <label class="full-label">Tool/Item:</label>
+                            <div class="field-wrap"> <textarea name="des_tool">{{data.des_tool}}</textarea> </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2"> <label class="full-label">Description of Deficiency:</label>
+                            <div class="field-wrap"> <textarea name="des_deficiency">{{data.des_deficiency}}</textarea> </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2" style="border: 0">
+                            <div class="field-wrap"> <label>Lock Out/Tag Out Required:</label>
+                                <div class="single-line-checkbox"> <label> <input type="radio" {{ data.required|radio_three:"yes" }} name="required" value="yes"> YES</label> </div>
+                                <div class="single-line-checkbox"> <label> <input type="radio" {{ data.required|radio_three:"no" }} name="required" value="no"> NO</label> </div>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+                            <div class="field-wrap"> <label>Lock Out/Tag Out Completed::</label>
+                                <div class="single-line-checkbox"> <label> <input type="radio" {{ data.completed|radio_three:"yes" }} name="completed" value="yes"> YES</label> </div>
+                                <div class="single-line-checkbox"> <label> <input type="radio" {{ data.completed|radio_three:"no" }} name="completed" value="no"> NO</label> </div>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2"> <label class="full-label">Follow-up Action:</label>
+                            <div class="field-wrap"> <textarea name="des_follow">{{data.des_follow}}</textarea> </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2"> <label class="full-label">Report Filled Out by:</label> </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="field-wrap"> <label>(Print):</label> <input type="text" value="{{dataprint.}}" name="print"> </div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"> <label>Signature:</label> <input type="text" value="{{data.sign}}" name="sign"> </div>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<script type="text/javascript" src="/static/js/draft.js"></script>

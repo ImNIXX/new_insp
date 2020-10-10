@@ -84,6 +84,7 @@ class DraftTables(models.Model):
     id = models.AutoField(primary_key=True)
     draft_name = models.CharField(max_length=100)
     draft_func_name = models.CharField(max_length=100)
+    models_name = models.CharField(max_length=255)
 
     class Meta:
         db_table = "insp_draft_tbl"
@@ -332,6 +333,7 @@ class ConfinedSpaceAuthorization(models.Model):
     entry_detail = models.TextField(blank=True, null=True)
     personnel = models.CharField(max_length=5, blank=True, null=True)
     personnel_detail = models.CharField(max_length=50, blank=True, null=True)
+    method_communication = models.CharField(max_length=50, blank=True, null=True)
     communication = models.CharField(max_length=50, blank=True, null=True)
     des_instruction = models.TextField(blank=True, null=True)
     CSE_issuer_name = models.TextField(blank=True, null=True)
@@ -1735,6 +1737,7 @@ class ManagementofChange(models.Model):
     business_change = models.TextField(blank=True, null=True)
     proposed_start_date = models.TextField(blank=True, null=True)
     implement_change = models.TextField(blank=True, null=True)
+    identify_risk = models.TextField(blank=True, null=True)
     app_name_one = models.TextField(blank=True, null=True)
     sign_one = models.TextField(blank=True, null=True)
     date_one = models.TextField(blank=True, null=True)

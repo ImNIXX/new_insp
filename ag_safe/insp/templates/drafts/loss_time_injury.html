@@ -1,0 +1,128 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" type="text/css" href="/static/css/draft_style.css">
+<link rel="stylesheet" type="text/css" href="/static/css/style.css">
+<div class="header-top">
+    <div class="container-category">
+        <div class="header-inner">
+            <div class="logo">logo</div>
+            <div class="right-contant">
+                <div class="field-wrap"><label>Alberta See Processor – </label><input type="text" value="{{data.plants_name}}" name="plants_name" placeholder="Plants Name" /></div>
+                <p>Loss Time Injury (LTI) and Injury Treatment Record</p>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="AWP-form RCA-form-pdf">
+    <div class="contant-top">
+        <div class="container-category">
+            <div class="top-link">
+                <h2>Loss Time Injury (LTI) and Injury Treatment Record</h2>
+            </div>
+        </div>
+    </div>
+    <div class="container-category">
+        <div class="ABSP-form-block">
+            <table class="inside-tbl input-bt-br">
+                <tr>
+                    <td class="tbold">
+                        <div class="field-wrap"><label>Year:</label><input type="text" value="{{data.year}} "name="year"></div>
+                    </td>
+                    <td></td>
+                    <td></td>
+                </tr>
+            </table>
+            <table class="lr-border-zero space-tbl responsive-tbl">
+                <tr>
+                    <td style="width: 40%" class="td-heading tleft">Information</td>
+                    <td class="td-heading tleft">Details</td>
+                </tr>
+                <tr>
+                    <td>incident #</td>
+                    <td>
+                        <div class="field-wrap"><input type="text" value="{{data.incident_detail}}" name="incident_detail"></div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Date / Time of Accident</td>
+                    <td>
+                        <div class="field-wrap"><input type="text" value="{{data.acc_time_detail}}" name="acc_time_detail"></div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Time/ Date Reported</td>
+                    <td>
+                        <div class="field-wrap"><input type="text" value="{{data.report_time_detail}}" name="report_time_detail"></div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Name of Employee</td>
+                    <td>
+                        <div class="field-wrap"><input type="text" value="{{data.emp_name_detail}}" name="emp_name_detail"></div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Employee Role</td>
+                    <td>
+                        <div class="field-wrap"><input type="text" value="{{data.emp_role_detail}}" name="emp_role_detail"></div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Description of Accident</td>
+                    <td>
+                        <div class="field-wrap"><input type="text" value="{{data.acc_detail}}" name="acc_detail"></div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Nature of Injury</td>
+                    <td>
+                        <div class="field-wrap"><input type="text" value="{{data.injury_detail}}" name="injury_detail"></div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Treatment(s)</td>
+                    <td>
+                        <div class="field-wrap"><input type="text" value="{{data.treat_detail}}" name="treat_detail"></div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>F.A.A. Initials</td>
+                    <td>
+                        <div class="field-wrap"><input type="text" value="{{data.faa_detail}}" name="faa_detail"></div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Deposition of Case and Remarks</td>
+                    <td>
+                        <div class="field-wrap"><input type="text" value="{{data.remark_detail}}" name="remark_detail"></div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Loss Time (>24 Hrs.)</td>
+                    <td>
+                        <div class="field-wrap"><input type="text" value="{{data.loss_detail}}" name="loss_detail"></div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Supervisor</td>
+                    <td>
+                        <div class="field-wrap"><input type="text" value="{{data.supervisor_detail}}" name="supervisor_detail"></div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Comment</td>
+                    <td>
+                        <div class="field-wrap"><input type="text" value="{{data.comment_detail}}" name="comment_detail"></div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Other</td>
+                    <td>
+                        <div class="field-wrap"><input type="text" value="{{data.other_detail}}" name="other_detail"></div>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</div>
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<script type="text/javascript" src="/static/js/draft.js"></script>

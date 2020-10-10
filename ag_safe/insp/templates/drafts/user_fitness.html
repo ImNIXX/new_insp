@@ -1,0 +1,196 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" type="text/css" href="/static/css/draft_style.css">
+<link rel="stylesheet" type="text/css" href="/static/css/style.css">
+<div class="header-top">
+    <div class="container-category">
+        <div class="header-inner">
+            <div class="logo">logo</div>
+            <div class="right-contant">
+                <div class="field-wrap"><label>Alberta See Processor – </label><input type="text" value="{{data.plants_name}}" name="plants_name" placeholder="Plants Name" /> </div>
+                <p>User Fitness Screening Form</p>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="AWP-form RCA-form-pdf">
+    <div class="container-category">
+        <div class="ABSP-form-block">
+            <div class="top-link">
+                <h2>User Fitness Screening Form</h2>
+            </div>
+            <table class="tbl-mb">
+                <tr>
+                    <td class="tbold">USER FITNESS SCREENING FORM RESPIRATORY PROTECTION</td>
+                </tr>
+                <tr>
+                    <td class="td-heading tleft">Respirator User Information</td>
+                </tr>
+                <tr>
+                    <td>
+                        <table class="inside-tbl input-bt-br">
+                            <tr>
+                                <td>
+                                    <div class="field-wrap"><label>Last Name:</label><input type="text" value="{{data.last_name}}" name="last_name"></div>
+                                </td>
+                                <td>
+                                    <div class="field-wrap"><label>First Name:</label><input type="text" value="{{data.first_name}}" name="first_name"></div>
+                                </td>
+                                <td>
+                                    <div class="field-wrap"><label>Date:</label><input type="text" value="{{data.date}}" name="date"></div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="field-wrap"><label>Employee No:</label><input type="text" value="{{data.employee_no}}" name="employee_no"></div>
+                                </td>
+                                <td>
+                                    <div class="field-wrap"><label>Job Title:</label><input type="text" value="{{data.job_title}}" name="job_title"></div>
+                                </td>
+                                <td>
+                                    <div class="field-wrap"><label>Area::</label><input type="text" value="{{data.area}}" name="area"></div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="field-wrap"><label>Phone No.</label><input type="text" value="{{data.phone_no}}" name="phone_no"></div>
+                                </td>
+                                <td>
+                                    <div class="field-wrap"><label>First Name:</label><input type="text" value="{{data.first_name_two}}" name="first_name_two"></div>
+                                </td>
+                                <td>
+                                    <div class="field-wrap"><label>Supervisors Name:</label><input type="text" value="{{data.supervisors_name}}" name="supervisors_name"></div>
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+            </table>
+            <table class="tbl-mt">
+                <tr>
+                    <td class="td-heading tleft" colspan="4">Conditions of Use:</td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="field-wrap"><label>Activities Requiring Respirator:</label><input type="text" value="{{data.activity}}" name="activity"></div>
+                    </td>
+                    <td>
+                        <div class="field-wrap"><input type="text" value="{{data.activity_two}}" name="activity_two"></div>
+                    </td>
+                    <td>
+                        <div class="field-wrap"><input type="text" value="{{data.activity_three}}" name="activity_three"></div>
+                    </td>
+                    <td>
+                        <div class="field-wrap"><input type="text" value="{{data.activity_four}}" name="activity_four"></div>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="4" class="checkbox-mg"><label class="full-label">Frequency of Respirator Use:</label>
+                        <div class="single-line-checkbox"><label><input type="checkbox" {{ data.frequency_of_respirator|get_string_as_list|match_value:"Daily" }} name="frequency_of_respirator" value="Daily">Daily</label></div>
+                        <div class="single-line-checkbox"><label><input type="checkbox" {{ data.frequency_of_respirator|get_string_as_list|match_value:"Weekly" }} name="frequency_of_respirator" value="Weekly">Weekly</label></div>
+                        <div class="single-line-checkbox"><label><input type="checkbox" {{ data.frequency_of_respirator|get_string_as_list|match_value:"Monthly" }} name="frequency_of_respirator" value="Monthly">Monthly</label></div>
+                        <div class="single-line-checkbox"><label><input type="checkbox" {{ data.frequency_of_respirator|get_string_as_list|match_value:"Yearly" }} name="frequency_of_respirator" value="Yearly">Yearly</label></div>
+                        <div class="single-line-checkbox"><label><input type="checkbox" {{ data.frequency_of_respirator|get_string_as_list|match_value:"Uncertain" }} name="frequency_of_respirator" value="Uncertain">Uncertain</label></div>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="4" class="checkbox-mg"><label class="full-label">Exertion Level During Use:</label>
+                        <div class="single-line-checkbox"><label><input type="checkbox" {{ data.exertion_level|get_string_as_list|match_value:"Light" }} name="exertion_level" value="Light">Light</label></div>
+                        <div class="single-line-checkbox"><label><input type="checkbox" {{ data.exertion_level|get_string_as_list|match_value:"Moderate" }} name="exertion_level" value="Moderate">Moderate</label></div>
+                        <div class="single-line-checkbox"><label><input type="checkbox" {{ data.exertion_level|get_string_as_list|match_value:"Heavy" }} name="exertion_level" value="Heavy">Heavy</label></div>
+                        <div class="single-line-checkbox"><label><input type="checkbox" {{ data.exertion_level|get_string_as_list|match_value:"Other" }} name="exertion_level" value="Other">Other</label></div>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="4" class="checkbox-mg"><label class="full-label">Duration of Respirator Use Per Shift:</label>
+                        <div class="single-line-checkbox"><label><input type="checkbox" {{ data.duration_of_respirator|get_string_as_list|match_value:"1/4" }} name="duration_of_respirator" value="1/4"><1/4 hr</label></div>
+                        <div class="single-line-checkbox"><label><input type="checkbox" {{ data.duration_of_respirator|get_string_as_list|match_value:"1/4 hr" }} name="duration_of_respirator" value="1/4 hr">>1/4 hr</label></div>
+                        <div class="single-line-checkbox"><label><input type="checkbox" {{ data.duration_of_respirator|get_string_as_list|match_value:">2" }} name="duration_of_respirator" value=">2">>2 hr</label></div>
+                        <div class="single-line-checkbox"><label><input type="checkbox" {{ data.duration_of_respirator|get_string_as_list|match_value:"Variable" }} name="duration_of_respirator" value="Variable">Variable</label></div>
+                        <div class="single-line-checkbox"><label><input type="checkbox" {{ data.duration_of_respirator|get_string_as_list|match_value:"Unknown" }} name="duration_of_respirator" value="Unknown">Unknown</label></div>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="4" class="checkbox-mg"><label class="full-label">Temperature During Respirator Use:</label>
+                        <div class="single-line-checkbox"><label><input type="checkbox" {{ data.temperature_during_respirator|get_string_as_list|match_value:"0 C" }} name="temperature_during_respirator" value="0 C"><0<sup>o</sup> C</label></div>
+                        <div class="single-line-checkbox"><label><input type="checkbox" {{ data.temperature_during_respirator|get_string_as_list|match_value:">0 C and <25 C" }} name="temperature_during_respirator" value=">0 C and <25 C">>0<sup>o</sup> C and <25<sup>o</sup> C</label></div>
+                        <div class="single-line-checkbox"><label><input type="checkbox" {{ data.temperature_during_respirator|get_string_as_list|match_value:">25 C" }} name="temperature_during_respirator" value=">25 C">>25<sup>o</sup> C</label></div>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="4" class="checkbox-mg"><label class="full-label">Atmospheric Pressure During Respirator Use:</label>
+                        <div class="single-line-checkbox"><label><input type="checkbox" {{ data.atmospheric_pressure|get_string_as_list|match_value:"Reduced" }} name="atmospheric_pressure" value="Reduced">Reduced</label></div>
+                        <div class="single-line-checkbox"><label><input type="checkbox" {{ data.atmospheric_pressure|get_string_as_list|match_value:"Normal / Ambient" }} name="atmospheric_pressure" value="Normal / Ambient">Normal / Ambient</label></div>
+                        <div class="single-line-checkbox"><label><input type="checkbox" {{ data.atmospheric_pressure|get_string_as_list|match_value:"Increased" }} name="atmospheric_pressure" value="Increased">Increased</label></div>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="4" class="td-heading tleft">Special Work Considerations:</td>
+                </tr>
+                <tr>
+                    <td class="border-zero">
+                        <div class="single-line-checkbox"><label><input type="checkbox" {{ data.special_work|get_string_as_list|match_value:"Emergency Escape" }} name="special_work" value="Emergency Escape">Emergency Escape</label></div>
+                    </td>
+                    <td class="border-zero" colspan="2">
+                        <div class="single-line-checkbox"><label><input type="checkbox" {{ data.special_work|get_string_as_list|match_value:"IDLH" }} name="special_work" value="IDLH">IDLH</label></div>
+                    </td>
+                    <td class="border-zero">
+                        <div class="single-line-checkbox"><label><input type="checkbox" {{ data.special_work|get_string_as_list|match_value:"Oxygen Deficiency" }} name="special_work" value="Oxygen Deficiency">Oxygen Deficiency</label></div>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="border-zero">
+                        <div class="single-line-checkbox"><label><input type="checkbox" {{ data.special_work|get_string_as_list|match_value:"Hazardous Materials" }} name="special_work" value="Hazardous Materials">Hazardous Materials</label></div>
+                    </td>
+                    <td class="border-zero" colspan="2">
+                        <div class="single-line-checkbox"><label><input type="checkbox" {{ data.special_work|get_string_as_list|match_value:"Confined Spaces" }} name="special_work" value="Confined Spaces">Confined Spaces</label></div>
+                    </td>
+                    <td class="border-zero">
+                        <div class="single-line-checkbox"><label><input type="checkbox" {{ data.special_work|get_string_as_list|match_value:"Other" }} name="special_work" value="Other">Other</label></div>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="4" class="td-heading tleft">RPE Mask Fit Details:</td>
+                </tr>
+                <tr>
+                    <td class="border-zero">
+                        <div class="field-wrap"><label>Type:</label><input type="text" value="{{data.mask_type}}" name="mask_type"></div>
+                    </td>
+                    <td colspan="2" class="border-zero">
+                        <div class="field-wrap"><label>Make:</label><input type="text" value="{{data.mask_make}}" name="mask_make"></div>
+                    </td>
+                    <td class="border-zero">
+                        <div class="field-wrap"><label>Model:</label><input type="text" value="{{data.mask_model}}" name="mask_model"></div>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="4" class="border-zero">
+                        <div class="field-wrap"><label>Test results:</label><input type="text" value="{{data.mask_test}}" name="mask_test"></div>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="4" class="td-heading tleft">Other Personal Protective Equipment:</td>
+                </tr>
+                <tr>
+                    <td class="border-zero">
+                        <div class="single-line-checkbox"><label><input type="checkbox" {{ data.other_equip|get_string_as_list|match_value:"Additional types of PPE required" }} name="other_equip" value="Additional types of PPE required">Additional types of PPE required (Specify):</label></div>
+                    </td>
+                    <td colspan="3" class="border-zero">
+                        <div class="field-wrap"><input type="text" value="{{data.}}" name="other"></div>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="4" class="border-zero">
+                        <div class="single-line-checkbox"><label><input type="checkbox" {{ data.other_equip|get_string_as_list|match_value:"Estimated total weight of tools/equipment carried during respirator use" }} name="other_equip" value="Estimated total weight of tools/equipment carried during respirator use">Estimated total weight of tools/equipment carried during respirator use. Maximum Average:</label></div>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="4" class="border-zero">
+                        <div class="field-wrap"><input type="text" value="{{data.average}}" name="average"></div>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</div>
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<script type="text/javascript" src="/static/js/draft.js"></script>
