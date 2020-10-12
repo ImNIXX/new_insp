@@ -36,3 +36,9 @@ def radio_three(dic, name):
         return_data = ""
     return return_data
 
+
+@register.filter()
+def get_list_val(list, key_no):
+    data = list[0]
+    return data
+

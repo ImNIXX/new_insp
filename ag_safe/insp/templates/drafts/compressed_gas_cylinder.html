@@ -14,6 +14,8 @@
 </div>
 <div class="compressed-gas-form RCA-form-pdf">
     <div class="container-category">
+        <form action="update-drafts" method="POST">
+			{% csrf_token %}
         <div class="ABSP-form-block">
             <div class="top-link">
                 <h2>Compressed Gas Cylinder Inspection Checklist</h2>
@@ -133,6 +135,9 @@
                 </tr>
             </table>
         </div>
+        <input type="hidden" value="{{data.id}}" name="draft_id">
+        <button type="submit" class="btn main-content-inner-box-export-btn">Update Data</button>
+		</form>
     </div>
 </div>
 <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>

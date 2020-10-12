@@ -25,6 +25,7 @@ urlpatterns = [
     path('insert-draft/', views.insert_draft, name="insert-draft"),
     path('insert-draft-form/', views.insert_draft_form, name="insert-draft-form"),
     path('view-draft', views.view_draft, name="view-draft"),
+    path('update-drafts', views.update_drafts, name="update-drafts"),
     # DRAFT FORM UPDATE
     path('update-draft/', views.update_draft, name="update-draft"),
     # APPROVE INSPECTION

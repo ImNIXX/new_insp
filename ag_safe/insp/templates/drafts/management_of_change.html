@@ -21,6 +21,8 @@
         </div>
     </div>
     <div class="container-category">
+        <form action="update-drafts" method="POST">
+			{% csrf_token %}
         <div class="ABSP-form-block moc-form">
             <p>MOC Number:</p>
             <table class="lr-border-zero space-tbl responsive-tbl">
@@ -362,6 +364,9 @@
                 </tr>
             </table>
         </div>
+            <input type="hidden" value="{{data.id}}" name="draft_id">
+        <button type="submit" class="btn main-content-inner-box-export-btn">Update Data</button>
+		</form>
     </div>
 </div>
 <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
