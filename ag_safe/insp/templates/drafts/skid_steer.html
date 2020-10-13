@@ -1,10 +1,1647 @@
 <!DOCTYPE html>
+{% load custom_tags %}
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="/static/css/draft_style.css">
+    <link rel="stylesheet" type="text/css" href="/static/css/style.css">
     <title>Title</title>
 </head>
 <body>
+<div class="header-top">
+    <div class="container-category">
+        <div class="header-inner">
+            <div class="logo">logo</div>
+            <div class="right-contant">
+                <div class="field-wrap"><label>Alberta See Processor – </label><input type="text" value="{{ data.plants_name }}" name="plants_name" placeholder="Plants Name" /> </div>
+                <p>Skid Steer/Loader Pre Operation Checklist</p>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="AWP-form RCA-form-pdf">
+    <div class="container-category">
+        <form action="update-drafts" method="POST">
+			{% csrf_token %}
+        <div class="ABSP-form-block">
+            <div class="top-link">
+                <h2>Skid Steer/Loader Pre Operation Checklist</h2>
+            </div>
+            <table class="inside-tbl input-bt-br">
+                <tr>
+                    <td></td>
+                    <td class="tbold">
+                        <div class="field-wrap"><label>MONTH:</label><input type="text" value="{{ data.month|get_string_as_list|get_list_val:0 }}" name="month"></div>
+                    </td>
+                    <td></td>
+                </tr>
+            </table>
+            <p><i>Initial each box if no deficiency is found, otherwise mark with an "X" and make a note about the deficiency on the deficiency form on the back of this page.</i></p>
+            <div class="tbl-scroll">
+                <table class="space-tbl responsive-tbl">
+                    <tr>
+                        <td class="td-heading" style="width: 25%">DAILY TASKS</td>
+                        <td class="td-heading">1</td>
+                        <td class="td-heading">2</td>
+                        <td class="td-heading">3</td>
+                        <td class="td-heading">4</td>
+                        <td class="td-heading">5</td>
+                        <td class="td-heading">6</td>
+                        <td class="td-heading">7</td>
+                        <td class="td-heading">8</td>
+                        <td class="td-heading">9</td>
+                        <td class="td-heading">10</td>
+                        <td class="td-heading">11</td>
+                        <td class="td-heading">12</td>
+                        <td class="td-heading">13</td>
+                        <td class="td-heading">14</td>
+                        <td class="td-heading">15</td>
+                        <td class="td-heading">16</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <ol start="1">
+                                <li>Check engine oil</li>
+                            </ol>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{ data.oil|get_string_as_list|get_list_val:0 }}" name="oil"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{ data.oil|get_string_as_list|get_list_val:1 }}" name="oil"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{ data.oil|get_string_as_list|get_list_val:2 }}" name="oil"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{ data.oil|get_string_as_list|get_list_val:3 }}" name="oil"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{ data.oil|get_string_as_list|get_list_val:4 }}" name="oil"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{ data.oil|get_string_as_list|get_list_val:5 }}" name="oil"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{ data.oil|get_string_as_list|get_list_val:6 }}" name="oil"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{ data.oil|get_string_as_list|get_list_val:7 }}" name="oil"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{ data.oil|get_string_as_list|get_list_val:8 }}" name="oil"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{ data.oil|get_string_as_list|get_list_val:9 }}" name="oil"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{ data.oil|get_string_as_list|get_list_val:10 }}" name="oil"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{ data.oil|get_string_as_list|get_list_val:11 }}" name="oil"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{ data.oil|get_string_as_list|get_list_val:12 }}" name="oil"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{ data.oil|get_string_as_list|get_list_val:13 }}" name="oil"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{ data.oil|get_string_as_list|get_list_val:14 }}" name="oil"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{ data.oil|get_string_as_list|get_list_val:15 }}" name="oil"></div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <ol start="2">
+                                <li>Check cooling system</li>
+                            </ol>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{ data.cooling|get_string_as_list|get_list_val:0 }}" name="cooling"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{ data.cooling|get_string_as_list|get_list_val:1 }}" name="cooling"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{ data.cooling|get_string_as_list|get_list_val:2 }}" name="cooling"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{ data.cooling|get_string_as_list|get_list_val:3 }}" name="cooling"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{ data.cooling|get_string_as_list|get_list_val:4 }}" name="cooling"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{ data.cooling|get_string_as_list|get_list_val:5 }}" name="cooling"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{ data.cooling|get_string_as_list|get_list_val:6 }}" name="cooling"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{ data.cooling|get_string_as_list|get_list_val:7 }}"name="cooling"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{ data.cooling|get_string_as_list|get_list_val:8 }}" name="cooling"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{ data.cooling|get_string_as_list|get_list_val:9 }}" name="cooling"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{ data.cooling|get_string_as_list|get_list_val:10 }}" name="cooling"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{ data.cooling|get_string_as_list|get_list_val:11 }}" name="cooling"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{ data.cooling|get_string_as_list|get_list_val:12 }}" name="cooling"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{ data.cooling|get_string_as_list|get_list_val:13 }}" name="cooling"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{ data.cooling|get_string_as_list|get_list_val:14 }}" name="cooling"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{ data.cooling|get_string_as_list|get_list_val:15 }}" name="cooling"></div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <ol start="3">
+                                <li>Check hydraulic fluid</li>
+                            </ol>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{ data.hydraulic|get_string_as_list|get_list_val:0 }}" name="hydraulic"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{ data.hydraulic|get_string_as_list|get_list_val:1 }}" name="hydraulic"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{ data.hydraulic|get_string_as_list|get_list_val:2 }}" name="hydraulic"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{ data.hydraulic|get_string_as_list|get_list_val:3 }}" name="hydraulic"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{ data.hydraulic|get_string_as_list|get_list_val:4 }}" name="hydraulic"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{ data.hydraulic|get_string_as_list|get_list_val:5 }}" name="hydraulic"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{ data.hydraulic|get_string_as_list|get_list_val:6 }}" name="hydraulic"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{ data.hydraulic|get_string_as_list|get_list_val:7 }}" name="hydraulic"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{ data.hydraulic|get_string_as_list|get_list_val:8 }}" name="hydraulic"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{ data.hydraulic|get_string_as_list|get_list_val:9 }}" name="hydraulic"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{ data.hydraulic|get_string_as_list|get_list_val:10 }}" name="hydraulic"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{ data.hydraulic|get_string_as_list|get_list_val:11 }}" name="hydraulic"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{ data.hydraulic|get_string_as_list|get_list_val:12 }}" name="hydraulic"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{ data.hydraulic|get_string_as_list|get_list_val:13 }}" name="hydraulic"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{ data.hydraulic|get_string_as_list|get_list_val:14 }}" name="hydraulic"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{ data.hydraulic|get_string_as_list|get_list_val:15 }}" name="hydraulic"></div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <ol start="4">
+                                <li>Check lift arm and center pivot pins</li>
+                            </ol>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{ data.lift|get_string_as_list|get_list_val:0 }}" name="lift"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{ data.lift|get_string_as_list|get_list_val:1 }}" name="lift"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{ data.lift|get_string_as_list|get_list_val:2 }}" name="lift"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{ data.lift|get_string_as_list|get_list_val:3 }}" name="lift"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{ data.lift|get_string_as_list|get_list_val:4 }}" name="lift"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{ data.lift|get_string_as_list|get_list_val:5 }}" name="lift"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{ data.lift|get_string_as_list|get_list_val:6 }}" name="lift"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{ data.lift|get_string_as_list|get_list_val:7 }}" name="lift"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{ data.lift|get_string_as_list|get_list_val:8 }}" name="lift"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{ data.lift|get_string_as_list|get_list_val:9 }}" name="lift"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{ data.lift|get_string_as_list|get_list_val:10 }}" name="lift"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{ data.lift|get_string_as_list|get_list_val:11 }}" name="lift"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{ data.lift|get_string_as_list|get_list_val:12 }}" name="lift"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{ data.lift|get_string_as_list|get_list_val:13 }}" name="lift"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{ data.lift|get_string_as_list|get_list_val:14 }}" name="lift"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{ data.lift|get_string_as_list|get_list_val:15 }}" name="lift"></div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <ol start="5">
+                                <li>Check tire condition and air pressure</li>
+                            </ol>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{ data.tire|get_string_as_list|get_list_val:0 }}" name="tire"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{ data.tire|get_string_as_list|get_list_val:1 }}" name="tire"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{ data.tire|get_string_as_list|get_list_val:2 }}" name="tire"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{ data.tire|get_string_as_list|get_list_val:3 }}" name="tire"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{ data.tire|get_string_as_list|get_list_val:4 }}" name="tire"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{ data.tire|get_string_as_list|get_list_val:5 }}" name="tire"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{ data.tire|get_string_as_list|get_list_val:6 }}" name="tire"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{ data.tire|get_string_as_list|get_list_val:7 }}" name="tire"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{ data.tire|get_string_as_list|get_list_val:8 }}" name="tire"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{ data.tire|get_string_as_list|get_list_val:9 }}" name="tire"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{ data.tire|get_string_as_list|get_list_val:10 }}" name="tire"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{ data.tire|get_string_as_list|get_list_val:11 }}" name="tire"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{ data.tire|get_string_as_list|get_list_val:12 }}" name="tire"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{ data.tire|get_string_as_list|get_list_val:13 }}" name="tire"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{ data.tire|get_string_as_list|get_list_val:14 }}" name="tire"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{ data.tire|get_string_as_list|get_list_val:15 }}" name="tire"></div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <ol start="6">
+                                <li>Check for broken or loose parts</li>
+                            </ol>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{ data.broken|get_string_as_list|get_list_val:0 }}" name="broken"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{ data.broken|get_string_as_list|get_list_val:1 }}" name="broken"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{ data.broken|get_string_as_list|get_list_val:2 }}" name="broken"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{ data.broken|get_string_as_list|get_list_val:3 }}" name="broken"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{ data.broken|get_string_as_list|get_list_val:4 }}" name="broken"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{ data.broken|get_string_as_list|get_list_val:5 }}" name="broken"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{ data.broken|get_string_as_list|get_list_val:6 }}" name="broken"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{ data.broken|get_string_as_list|get_list_val:7 }}" name="broken"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{ data.broken|get_string_as_list|get_list_val:8 }}" name="broken"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{ data.broken|get_string_as_list|get_list_val:9 }}" name="broken"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{ data.broken|get_string_as_list|get_list_val:10 }}" name="broken"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{ data.broken|get_string_as_list|get_list_val:11 }}" name="broken"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{ data.broken|get_string_as_list|get_list_val:12 }}" name="broken"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{ data.broken|get_string_as_list|get_list_val:13 }}" name="broken"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{ data.broken|get_string_as_list|get_list_val:14 }}" name="broken"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{ data.broken|get_string_as_list|get_list_val:15 }}" name="broken"></div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <ol start="7">
+                                <li>Check fuel level</li>
+                            </ol>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{ data.fuel|get_string_as_list|get_list_val:0 }}" name="fuel"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{ data.fuel|get_string_as_list|get_list_val:1 }}" name="fuel"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{ data.fuel|get_string_as_list|get_list_val:2 }}" name="fuel"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{ data.fuel|get_string_as_list|get_list_val:3 }}" name="fuel"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{ data.fuel|get_string_as_list|get_list_val:4 }}" name="fuel"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{ data.fuel|get_string_as_list|get_list_val:5 }}" name="fuel"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{ data.fuel|get_string_as_list|get_list_val:6 }}" name="fuel"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{ data.fuel|get_string_as_list|get_list_val:7 }}" name="fuel"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{ data.fuel|get_string_as_list|get_list_val:8 }}" name="fuel"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{ data.fuel|get_string_as_list|get_list_val:9 }}" name="fuel"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{ data.fuel|get_string_as_list|get_list_val:10 }}" name="fuel"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{ data.fuel|get_string_as_list|get_list_val:11 }}" name="fuel"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{ data.fuel|get_string_as_list|get_list_val:12 }}" name="fuel"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{ data.fuel|get_string_as_list|get_list_val:13 }}" name="fuel"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{ data.fuel|get_string_as_list|get_list_val:14 }}" name="fuel"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{ data.fuel|get_string_as_list|get_list_val:15 }}" name="fuel"></div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <ol start="8">
+                                <li>Check safety tread and safety decals</li>
+                            </ol>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{ data.decals|get_string_as_list|get_list_val:0 }}" name="decals"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{ data.decals|get_string_as_list|get_list_val:1 }}" name="decals"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{ data.decals|get_string_as_list|get_list_val:2 }}" name="decals"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{ data.decals|get_string_as_list|get_list_val:3 }}" name="decals"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{ data.decals|get_string_as_list|get_list_val:4 }}" name="decals"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{ data.decals|get_string_as_list|get_list_val:5 }}" name="decals"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{ data.decals|get_string_as_list|get_list_val:6 }}" name="decals"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{ data.decals|get_string_as_list|get_list_val:7 }}" name="decals"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{ data.decals|get_string_as_list|get_list_val:8 }}" name="decals"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{ data.decals|get_string_as_list|get_list_val:9 }}" name="decals"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{ data.decals|get_string_as_list|get_list_val:10 }}" name="decals"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{ data.decals|get_string_as_list|get_list_val:11 }}" name="decals"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{ data.decals|get_string_as_list|get_list_val:12 }}" name="decals"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{ data.decals|get_string_as_list|get_list_val:13 }}" name="decals"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{ data.decals|get_string_as_list|get_list_val:14 }}" name="decals"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{ data.decals|get_string_as_list|get_list_val:15 }}" name="decals"></div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <ol start="9">
+                                <li>Check brakes</li>
+                            </ol>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{ data.brakes|get_string_as_list|get_list_val:0 }}" name="brakes"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{ data.brakes|get_string_as_list|get_list_val:1 }}" name="brakes"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{ data.brakes|get_string_as_list|get_list_val:2 }}" name="brakes"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{ data.brakes|get_string_as_list|get_list_val:3 }}" name="brakes"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{ data.brakes|get_string_as_list|get_list_val:4 }}" name="brakes"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{ data.brakes|get_string_as_list|get_list_val:5 }}" name="brakes"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{ data.brakes|get_string_as_list|get_list_val:6 }}" name="brakes"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{ data.brakes|get_string_as_list|get_list_val:7 }}" name="brakes"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{ data.brakes|get_string_as_list|get_list_val:8 }}" name="brakes"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{ data.brakes|get_string_as_list|get_list_val:9 }}" name="brakes"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{ data.brakes|get_string_as_list|get_list_val:10 }}" name="brakes"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{ data.brakes|get_string_as_list|get_list_val:11 }}" name="brakes"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{ data.brakes|get_string_as_list|get_list_val:12 }}" name="brakes"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{ data.brakes|get_string_as_list|get_list_val:13 }}" name="brakes"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{ data.brakes|get_string_as_list|get_list_val:14 }}" name="brakes"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{ data.brakes|get_string_as_list|get_list_val:15 }}" name="brakes"></div>
+                        </td>
+                        </tr>
+                    <tr>
+                        <td>
+                            <ol start="10">
+                                <li>Check seat bar sensor</li>
+                            </ol>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{ data.seat_bar|get_string_as_list|get_list_val:0 }}" name="seat_bar"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{ data.seat_bar|get_string_as_list|get_list_val:1 }}" name="seat_bar"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{ data.seat_bar|get_string_as_list|get_list_val:2 }}" name="seat_bar"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{ data.seat_bar|get_string_as_list|get_list_val:3 }}" name="seat_bar"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{ data.seat_bar|get_string_as_list|get_list_val:4 }}" name="seat_bar"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{ data.seat_bar|get_string_as_list|get_list_val:5 }}" name="seat_bar"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{ data.seat_bar|get_string_as_list|get_list_val:6 }}" name="seat_bar"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{ data.seat_bar|get_string_as_list|get_list_val:7 }}" name="seat_bar"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{ data.seat_bar|get_string_as_list|get_list_val:8 }}" name="seat_bar"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{ data.seat_bar|get_string_as_list|get_list_val:9 }}" name="seat_bar"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{ data.seat_bar|get_string_as_list|get_list_val:10 }}" name="seat_bar"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{ data.seat_bar|get_string_as_list|get_list_val:11 }}" name="seat_bar"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{ data.seat_bar|get_string_as_list|get_list_val:12 }}" name="seat_bar"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{ data.seat_bar|get_string_as_list|get_list_val:13 }}" name="seat_bar"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{ data.seat_bar|get_string_as_list|get_list_val:14 }}" name="seat_bar"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{ data.seat_bar|get_string_as_list|get_list_val:15 }}" name="seat_bar"></div>
+                        </td>
+                        </tr>
+                    <tr>
+                        <td>
+                            <ol start="11">
+                                <li>Check seat belt condition</li>
+                            </ol>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{ data.seat_belt|get_string_as_list|get_list_val:0 }}" name="seat_belt"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{ data.seat_belt|get_string_as_list|get_list_val:1 }}" name="seat_belt"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{ data.seat_belt|get_string_as_list|get_list_val:2 }}" name="seat_belt"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{ data.seat_belt|get_string_as_list|get_list_val:3 }}" name="seat_belt"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{ data.seat_belt|get_string_as_list|get_list_val:4 }}" name="seat_belt"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{ data.seat_belt|get_string_as_list|get_list_val:5 }}" name="seat_belt"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{ data.seat_belt|get_string_as_list|get_list_val:6 }}" name="seat_belt"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{ data.seat_belt|get_string_as_list|get_list_val:7 }}" name="seat_belt"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{ data.seat_belt|get_string_as_list|get_list_val:8 }}" name="seat_belt"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{ data.seat_belt|get_string_as_list|get_list_val:9 }}" name="seat_belt"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{ data.seat_belt|get_string_as_list|get_list_val:10 }}" name="seat_belt"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{ data.seat_belt|get_string_as_list|get_list_val:11 }}" name="seat_belt"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{ data.seat_belt|get_string_as_list|get_list_val:12 }}" name="seat_belt"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{ data.seat_belt|get_string_as_list|get_list_val:13 }}" name="seat_belt"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{ data.seat_belt|get_string_as_list|get_list_val:14 }}" name="seat_belt"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{ data.seat_belt|get_string_as_list|get_list_val:15 }}" name="seat_belt"></div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <ol start="12">
+                                <li>Check back-up alarm</li>
+                            </ol>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{ data.seat_backup|get_string_as_list|get_list_val:0 }}" name="seat_backup"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{ data.seat_backup|get_string_as_list|get_list_val:1 }}" name="seat_backup"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{ data.seat_backup|get_string_as_list|get_list_val:2 }}" name="seat_backup"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{ data.seat_backup|get_string_as_list|get_list_val:3 }}" name="seat_backup"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{ data.seat_backup|get_string_as_list|get_list_val:4 }}" name="seat_backup"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{ data.seat_backup|get_string_as_list|get_list_val:5 }}" name="seat_backup"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{ data.seat_backup|get_string_as_list|get_list_val:6 }}" name="seat_backup"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{ data.seat_backup|get_string_as_list|get_list_val:7 }}" name="seat_backup"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{ data.seat_backup|get_string_as_list|get_list_val:8 }}" name="seat_backup"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{ data.seat_backup|get_string_as_list|get_list_val:9 }}" name="seat_backup"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{ data.seat_backup|get_string_as_list|get_list_val:10 }}" name="seat_backup"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{ data.seat_backup|get_string_as_list|get_list_val:11 }}" name="seat_backup"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{ data.seat_backup|get_string_as_list|get_list_val:12 }}" name="seat_backup"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{ data.seat_backup|get_string_as_list|get_list_val:13 }}" name="seat_backup"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{ data.seat_backup|get_string_as_list|get_list_val:14 }}" name="seat_backup"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{ data.seat_backup|get_string_as_list|get_list_val:15 }}" name="seat_backup"></div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <ol start="13">
+                                <li>Check head lights</li>
+                            </ol>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{ data.head|get_string_as_list|get_list_val:0 }}" name="head"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{ data.head|get_string_as_list|get_list_val:1 }}" name="head"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{ data.head|get_string_as_list|get_list_val:2 }}" name="head"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{ data.head|get_string_as_list|get_list_val:3 }}" name="head"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{ data.head|get_string_as_list|get_list_val:4 }}" name="head"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{ data.head|get_string_as_list|get_list_val:5 }}" name="head"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{ data.head|get_string_as_list|get_list_val:6 }}" name="head"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{ data.head|get_string_as_list|get_list_val:7 }}" name="head"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{ data.head|get_string_as_list|get_list_val:8 }}" name="head"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{ data.head|get_string_as_list|get_list_val:9 }}" name="head"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{ data.head|get_string_as_list|get_list_val:10 }}" name="head"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{ data.head|get_string_as_list|get_list_val:11 }}" name="head"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{ data.head|get_string_as_list|get_list_val:12 }}" name="head"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{ data.head|get_string_as_list|get_list_val:13 }}" name="head"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{ data.head|get_string_as_list|get_list_val:14 }}" name="head"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{ data.head|get_string_as_list|get_list_val:15 }}" name="head"></div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <ol start="14">
+                                <li>Make sure all guards and shields are in place</li>
+                            </ol>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{ data.guards|get_string_as_list|get_list_val:0 }}" name="guards"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{ data.guards|get_string_as_list|get_list_val:1 }}" name="guards"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{ data.guards|get_string_as_list|get_list_val:2 }}" name="guards"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{ data.guards|get_string_as_list|get_list_val:3 }}" name="guards"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{ data.guards|get_string_as_list|get_list_val:4 }}" name="guards"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{ data.guards|get_string_as_list|get_list_val:5 }}" name="guards"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{ data.guards|get_string_as_list|get_list_val:6 }}" name="guards"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{ data.guards|get_string_as_list|get_list_val:7 }}" name="guards"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{ data.guards|get_string_as_list|get_list_val:8 }}" name="guards"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{ data.guards|get_string_as_list|get_list_val:9 }}" name="guards"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{ data.guards|get_string_as_list|get_list_val:10 }}" name="guards"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{ data.guards|get_string_as_list|get_list_val:11 }}" name="guards"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{ data.guards|get_string_as_list|get_list_val:12 }}" name="guards"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{ data.guards|get_string_as_list|get_list_val:13 }}" name="guards"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{ data.guards|get_string_as_list|get_list_val:14 }}" name="guards"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{ data.guards|get_string_as_list|get_list_val:15 }}" name="guards"></div>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <table class="inside-tbl input-bt-br">
+                <tr>
+                    <td></td>
+                    <td class="tbold">
+                        <div class="field-wrap"><label>MONTH:</label><input type="text" value="{{ data.month|get_string_as_list|get_list_val:1 }}" name="month"></div>
+                    </td>
+                    <td></td>
+                </tr>
+            </table>
+            <p><i>Initial each box if no deficiency is found, otherwise mark with an "X" and make a note about the deficiency on the deficiency form on the back of this page.</i></p>
+            <div class="tbl-scroll">
+                <table class="space-tbl responsive-tbl">
+                    <tr>
+                        <td class="td-heading" style="width: 25%">DAILY TASKS</td>
+                        <td class="td-heading">17</td>
+                        <td class="td-heading">18</td>
+                        <td class="td-heading">19</td>
+                        <td class="td-heading">20</td>
+                        <td class="td-heading">21</td>
+                        <td class="td-heading">22</td>
+                        <td class="td-heading">23</td>
+                        <td class="td-heading">24</td>
+                        <td class="td-heading">25</td>
+                        <td class="td-heading">26</td>
+                        <td class="td-heading">27</td>
+                        <td class="td-heading">28</td>
+                        <td class="td-heading">29</td>
+                        <td class="td-heading">30</td>
+                        <td class="td-heading">31</td>
+                        <td class="td-heading">32</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <ol start="1">
+                                <li>Check engine oil</li>
+                            </ol>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{ data.oil|get_string_as_list|get_list_val:16 }}" name="oil"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{ data.oil|get_string_as_list|get_list_val:17 }}" name="oil"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{ data.oil|get_string_as_list|get_list_val:18 }}" name="oil"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{ data.oil|get_string_as_list|get_list_val:19 }}" name="oil"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{ data.oil|get_string_as_list|get_list_val:20 }}" name="oil"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{ data.oil|get_string_as_list|get_list_val:21 }}" name="oil"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{ data.oil|get_string_as_list|get_list_val:22 }}" name="oil"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{ data.oil|get_string_as_list|get_list_val:23 }}" name="oil"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{ data.oil|get_string_as_list|get_list_val:24 }}" name="oil"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{ data.oil|get_string_as_list|get_list_val:25 }}" name="oil"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{ data.oil|get_string_as_list|get_list_val:26 }}" name="oil"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{ data.oil|get_string_as_list|get_list_val:27 }}" name="oil"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{ data.oil|get_string_as_list|get_list_val:28 }}" name="oil"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{ data.oil|get_string_as_list|get_list_val:29 }}" name="oil"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{ data.oil|get_string_as_list|get_list_val:30 }}" name="oil"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{ data.oil|get_string_as_list|get_list_val:31 }}" name="oil"></div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <ol start="2">
+                                <li>Check cooling system</li>
+                            </ol>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{ data.cooling|get_string_as_list|get_list_val:16 }}" name="cooling"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{ data.cooling|get_string_as_list|get_list_val:17 }}" name="cooling"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{ data.cooling|get_string_as_list|get_list_val:18 }}" name="cooling"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{ data.cooling|get_string_as_list|get_list_val:19 }}" name="cooling"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{ data.cooling|get_string_as_list|get_list_val:20 }}" name="cooling"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{ data.cooling|get_string_as_list|get_list_val:21 }}" name="cooling"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{ data.cooling|get_string_as_list|get_list_val:22 }}" name="cooling"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{ data.cooling|get_string_as_list|get_list_val:23 }}" name="cooling"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{ data.cooling|get_string_as_list|get_list_val:24 }}" name="cooling"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{ data.cooling|get_string_as_list|get_list_val:25 }}" name="cooling"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{ data.cooling|get_string_as_list|get_list_val:26 }}" name="cooling"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{ data.cooling|get_string_as_list|get_list_val:27 }}" name="cooling"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{ data.cooling|get_string_as_list|get_list_val:28 }}" name="cooling"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{ data.cooling|get_string_as_list|get_list_val:29 }}" name="cooling"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{ data.cooling|get_string_as_list|get_list_val:30 }}" name="cooling"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{ data.cooling|get_string_as_list|get_list_val:31 }}" name="cooling"></div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <ol start="3">
+                                <li>Check hydraulic fluid</li>
+                            </ol>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{ data.hydraulic|get_string_as_list|get_list_val:16 }}" name="hydraulic"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{ data.hydraulic|get_string_as_list|get_list_val:17 }}" name="hydraulic"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{ data.hydraulic|get_string_as_list|get_list_val:18 }}" name="hydraulic"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{ data.hydraulic|get_string_as_list|get_list_val:19 }}" name="hydraulic"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{ data.hydraulic|get_string_as_list|get_list_val:20 }}" name="hydraulic"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{ data.hydraulic|get_string_as_list|get_list_val:21 }}" name="hydraulic"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{ data.hydraulic|get_string_as_list|get_list_val:22 }}" name="hydraulic"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{ data.hydraulic|get_string_as_list|get_list_val:23 }}" name="hydraulic"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{ data.hydraulic|get_string_as_list|get_list_val:24 }}" name="hydraulic"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{ data.hydraulic|get_string_as_list|get_list_val:25 }}" name="hydraulic"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{ data.hydraulic|get_string_as_list|get_list_val:26 }}" name="hydraulic"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{ data.hydraulic|get_string_as_list|get_list_val:27 }}" name="hydraulic"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{ data.hydraulic|get_string_as_list|get_list_val:28 }}" name="hydraulic"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{ data.hydraulic|get_string_as_list|get_list_val:29 }}" name="hydraulic"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{ data.hydraulic|get_string_as_list|get_list_val:30 }}" name="hydraulic"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{ data.hydraulic|get_string_as_list|get_list_val:31 }}" name="hydraulic"></div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <ol start="4">
+                                <li>Check lift arm and center pivot pins</li>
+                            </ol>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{ data.lift|get_string_as_list|get_list_val:16 }}" name="lift"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{ data.lift|get_string_as_list|get_list_val:17 }}" name="lift"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{ data.lift|get_string_as_list|get_list_val:18 }}" name="lift"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{ data.lift|get_string_as_list|get_list_val:19 }}" name="lift"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{ data.lift|get_string_as_list|get_list_val:20 }}" name="lift"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{ data.lift|get_string_as_list|get_list_val:21 }}" name="lift"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{ data.lift|get_string_as_list|get_list_val:22 }}" name="lift"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{ data.lift|get_string_as_list|get_list_val:23 }}" name="lift"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{ data.lift|get_string_as_list|get_list_val:24 }}" name="lift"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{ data.lift|get_string_as_list|get_list_val:25 }}" name="lift"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{ data.lift|get_string_as_list|get_list_val:26 }}" name="lift"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{ data.lift|get_string_as_list|get_list_val:27 }}" name="lift"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{ data.lift|get_string_as_list|get_list_val:28 }}" name="lift"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{ data.lift|get_string_as_list|get_list_val:29 }}" name="lift"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{ data.lift|get_string_as_list|get_list_val:30 }}" name="lift"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{ data.lift|get_string_as_list|get_list_val:31 }}" name="lift"></div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <ol start="5">
+                                <li>Check tire condition and air pressure</li>
+                            </ol>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{ data.tire|get_string_as_list|get_list_val:16 }}" name="tire"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{ data.tire|get_string_as_list|get_list_val:17 }}" name="tire"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{ data.tire|get_string_as_list|get_list_val:18 }}" name="tire"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{ data.tire|get_string_as_list|get_list_val:19 }}" name="tire"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{ data.tire|get_string_as_list|get_list_val:20 }}" name="tire"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{ data.tire|get_string_as_list|get_list_val:21 }}" name="tire"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{ data.tire|get_string_as_list|get_list_val:22 }}" name="tire"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{ data.tire|get_string_as_list|get_list_val:23 }}" name="tire"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{ data.tire|get_string_as_list|get_list_val:24 }}" name="tire"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{ data.tire|get_string_as_list|get_list_val:25 }}" name="tire"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{ data.tire|get_string_as_list|get_list_val:26 }}" name="tire"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{ data.tire|get_string_as_list|get_list_val:27 }}" name="tire"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{ data.tire|get_string_as_list|get_list_val:28 }}" name="tire"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{ data.tire|get_string_as_list|get_list_val:29 }}" name="tire"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{ data.tire|get_string_as_list|get_list_val:30 }}" name="tire"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{ data.tire|get_string_as_list|get_list_val:31 }}" name="tire"></div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <ol start="6">
+                                <li>Check for broken or loose parts</li>
+                            </ol>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{ data.broken|get_string_as_list|get_list_val:16 }}" name="broken"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{ data.broken|get_string_as_list|get_list_val:17 }}" name="broken"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{ data.broken|get_string_as_list|get_list_val:18 }}" name="broken"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{ data.broken|get_string_as_list|get_list_val:19 }}" name="broken"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{ data.broken|get_string_as_list|get_list_val:20 }}" name="broken"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{ data.broken|get_string_as_list|get_list_val:21 }}" name="broken"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{ data.broken|get_string_as_list|get_list_val:22 }}" name="broken"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{ data.broken|get_string_as_list|get_list_val:23 }}" name="broken"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{ data.broken|get_string_as_list|get_list_val:24 }}" name="broken"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{ data.broken|get_string_as_list|get_list_val:25 }}" name="broken"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{ data.broken|get_string_as_list|get_list_val:26 }}" name="broken"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{ data.broken|get_string_as_list|get_list_val:27 }}" name="broken"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{ data.broken|get_string_as_list|get_list_val:28 }}" name="broken"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{ data.broken|get_string_as_list|get_list_val:29 }}" name="broken"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{ data.broken|get_string_as_list|get_list_val:30 }}" name="broken"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{ data.broken|get_string_as_list|get_list_val:31 }}" name="broken"></div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <ol start="7">
+                                <li>Check fuel level</li>
+                            </ol>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{ data.fuel|get_string_as_list|get_list_val:16 }}" name="fuel"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{ data.fuel|get_string_as_list|get_list_val:17 }}" name="fuel"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{ data.fuel|get_string_as_list|get_list_val:18 }}" name="fuel"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{ data.fuel|get_string_as_list|get_list_val:19 }}" name="fuel"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{ data.fuel|get_string_as_list|get_list_val:20 }}" name="fuel"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{ data.fuel|get_string_as_list|get_list_val:21 }}" name="fuel"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{ data.fuel|get_string_as_list|get_list_val:22 }}" name="fuel"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{ data.fuel|get_string_as_list|get_list_val:23 }}" name="fuel"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{ data.fuel|get_string_as_list|get_list_val:24 }}" name="fuel"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{ data.fuel|get_string_as_list|get_list_val:25 }}" name="fuel"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{ data.fuel|get_string_as_list|get_list_val:26 }}" name="fuel"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{ data.fuel|get_string_as_list|get_list_val:27 }}" name="fuel"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{ data.fuel|get_string_as_list|get_list_val:28 }}" name="fuel"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{ data.fuel|get_string_as_list|get_list_val:29 }}" name="fuel"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{ data.fuel|get_string_as_list|get_list_val:30 }}" name="fuel"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{ data.fuel|get_string_as_list|get_list_val:31 }}" name="fuel"></div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <ol start="8">
+                                <li>Check safety tread and safety decals</li>
+                            </ol>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{ data.decals|get_string_as_list|get_list_val:16 }}" name="decals"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{ data.decals|get_string_as_list|get_list_val:17 }}" name="decals"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{ data.decals|get_string_as_list|get_list_val:18 }}" name="decals"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{ data.decals|get_string_as_list|get_list_val:19 }}" name="decals"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{ data.decals|get_string_as_list|get_list_val:20 }}" name="decals"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{ data.decals|get_string_as_list|get_list_val:21 }}" name="decals"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{ data.decals|get_string_as_list|get_list_val:22 }}" name="decals"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{ data.decals|get_string_as_list|get_list_val:23 }}" name="decals"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{ data.decals|get_string_as_list|get_list_val:24 }}" name="decals"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{ data.decals|get_string_as_list|get_list_val:25 }}" name="decals"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{ data.decals|get_string_as_list|get_list_val:26 }}" name="decals"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{ data.decals|get_string_as_list|get_list_val:27 }}" name="decals"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{ data.decals|get_string_as_list|get_list_val:28 }}" name="decals"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{ data.decals|get_string_as_list|get_list_val:29 }}" name="decals"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{ data.decals|get_string_as_list|get_list_val:30 }}" name="decals"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{ data.decals|get_string_as_list|get_list_val:31 }}" name="decals"></div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <ol start="9">
+                                <li>Check brakes</li>
+                            </ol>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{ data.brakes|get_string_as_list|get_list_val:16 }}" name="brakes"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{ data.brakes|get_string_as_list|get_list_val:17 }}" name="brakes"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{ data.brakes|get_string_as_list|get_list_val:18 }}" name="brakes"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{ data.brakes|get_string_as_list|get_list_val:19 }}" name="brakes"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{ data.brakes|get_string_as_list|get_list_val:20 }}" name="brakes"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{ data.brakes|get_string_as_list|get_list_val:21 }}" name="brakes"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{ data.brakes|get_string_as_list|get_list_val:22 }}" name="brakes"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{ data.brakes|get_string_as_list|get_list_val:23 }}" name="brakes"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{ data.brakes|get_string_as_list|get_list_val:24 }}" name="brakes"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{ data.brakes|get_string_as_list|get_list_val:25 }}" name="brakes"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{ data.brakes|get_string_as_list|get_list_val:26 }}" name="brakes"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{ data.brakes|get_string_as_list|get_list_val:27 }}" name="brakes"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{ data.brakes|get_string_as_list|get_list_val:28 }}" name="brakes"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{ data.brakes|get_string_as_list|get_list_val:29 }}" name="brakes"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{ data.brakes|get_string_as_list|get_list_val:30 }}" name="brakes"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{ data.brakes|get_string_as_list|get_list_val:31 }}" name="brakes"></div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <ol start="10">
+                                <li>Check seat bar sensor</li>
+                            </ol>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{ data.seat_bar|get_string_as_list|get_list_val:16 }}" name="seat_bar"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{ data.seat_bar|get_string_as_list|get_list_val:17 }}" name="seat_bar"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{ data.seat_bar|get_string_as_list|get_list_val:18 }}" name="seat_bar"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{ data.seat_bar|get_string_as_list|get_list_val:19 }}" name="seat_bar"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{ data.seat_bar|get_string_as_list|get_list_val:20 }}" name="seat_bar"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{ data.seat_bar|get_string_as_list|get_list_val:21 }}" name="seat_bar"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{ data.seat_bar|get_string_as_list|get_list_val:22 }}" name="seat_bar"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{ data.seat_bar|get_string_as_list|get_list_val:23 }}" name="seat_bar"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{ data.seat_bar|get_string_as_list|get_list_val:24 }}" name="seat_bar"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{ data.seat_bar|get_string_as_list|get_list_val:25 }}" name="seat_bar"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{ data.seat_bar|get_string_as_list|get_list_val:26 }}" name="seat_bar"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{ data.seat_bar|get_string_as_list|get_list_val:27 }}" name="seat_bar"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{ data.seat_bar|get_string_as_list|get_list_val:28 }}" name="seat_bar"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{ data.seat_bar|get_string_as_list|get_list_val:29 }}" name="seat_bar"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{ data.seat_bar|get_string_as_list|get_list_val:30 }}" name="seat_bar"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{ data.seat_bar|get_string_as_list|get_list_val:31 }}" name="seat_bar"></div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <ol start="11">
+                                <li>Check seat belt condition</li>
+                            </ol>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{ data.seat_belt|get_string_as_list|get_list_val:16 }}" name="seat_belt"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{ data.seat_belt|get_string_as_list|get_list_val:17 }}" name="seat_belt"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{ data.seat_belt|get_string_as_list|get_list_val:18 }}" name="seat_belt"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{ data.seat_belt|get_string_as_list|get_list_val:19 }}" name="seat_belt"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{ data.seat_belt|get_string_as_list|get_list_val:20 }}" name="seat_belt"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{ data.seat_belt|get_string_as_list|get_list_val:21 }}" name="seat_belt"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{ data.seat_belt|get_string_as_list|get_list_val:22 }}" name="seat_belt"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{ data.seat_belt|get_string_as_list|get_list_val:23 }}" name="seat_belt"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{ data.seat_belt|get_string_as_list|get_list_val:24 }}" name="seat_belt"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{ data.seat_belt|get_string_as_list|get_list_val:25 }}" name="seat_belt"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{ data.seat_belt|get_string_as_list|get_list_val:26 }}" name="seat_belt"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{ data.seat_belt|get_string_as_list|get_list_val:27 }}" name="seat_belt"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{ data.seat_belt|get_string_as_list|get_list_val:28 }}" name="seat_belt"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{ data.seat_belt|get_string_as_list|get_list_val:29 }}" name="seat_belt"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{ data.seat_belt|get_string_as_list|get_list_val:30 }}" name="seat_belt"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{ data.seat_belt|get_string_as_list|get_list_val:31 }}" name="seat_belt"></div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <ol start="12">
+                                <li>Check back-up alarm</li>
+                            </ol>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{ data.seat_backup|get_string_as_list|get_list_val:16 }}" name="seat_backup"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{ data.seat_backup|get_string_as_list|get_list_val:17 }}" name="seat_backup"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{ data.seat_backup|get_string_as_list|get_list_val:18 }}" name="seat_backup"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{ data.seat_backup|get_string_as_list|get_list_val:19 }}" name="seat_backup"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{ data.seat_backup|get_string_as_list|get_list_val:20 }}" name="seat_backup"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{ data.seat_backup|get_string_as_list|get_list_val:21 }}" name="seat_backup"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{ data.seat_backup|get_string_as_list|get_list_val:22 }}" name="seat_backup"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{ data.seat_backup|get_string_as_list|get_list_val:23 }}" name="seat_backup"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{ data.seat_backup|get_string_as_list|get_list_val:24 }}" name="seat_backup"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{ data.seat_backup|get_string_as_list|get_list_val:25 }}" name="seat_backup"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{ data.seat_backup|get_string_as_list|get_list_val:26 }}" name="seat_backup"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{ data.seat_backup|get_string_as_list|get_list_val:27 }}" name="seat_backup"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{ data.seat_backup|get_string_as_list|get_list_val:28 }}" name="seat_backup"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{ data.seat_backup|get_string_as_list|get_list_val:29 }}" name="seat_backup"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{ data.seat_backup|get_string_as_list|get_list_val:30 }}" name="seat_backup"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{ data.seat_backup|get_string_as_list|get_list_val:31 }}" name="seat_backup"></div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <ol start="13">
+                                <li>Check head lights</li>
+                            </ol>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{ data.head|get_string_as_list|get_list_val:16 }}" name="head"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{ data.head|get_string_as_list|get_list_val:17 }}" name="head"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{ data.head|get_string_as_list|get_list_val:18 }}" name="head"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{ data.head|get_string_as_list|get_list_val:19 }}" name="head"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{ data.head|get_string_as_list|get_list_val:20 }}" name="head"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{ data.head|get_string_as_list|get_list_val:21 }}" name="head"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{ data.head|get_string_as_list|get_list_val:22 }}" name="head"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{ data.head|get_string_as_list|get_list_val:23 }}" name="head"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{ data.head|get_string_as_list|get_list_val:24 }}" name="head"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{ data.head|get_string_as_list|get_list_val:25 }}" name="head"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{ data.head|get_string_as_list|get_list_val:26 }}" name="head"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{ data.head|get_string_as_list|get_list_val:27 }}" name="head"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{ data.head|get_string_as_list|get_list_val:28 }}" name="head"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{ data.head|get_string_as_list|get_list_val:29 }}" name="head"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{ data.head|get_string_as_list|get_list_val:30 }}" name="head"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{ data.head|get_string_as_list|get_list_val:31 }}" name="head"></div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <ol start="14">
+                                <li>Make sure all guards and shields are in place</li>
+                            </ol>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{ data.guards|get_string_as_list|get_list_val:16 }}" name="guards"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{ data.guards|get_string_as_list|get_list_val:17 }}" name="guards"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{ data.guards|get_string_as_list|get_list_val:18 }}" name="guards"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{ data.guards|get_string_as_list|get_list_val:19 }}" name="guards"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{ data.guards|get_string_as_list|get_list_val:20 }}" name="guards"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{ data.guards|get_string_as_list|get_list_val:21 }}" name="guards"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{ data.guards|get_string_as_list|get_list_val:22 }}" name="guards"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{ data.guards|get_string_as_list|get_list_val:23 }}" name="guards"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{ data.guards|get_string_as_list|get_list_val:24 }}" name="guards"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{ data.guards|get_string_as_list|get_list_val:25 }}" name="guards"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{ data.guards|get_string_as_list|get_list_val:26 }}" name="guards"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{ data.guards|get_string_as_list|get_list_val:27 }}" name="guards"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{ data.guards|get_string_as_list|get_list_val:28 }}" name="guards"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{ data.guards|get_string_as_list|get_list_val:29 }}" name="guards"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{ data.guards|get_string_as_list|get_list_val:30 }}" name="guards"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text" value="{{ data.guards|get_string_as_list|get_list_val:31 }}" name="guards"></div>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+            <input type="hidden" value="{{data.id}}" name="draft_id">
+            <input type="hidden" value="Skid-Steer-Loader-Pre-Operation-Checklist" name="draft_name">
+        <button type="submit" class="btn main-content-inner-box-export-btn">Update Data</button>
+		</form>
+    </div>
+</div>
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<script type="text/javascript" src="/static/js/draft.js"></script>
 </body>
-{{ data.oil|get_string_as_list }}
 </html>

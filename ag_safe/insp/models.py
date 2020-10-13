@@ -765,6 +765,24 @@ class EmergencyRescue(models.Model):
         return self.plants_name
 
 
+class EmployeeAcknowledgment(models.Model):
+    id = models.AutoField(primary_key=True)
+    plants_name = models.TextField(blank=True, null=True)
+    permit = models.TextField(blank=True, null=True)
+    area = models.TextField(blank=True, null=True)
+    equipment = models.TextField(blank=True, null=True)
+    date_develop = models.TextField(blank=True, null=True)
+    developed_by = models.TextField(blank=True, null=True)
+    des_location = models.TextField(blank=True, null=True)
+    inspection = models.ForeignKey(to="Inspections", on_delete=models.CASCADE)
+
+    class Meta:
+        db_table = "insp_EmployeeAcknowledgment"
+
+    def __str__(self):
+        return self.plants_name
+
+
 class EnergizedElectrical(models.Model):
     id = models.AutoField(primary_key=True)
     plants_name = models.TextField(blank=True, null=True)
@@ -1079,6 +1097,121 @@ class FirstAid(models.Model):
 
     class Meta:
         db_table = "insp_FirstAid"
+
+    def __str__(self):
+        return self.plants_name
+
+
+class FormalSiteInspection(models.Model):
+    id = models.AutoField(primary_key=True)
+    plants_name = models.TextField(blank=True, null=True)
+    health = models.TextField(blank=True, null=True)
+    alberta = models.TextField(blank=True, null=True)
+    health_safe = models.TextField(blank=True, null=True)
+    signage = models.TextField(blank=True, null=True)
+    aid_supply = models.TextField(blank=True, null=True)
+    bulletin = models.TextField(blank=True, null=True)
+    whmis = models.TextField(blank=True, null=True)
+    postings = models.TextField(blank=True, null=True)
+    permits = models.TextField(blank=True, null=True)
+    defi_1 = models.TextField(blank=True, null=True)
+    defi_2 = models.TextField(blank=True, null=True)
+    defi_3 = models.TextField(blank=True, null=True)
+    defi_4 = models.TextField(blank=True, null=True)
+    defi_5 = models.TextField(blank=True, null=True)
+    stacking = models.TextField(blank=True, null=True)
+    aisle = models.TextField(blank=True, null=True)
+    stairways = models.TextField(blank=True, null=True)
+    entrance = models.TextField(blank=True, null=True)
+    snow = models.TextField(blank=True, null=True)
+    smoking = models.TextField(blank=True, null=True)
+    fire = models.TextField(blank=True, null=True)
+    yards = models.TextField(blank=True, null=True)
+    surfaces = models.TextField(blank=True, null=True)
+    containing = models.TextField(blank=True, null=True)
+    random = models.TextField(blank=True, null=True)
+    office = models.TextField(blank=True, null=True)
+    cords = models.TextField(blank=True, null=True)
+    defi_6 = models.TextField(blank=True, null=True)
+    defi_7 = models.TextField(blank=True, null=True)
+    defi_8 = models.TextField(blank=True, null=True)
+    defi_9 = models.TextField(blank=True, null=True)
+    repair = models.TextField(blank=True, null=True)
+    ladders = models.TextField(blank=True, null=True)
+    reinforces = models.TextField(blank=True, null=True)
+    guards = models.TextField(blank=True, null=True)
+    indicate = models.TextField(blank=True, null=True)
+    cables = models.TextField(blank=True, null=True)
+    supports = models.TextField(blank=True, null=True)
+    equipment = models.TextField(blank=True, null=True)
+    electrical = models.TextField(blank=True, null=True)
+    accordance = models.TextField(blank=True, null=True)
+    all_forklift = models.TextField(blank=True, null=True)
+    foeklift_main = models.TextField(blank=True, null=True)
+    forklift_backup = models.TextField(blank=True, null=True)
+    forklift = models.TextField(blank=True, null=True)
+    extinguishers = models.TextField(blank=True, null=True)
+    review = models.TextField(blank=True, null=True)
+    hand_power = models.TextField(blank=True, null=True)
+    wiring = models.TextField(blank=True, null=True)
+    tools = models.TextField(blank=True, null=True)
+    flammable = models.TextField(blank=True, null=True)
+    materials = models.TextField(blank=True, null=True)
+    compressed = models.TextField(blank=True, null=True)
+    defi_10 = models.TextField(blank=True, null=True)
+    defi_11 = models.TextField(blank=True, null=True)
+    defi_12 = models.TextField(blank=True, null=True)
+    defi_13 = models.TextField(blank=True, null=True)
+    defi_14 = models.TextField(blank=True, null=True)
+    defi_15 = models.TextField(blank=True, null=True)
+    defi_16 = models.TextField(blank=True, null=True)
+    defi_17 = models.TextField(blank=True, null=True)
+    whmis_signs = models.TextField(blank=True, null=True)
+    whmis_product = models.TextField(blank=True, null=True)
+    worksite_label = models.TextField(blank=True, null=True)
+    supports_whmis = models.TextField(blank=True, null=True)
+    available_workers = models.TextField(blank=True, null=True)
+    facility = models.TextField(blank=True, null=True)
+    data_sheet = models.TextField(blank=True, null=True)
+    defi_18 = models.TextField(blank=True, null=True)
+    defi_19 = models.TextField(blank=True, null=True)
+    defi_20 = models.TextField(blank=True, null=True)
+    defi_21 = models.TextField(blank=True, null=True)
+    defi_22 = models.TextField(blank=True, null=True)
+    adequate = models.TextField(blank=True, null=True)
+    visitors = models.TextField(blank=True, null=True)
+    incomplaint = models.TextField(blank=True, null=True)
+    acknowledging = models.TextField(blank=True, null=True)
+    defi_23 = models.TextField(blank=True, null=True)
+    defi_24 = models.TextField(blank=True, null=True)
+    defi_25 = models.TextField(blank=True, null=True)
+    defi_26 = models.TextField(blank=True, null=True)
+    lighting = models.TextField(blank=True, null=True)
+    random_check = models.TextField(blank=True, null=True)
+    investigation = models.TextField(blank=True, null=True)
+    adequate_signage = models.TextField(blank=True, null=True)
+    emergency_light = models.TextField(blank=True, null=True)
+    defi_27 = models.TextField(blank=True, null=True)
+    defi_28 = models.TextField(blank=True, null=True)
+    defi_29 = models.TextField(blank=True, null=True)
+    defi_30 = models.TextField(blank=True, null=True)
+    bulletin_boards = models.TextField(blank=True, null=True)
+    eye_wash = models.TextField(blank=True, null=True)
+    wash_bottles = models.TextField(blank=True, null=True)
+    certified_first = models.TextField(blank=True, null=True)
+    minutes_last = models.TextField(blank=True, null=True)
+    notification = models.TextField(blank=True, null=True)
+    documentation = models.TextField(blank=True, null=True)
+    areas_maintained = models.TextField(blank=True, null=True)
+    signage_advising = models.TextField(blank=True, null=True)
+    defi_31 = models.TextField(blank=True, null=True)
+    defi_32 = models.TextField(blank=True, null=True)
+    defi_33 = models.TextField(blank=True, null=True)
+    defi_34 = models.TextField(blank=True, null=True)
+    inspection = models.ForeignKey(to="Inspections", on_delete=models.CASCADE)
+
+    class Meta:
+        db_table = "insp_FormalSiteInspection"
 
     def __str__(self):
         return self.plants_name

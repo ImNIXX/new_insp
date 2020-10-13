@@ -1,3 +1,4 @@
+{% load custom_tags %}
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <link rel="stylesheet" type="text/css" href="/static/css/draft_style.css">
 <link rel="stylesheet" type="text/css" href="/static/css/style.css">
@@ -460,6 +461,7 @@
             </div>
         </div>
         <input type="hidden" value="{{data.id}}" name="draft_id">
+            <input type="hidden" value="Safety-Statistics-Worksheet" name="draft_name">
         <button type="submit" class="btn main-content-inner-box-export-btn">Update Data</button>
 		</form>
     </div>

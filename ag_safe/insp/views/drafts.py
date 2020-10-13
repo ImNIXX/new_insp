@@ -1,7 +1,7 @@
 from django.http import HttpResponse, QueryDict
 from django.contrib import messages
 from django.shortcuts import render, redirect
-from ..models import Inspections, Type, CompressedGasCylinder, AccidentInvestigationRCAForm, AWPForm, ConfinedSpaceAuthorization, ConfinedSpaceEntry, DailyExcavation, DailyMaintenance, EarthmovingEquipment, EmergencyRescue, EnergizedElectrical, EmergencyEvacuation, EquipmentDeficiency, EquipmentInspection, EquipmentOperator, EyewashStation, FormalSite, FirstAid, FireExtinguisher, GasTest, GasMonitor, GeneralService, GenericSafe, IndustrialForklift, LocationofFirst, LossTimeInjury, MaintenanceRecord, ManagementofChange, MobileEquipment, MonthlyOffice, NewEmployee, QuarterlyOxygen, PersonalLock, PortableLadder, SkidSteer, ShopOffice, SafetyStatistics, ScaffoldInspection, SpotInspection, SubcontractorAcknowledgment, SubcontractorOrientation, TruckDeficiency, UserFitness, VehicleInspection, VehicleInspectionLog, VendorTruck, DraftTables
+from ..models import Inspections, Type, CompressedGasCylinder, AccidentInvestigationRCAForm, AWPForm, ConfinedSpaceAuthorization, ConfinedSpaceEntry, DailyExcavation, DailyMaintenance, EarthmovingEquipment, EmergencyRescue, EmployeeAcknowledgment, EnergizedElectrical, EmergencyEvacuation, EquipmentDeficiency, EquipmentInspection, EquipmentOperator, EyewashStation, FormalSiteInspection, FormalSite, FirstAid, FireExtinguisher, GasTest, GasMonitor, GeneralService, GenericSafe, IndustrialForklift, LocationofFirst, LossTimeInjury, MaintenanceRecord, ManagementofChange, MobileEquipment, MonthlyOffice, NewEmployee, QuarterlyOxygen, PersonalLock, PortableLadder, SkidSteer, ShopOffice, SafetyStatistics, ScaffoldInspection, SpotInspection, SubcontractorAcknowledgment, SubcontractorOrientation, TruckDeficiency, UserFitness, VehicleInspection, VehicleInspectionLog, VendorTruck, DraftTables
 
 
 def accident_investigation_rca_form(request):
@@ -94,7 +94,12 @@ def accident_investigation_rca_form(request):
     update_data['supervisor_name'] = draft.supervisor_name = request.POST.get('supervisor_name', None)
     update_data['supervisor_sign'] = draft.supervisor_sign = request.POST.get('supervisor_sign', None)
     draft.inspection_id = request.POST.get('inspection_id', None)
-    draft.save()
+    if request.POST.get('draft_id', None):
+        draft_id = request.POST.get('draft_id', None)
+        AccidentInvestigationRCAForm.objects.filter(id=draft_id).update(**update_data)
+        return HttpResponse('updated')
+    else:
+        draft.save()
     return HttpResponse('HELLO')
 
 
@@ -170,7 +175,12 @@ def compressed_gas_cylinder(request):
     update_data['isnp_name'] = draft.isnp_name = request.POST.get('isnp_name', None)
     update_data['sign'] = draft.sign = request.POST.get('sign', None)
     draft.inspection_id = request.POST.get('inspection_id', None)
-    draft.save()
+    if request.POST.get('draft_id', None):
+        draft_id = request.POST.get('draft_id', None)
+        CompressedGasCylinder.objects.filter(id=draft_id).update(**update_data)
+        return HttpResponse('updated')
+    else:
+        draft.save()
     return HttpResponse('HELLO')
 
 
@@ -254,7 +264,12 @@ def confined_space_authorization(request):
     update_data['ABSP_auth_name'] = draft.ABSP_auth_name = request.POST.get('ABSP_auth_name', None)
     update_data['ABSP_auth_sign'] = draft.ABSP_auth_sign = request.POST.get('ABSP_auth_sign', None)
     draft.inspection_id = request.POST.get('inspection_id', None)
-    draft.save()
+    if request.POST.get('draft_id', None):
+        draft_id = request.POST.get('draft_id', None)
+        ConfinedSpaceAuthorization.objects.filter(id=draft_id).update(**update_data)
+        return HttpResponse('updated')
+    else:
+        draft.save()
     return HttpResponse('HELLO')
 
 
@@ -319,7 +334,12 @@ def confined_space_entry(request):
     update_data['time_out_eleven'] = draft.time_out_eleven = request.POST.get('time_out_eleven', None)
     update_data['des_comment'] = draft.des_comment = request.POST.get('des_comment', None)
     draft.inspection_id = request.POST.get('inspection_id', None)
-    draft.save()
+    if request.POST.get('draft_id', None):
+        draft_id = request.POST.get('draft_id', None)
+        ConfinedSpaceEntry.objects.filter(id=draft_id).update(**update_data)
+        return HttpResponse('updated')
+    else:
+        draft.save()
     return HttpResponse('HELLO')
 
 
@@ -355,7 +375,12 @@ def daily_excavation(request):
     update_data['supervisor_name'] = draft.supervisor_name = request.POST.get('supervisor_name', None)
     update_data['sign'] = draft.sign = request.POST.get('sign', None)
     draft.inspection_id = request.POST.get('inspection_id', None)
-    draft.save()
+    if request.POST.get('draft_id', None):
+        draft_id = request.POST.get('draft_id', None)
+        DailyExcavation.objects.filter(id=draft_id).update(**update_data)
+        return HttpResponse('updated')
+    else:
+        draft.save()
     return HttpResponse('HELLO')
 
 
@@ -421,7 +446,12 @@ def daily_maintenance(request):
     update_data['crawler_condition'] = draft.crawler_condition = request.POST.get('crawler_condition', None)
     update_data['crawler_notes'] = draft.crawler_notes = request.POST.get('crawler_notes', None)
     draft.inspection_id = request.POST.get('inspection_id', None)
-    draft.save()
+    if request.POST.get('draft_id', None):
+        draft_id = request.POST.get('draft_id', None)
+        DailyMaintenance.objects.filter(id=draft_id).update(**update_data)
+        return HttpResponse('updated')
+    else:
+        draft.save()
     return HttpResponse('HELLO')
 
 
@@ -562,7 +592,12 @@ def earth_moving_equipment(request):
     update_data['inspected_by'] = draft.inspected_by = request.POST.get('inspected_by', None)
     update_data['date'] = draft.date = request.POST.get('date', None)
     draft.inspection_id = request.POST.get('inspection_id', None)
-    draft.save()
+    if request.POST.get('draft_id', None):
+        draft_id = request.POST.get('draft_id', None)
+        EarthmovingEquipment.objects.filter(id=draft_id).update(**update_data)
+        return HttpResponse('updated')
+    else:
+        draft.save()
     return HttpResponse('HELLO')
 
 
@@ -594,7 +629,12 @@ def emergency_evacuation(request):
     update_data['date_last_drill'] = draft.date_last_drill = request.POST.get('date_last_drill', None)
     update_data['noted_deficiencies'] = draft.noted_deficiencies = request.POST.get('noted_deficiencies', None)
     draft.inspection_id = request.POST.get('inspection_id', None)
-    draft.save()
+    if request.POST.get('draft_id', None):
+        draft_id = request.POST.get('draft_id', None)
+        EmergencyEvacuation.objects.filter(id=draft_id).update(**update_data)
+        return HttpResponse('updated')
+    else:
+        draft.save()
     return HttpResponse('HELLO')
 
 
@@ -653,7 +693,32 @@ def emergency_rescue(request):
     update_data['HSE_representative_date'] = draft.HSE_representative_date = request.POST.get('HSE_representative_date',
                                                                                               None)
     draft.inspection_id = request.POST.get('inspection_id', None)
-    draft.save()
+    if request.POST.get('draft_id', None):
+        draft_id = request.POST.get('draft_id', None)
+        EmergencyRescue.objects.filter(id=draft_id).update(**update_data)
+        return HttpResponse('updated')
+    else:
+        draft.save()
+    return HttpResponse('HELLO')
+
+
+def employee_acknowledgment(request):
+    draft = EmployeeAcknowledgment()
+    update_data = {}
+    update_data['plants_name'] = draft.plants_name = request.POST.get('plants_name', None)
+    update_data['permit'] = draft.permit = request.POST.get('permit', None)
+    update_data['area'] = draft.area = request.POST.get('area', None)
+    update_data['equipment'] = draft.equipment = request.POST.get('equipment', None)
+    update_data['date_develop'] = draft.date_develop = request.POST.get('date_develop', None)
+    update_data['developed_by'] = draft.developed_by = request.POST.get('developed_by', None)
+    update_data['des_location'] = draft.des_location = request.POST.get('des_location', None)
+    draft.inspection_id = request.POST.get('inspection_id', None)
+    if request.POST.get('draft_id', None):
+        draft_id = request.POST.get('draft_id', None)
+        EmployeeAcknowledgment.objects.filter(id=draft_id).update(**update_data)
+        return HttpResponse('updated')
+    else:
+        draft.save()
     return HttpResponse('HELLO')
 
 
@@ -733,7 +798,12 @@ def energized_electrical(request):
     update_data['second_elect_sign'] = draft.second_elect_sign = request.POST.get('second_elect_sign', None)
     update_data['second_elect_date'] = draft.second_elect_date = request.POST.get('second_elect_date', None)
     draft.inspection_id = request.POST.get('inspection_id', None)
-    draft.save()
+    if request.POST.get('draft_id', None):
+        draft_id = request.POST.get('draft_id', None)
+        EnergizedElectrical.objects.filter(id=draft_id).update(**update_data)
+        return HttpResponse('updated')
+    else:
+        draft.save()
     return HttpResponse('HELLO')
 
 
@@ -751,7 +821,12 @@ def equipment_deficiency(request):
     update_data['print'] = draft.print = request.POST.get('print', None)
     update_data['sign'] = draft.sign = request.POST.get('sign', None)
     draft.inspection_id = request.POST.get('inspection_id', None)
-    draft.save()
+    if request.POST.get('draft_id', None):
+        draft_id = request.POST.get('draft_id', None)
+        EquipmentDeficiency.objects.filter(id=draft_id).update(**update_data)
+        return HttpResponse('updated')
+    else:
+        draft.save()
     return HttpResponse('HELLO')
 
 
@@ -796,7 +871,12 @@ def equipment_inspection(request):
     update_data['insp_by'] = draft.insp_by = request.POST.get('insp_by', None)
     update_data['sign'] = draft.sign = request.POST.get('sign', None)
     draft.inspection_id = request.POST.get('inspection_id', None)
-    draft.save()
+    if request.POST.get('draft_id', None):
+        draft_id = request.POST.get('draft_id', None)
+        EquipmentInspection.objects.filter(id=draft_id).update(**update_data)
+        return HttpResponse('updated')
+    else:
+        draft.save()
     return HttpResponse('HELLO')
 
 
@@ -817,7 +897,12 @@ def equipment_operator(request):
     update_data['oper_sign'] = draft.oper_sign = request.POST.get('oper_sign', None)
     update_data['oper_date'] = draft.oper_date = request.POST.get('oper_date', None)
     draft.inspection_id = request.POST.get('inspection_id', None)
-    draft.save()
+    if request.POST.get('draft_id', None):
+        draft_id = request.POST.get('draft_id', None)
+        EquipmentOperator.objects.filter(id=draft_id).update(**update_data)
+        return HttpResponse('updated')
+    else:
+        draft.save()
     return HttpResponse('HELLO')
 
 
@@ -862,7 +947,12 @@ def eyewash_station(request):
     update_data['dec_insp_by'] = draft.dec_insp_by = request.POST.get('dec_insp_by', None)
     update_data['dec_sign'] = draft.dec_sign = request.POST.get('dec_sign', None)
     draft.inspection_id = request.POST.get('inspection_id', None)
-    draft.save()
+    if request.POST.get('draft_id', None):
+        draft_id = request.POST.get('draft_id', None)
+        EyewashStation.objects.filter(id=draft_id).update(**update_data)
+        return HttpResponse('updated')
+    else:
+        draft.save()
     return HttpResponse('HELLO')
 
 
@@ -907,7 +997,12 @@ def fire_extinguisher(request):
     update_data['dec_insp_by'] = draft.dec_insp_by = request.POST.get('dec_insp_by', None)
     update_data['dec_sign'] = draft.dec_sign = request.POST.get('dec_sign', None)
     draft.inspection_id = request.POST.get('inspection_id', None)
-    draft.save()
+    if request.POST.get('draft_id', None):
+        draft_id = request.POST.get('draft_id', None)
+        FireExtinguisher.objects.filter(id=draft_id).update(**update_data)
+        return HttpResponse('updated')
+    else:
+        draft.save()
     return HttpResponse('HELLO')
 
 
@@ -952,7 +1047,129 @@ def first_aid(request):
     update_data['dec_insp_by'] = draft.dec_insp_by = request.POST.get('dec_insp_by', None)
     update_data['dec_sign'] = draft.dec_sign = request.POST.get('dec_sign', None)
     draft.inspection_id = request.POST.get('inspection_id', None)
-    draft.save()
+    if request.POST.get('draft_id', None):
+        draft_id = request.POST.get('draft_id', None)
+        FirstAid.objects.filter(id=draft_id).update(**update_data)
+        return HttpResponse('updated')
+    else:
+        draft.save()
+    return HttpResponse('HELLO')
+
+
+def formal_site_inspection(request):
+    draft = FormalSite()
+    update_data = {}
+    update_data['plants_name'] = draft.plants_name = request.POST.get('plants_name', None)
+    update_data['health'] = draft.health = request.POST.get('', None)
+    alberta = request.POST.get('health', None)
+    update_data['health_safe'] = draft.health_safe = request.POST.get('health_safe', None)
+    update_data['signage'] = draft.signage = request.POST.get('signage', None)
+    update_data['aid_supply'] = draft.aid_supply = request.POST.get('aid_supply', None)
+    update_data['bulletin'] = draft.bulletin = request.POST.get('bulletin', None)
+    update_data['whmis'] = draft.whmis = request.POST.get('whmis', None)
+    update_data['postings'] = draft.postings = request.POST.get('postings', None)
+    update_data['permits'] = draft.permits = request.POST.get('permits', None)
+    update_data['defi_1'] = draft.defi_1 = request.POST.get('defi_1', None)
+    update_data['defi_2'] = draft.defi_2 = request.POST.get('defi_2', None)
+    update_data['defi_3'] = draft.defi_3 = request.POST.get('defi_3', None)
+    update_data['defi_4'] = draft.defi_4 = request.POST.get('defi_4', None)
+    update_data['defi_5'] = draft.defi_5 = request.POST.get('defi_5', None)
+    update_data['stacking'] = draft.stacking = request.POST.get('stacking', None)
+    update_data['aisle'] = draft.aisle = request.POST.get('aisle', None)
+    update_data['stairways'] = draft.stairways = request.POST.get('stairways', None)
+    update_data['entrance'] = draft.entrance = request.POST.get('entrance', None)
+    update_data['snow'] = draft.snow = request.POST.get('snow', None)
+    update_data['smoking'] = draft.smoking = request.POST.get('smoking', None)
+    update_data['fire'] = draft.fire = request.POST.get('fire', None)
+    update_data['yards'] = draft.yards = request.POST.get('yards', None)
+    update_data['surfaces'] = draft.surfaces = request.POST.get('surfaces', None)
+    update_data['containing'] = draft.containing = request.POST.get('containing', None)
+    update_data['random'] = draft.random = request.POST.get('random', None)
+    update_data['office'] = draft.office = request.POST.get('office', None)
+    update_data['cords'] = draft.cords = request.POST.get('cords', None)
+    update_data['defi_6'] = draft.defi_6 = request.POST.get('defi_6', None)
+    update_data['defi_7'] = draft.defi_7 = request.POST.get('defi_7', None)
+    update_data['defi_8'] = draft.defi_8 = request.POST.get('defi_8', None)
+    update_data['defi_9'] = draft.defi_9 = request.POST.get('defi_9', None)
+    update_data['repair'] = draft.repair = request.POST.get('repair', None)
+    update_data['ladders'] = draft.ladders = request.POST.get('ladders', None)
+    update_data['reinforces'] = draft.reinforces = request.POST.get('reinforces', None)
+    update_data['guards'] = draft.guards = request.POST.get('guards', None)
+    update_data['indicate'] = draft.indicate = request.POST.get('indicate', None)
+    update_data['cables'] = draft.cables = request.POST.get('cables', None)
+    update_data['supports'] = draft.supports = request.POST.get('supports', None)
+    update_data['equipment'] = draft.equipment = request.POST.get('equipment', None)
+    update_data['electrical'] = draft.electrical = request.POST.get('electrical', None)
+    update_data['accordance'] = draft.accordance = request.POST.get('accordance', None)
+    update_data['all_forklift'] = draft.all_forklift = request.POST.get('all_forklift', None)
+    update_data['foeklift_main'] = draft.foeklift_main = request.POST.get('foeklift_main', None)
+    update_data['forklift_backup'] = draft.forklift_backup = request.POST.get('forklift_backup', None)
+    update_data['forklift'] = draft.forklift = request.POST.get('forklift', None)
+    update_data['extinguishers'] = draft.extinguishers = request.POST.get('extinguishers', None)
+    update_data['review'] = draft.review = request.POST.get('review', None)
+    update_data['hand_power'] = draft.hand_power = request.POST.get('hand_power', None)
+    update_data['wiring'] = draft.wiring = request.POST.get('wiring', None)
+    update_data['tools'] = draft.tools = request.POST.get('tools', None)
+    update_data['flammable'] = draft.flammable = request.POST.get('flammable', None)
+    update_data['materials'] = draft.materials = request.POST.get('materials', None)
+    update_data['compressed'] = draft.compressed = request.POST.get('compressed', None)
+    update_data['defi_10'] = draft.defi_10 = request.POST.get('defi_10', None)
+    update_data['defi_11'] = draft.defi_11 = request.POST.get('defi_11', None)
+    update_data['defi_12'] = draft.defi_12 = request.POST.get('defi_12', None)
+    update_data['defi_13'] = draft.defi_13 = request.POST.get('defi_13', None)
+    update_data['defi_14'] = draft.defi_14 = request.POST.get('defi_14', None)
+    update_data['defi_15'] = draft.defi_15 = request.POST.get('defi_15', None)
+    update_data['defi_16'] = draft.defi_16 = request.POST.get('defi_16', None)
+    update_data['defi_17'] = draft.defi_17 = request.POST.get('defi_17', None)
+    update_data['whmis_signs'] = draft.whmis_signs = request.POST.get('whmis_signs', None)
+    update_data['whmis_product'] = draft.whmis_product = request.POST.get('whmis_product', None)
+    update_data['worksite_label'] = draft.worksite_label = request.POST.get('worksite_label', None)
+    update_data['supports_whmis'] = draft.supports_whmis = request.POST.get('supports_whmis', None)
+    update_data['available_workers'] = draft.available_workers = request.POST.get('available_workers', None)
+    update_data['facility'] = draft.facility = request.POST.get('facility', None)
+    update_data['data_sheet'] = draft.data_sheet = request.POST.get('data_sheet', None)
+    update_data['defi_18'] = draft.defi_18 = request.POST.get('defi_18', None)
+    update_data['defi_19'] = draft.defi_19 = request.POST.get('defi_19', None)
+    update_data['defi_20'] = draft.defi_20 = request.POST.get('defi_20', None)
+    update_data['defi_21'] = draft.defi_21 = request.POST.get('defi_21', None)
+    update_data['defi_22'] = draft.defi_22 = request.POST.get('defi_22', None)
+    update_data['adequate'] = draft.adequate = request.POST.get('adequate', None)
+    update_data['visitors'] = draft.visitors = request.POST.get('visitors', None)
+    update_data['incomplaint'] = draft.incomplaint = request.POST.get('incomplaint', None)
+    update_data['acknowledging'] = draft.acknowledging = request.POST.get('acknowledging', None)
+    update_data['defi_23'] = draft.defi_23 = request.POST.get('defi_23', None)
+    update_data['defi_24'] = draft.defi_24 = request.POST.get('defi_24', None)
+    update_data['defi_25'] = draft.defi_25 = request.POST.get('defi_25', None)
+    update_data['defi_26'] = draft.defi_26 = request.POST.get('defi_26', None)
+    update_data['lighting'] = draft.lighting = request.POST.get('lighting', None)
+    update_data['random_check'] = draft.random_check = request.POST.get('random_check', None)
+    update_data['investigation'] = draft.investigation = request.POST.get('investigation', None)
+    update_data['adequate_signage'] = draft.adequate_signage = request.POST.get('adequate_signage', None)
+    update_data['emergency_light'] = draft.emergency_light = request.POST.get('emergency_light', None)
+    update_data['defi_27'] = draft.defi_27 = request.POST.get('defi_27', None)
+    update_data['defi_28'] = draft.defi_28 = request.POST.get('defi_28', None)
+    update_data['defi_29'] = draft.defi_29 = request.POST.get('defi_29', None)
+    update_data['defi_30'] = draft.defi_30 = request.POST.get('defi_30', None)
+    update_data['bulletin_boards'] = draft.bulletin_boards = request.POST.get('bulletin_boards', None)
+    update_data['eye_wash'] = draft.eye_wash = request.POST.get('eye_wash', None)
+    update_data['wash_bottles'] = draft.wash_bottles = request.POST.get('wash_bottles', None)
+    update_data['certified_first'] = draft.certified_first = request.POST.get('certified_first', None)
+    update_data['minutes_last'] = draft.minutes_last = request.POST.get('minutes_last', None)
+    update_data['notification'] = draft.notification = request.POST.get('notification', None)
+    update_data['documentation'] = draft.documentation = request.POST.get('documentation', None)
+    update_data['areas_maintained'] = draft.areas_maintained = request.POST.get('areas_maintained', None)
+    update_data['signage_advising'] = draft.signage_advising = request.POST.get('signage_advising', None)
+    update_data['defi_31'] = draft.defi_31 = request.POST.get('defi_31', None)
+    update_data['defi_32'] = draft.defi_32 = request.POST.get('defi_32', None)
+    update_data['defi_33'] = draft.defi_33 = request.POST.get('defi_33', None)
+    update_data['defi_34'] = draft.defi_34 = request.POST.get('defi_34', None)
+    draft.inspection_id = request.POST.get('inspection_id', None)
+    if request.POST.get('draft_id', None):
+        draft_id = request.POST.get('draft_id', None)
+        FormalSiteInspection.objects.filter(id=draft_id).update(**update_data)
+        return HttpResponse('updated')
+    else:
+        draft.save()
     return HttpResponse('HELLO')
 
 
@@ -980,7 +1197,12 @@ def formal_site(request):
     update_data['position'] = draft.position = request.POST.get('position', None)
     update_data['date'] = draft.date = request.POST.get('date', None)
     draft.inspection_id = request.POST.get('inspection_id', None)
-    draft.save()
+    if request.POST.get('draft_id', None):
+        draft_id = request.POST.get('draft_id', None)
+        FormalSite.objects.filter(id=draft_id).update(**update_data)
+        return HttpResponse('updated')
+    else:
+        draft.save()
     return HttpResponse('HELLO')
 
 
@@ -1025,7 +1247,12 @@ def gas_monitor(request):
     update_data['location_twelve'] = draft.location_twelve = request.POST.get('location_twelve', None)
     update_data['date_cali_exp_twelve'] = draft.date_cali_exp_twelve = request.POST.get('date_cali_exp_twelve', None)
     draft.inspection_id = request.POST.get('inspection_id', None)
-    draft.save()
+    if request.POST.get('draft_id', None):
+        draft_id = request.POST.get('draft_id', None)
+        GasMonitor.objects.filter(id=draft_id).update(**update_data)
+        return HttpResponse('updated')
+    else:
+        draft.save()
     return HttpResponse('HELLO')
 
 
@@ -1114,7 +1341,12 @@ def gas_test(request):
     update_data['other_ten'] = draft.other_ten = request.POST.get('other_ten', None)
     update_data['initials_ten'] = draft.initials_ten = request.POST.get('initials_ten', None)
     draft.inspection_id = request.POST.get('inspection_id', None)
-    draft.save()
+    if request.POST.get('draft_id', None):
+        draft_id = request.POST.get('draft_id', None)
+        GasTest.objects.filter(id=draft_id).update(**update_data)
+        return HttpResponse('updated')
+    else:
+        draft.save()
     return HttpResponse('HELLO')
 
 
@@ -1167,7 +1399,12 @@ def general_service(request):
     update_data['date_thirteen'] = draft.date_thirteen = request.POST.get('date_thirteen', None)
     update_data['work_per_thirteen'] = draft.work_per_thirteen = request.POST.get('work_per_thirteen', None)
     draft.inspection_id = request.POST.get('inspection_id', None)
-    draft.save()
+    if request.POST.get('draft_id', None):
+        draft_id = request.POST.get('draft_id', None)
+        GeneralService.objects.filter(id=draft_id).update(**update_data)
+        return HttpResponse('updated')
+    else:
+        draft.save()
     return HttpResponse('HELLO')
 
 
@@ -1299,7 +1536,12 @@ def generic_safe(request):
     update_data['close_issu_sign'] = draft.close_issu_sign = request.POST.get('close_issu_sign', None)
     update_data['close_issu_date'] = draft.close_issu_date = request.POST.get('close_issu_date', None)
     draft.inspection_id = request.POST.get('inspection_id', None)
-    draft.save()
+    if request.POST.get('draft_id', None):
+        draft_id = request.POST.get('draft_id', None)
+        GenericSafe.objects.filter(id=draft_id).update(**update_data)
+        return HttpResponse('updated')
+    else:
+        draft.save()
     return HttpResponse('HELLO')
 
 
@@ -1435,7 +1677,12 @@ def industrial_forklift(request):
     update_data['remark_wippers'] = draft.remark_wippers = request.POST.get('remark_wippers', None)
     update_data['date'] = draft.date = request.POST.get('date', None)
     draft.inspection_id = request.POST.get('inspection_id', None)
-    draft.save()
+    if request.POST.get('draft_id', None):
+        draft_id = request.POST.get('draft_id', None)
+        IndustrialForklift.objects.filter(id=draft_id).update(**update_data)
+        return HttpResponse('updated')
+    else:
+        draft.save()
     return HttpResponse('HELLO')
 
 
@@ -1461,7 +1708,12 @@ def location_of_first(request):
     update_data['name_six'] = draft.name_six = request.POST.get('name_six', None)
     update_data['certificate_six'] = draft.certificate_six = request.POST.get('certificate_six', None)
     draft.inspection_id = request.POST.get('inspection_id', None)
-    draft.save()
+    if request.POST.get('draft_id', None):
+        draft_id = request.POST.get('draft_id', None)
+        LocationofFirst.objects.filter(id=draft_id).update(**update_data)
+        return HttpResponse('updated')
+    else:
+        draft.save()
     return HttpResponse('HELLO')
 
 
@@ -1485,7 +1737,12 @@ def loss_time_injury(request):
     update_data['comment_detail'] = draft.comment_detail = request.POST.get('comment_detail', None)
     update_data['other_detail'] = draft.other_detail = request.POST.get('other_detail', None)
     draft.inspection_id = request.POST.get('inspection_id', None)
-    draft.save()
+    if request.POST.get('draft_id', None):
+        draft_id = request.POST.get('draft_id', None)
+        LossTimeInjury.objects.filter(id=draft_id).update(**update_data)
+        return HttpResponse('updated')
+    else:
+        draft.save()
     return HttpResponse('HELLO')
 
 
@@ -1567,7 +1824,12 @@ def maintenance_record(request):
     update_data['initial_fourteen'] = draft.initial_fourteen = request.POST.get('initial_fourteen', None)
     update_data['year_completed'] = draft.year_completed = request.POST.get('year_completed', None)
     draft.inspection_id = request.POST.get('inspection_id', None)
-    draft.save()
+    if request.POST.get('draft_id', None):
+        draft_id = request.POST.get('draft_id', None)
+        MaintenanceRecord.objects.filter(id=draft_id).update(**update_data)
+        return HttpResponse('updated')
+    else:
+        draft.save()
     return HttpResponse('HELLO')
 
 
@@ -1626,7 +1888,12 @@ def management_of_change(request):
     update_data['sign'] = draft.sign = request.POST.get('sign', None)
     update_data['date_closed'] = draft.date_closed = request.POST.get('date_closed', None)
     draft.inspection_id = request.POST.get('inspection_id', None)
-    draft.save()
+    if request.POST.get('draft_id', None):
+        draft_id = request.POST.get('draft_id', None)
+        ManagementofChange.objects.filter(id=draft_id).update(**update_data)
+        return HttpResponse('updated')
+    else:
+        draft.save()
     return HttpResponse('HELLO')
 
 
@@ -1668,7 +1935,12 @@ def mobile_equipment(request):
     update_data['hse_lead'] = draft.hse_lead = request.POST.get('hse_lead', None)
     update_data['date_six'] = draft.date_six = request.POST.get('date_six', None)
     draft.inspection_id = request.POST.get('inspection_id', None)
-    draft.save()
+    if request.POST.get('draft_id', None):
+        draft_id = request.POST.get('draft_id', None)
+        MobileEquipment.objects.filter(id=draft_id).update(**update_data)
+        return HttpResponse('updated')
+    else:
+        draft.save()
     return HttpResponse('HELLO')
 
 
@@ -1832,7 +2104,12 @@ def monthly_office(request):
     update_data['insp_name'] = draft.insp_name = request.POST.get('insp_name', None)
     update_data['sign'] = draft.sign = request.POST.get('sign', None)
     draft.inspection_id = request.POST.get('inspection_id', None)
-    draft.save()
+    if request.POST.get('draft_id', None):
+        draft_id = request.POST.get('draft_id', None)
+        MonthlyOffice.objects.filter(id=draft_id).update(**update_data)
+        return HttpResponse('updated')
+    else:
+        draft.save()
     return HttpResponse('HELLO')
 
 
@@ -1902,7 +2179,12 @@ def new_employee(request):
     update_data['duration_training'] = draft.duration_training = request.POST.get('duration_training', None)
     update_data['trainer'] = draft.trainer = request.POST.get('trainer', None)
     draft.inspection_id = request.POST.get('inspection_id', None)
-    draft.save()
+    if request.POST.get('draft_id', None):
+        draft_id = request.POST.get('draft_id', None)
+        NewEmployee.objects.filter(id=draft_id).update(**update_data)
+        return HttpResponse('updated')
+    else:
+        draft.save()
     return HttpResponse('HELLO')
 
 
@@ -1931,7 +2213,12 @@ def personal_lock(request):
     update_data['absp_sign'] = draft.absp_sign = request.POST.get('absp_sign', None)
     update_data['absp_date'] = draft.absp_date = request.POST.get('absp_date', None)
     draft.inspection_id = request.POST.get('inspection_id', None)
-    draft.save()
+    if request.POST.get('draft_id', None):
+        draft_id = request.POST.get('draft_id', None)
+        PersonalLock.objects.filter(id=draft_id).update(**update_data)
+        return HttpResponse('updated')
+    else:
+        draft.save()
     return HttpResponse('HELLO')
 
 
@@ -1969,7 +2256,12 @@ def portable_ladder(request):
     update_data['insp_name'] = draft.insp_name = request.POST.get('insp_name', None)
     update_data['sign'] = draft.sign = request.POST.get('sign', None)
     draft.inspection_id = request.POST.get('inspection_id', None)
-    draft.save()
+    if request.POST.get('draft_id', None):
+        draft_id = request.POST.get('draft_id', None)
+        PortableLadder.objects.filter(id=draft_id).update(**update_data)
+        return HttpResponse('updated')
+    else:
+        draft.save()
     return HttpResponse('HELLO')
 
 
@@ -2001,7 +2293,12 @@ def quarterly_oxygen(request):
     update_data['insp_name'] = draft.insp_name = request.POST.get('insp_name', None)
     update_data['sign'] = draft.sign = request.POST.get('sign', None)
     draft.inspection_id = request.POST.get('inspection_id', None)
-    draft.save()
+    if request.POST.get('draft_id', None):
+        draft_id = request.POST.get('draft_id', None)
+        QuarterlyOxygen.objects.filter(id=draft_id).update(**update_data)
+        return HttpResponse('updated')
+    else:
+        draft.save()
     return HttpResponse('HELLO')
 
 
@@ -2112,7 +2409,12 @@ def safety_statistics(request):
     update_data['result_D'] = draft.result_D = request.POST.get('result_D', None)
     update_data['ttl_lost_day_result'] = draft.ttl_lost_day_result = request.POST.get('ttl_lost_day_result', None)
     draft.inspection_id = request.POST.get('inspection_id', None)
-    draft.save()
+    if request.POST.get('draft_id', None):
+        draft_id = request.POST.get('draft_id', None)
+        SafetyStatistics.objects.filter(id=draft_id).update(**update_data)
+        return HttpResponse('updated')
+    else:
+        draft.save()
     return HttpResponse('HELLO')
 
 
@@ -2219,7 +2521,12 @@ def scaffold_inspection(request):
     update_data['insp_sign'] = draft.insp_sign = request.POST.get('insp_sign', None)
     update_data['scaff_num'] = draft.scaff_num = request.POST.get('scaff_num', None)
     draft.inspection_id = request.POST.get('inspection_id', None)
-    draft.save()
+    if request.POST.get('draft_id', None):
+        draft_id = request.POST.get('draft_id', None)
+        ScaffoldInspection.objects.filter(id=draft_id).update(**update_data)
+        return HttpResponse('updated')
+    else:
+        draft.save()
     return HttpResponse('HELLO')
 
 
@@ -2278,7 +2585,12 @@ def shop_office(request):
     update_data['insp_by'] = draft.insp_by = request.POST.get('insp_by', None)
     update_data['sign'] = draft.sign = request.POST.get('sign', None)
     draft.inspection_id = request.POST.get('inspection_id', None)
-    draft.save()
+    if request.POST.get('draft_id', None):
+        draft_id = request.POST.get('draft_id', None)
+        ShopOffice.objects.filter(id=draft_id).update(**update_data)
+        return HttpResponse('updated')
+    else:
+        draft.save()
     return HttpResponse('HELLO')
 
 
@@ -2286,7 +2598,7 @@ def skid_steer(request):
     draft = SkidSteer()
     update_data = {}
     update_data['plants_name'] = draft.plants_name = request.POST.get('plants_name', None)
-    update_data['month'] = draft.month = request.POST.get('month', None)
+    update_data['month'] = draft.month = request.POST.getlist('month', None)
     update_data['oil'] = draft.oil = request.POST.getlist('oil', None)
     update_data['cooling'] = draft.cooling = request.POST.getlist('cooling', None)
     update_data['hydraulic'] = draft.hydraulic = request.POST.getlist('hydraulic', None)
@@ -2302,7 +2614,12 @@ def skid_steer(request):
     update_data['head'] = draft.head = request.POST.getlist('head', None)
     update_data['guards'] = draft.guards = request.POST.getlist('guards', None)
     draft.inspection_id = request.POST.get('inspection_id', None)
-    draft.save()
+    if request.POST.get('draft_id', None):
+        draft_id = request.POST.get('draft_id', None)
+        SkidSteer.objects.filter(id=draft_id).update(**update_data)
+        return HttpResponse('updated')
+    else:
+        draft.save()
     return HttpResponse('HELLO')
 
 
@@ -2356,7 +2673,12 @@ def spot_inspection(request):
     update_data['insp_by'] = draft.insp_by = request.POST.get('insp_by', None)
     update_data['insp_by2'] = draft.insp_by2 = request.POST.get('insp_by2', None)
     draft.inspection_id = request.POST.get('inspection_id', None)
-    draft.save()
+    if request.POST.get('draft_id', None):
+        draft_id = request.POST.get('draft_id', None)
+        SpotInspection.objects.filter(id=draft_id).update(**update_data)
+        return HttpResponse('updated')
+    else:
+        draft.save()
     return HttpResponse('HELLO')
 
 
@@ -2369,7 +2691,12 @@ def subcontractor_acknowledgment(request):
     update_data['manager_name'] = draft.manager_name = request.POST.get('manager_name', None)
     update_data['management_sign'] = draft.management_sign = request.POST.get('management_sign', None)
     update_data['inspection_id'] = draft.inspection_id = request.POST.get('inspection_id', None)
-    draft.save()
+    if request.POST.get('draft_id', None):
+        draft_id = request.POST.get('draft_id', None)
+        SubcontractorAcknowledgment.objects.filter(id=draft_id).update(**update_data)
+        return HttpResponse('updated')
+    else:
+        draft.save()
     return HttpResponse('HELLO')
 
 
@@ -2433,7 +2760,12 @@ def subcontractor_orientation(request):
     update_data['date_compl'] = draft.date_compl = request.POST.get('date_compl', None)
     update_data['trainer_sign3'] = draft.trainer_sign3 = request.POST.get('trainer_sign3', None)
     draft.inspection_id = request.POST.get('inspection_id', None)
-    draft.save()
+    if request.POST.get('draft_id', None):
+        draft_id = request.POST.get('draft_id', None)
+        SubcontractorOrientation.objects.filter(id=draft_id).update(**update_data)
+        return HttpResponse('updated')
+    else:
+        draft.save()
     return HttpResponse('HELLO')
 
 
@@ -2450,7 +2782,12 @@ def truck_deficiency(request):
     update_data['print'] = draft.print = request.POST.get('print', None)
     update_data['sign'] = draft.sign = request.POST.get('sign', None)
     draft.inspection_id = request.POST.get('inspection_id', None)
-    draft.save()
+    if request.POST.get('draft_id', None):
+        draft_id = request.POST.get('draft_id', None)
+        TruckDeficiency.objects.filter(id=draft_id).update(**update_data)
+        return HttpResponse('updated')
+    else:
+        draft.save()
     return HttpResponse('HELLO')
 
 
@@ -2489,7 +2826,12 @@ def user_fitness(request):
     update_data['other'] = draft.other = request.POST.get('other', None)
     update_data['average'] = draft.average = request.POST.get('average', None)
     draft.inspection_id = request.POST.get('inspection_id', None)
-    draft.save()
+    if request.POST.get('draft_id', None):
+        draft_id = request.POST.get('draft_id', None)
+        UserFitness.objects.filter(id=draft_id).update(**update_data)
+        return HttpResponse('updated')
+    else:
+        draft.save()
     return HttpResponse('HELLO')
 
 
@@ -2544,7 +2886,12 @@ def vehicle_inspection(request):
     update_data['print'] = draft.print = request.POST.get('print', None)
     update_data['sign'] = draft.sign = request.POST.get('sign', None)
     draft.inspection_id = request.POST.get('inspection_id', None)
-    draft.save()
+    if request.POST.get('draft_id', None):
+        draft_id = request.POST.get('draft_id', None)
+        VehicleInspection.objects.filter(id=draft_id).update(**update_data)
+        return HttpResponse('updated')
+    else:
+        draft.save()
     return HttpResponse('HELLO')
 
 
@@ -2600,7 +2947,12 @@ def vehicle_inspection_log(request):
     update_data['date_fourteen'] = draft.date_fourteen = request.POST.get('date_fourteen', None)
     update_data['work_fourteen'] = draft.work_fourteen = request.POST.get('work_fourteen', None)
     draft.inspection_id = request.POST.get('inspection_id', None)
-    draft.save()
+    if request.POST.get('draft_id', None):
+        draft_id = request.POST.get('draft_id', None)
+        VehicleInspectionLog.objects.filter(id=draft_id).update(**update_data)
+        return HttpResponse('updated')
+    else:
+        draft.save()
     return HttpResponse('HELLO')
 
 
@@ -2640,13 +2992,18 @@ def vendor_truck(request):
     update_data['sign'] = draft.sign = request.POST.get('sign', None)
     update_data['company'] = draft.company = request.POST.get('company', None)
     draft.inspection_id = request.POST.get('inspection_id', None)
-    draft.save()
+    if request.POST.get('draft_id', None):
+        draft_id = request.POST.get('draft_id', None)
+        VendorTruck.objects.filter(id=draft_id).update(**update_data)
+        return HttpResponse('updated')
+    else:
+        draft.save()
     return HttpResponse('HELLO')
 
 
-def_name = {"accident_investigation_rca_form": accident_investigation_rca_form, "awp_form": awp_form, "compressed_gas_cylinder": compressed_gas_cylinder, "confined_space_authorization": confined_space_authorization, "confined_space_entry": confined_space_entry, "daily_excavation": daily_excavation, "daily_maintenance": daily_maintenance, "earth_moving_equipment": earth_moving_equipment, "emergency_evacuation": emergency_evacuation, "emergency_rescue": emergency_rescue, "energized_electrical": energized_electrical, "equipment_deficiency": equipment_deficiency, "equipment_inspection": equipment_inspection, "equipment_operator": equipment_operator, "eyewash_station": eyewash_station, "fire_extinguisher": fire_extinguisher, "first_aid": first_aid, "formal_site": formal_site, "gas_monitor": gas_monitor, "gas_test": gas_test, "general_service": general_service, "generic_safe": generic_safe, "industrial_forklift": industrial_forklift, "location_of_first": location_of_first, "loss_time_injury": loss_time_injury, "maintenance_record": maintenance_record, "management_of_change": management_of_change, "mobile_equipment": mobile_equipment, "monthly_office": monthly_office, "new_employee": new_employee, "personal_lock": personal_lock, "portable_ladder": portable_ladder, "quarterly_oxygen": quarterly_oxygen, "safety_statistics": safety_statistics, "scaffold_inspection": scaffold_inspection, "shop_office": shop_office, "skid_steer": skid_steer, "spot_inspection": spot_inspection, "subcontractor_acknowledgment": subcontractor_acknowledgment, "subcontractor_orientation": subcontractor_orientation, "truck_deficiency": truck_deficiency, "user_fitness": user_fitness, "vehicle_inspection": vehicle_inspection, "vehicle_inspection_log": vehicle_inspection_log, "vendor_truck": vendor_truck}
+def_name = {"accident_investigation_rca_form": accident_investigation_rca_form, "awp_form": awp_form, "compressed_gas_cylinder": compressed_gas_cylinder, "confined_space_authorization": confined_space_authorization, "confined_space_entry": confined_space_entry, "daily_excavation": daily_excavation, "daily_maintenance": daily_maintenance, "earth_moving_equipment": earth_moving_equipment, "emergency_evacuation": emergency_evacuation, "emergency_rescue": emergency_rescue, "employee_acknowledgment": employee_acknowledgment, "energized_electrical": energized_electrical, "equipment_deficiency": equipment_deficiency, "equipment_inspection": equipment_inspection, "equipment_operator": equipment_operator, "eyewash_station": eyewash_station, "fire_extinguisher": fire_extinguisher, "first_aid": first_aid, "formal_site": formal_site, "gas_monitor": gas_monitor, "gas_test": gas_test, "general_service": general_service, "generic_safe": generic_safe, "industrial_forklift": industrial_forklift, "location_of_first": location_of_first, "loss_time_injury": loss_time_injury, "maintenance_record": maintenance_record, "management_of_change": management_of_change, "mobile_equipment": mobile_equipment, "monthly_office": monthly_office, "new_employee": new_employee, "personal_lock": personal_lock, "portable_ladder": portable_ladder, "quarterly_oxygen": quarterly_oxygen, "safety_statistics": safety_statistics, "scaffold_inspection": scaffold_inspection, "shop_office": shop_office, "skid_steer": skid_steer, "spot_inspection": spot_inspection, "subcontractor_acknowledgment": subcontractor_acknowledgment, "subcontractor_orientation": subcontractor_orientation, "truck_deficiency": truck_deficiency, "user_fitness": user_fitness, "vehicle_inspection": vehicle_inspection, "vehicle_inspection_log": vehicle_inspection_log, "vendor_truck": vendor_truck}
 
-models_data = {'AccidentInvestigationRCAForm': AccidentInvestigationRCAForm, 'AWPForm': AWPForm, 'CompressedGasCylinder': CompressedGasCylinder, 'ConfinedSpaceAuthorization': ConfinedSpaceAuthorization, 'ConfinedSpaceEntry': ConfinedSpaceEntry, 'DailyExcavation': DailyExcavation, 'DailyMaintenance': DailyMaintenance, 'EarthmovingEquipment': EarthmovingEquipment, 'EmergencyEvacuation': EmergencyEvacuation, 'EmergencyRescue': EmergencyRescue, 'EnergizedElectrical': EnergizedElectrical, 'EquipmentDeficiency': EquipmentDeficiency, 'EquipmentInspection': EquipmentInspection, 'EquipmentOperator': EquipmentOperator, 'EyewashStation': EyewashStation, 'FireExtinguisher': FireExtinguisher, 'FirstAid': FirstAid, 'FormalSite': FormalSite, 'GasMonitor': GasMonitor, 'GasTest': GasTest, 'GeneralService': GeneralService, 'GenericSafe': GenericSafe, 'IndustrialForklift': IndustrialForklift, 'LocationofFirst': LocationofFirst, 'LossTimeInjury': LossTimeInjury, 'MaintenanceRecord': MaintenanceRecord, 'ManagementofChange': ManagementofChange, 'MobileEquipment': MobileEquipment, 'MonthlyOffice': MonthlyOffice, 'NewEmployee': NewEmployee, 'PersonalLock': PersonalLock, 'PortableLadder': PortableLadder, 'QuarterlyOxygen': QuarterlyOxygen, 'SafetyStatistics': SafetyStatistics, 'ScaffoldInspection': ScaffoldInspection, 'ShopOffice': ShopOffice, 'SkidSteer': SkidSteer, 'SpotInspection': SpotInspection, 'SubcontractorAcknowledgment': SubcontractorAcknowledgment, 'SubcontractorOrientation': SubcontractorOrientation, 'TruckDeficiency': TruckDeficiency, 'UserFitness': UserFitness, 'VehicleInspection': VehicleInspection, 'VehicleInspectionLog': VehicleInspectionLog, 'VendorTruck': VendorTruck }
+models_data = {'AccidentInvestigationRCAForm': AccidentInvestigationRCAForm, 'AWPForm': AWPForm, 'CompressedGasCylinder': CompressedGasCylinder, 'ConfinedSpaceAuthorization': ConfinedSpaceAuthorization, 'ConfinedSpaceEntry': ConfinedSpaceEntry, 'DailyExcavation': DailyExcavation, 'DailyMaintenance': DailyMaintenance, 'EarthmovingEquipment': EarthmovingEquipment, 'EmergencyEvacuation': EmergencyEvacuation, 'EmergencyRescue': EmergencyRescue, 'EmployeeAcknowledgment': EmployeeAcknowledgment, 'EnergizedElectrical': EnergizedElectrical, 'EquipmentDeficiency': EquipmentDeficiency, 'EquipmentInspection': EquipmentInspection, 'EquipmentOperator': EquipmentOperator, 'EyewashStation': EyewashStation, 'FireExtinguisher': FireExtinguisher, 'FirstAid': FirstAid, 'FormalSiteInspection': FormalSiteInspection, 'FormalSite': FormalSite, 'GasMonitor': GasMonitor, 'GasTest': GasTest, 'GeneralService': GeneralService, 'GenericSafe': GenericSafe, 'IndustrialForklift': IndustrialForklift, 'LocationofFirst': LocationofFirst, 'LossTimeInjury': LossTimeInjury, 'MaintenanceRecord': MaintenanceRecord, 'ManagementofChange': ManagementofChange, 'MobileEquipment': MobileEquipment, 'MonthlyOffice': MonthlyOffice, 'NewEmployee': NewEmployee, 'PersonalLock': PersonalLock, 'PortableLadder': PortableLadder, 'QuarterlyOxygen': QuarterlyOxygen, 'SafetyStatistics': SafetyStatistics, 'ScaffoldInspection': ScaffoldInspection, 'ShopOffice': ShopOffice, 'SkidSteer': SkidSteer, 'SpotInspection': SpotInspection, 'SubcontractorAcknowledgment': SubcontractorAcknowledgment, 'SubcontractorOrientation': SubcontractorOrientation, 'TruckDeficiency': TruckDeficiency, 'UserFitness': UserFitness, 'VehicleInspection': VehicleInspection, 'VehicleInspectionLog': VehicleInspectionLog, 'VendorTruck': VendorTruck }
 
 
 def insert_draft_form(request):
@@ -2672,7 +3029,7 @@ def view_draft(request):
     table_name = draft_page.models_name
     drafts_data['data'] = models_data[table_name].objects.get(inspection_id=insp_id)
     if drafts_data['data']:
-        print(drafts_data)
+        print('drafts_data')
     else:
         drafts_data['data'] = {}
     # json_data = eval(draft_data.unit_type)
@@ -2688,8 +3045,11 @@ def view_draft(request):
 
 def update_drafts(request):
     id_here = request.POST.get('draft_id', None)
-    return_data = awp_form(request)
-    # if return_data:
-        # return redirect('view-draft?insp_val=')
+    draft_name = request.POST.get('draft_name', None)
+    draft_data = DraftTables.objects.get(draft_name=draft_name)
+    fun_name = draft_data.draft_func_name
+    return_data = def_name[fun_name](request)
+    if return_data:
+        return redirect('view-draft?insp_val=88')
     return HttpResponse(return_data)
 
