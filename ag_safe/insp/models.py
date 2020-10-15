@@ -1236,6 +1236,7 @@ class FormalSite(models.Model):
     insp_five = models.CharField(max_length=50, blank=True)
     sign_five = models.CharField(max_length=50, blank=True)
     date_five = models.CharField(max_length=50, blank=True)
+    name = models.CharField(max_length=50, blank=True)
     sign = models.CharField(max_length=50, blank=True)
     position = models.CharField(max_length=50, blank=True)
     date = models.CharField(max_length=50, blank=True)

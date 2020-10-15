@@ -1,0 +1,1656 @@
+{% load custom_tags %}
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" type="text/css" href="/static/css/draft_style.css">
+<link rel="stylesheet" type="text/css" href="/static/css/style.css">
+<div class="header-top">
+    <div class="container-category">
+        <div class="header-inner">
+            <div class="logo">logo</div>
+            <div class="right-contant">
+                <div class="field-wrap"><label>Alberta See Processor – </label><input type="text"  value="{{ data.plants_name }}" name="plants_name" placeholder="Plants Name" /> </div>
+                <p>Formal Site Inspection</p>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="AWP-form RCA-form-pdf">
+    <div class="container-category">
+        <form action="update-drafts" method="POST">
+			{% csrf_token %}
+        <div class="ABSP-form-block">
+            <div class="top-link">
+                <h2>Formal Site Inspection</h2>
+            </div>
+            <div class="tbl-scroll">
+                <table class="responsive-tbl tbl-left-all">
+                    <tr>
+                        <td colspan="7" class="tbold">SECTION 1: DOCUMENTATION REVIEW</td>
+                    </tr>
+                    <tr>
+                        <td class="td-heading">Item #</td>
+                        <td class="td-heading">Yes</td>
+                        <td class="td-heading">No</td>
+                        <td class="td-heading">N/A</td>
+                        <td class="td-heading" colspan="3">Item Description</td>
+                    </tr>
+                    <tr>
+                        <td>1.1</td>
+                        <td>
+                            <div class="field-wrap"><input type="text"  value="{{ data.health|get_string_as_list|get_list_val:0 }}" name="health"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text"  value="{{ data.health|get_string_as_list|get_list_val:1 }}" name="health"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text"  value="{{ data.health|get_string_as_list|get_list_val:2 }}" name="health"></div>
+                        </td>
+                        <td colspan="3">A copy of The Health and Safety Program is readily available to all employees.
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>1.2</td>
+                        <td>
+                            <div class="field-wrap"><input type="text"  value="{{ data.alberta|get_string_as_list|get_list_val:0 }}" name="alberta"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text"  value="{{ data.alberta|get_string_as_list|get_list_val:1 }}" name="alberta"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text"  value="{{ data.alberta|get_string_as_list|get_list_val:2 }}" name="alberta"></div>
+                        </td>
+                        <td colspan="3">A copy of the most recent Alberta OHS legislation is readily available to all
+                            employees.</td>
+                    </tr>
+                    <tr>
+                        <td>1.3</td>
+                        <td>
+                            <div class="field-wrap"><input type="text"  value="{{ data.health_safe|get_string_as_list|get_list_val:0 }}" name="health_safe"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text"  value="{{ data.health_safe|get_string_as_list|get_list_val:1 }}" name="health_safe"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text"  value="{{ data.health_safe|get_string_as_list|get_list_val:2 }}" name="health_safe"></div>
+                        </td>
+                        <td colspan="3">A copy of the Health and Safety Policy statement is posted on bulletin boards,
+                            or can otherwise be located at the facility.</td>
+                    </tr>
+                    <tr>
+                        <td>1.4</td>
+                        <td>
+                            <div class="field-wrap"><input type="text"  value="{{ data.signage|get_string_as_list|get_list_val:0 }}" name="signage"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text"  value="{{ data.signage|get_string_as_list|get_list_val:1 }}" name="signage"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text"  value="{{ data.signage|get_string_as_list|get_list_val:2 }}" name="signage"></div>
+                        </td>
+                        <td colspan="3">All first aid stations/rooms have appropriate signage.</td>
+                    </tr>
+                    <tr>
+                        <td>1.5</td>
+                        <td>
+                            <div class="field-wrap"><input type="text"  value="{{ data.aid_supply|get_string_as_list|get_list_val:0 }}" name="aid_supply"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text"  value="{{ data.aid_supply|get_string_as_list|get_list_val:1 }}" name="aid_supply"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text"  value="{{ data.aid_supply|get_string_as_list|get_list_val:2 }}" name="aid_supply"></div>
+                        </td>
+                        <td colspan="3">All first aid stations/rooms have a list of required supplies.</td>
+                    </tr>
+                    <tr>
+                        <td>1.6</td>
+                        <td>
+                            <div class="field-wrap"><input type="text"  value="{{ data.bulletin|get_string_as_list|get_list_val:0 }}" name="bulletin"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text"  value="{{ data.bulletin|get_string_as_list|get_list_val:1 }}" name="bulletin"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text"  value="{{ data.bulletin|get_string_as_list|get_list_val:2 }}" name="bulletin"></div>
+                        </td>
+                        <td colspan="3">Every door and bulletin board has a copy of the site specific “Emergency
+                            Situation Map”.</td>
+                    </tr>
+                    <tr>
+                        <td>1.7</td>
+                        <td>
+                            <div class="field-wrap"><input type="text"  value="{{ data.whmis|get_string_as_list|get_list_val:0 }}" name="whmis"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text"  value="{{ data.whmis|get_string_as_list|get_list_val:1 }}" name="whmis"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text"  value="{{ data.whmis|get_string_as_list|get_list_val:2 }}" name="whmis"></div>
+                        </td>
+                        <td colspan="3">WHMIS signs are posted and in good repair.</td>
+                    </tr>
+                    <tr>
+                        <td>1.8</td>
+                        <td>
+                            <div class="field-wrap"><input type="text"  value="{{ data.postings|get_string_as_list|get_list_val:0 }}" name="postings"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text"  value="{{ data.postings|get_string_as_list|get_list_val:1 }}" name="postings"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text"  value="{{ data.postings|get_string_as_list|get_list_val:2 }}" name="postings"></div>
+                        </td>
+                        <td colspan="3">All other postings related to health and safety are in good repair.</td>
+                    </tr>
+                    <tr>
+                        <td>1.9</td>
+                        <td>
+                            <div class="field-wrap"><input type="text"  value="{{ data.permits|get_string_as_list|get_list_val:0 }}" name="permits"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text"  value="{{ data.permits|get_string_as_list|get_list_val:1 }}" name="permits"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text"  value="{{ data.permits|get_string_as_list|get_list_val:2 }}" name="permits"></div>
+                        </td>
+                        <td colspan="3">All Safe Work Permits are completed properly.</td>
+                    </tr>
+                    <tr>
+                        <td class="td-heading">Deficient Item #</td>
+                        <td class="td-heading" colspan="3">Corrective Action</td>
+                        <td class="td-heading">Assigned to</td>
+                        <td class="td-heading">Date Completed</td>
+                        <td class="td-heading">Verified by</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="field-wrap"><input type="text"  value="{{ data.defi_1|get_string_as_list|get_list_val:0 }}" name="defi_1"></div>
+                        </td>
+                        <td colspan="3">
+                            <div class="field-wrap"><input type="text"  value="{{ data.defi_1|get_string_as_list|get_list_val:1 }}" name="defi_1"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text"  value="{{ data.defi_1|get_string_as_list|get_list_val:2 }}" name="defi_1"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text"  value="{{ data.defi_1|get_string_as_list|get_list_val:3 }}" name="defi_1"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text"  value="{{ data.defi_1|get_string_as_list|get_list_val:4 }}" name="defi_1"></div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="field-wrap"><input type="text"  value="{{ data.defi_2|get_string_as_list|get_list_val:0 }}" name="defi_2"></div>
+                        </td>
+                        <td colspan="3">
+                            <div class="field-wrap"><input type="text"  value="{{ data.defi_2|get_string_as_list|get_list_val:1 }}" name="defi_2"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text"  value="{{ data.defi_2|get_string_as_list|get_list_val:2 }}" name="defi_2"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text"  value="{{ data.defi_2|get_string_as_list|get_list_val:3 }}" name="defi_2"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text"  value="{{ data.defi_2|get_string_as_list|get_list_val:4 }}" name="defi_2"></div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="field-wrap"><input type="text"  value="{{ data.defi_3|get_string_as_list|get_list_val:0 }}" name="defi_3"></div>
+                        </td>
+                        <td colspan="3">
+                            <div class="field-wrap"><input type="text"  value="{{ data.defi_3|get_string_as_list|get_list_val:1 }}" name="defi_3"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text"  value="{{ data.defi_3|get_string_as_list|get_list_val:2 }}" name="defi_3"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text"  value="{{ data.defi_3|get_string_as_list|get_list_val:3 }}" name="defi_3"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text"  value="{{ data.defi_3|get_string_as_list|get_list_val:4 }}" name="defi_3"></div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="field-wrap"><input type="text"  value="{{ data.defi_4|get_string_as_list|get_list_val:0 }}" name="defi_4"></div>
+                        </td>
+                        <td colspan="3">
+                            <div class="field-wrap"><input type="text"  value="{{ data.defi_4|get_string_as_list|get_list_val:1 }}" name="defi_4"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text"  value="{{ data.defi_4|get_string_as_list|get_list_val:2 }}" name="defi_4"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text"  value="{{ data.defi_4|get_string_as_list|get_list_val:3 }}" name="defi_4"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text"  value="{{ data.defi_4|get_string_as_list|get_list_val:4 }}" name="defi_4"></div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="field-wrap"><input type="text"  value="{{ data.defi_5|get_string_as_list|get_list_val:0 }}" name="defi_5"></div>
+                        </td>
+                        <td colspan="3">
+                            <div class="field-wrap"><input type="text"  value="{{ data.defi_5|get_string_as_list|get_list_val:1 }}" name="defi_5"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text"  value="{{ data.defi_5|get_string_as_list|get_list_val:2 }}" name="defi_5"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text"  value="{{ data.defi_5|get_string_as_list|get_list_val:3 }}" name="defi_5"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text"  value="{{ data.defi_5|get_string_as_list|get_list_val:4 }}" name="defi_5"></div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="7" class="tbold">SECTION 2 - PHYSICAL SITE INSPECTION (SHOP AND OFFICE)</td>
+                    </tr>
+                    <tr>
+                        <td class="td-heading">Item #</td>
+                        <td class="td-heading">Yes</td>
+                        <td class="td-heading">No</td>
+                        <td class="td-heading">N/A</td>
+                        <td class="td-heading" colspan="3">Item Description</td>
+                    </tr>
+                    <tr>
+                        <td>2.1</td>
+                        <td>
+                            <div class="field-wrap"><input type="text"  value="{{ data.stacking|get_string_as_list|get_list_val:0 }}" name="stacking"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text"  value="{{ data.stacking|get_string_as_list|get_list_val:1 }}" name="stacking"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text"  value="{{ data.stacking|get_string_as_list|get_list_val:2 }}" name="stacking"></div>
+                        </td>
+                        <td colspan="3">All stacking and racking of materials has been done safely.</td>
+                    </tr>
+                    <tr>
+                        <td>2.2</td>
+                        <td>
+                            <div class="field-wrap"><input type="text"  value="{{ data.aisle|get_string_as_list|get_list_val:0 }}" name="aisle"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text"  value="{{ data.aisle|get_string_as_list|get_list_val:1 }}" name="aisle"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text"  value="{{ data.aisle|get_string_as_list|get_list_val:2 }}" name="aisle"></div>
+                        </td>
+                        <td colspan="3">All aisle ways are clean and free of materials and other encumbrances.</td>
+                    </tr>
+                    <tr>
+                        <td>2.3</td>
+                        <td>
+                            <div class="field-wrap"><input type="text"  value="{{ data.stairways|get_string_as_list|get_list_val:0 }}" name="stairways"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text"  value="{{ data.stairways|get_string_as_list|get_list_val:1 }}" name="stairways"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text"  value="{{ data.stairways|get_string_as_list|get_list_val:2 }}" name="stairways"></div>
+                        </td>
+                        <td colspan="3">All stairways are unobstructed and secure.</td>
+                    </tr>
+                    <tr>
+                        <td>2.4</td>
+                        <td>
+                            <div class="field-wrap"><input type="text"  value="{{ data.entrance|get_string_as_list|get_list_val:0 }}" name="entrance"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text"  value="{{ data.entrance|get_string_as_list|get_list_val:1 }}" name="entrance"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text"  value="{{ data.entrance|get_string_as_list|get_list_val:2 }}" name="entrance"></div>
+                        </td>
+                        <td colspan="3">All entrance/exits are clear, unobstructed, and marked.</td>
+                    </tr>
+                    <tr>
+                        <td>2.5</td>
+                        <td>
+                            <div class="field-wrap"><input type="text"  value="{{ data.snow|get_string_as_list|get_list_val:0 }}" name="snow"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text"  value="{{ data.snow|get_string_as_list|get_list_val:1 }}" name="snow"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text"  value="{{ data.snow|get_string_as_list|get_list_val:2 }}" name="snow"></div>
+                        </td>
+                        <td colspan="3">All ice, snow and other debris has been removed from entrance/exit doors.</td>
+                    </tr>
+                    <tr>
+                        <td>2.6</td>
+                        <td>
+                            <div class="field-wrap"><input type="text"  value="{{ data.smoking|get_string_as_list|get_list_val:0 }}" name="smoking"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text"  value="{{ data.smoking|get_string_as_list|get_list_val:1 }}" name="smoking"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text"  value="{{ data.smoking|get_string_as_list|get_list_val:2 }}" name="smoking"></div>
+                        </td>
+                        <td colspan="3">Approved smoking areas are marked with signage and provide appropriate refuse
+                            containers.</td>
+                    </tr>
+                    <tr>
+                        <td>2.7</td>
+                        <td>
+                            <div class="field-wrap"><input type="text"  value="{{ data.fire|get_string_as_list|get_list_val:0 }}" name="fire"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text"  value="{{ data.fire|get_string_as_list|get_list_val:1 }}" name="fire"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text"  value="{{ data.fire|get_string_as_list|get_list_val:2 }}" name="fire"></div>
+                        </td>
+                        <td colspan="3">A fire extinguisher is located within three (3) meters or smoking areas (indoor
+                            and outdoor).</td>
+                    </tr>
+                    <tr>
+                        <td>2.8</td>
+                        <td>
+                            <div class="field-wrap"><input type="text"  value="{{ data.yards|get_string_as_list|get_list_val:0 }}" name="yards"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text"  value="{{ data.yards|get_string_as_list|get_list_val:1 }}" name="yards"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text"  value="{{ data.yards|get_string_as_list|get_list_val:2 }}" name="yards"></div>
+                        </td>
+                        <td colspan="3">Yards are neat and free of debris.</td>
+                    </tr>
+                    <tr>
+                        <td>2.9</td>
+                        <td>
+                            <div class="field-wrap"><input type="text"  value="{{ data.surfaces|get_string_as_list|get_list_val:0 }}" name="surfaces"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text"  value="{{ data.surfaces|get_string_as_list|get_list_val:1 }}" name="surfaces"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text"  value="{{ data.surfaces|get_string_as_list|get_list_val:2 }}" name="surfaces"></div>
+                        </td>
+                        <td colspan="3">Yard surfaces are in good repair.</td>
+                    </tr>
+                    <tr>
+                        <td>2.10</td>
+                        <td>
+                            <div class="field-wrap"><input type="text"  value="{{ data.containing|get_string_as_list|get_list_val:0 }}" name="containing"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text"  value="{{ data.containing|get_string_as_list|get_list_val:1 }}" name="containing"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text"  value="{{ data.containing|get_string_as_list|get_list_val:2 }}" name="containing"></div>
+                        </td>
+                        <td colspan="3">Bins containing metal and other hazardous materials are marked with signage</td>
+                    </tr>
+                    <tr>
+                        <td>2.11</td>
+                        <td>
+                            <div class="field-wrap"><input type="text"  value="{{ data.random|get_string_as_list|get_list_val:0 }}" name="random"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text"  value="{{ data.random|get_string_as_list|get_list_val:1 }}" name="random"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text"  value="{{ data.random|get_string_as_list|get_list_val:2 }}" name="random"></div>
+                        </td>
+                        <td colspan="3">A random review supports that all materials are marked with signage.</td>
+                    </tr>
+                    <tr>
+                        <td>2.12</td>
+                        <td>
+                            <div class="field-wrap"><input type="text"  value="{{ data.office|get_string_as_list|get_list_val:0 }}" name="office"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text"  value="{{ data.office|get_string_as_list|get_list_val:1 }}" name="office"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text"  value="{{ data.office|get_string_as_list|get_list_val:2 }}" name="office"></div>
+                        </td>
+                        <td colspan="3">Office areas are neat, clean, and free of refuse and debris.</td>
+                    </tr>
+                    <tr>
+                        <td>2.13</td>
+                        <td>
+                            <div class="field-wrap"><input type="text"  value="{{ data.cords|get_string_as_list|get_list_val:0 }}" name="cords"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text"  value="{{ data.cords|get_string_as_list|get_list_val:1 }}" name="cords"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text"  value="{{ data.cords|get_string_as_list|get_list_val:2 }}" name="cords"></div>
+                        </td>
+                        <td colspan="3">Cords and other slip trip hazards have been eliminated in plant and office
+                            areas.</td>
+                    </tr>
+                    <tr>
+                        <td class="td-heading">Deficient Item #</td>
+                        <td class="td-heading" colspan="3">Corrective Action</td>
+                        <td class="td-heading">Assigned to</td>
+                        <td class="td-heading">Date Completed</td>
+                        <td class="td-heading">Verified by</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="field-wrap"><input type="text"  value="{{ data.defi_6|get_string_as_list|get_list_val:0 }}" name="defi_6"></div>
+                        </td>
+                        <td colspan="3">
+                            <div class="field-wrap"><input type="text"  value="{{ data.defi_6|get_string_as_list|get_list_val:1 }}" name="defi_6"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text"  value="{{ data.defi_6|get_string_as_list|get_list_val:2 }}" name="defi_6"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text"  value="{{ data.defi_6|get_string_as_list|get_list_val:3 }}" name="defi_6"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text"  value="{{ data.defi_6|get_string_as_list|get_list_val:4 }}" name="defi_6"></div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="field-wrap"><input type="text"  value="{{ data.defi_7|get_string_as_list|get_list_val:0 }}" name="defi_7"></div>
+                        </td>
+                        <td colspan="3">
+                            <div class="field-wrap"><input type="text"  value="{{ data.defi_7|get_string_as_list|get_list_val:1 }}" name="defi_7"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text"  value="{{ data.defi_7|get_string_as_list|get_list_val:2 }}" name="defi_7"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text"  value="{{ data.defi_7|get_string_as_list|get_list_val:3 }}" name="defi_7"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text"  value="{{ data.defi_7|get_string_as_list|get_list_val:4 }}" name="defi_7"></div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="field-wrap"><input type="text"  value="{{ data.defi_8|get_string_as_list|get_list_val:0 }}" name="defi_8"></div>
+                        </td>
+                        <td colspan="3">
+                            <div class="field-wrap"><input type="text"  value="{{ data.defi_8|get_string_as_list|get_list_val:1 }}" name="defi_8"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text"  value="{{ data.defi_8|get_string_as_list|get_list_val:2 }}" name="defi_8"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text"  value="{{ data.defi_8|get_string_as_list|get_list_val:3 }}" name="defi_8"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text"  value="{{ data.defi_8|get_string_as_list|get_list_val:4 }}" name="defi_8"></div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="field-wrap"><input type="text"  value="{{ data.defi_9|get_string_as_list|get_list_val:0 }}" name="defi_9"></div>
+                        </td>
+                        <td colspan="3">
+                            <div class="field-wrap"><input type="text"  value="{{ data.defi_9|get_string_as_list|get_list_val:1 }}" name="defi_9"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text"  value="{{ data.defi_9|get_string_as_list|get_list_val:2 }}" name="defi_9"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text"  value="{{ data.defi_9|get_string_as_list|get_list_val:3 }}" name="defi_9"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text"  value="{{ data.defi_9|get_string_as_list|get_list_val:4 }}" name="defi_9"></div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="7" class="tbold">SECTION 3 – PHYSICAL INSPECTION EQUIPMENT/MACHINERY</td>
+                    </tr>
+                    <tr>
+                        <td class="td-heading">Item #</td>
+                        <td class="td-heading">Yes</td>
+                        <td class="td-heading">No</td>
+                        <td class="td-heading">N/A</td>
+                        <td class="td-heading" colspan="3">Item Description</td>
+                    </tr>
+                    <tr>
+                        <td>3.1</td>
+                        <td>
+                            <div class="field-wrap"><input type="text"  value="{{ data.repair|get_string_as_list|get_list_val:0 }}" name="repair"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text"  value="{{ data.repair|get_string_as_list|get_list_val:1 }}" name="repair"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text"  value="{{ data.repair|get_string_as_list|get_list_val:2 }}" name="repair"></div>
+                        </td>
+                        <td colspan="3">A random review of ladders supports that they are in good repair.</td>
+                    </tr>
+                    <tr>
+                        <td>3.2</td>
+                        <td>
+                            <div class="field-wrap"><input type="text"  value="{{ data.ladders|get_string_as_list|get_list_val:0 }}" name="ladders"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text"  value="{{ data.ladders|get_string_as_list|get_list_val:1 }}" name="ladders"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text"  value="{{ data.ladders|get_string_as_list|get_list_val:2 }}" name="ladders"></div>
+                        </td>
+                        <td colspan="3">A random check of ladders supports that they have safety feet.</td>
+                    </tr>
+                    <tr>
+                        <td>3.3</td>
+                        <td>
+                            <div class="field-wrap"><input type="text"  value="{{ data.reinforces|get_string_as_list|get_list_val:0 }}" name="reinforces"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text"  value="{{ data.reinforces|get_string_as_list|get_list_val:1 }}" name="reinforces"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text"  value="{{ data.reinforces|get_string_as_list|get_list_val:2 }}" name="reinforces"></div>
+                        </td>
+                        <td colspan="3">Metal ladders or metal reinforces rails are not used near any exposed energized
+                            electrical circuits or equipment.</td>
+                    </tr>
+                    <tr>
+                        <td>3.4</td>
+                        <td>
+                            <div class="field-wrap"><input type="text"  value="{{ data.guards|get_string_as_list|get_list_val:0 }}" name="guards"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text"  value="{{ data.guards|get_string_as_list|get_list_val:1 }}" name="guards"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text"  value="{{ data.guards|get_string_as_list|get_list_val:2 }}" name="guards"></div>
+                        </td>
+                        <td colspan="3">A random check of equipment indicates that all guards are in place.</td>
+                    </tr>
+                    <tr>
+                        <td>3.5</td>
+                        <td>
+                            <div class="field-wrap"><input type="text"  value="{{ data.indicate|get_string_as_list|get_list_val:0 }}" name="indicate"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text"  value="{{ data.indicate|get_string_as_list|get_list_val:1 }}" name="indicate"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text"  value="{{ data.indicate|get_string_as_list|get_list_val:2 }}" name="indicate"></div>
+                        </td>
+                        <td colspan="3">A random check of hoses would indicate that couplings are in good order.</td>
+                    </tr>
+                    <tr>
+                        <td>3.6</td>
+                        <td>
+                            <div class="field-wrap"><input type="text"  value="{{ data.cables|get_string_as_list|get_list_val:0 }}" name="cables"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text"  value="{{ data.cables|get_string_as_list|get_list_val:1 }}" name="cables"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text"  value="{{ data.cables|get_string_as_list|get_list_val:2 }}" name="cables"></div>
+                        </td>
+                        <td colspan="3">A random check supports that cables and hoses are properly stored.</td>
+                    </tr>
+                    <tr>
+                        <td>3.7</td>
+                        <td>
+                            <div class="field-wrap"><input type="text"  value="{{ data.supports|get_string_as_list|get_list_val:0 }}" name="supports"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text"  value="{{ data.supports|get_string_as_list|get_list_val:1 }}" name="supports"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text"  value="{{ data.supports|get_string_as_list|get_list_val:2 }}" name="supports"></div>
+                        </td>
+                        <td colspan="3">A random check of equipment supports that all belts, pulleys, gears and shafts
+                            are guarded.</td>
+                    </tr>
+                    <tr>
+                        <td>3.8</td>
+                        <td>
+                            <div class="field-wrap"><input type="text"  value="{{ data.equipment|get_string_as_list|get_list_val:0 }}" name="equipment"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text"  value="{{ data.equipment|get_string_as_list|get_list_val:1 }}" name="equipment"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text"  value="{{ data.equipment|get_string_as_list|get_list_val:2 }}" name="equipment"></div>
+                        </td>
+                        <td colspan="3">Equipment has maintenance logs advising of maintenance cleaning, and adjustments
+                            performed.</td>
+                    </tr>
+                    <tr>
+                        <td>3.9</td>
+                        <td>
+                            <div class="field-wrap"><input type="text"  value="{{ data.electrical|get_string_as_list|get_list_val:0 }}" name="electrical"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text"  value="{{ data.electrical|get_string_as_list|get_list_val:1 }}" name="electrical"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text"  value="{{ data.electrical|get_string_as_list|get_list_val:2 }}" name="electrical"></div>
+                        </td>
+                        <td colspan="3">All electrical boxes and control panels are closed and secure.</td>
+                    </tr>
+                    <tr>
+                        <td>3.10</td>
+                        <td>
+                            <div class="field-wrap"><input type="text"  value="{{ data.accordance|get_string_as_list|get_list_val:0 }}" name="accordance"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text"  value="{{ data.accordance|get_string_as_list|get_list_val:1 }}" name="accordance"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text"  value="{{ data.accordance|get_string_as_list|get_list_val:2 }}" name="accordance"></div>
+                        </td>
+                        <td colspan="3">Lockout and tag out procedures are in place, in accordance with policy.</td>
+                    </tr>
+                    <tr>
+                        <td>3.11</td>
+                        <td>
+                            <div class="field-wrap"><input type="text"  value="{{ data.all_forklift|get_string_as_list|get_list_val:0 }}" name="all_forklift"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text"  value="{{ data.all_forklift|get_string_as_list|get_list_val:1 }}" name="all_forklift"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text"  value="{{ data.all_forklift|get_string_as_list|get_list_val:2 }}" name="all_forklift"></div>
+                        </td>
+                        <td colspan="3">A random check supports that all forklift trucks have maintenance records
+                            available.</td>
+                    </tr>
+                    <tr>
+                        <td>3.12</td>
+                        <td>
+                            <div class="field-wrap"><input type="text"  value="{{ data.foeklift_main|get_string_as_list|get_list_val:0 }}" name="foeklift_main"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text"  value="{{ data.foeklift_main|get_string_as_list|get_list_val:1 }}" name="foeklift_main"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text"  value="{{ data.foeklift_main|get_string_as_list|get_list_val:2 }}" name="foeklift_main"></div>
+                        </td>
+                        <td colspan="3">Forklift maintenance records reviewed are current.</td>
+                    </tr>
+                    <tr>
+                        <td>3.13</td>
+                        <td>
+                            <div class="field-wrap"><input type="text"  value="{{ data.forklift_backup|get_string_as_list|get_list_val:0 }}" name="forklift_backup"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text"  value="{{ data.forklift_backup|get_string_as_list|get_list_val:1 }}" name="forklift_backup"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text"  value="{{ data.forklift_backup|get_string_as_list|get_list_val:2 }}" name="forklift_backup"></div>
+                        </td>
+                        <td colspan="3">Forklift backup alarms checked are in working order.</td>
+                    </tr>
+                    <tr>
+                        <td>3.14</td>
+                        <td>
+                            <div class="field-wrap"><input type="text"  value="{{ data.forklift|get_string_as_list|get_list_val:0 }}" name="forklift"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text"  value="{{ data.forklift|get_string_as_list|get_list_val:1 }}" name="forklift"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text"  value="{{ data.forklift|get_string_as_list|get_list_val:2 }}" name="forklift"></div>
+                        </td>
+                        <td colspan="3">Forklift supports that seat belts are available and being used.</td>
+                    </tr>
+                    <tr>
+                        <td>3.15</td>
+                        <td>
+                            <div class="field-wrap"><input type="text"  value="{{ data.extinguishers|get_string_as_list|get_list_val:0 }}" name="extinguishers"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text"  value="{{ data.extinguishers|get_string_as_list|get_list_val:1 }}" name="extinguishers"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text"  value="{{ data.extinguishers|get_string_as_list|get_list_val:2 }}" name="extinguishers"></div>
+                        </td>
+                        <td colspan="3">A random check of fire extinguishers supports that they have been reviewed and a
+                            card is located on the extinguisher advising of the review date.</td>
+                    </tr>
+                    <tr>
+                        <td>3.16</td>
+                        <td>
+                            <div class="field-wrap"><input type="text"  value="{{ data.review|get_string_as_list|get_list_val:0 }}" name="review"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text"  value="{{ data.review|get_string_as_list|get_list_val:1 }}" name="review"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text"  value="{{ data.review|get_string_as_list|get_list_val:2 }}" name="review"></div>
+                        </td>
+                        <td colspan="3">A random review of forklift users supports that seat belts are available.</td>
+                    </tr>
+                    <tr>
+                        <td>3.17</td>
+                        <td>
+                            <div class="field-wrap"><input type="text"  value="{{ data.hand_power|get_string_as_list|get_list_val:0 }}" name="hand_power"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text"  value="{{ data.hand_power|get_string_as_list|get_list_val:1 }}" name="hand_power"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text"  value="{{ data.hand_power|get_string_as_list|get_list_val:2 }}" name="hand_power"></div>
+                        </td>
+                        <td colspan="3">All hand power tools are properly stored.</td>
+                    </tr>
+                    <tr>
+                        <td>3.18</td>
+                        <td>
+                            <div class="field-wrap"><input type="text"  value="{{ data.wiring|get_string_as_list|get_list_val:0 }}" name="wiring"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text"  value="{{ data.wiring|get_string_as_list|get_list_val:1 }}" name="wiring"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text"  value="{{ data.wiring|get_string_as_list|get_list_val:2 }}" name="wiring"></div>
+                        </td>
+                        <td colspan="3">A random check of power tools and wiring would indicate that they are in good
+                            condition</td>
+                    </tr>
+                    <tr>
+                        <td>3.19</td>
+                        <td>
+                            <div class="field-wrap"><input type="text"  value="{{ data.tools|get_string_as_list|get_list_val:0 }}" name="tools"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text"  value="{{ data.tools|get_string_as_list|get_list_val:1 }}" name="tools"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text"  value="{{ data.tools|get_string_as_list|get_list_val:2 }}" name="tools"></div>
+                        </td>
+                        <td colspan="3">All tools with guards have those guards in place or have been tagged out of
+                            service.</td>
+                    </tr>
+                    <tr>
+                        <td>3.20</td>
+                        <td>
+                            <div class="field-wrap"><input type="text"  value="{{ data.flammable|get_string_as_list|get_list_val:0 }}" name="flammable"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text"  value="{{ data.flammable|get_string_as_list|get_list_val:1 }}" name="flammable"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text"  value="{{ data.flammable|get_string_as_list|get_list_val:2 }}" name="flammable"></div>
+                        </td>
+                        <td colspan="3">All flammable materials in use are away from heat sources and exits.</td>
+                    </tr>
+                    <tr>
+                        <td>3.21</td>
+                        <td>
+                            <div class="field-wrap"><input type="text"  value="{{ data.materials|get_string_as_list|get_list_val:0 }}" name="materials"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text"  value="{{ data.materials|get_string_as_list|get_list_val:1 }}" name="materials"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text"  value="{{ data.materials|get_string_as_list|get_list_val:2 }}" name="materials"></div>
+                        </td>
+                        <td colspan="3">All materials are stored away from aisle ways, walkways, stairways, and/or
+                            doorways</td>
+                    </tr>
+                    <tr>
+                        <td>3.22</td>
+                        <td>
+                            <div class="field-wrap"><input type="text"  value="{{ data.compressed|get_string_as_list|get_list_val:0 }}" name="compressed"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text"  value="{{ data.compressed|get_string_as_list|get_list_val:1 }}" name="compressed"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text"  value="{{ data.compressed|get_string_as_list|get_list_val:2 }}" name="compressed"></div>
+                        </td>
+                        <td colspan="3">Compressed gas cylinders secured.</td>
+                    </tr>
+                    <tr>
+                        <td class="td-heading">Deficient Item #</td>
+                        <td class="td-heading" colspan="3">Corrective Action</td>
+                        <td class="td-heading">Assigned to</td>
+                        <td class="td-heading">Date Completed</td>
+                        <td class="td-heading">Verified by</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="field-wrap"><input type="text"  value="{{ data.defi_10|get_string_as_list|get_list_val:0 }}" name="defi_10"></div>
+                        </td>
+                        <td colspan="3">
+                            <div class="field-wrap"><input type="text"  value="{{ data.defi_10|get_string_as_list|get_list_val:1 }}" name="defi_10"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text"  value="{{ data.defi_10|get_string_as_list|get_list_val:2 }}" name="defi_10"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text"  value="{{ data.defi_10|get_string_as_list|get_list_val:3 }}" name="defi_10"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text"  value="{{ data.defi_10|get_string_as_list|get_list_val:4 }}" name="defi_10"></div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="field-wrap"><input type="text"  value="{{ data.defi_11|get_string_as_list|get_list_val:0 }}" name="defi_11"></div>
+                        </td>
+                        <td colspan="3">
+                            <div class="field-wrap"><input type="text"  value="{{ data.defi_11|get_string_as_list|get_list_val:1 }}" name="defi_11"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text"  value="{{ data.defi_11|get_string_as_list|get_list_val:2 }}" name="defi_11"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text"  value="{{ data.defi_11|get_string_as_list|get_list_val:3 }}" name="defi_11"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text"  value="{{ data.defi_11|get_string_as_list|get_list_val:4 }}" name="defi_11"></div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="field-wrap"><input type="text"  value="{{ data.defi_12|get_string_as_list|get_list_val:0 }}" name="defi_12"></div>
+                        </td>
+                        <td colspan="3">
+                            <div class="field-wrap"><input type="text"  value="{{ data.defi_12|get_string_as_list|get_list_val:1 }}" name="defi_12"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text"  value="{{ data.defi_12|get_string_as_list|get_list_val:2 }}" name="defi_12"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text"  value="{{ data.defi_12|get_string_as_list|get_list_val:3 }}" name="defi_12"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text"  value="{{ data.defi_12|get_string_as_list|get_list_val:4 }}" name="defi_12"></div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="field-wrap"><input type="text"  value="{{ data.defi_13|get_string_as_list|get_list_val:0 }}" name="defi_13"></div>
+                        </td>
+                        <td colspan="3">
+                            <div class="field-wrap"><input type="text"  value="{{ data.defi_13|get_string_as_list|get_list_val:1 }}" name="defi_13"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text"  value="{{ data.defi_13|get_string_as_list|get_list_val:2 }}" name="defi_13"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text"  value="{{ data.defi_13|get_string_as_list|get_list_val:3 }}" name="defi_13"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text"  value="{{ data.defi_13|get_string_as_list|get_list_val:4 }}" name="defi_13"></div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="field-wrap"><input type="text"  value="{{ data.defi_14|get_string_as_list|get_list_val:0 }}" name="defi_14"></div>
+                        </td>
+                        <td colspan="3">
+                            <div class="field-wrap"><input type="text"  value="{{ data.defi_14|get_string_as_list|get_list_val:1 }}" name="defi_14"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text"  value="{{ data.defi_14|get_string_as_list|get_list_val:2 }}" name="defi_14"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text"  value="{{ data.defi_14|get_string_as_list|get_list_val:3 }}" name="defi_14"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text"  value="{{ data.defi_14|get_string_as_list|get_list_val:4 }}" name="defi_14"></div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="field-wrap"><input type="text"  value="{{ data.defi_15|get_string_as_list|get_list_val:0 }}" name="defi_15"></div>
+                        </td>
+                        <td colspan="3">
+                            <div class="field-wrap"><input type="text"  value="{{ data.defi_15|get_string_as_list|get_list_val:1 }}" name="defi_15"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text"  value="{{ data.defi_15|get_string_as_list|get_list_val:2 }}" name="defi_15"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text"  value="{{ data.defi_15|get_string_as_list|get_list_val:3 }}" name="defi_15"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text"  value="{{ data.defi_15|get_string_as_list|get_list_val:4 }}" name="defi_15"></div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="field-wrap"><input type="text"  value="{{ data.defi_16|get_string_as_list|get_list_val:0 }}" name="defi_16"></div>
+                        </td>
+                        <td colspan="3">
+                            <div class="field-wrap"><input type="text"  value="{{ data.defi_16|get_string_as_list|get_list_val:1 }}" name="defi_16"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text"  value="{{ data.defi_16|get_string_as_list|get_list_val:2 }}" name="defi_16"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text"  value="{{ data.defi_16|get_string_as_list|get_list_val:3 }}" name="defi_16"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text"  value="{{ data.defi_16|get_string_as_list|get_list_val:4 }}" name="defi_16"></div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="field-wrap"><input type="text"  value="{{ data.defi_17|get_string_as_list|get_list_val:0 }}" name="defi_17"></div>
+                        </td>
+                        <td colspan="3">
+                            <div class="field-wrap"><input type="text"  value="{{ data.defi_17|get_string_as_list|get_list_val:1 }}" name="defi_17"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text"  value="{{ data.defi_17|get_string_as_list|get_list_val:2 }}" name="defi_17"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text"  value="{{ data.defi_17|get_string_as_list|get_list_val:3 }}" name="defi_17"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text"  value="{{ data.defi_17|get_string_as_list|get_list_val:4 }}" name="defi_17"></div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="7" class="tbold">SECTION 4 - WHMIS PROGRAM REVIEW</td>
+                    </tr>
+                    <tr>
+                        <td class="td-heading">Item #</td>
+                        <td class="td-heading">Yes</td>
+                        <td class="td-heading">No</td>
+                        <td class="td-heading">N/A</td>
+                        <td class="td-heading" colspan="3">Item Description</td>
+                    </tr>
+                    <tr>
+                        <td>4.1</td>
+                        <td>
+                            <div class="field-wrap"><input type="text"  value="{{ data.whmis_signs|get_string_as_list|get_list_val:0 }}" name="whmis_signs"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text"  value="{{ data.whmis_signs|get_string_as_list|get_list_val:1 }}" name="whmis_signs"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text"  value="{{ data.whmis_signs|get_string_as_list|get_list_val:2 }}" name="whmis_signs"></div>
+                        </td>
+                        <td colspan="3">WHMIS signs are posted in good repair.</td>
+                    </tr>
+                    <tr>
+                        <td>4.2</td>
+                        <td>
+                            <div class="field-wrap"><input type="text"  value="{{ data.whmis_product|get_string_as_list|get_list_val:0 }}" name="whmis_product"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text"  value="{{ data.whmis_product|get_string_as_list|get_list_val:1 }}" name="whmis_product"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text"  value="{{ data.whmis_product|get_string_as_list|get_list_val:2 }}" name="whmis_product"></div>
+                        </td>
+                        <td colspan="3">A review of ALL WHMIS products demonstrates a supplier label with a slash-
+                            marked border and information in English and French.</td>
+                    </tr>
+                    <tr>
+                        <td>4.3</td>
+                        <td>
+                            <div class="field-wrap"><input type="text"  value="{{ data.worksite_label|get_string_as_list|get_list_val:0 }}" name="worksite_label"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text"  value="{{ data.worksite_label|get_string_as_list|get_list_val:1 }}" name="worksite_label"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text"  value="{{ data.worksite_label|get_string_as_list|get_list_val:2 }}" name="worksite_label"></div>
+                        </td>
+                        <td colspan="3">ALL WHMIS products not in the supplier container have a worksite label, placed
+                            in accordance with the WHMIS program (includes the product name, information for safe us,
+                            and a reference to the Material Safety Data Sheet).</td>
+                    </tr>
+                    <tr>
+                        <td>4.4</td>
+                        <td>
+                            <div class="field-wrap"><input type="text"  value="{{ data.supports_whmis|get_string_as_list|get_list_val:0 }}" name="supports_whmis"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text"  value="{{ data.supports_whmis|get_string_as_list|get_list_val:1 }}" name="supports_whmis"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text"  value="{{ data.supports_whmis|get_string_as_list|get_list_val:2 }}" name="supports_whmis"></div>
+                        </td>
+                        <td colspan="3">Random check supports that each WHMIS product has a material safety data sheet,
+                            produced within the last three (3) years.</td>
+                    </tr>
+                    <tr>
+                        <td>4.5</td>
+                        <td>
+                            <div class="field-wrap"><input type="text"  value="{{ data.available_workers|get_string_as_list|get_list_val:0 }}" name="available_workers"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text"  value="{{ data.available_workers|get_string_as_list|get_list_val:1 }}" name="available_workers"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text"  value="{{ data.available_workers|get_string_as_list|get_list_val:2 }}" name="available_workers"></div>
+                        </td>
+                        <td colspan="3">Material Safety Data Sheets are available to all workers on all shifts.</td>
+                    </tr>
+                    <tr>
+                        <td>4.6</td>
+                        <td>
+                            <div class="field-wrap"><input type="text"  value="{{ data.facility|get_string_as_list|get_list_val:0 }}" name="facility"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text"  value="{{ data.facility|get_string_as_list|get_list_val:1 }}" name="facility"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text"  value="{{ data.facility|get_string_as_list|get_list_val:2 }}" name="facility"></div>
+                        </td>
+                        <td colspan="3">A review of the facility supports that there is signage advising of the
+                            different WHMIS labels.</td>
+                    </tr>
+                    <tr>
+                        <td>4.7</td>
+                        <td>
+                            <div class="field-wrap"><input type="text"  value="{{ data.data_sheet|get_string_as_list|get_list_val:0 }}" name="data_sheet"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text"  value="{{ data.data_sheet|get_string_as_list|get_list_val:1 }}" name="data_sheet"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text"  value="{{ data.data_sheet|get_string_as_list|get_list_val:2 }}" name="data_sheet"></div>
+                        </td>
+                        <td colspan="3">Locations of Material Safety Data Sheets are will marked (signage)</td>
+                    </tr>
+                    <tr>
+                        <td class="td-heading">Deficient Item #</td>
+                        <td class="td-heading" colspan="3">Corrective Action</td>
+                        <td class="td-heading">Assigned to</td>
+                        <td class="td-heading">Date Completed</td>
+                        <td class="td-heading">Verified by</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="field-wrap"><input type="text"  value="{{ data.defi_18|get_string_as_list|get_list_val:0 }}" name="defi_18"></div>
+                        </td>
+                        <td colspan="3">
+                            <div class="field-wrap"><input type="text"  value="{{ data.defi_18|get_string_as_list|get_list_val:1 }}" name="defi_18"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text"  value="{{ data.defi_18|get_string_as_list|get_list_val:2 }}" name="defi_18"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text"  value="{{ data.defi_18|get_string_as_list|get_list_val:3 }}" name="defi_18"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text"  value="{{ data.defi_18|get_string_as_list|get_list_val:4 }}" name="defi_18"></div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="field-wrap"><input type="text"  value="{{ data.defi_19|get_string_as_list|get_list_val:0 }}" name="defi_19"></div>
+                        </td>
+                        <td colspan="3">
+                            <div class="field-wrap"><input type="text"  value="{{ data.defi_19|get_string_as_list|get_list_val:1 }}" name="defi_19"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text"  value="{{ data.defi_19|get_string_as_list|get_list_val:2 }}" name="defi_19"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text"  value="{{ data.defi_19|get_string_as_list|get_list_val:3 }}" name="defi_19"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text"  value="{{ data.defi_19|get_string_as_list|get_list_val:4 }}" name="defi_19"></div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="field-wrap"><input type="text"  value="{{ data.defi_20|get_string_as_list|get_list_val:0 }}" name="defi_20"></div>
+                        </td>
+                        <td colspan="3">
+                            <div class="field-wrap"><input type="text"  value="{{ data.defi_20|get_string_as_list|get_list_val:1 }}" name="defi_20"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text"  value="{{ data.defi_20|get_string_as_list|get_list_val:2 }}" name="defi_20"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text"  value="{{ data.defi_20|get_string_as_list|get_list_val:3 }}" name="defi_20"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text"  value="{{ data.defi_20|get_string_as_list|get_list_val:4 }}" name="defi_20"></div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="field-wrap"><input type="text"  value="{{ data.defi_21|get_string_as_list|get_list_val:0 }}" name="defi_21"></div>
+                        </td>
+                        <td colspan="3">
+                            <div class="field-wrap"><input type="text"  value="{{ data.defi_21|get_string_as_list|get_list_val:1 }}" name="defi_21"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text"  value="{{ data.defi_21|get_string_as_list|get_list_val:2 }}" name="defi_21"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text"  value="{{ data.defi_21|get_string_as_list|get_list_val:3 }}" name="defi_21"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text"  value="{{ data.defi_21|get_string_as_list|get_list_val:4 }}" name="defi_21"></div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="field-wrap"><input type="text"  value="{{ data.defi_22|get_string_as_list|get_list_val:0 }}" name="defi_22"></div>
+                        </td>
+                        <td colspan="3">
+                            <div class="field-wrap"><input type="text"  value="{{ data.defi_22|get_string_as_list|get_list_val:1 }}" name="defi_22"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text"  value="{{ data.defi_22|get_string_as_list|get_list_val:2 }}" name="defi_22"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text"  value="{{ data.defi_22|get_string_as_list|get_list_val:3 }}" name="defi_22"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text"  value="{{ data.defi_22|get_string_as_list|get_list_val:4 }}" name="defi_22"></div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="7" class="tbold">SECTION 5 – PROTECTIVE EQUIPMENT (PPE)</td>
+                    </tr>
+                    <tr>
+                        <td class="td-heading">Item #</td>
+                        <td class="td-heading">Yes</td>
+                        <td class="td-heading">No</td>
+                        <td class="td-heading">N/A</td>
+                        <td class="td-heading" colspan="3">Item Description</td>
+                    </tr>
+                    <tr>
+                        <td>5.1</td>
+                        <td>
+                            <div class="field-wrap"><input type="text"  value="{{ data.adequate|get_string_as_list|get_list_val:0 }}" name="adequate"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text"  value="{{ data.adequate|get_string_as_list|get_list_val:1 }}" name="adequate"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text"  value="{{ data.adequate|get_string_as_list|get_list_val:2 }}" name="adequate"></div>
+                        </td>
+                        <td colspan="3">Does the facility have adequate signage about required personal protective
+                            equipment.</td>
+                    </tr>
+                    <tr>
+                        <td>5.2</td>
+                        <td>
+                            <div class="field-wrap"><input type="text"  value="{{ data.visitors|get_string_as_list|get_list_val:0 }}" name="visitors"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text"  value="{{ data.visitors|get_string_as_list|get_list_val:1 }}" name="visitors"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text"  value="{{ data.visitors|get_string_as_list|get_list_val:2 }}" name="visitors"></div>
+                        </td>
+                        <td colspan="3">A random check of workers and visitors on site confirms compliance with PPE
+                            policy.</td>
+                    </tr>
+                    <tr>
+                        <td>5.3</td>
+                        <td>
+                            <div class="field-wrap"><input type="text"  value="{{ data.incomplaint|get_string_as_list|get_list_val:0 }}" name="incomplaint"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text"  value="{{ data.incomplaint|get_string_as_list|get_list_val:1 }}" name="incomplaint"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text"  value="{{ data.incomplaint|get_string_as_list|get_list_val:2 }}" name="incomplaint"></div>
+                        </td>
+                        <td colspan="3">Workers and visitors incompliant with PPE policy have been subject to the
+                            disciplinary policy.</td>
+                    </tr>
+                    <tr>
+                        <td>5.4</td>
+                        <td>
+                            <div class="field-wrap"><input type="text"  value="{{ data.acknowledging|get_string_as_list|get_list_val:0 }}" name="acknowledging"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text"  value="{{ data.acknowledging|get_string_as_list|get_list_val:1 }}" name="acknowledging"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text"  value="{{ data.acknowledging|get_string_as_list|get_list_val:2 }}" name="acknowledging"></div>
+                        </td>
+                        <td colspan="3">A check of the visitor log supports that all visitors have signed in,
+                            acknowledging their understanding of safety policy, procedure, and practice.</td>
+                    </tr>
+                    <tr>
+                        <td class="td-heading">Deficient Item #</td>
+                        <td class="td-heading" colspan="3">Corrective Action</td>
+                        <td class="td-heading">Assigned to</td>
+                        <td class="td-heading">Date Completed</td>
+                        <td class="td-heading">Verified by</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="field-wrap"><input type="text"  value="{{ data.defi_23|get_string_as_list|get_list_val:0 }}" name="defi_23"></div>
+                        </td>
+                        <td colspan="3">
+                            <div class="field-wrap"><input type="text"  value="{{ data.defi_23|get_string_as_list|get_list_val:1 }}" name="defi_23"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text"  value="{{ data.defi_23|get_string_as_list|get_list_val:2 }}" name="defi_23"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text"  value="{{ data.defi_23|get_string_as_list|get_list_val:3 }}" name="defi_23"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text"  value="{{ data.defi_23|get_string_as_list|get_list_val:4 }}" name="defi_23"></div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="field-wrap"><input type="text"  value="{{ data.defi_24|get_string_as_list|get_list_val:0 }}" name="defi_24"></div>
+                        </td>
+                        <td colspan="3">
+                            <div class="field-wrap"><input type="text"  value="{{ data.defi_24|get_string_as_list|get_list_val:1 }}" name="defi_24"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text"  value="{{ data.defi_24|get_string_as_list|get_list_val:2 }}" name="defi_24"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text"  value="{{ data.defi_24|get_string_as_list|get_list_val:3 }}" name="defi_24"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text"  value="{{ data.defi_24|get_string_as_list|get_list_val:4 }}" name="defi_24"></div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="field-wrap"><input type="text"  value="{{ data.defi_25|get_string_as_list|get_list_val:0 }}" name="defi_25"></div>
+                        </td>
+                        <td colspan="3">
+                            <div class="field-wrap"><input type="text"  value="{{ data.defi_25|get_string_as_list|get_list_val:1 }}" name="defi_25"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text"  value="{{ data.defi_25|get_string_as_list|get_list_val:2 }}" name="defi_25"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text"  value="{{ data.defi_25|get_string_as_list|get_list_val:3 }}" name="defi_25"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text"  value="{{ data.defi_25|get_string_as_list|get_list_val:4 }}" name="defi_25"></div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="field-wrap"><input type="text"  value="{{ data.defi_26|get_string_as_list|get_list_val:0 }}" name="defi_26"></div>
+                        </td>
+                        <td colspan="3">
+                            <div class="field-wrap"><input type="text"  value="{{ data.defi_26|get_string_as_list|get_list_val:1 }}" name="defi_26"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text"  value="{{ data.defi_26|get_string_as_list|get_list_val:2 }}" name="defi_26"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text"  value="{{ data.defi_26|get_string_as_list|get_list_val:3 }}" name="defi_26"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text"  value="{{ data.defi_26|get_string_as_list|get_list_val:4 }}" name="defi_26"></div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="7" class="tbold">SECTION 6 – ENVIRONMENT REVIEW</td>
+                    </tr>
+                    <tr>
+                        <td class="td-heading">Item #</td>
+                        <td class="td-heading">Yes</td>
+                        <td class="td-heading">No</td>
+                        <td class="td-heading">N/A</td>
+                        <td class="td-heading" colspan="3">Item Description</td>
+                    </tr>
+                    <tr>
+                        <td>6.1</td>
+                        <td>
+                            <div class="field-wrap"><input type="text"  value="{{ data.lighting|get_string_as_list|get_list_val:0 }}" name="lighting"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text"  value="{{ data.lighting|get_string_as_list|get_list_val:1 }}" name="lighting"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text"  value="{{ data.lighting|get_string_as_list|get_list_val:2 }}" name="lighting"></div>
+                        </td>
+                        <td colspan="3">Does lighting appear to be adequate in all areas.</td>
+                    </tr>
+                    <tr>
+                        <td>6.2</td>
+                        <td>
+                            <div class="field-wrap"><input type="text"  value="{{ data.random_check|get_string_as_list|get_list_val:0 }}" name="random_check"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text"  value="{{ data.random_check|get_string_as_list|get_list_val:1 }}" name="random_check"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text"  value="{{ data.random_check|get_string_as_list|get_list_val:2 }}" name="random_check"></div>
+                        </td>
+                        <td colspan="3">A random check supports that lighting is functioning.</td>
+                    </tr>
+                    <tr>
+                        <td>6.3</td>
+                        <td>
+                            <div class="field-wrap"><input type="text"  value="{{ data.investigation|get_string_as_list|get_list_val:0 }}" name="investigation"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text"  value="{{ data.investigation|get_string_as_list|get_list_val:1 }}" name="investigation"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text"  value="{{ data.investigation|get_string_as_list|get_list_val:2 }}" name="investigation"></div>
+                        </td>
+                        <td colspan="3">Does the investigation team feel that air quality is adequate.</td>
+                    </tr>
+                    <tr>
+                        <td>6.4</td>
+                        <td>
+                            <div class="field-wrap"><input type="text"  value="{{ data.adequate_signage|get_string_as_list|get_list_val:0 }}" name="adequate_signage"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text"  value="{{ data.adequate_signage|get_string_as_list|get_list_val:1 }}" name="adequate_signage"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text"  value="{{ data.adequate_signage|get_string_as_list|get_list_val:2 }}" name="adequate_signage"></div>
+                        </td>
+                        <td colspan="3">Is there adequate signage to advise of hearing protection.</td>
+                    </tr>
+                    <tr>
+                        <td>6.5</td>
+                        <td>
+                            <div class="field-wrap"><input type="text"  value="{{ data.emergency_light|get_string_as_list|get_list_val:0 }}" name="emergency_light"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text"  value="{{ data.emergency_light|get_string_as_list|get_list_val:1 }}" name="emergency_light"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text"  value="{{ data.emergency_light|get_string_as_list|get_list_val:2 }}" name="emergency_light"></div>
+                        </td>
+                        <td colspan="3">Does the emergency lighting function properly.</td>
+                    </tr>
+                    <tr>
+                        <td class="td-heading">Deficient Item #</td>
+                        <td class="td-heading" colspan="3">Corrective Action</td>
+                        <td class="td-heading">Assigned to</td>
+                        <td class="td-heading">Date Completed</td>
+                        <td class="td-heading">Verified by</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="field-wrap"><input type="text"  value="{{ data.defi_27|get_string_as_list|get_list_val:0 }}" name="defi_27"></div>
+                        </td>
+                        <td colspan="3">
+                            <div class="field-wrap"><input type="text"  value="{{ data.defi_27|get_string_as_list|get_list_val:1 }}" name="defi_27"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text"  value="{{ data.defi_27|get_string_as_list|get_list_val:2 }}" name="defi_27"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text"  value="{{ data.defi_27|get_string_as_list|get_list_val:3 }}" name="defi_27"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text"  value="{{ data.defi_27|get_string_as_list|get_list_val:4 }}" name="defi_27"></div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="field-wrap"><input type="text"  value="{{ data.defi_28|get_string_as_list|get_list_val:0 }}" name="defi_28"></div>
+                        </td>
+                        <td colspan="3">
+                            <div class="field-wrap"><input type="text"  value="{{ data.defi_28|get_string_as_list|get_list_val:1 }}" name="defi_28"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text"  value="{{ data.defi_28|get_string_as_list|get_list_val:2 }}" name="defi_28"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text"  value="{{ data.defi_28|get_string_as_list|get_list_val:3 }}" name="defi_28"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text"  value="{{ data.defi_28|get_string_as_list|get_list_val:4 }}" name="defi_28"></div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="field-wrap"><input type="text"  value="{{ data.defi_29|get_string_as_list|get_list_val:0 }}" name="defi_29"></div>
+                        </td>
+                        <td colspan="3">
+                            <div class="field-wrap"><input type="text"  value="{{ data.defi_29|get_string_as_list|get_list_val:1 }}" name="defi_29"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text"  value="{{ data.defi_29|get_string_as_list|get_list_val:2 }}" name="defi_29"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text"  value="{{ data.defi_29|get_string_as_list|get_list_val:3 }}" name="defi_29"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text"  value="{{ data.defi_29|get_string_as_list|get_list_val:4 }}" name="defi_29"></div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="field-wrap"><input type="text"  value="{{ data.defi_30|get_string_as_list|get_list_val:0 }}" name="defi_30"></div>
+                        </td>
+                        <td colspan="3">
+                            <div class="field-wrap"><input type="text"  value="{{ data.defi_30|get_string_as_list|get_list_val:1 }}" name="defi_30"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text"  value="{{ data.defi_30|get_string_as_list|get_list_val:2 }}" name="defi_30"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text"  value="{{ data.defi_30|get_string_as_list|get_list_val:3 }}" name="defi_30"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text"  value="{{ data.defi_30|get_string_as_list|get_list_val:4 }}" name="defi_30"></div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="7" class="tbold">SECTION 7 – EMERGENCY RESPONSE PLAN/MISCELLANEOUS</td>
+                    </tr>
+                    <tr>
+                        <td class="td-heading">Item #</td>
+                        <td class="td-heading">Yes</td>
+                        <td class="td-heading">No</td>
+                        <td class="td-heading">N/A</td>
+                        <td class="td-heading" colspan="3">Item Description</td>
+                    </tr>
+                    <tr>
+                        <td>7.1</td>
+                        <td>
+                            <div class="field-wrap"><input type="text"  value="{{ data.bulletin_boards|get_string_as_list|get_list_val:0 }}" name="bulletin_boards"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text"  value="{{ data.bulletin_boards|get_string_as_list|get_list_val:1 }}" name="bulletin_boards"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text"  value="{{ data.bulletin_boards|get_string_as_list|get_list_val:2 }}" name="bulletin_boards"></div>
+                        </td>
+                        <td colspan="3">Are emergency contact numbers posted on all bulletin boards and by all
+                            telephones.</td>
+                    </tr>
+                    <tr>
+                        <td>7.2</td>
+                        <td>
+                            <div class="field-wrap"><input type="text"  value="{{ data.eye_wash|get_string_as_list|get_list_val:0 }}" name="eye_wash"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text"  value="{{ data.eye_wash|get_string_as_list|get_list_val:1 }}" name="eye_wash"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text"  value="{{ data.eye_wash|get_string_as_list|get_list_val:2 }}" name="eye_wash"></div>
+                        </td>
+                        <td colspan="3">Are emergency eye wash stations available where indicated.</td>
+                    </tr>
+                    <tr>
+                        <td>7.3</td>
+                        <td>
+                            <div class="field-wrap"><input type="text"  value="{{ data.wash_bottles|get_string_as_list|get_list_val:0 }}" name="wash_bottles"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text"  value="{{ data.wash_bottles|get_string_as_list|get_list_val:1 }}" name="wash_bottles"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text"  value="{{ data.wash_bottles|get_string_as_list|get_list_val:2 }}" name="wash_bottles"></div>
+                        </td>
+                        <td colspan="3">Are eye wash bottles checked, cleaned and in good condition.</td>
+                    </tr>
+                    <tr>
+                        <td>7.4</td>
+                        <td>
+                            <div class="field-wrap"><input type="text"  value="{{ data.certified_first|get_string_as_list|get_list_val:0 }}" name="certified_first"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text"  value="{{ data.certified_first|get_string_as_list|get_list_val:1 }}" name="certified_first"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text"  value="{{ data.certified_first|get_string_as_list|get_list_val:2 }}" name="certified_first"></div>
+                        </td>
+                        <td colspan="3">Are lists of certificates or certified first aiders poster.</td>
+                    </tr>
+                    <tr>
+                        <td>7.5</td>
+                        <td>
+                            <div class="field-wrap"><input type="text"  value="{{ data.minutes_last|get_string_as_list|get_list_val:0 }}" name="minutes_last"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text"  value="{{ data.minutes_last|get_string_as_list|get_list_val:1 }}" name="minutes_last"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text"  value="{{ data.minutes_last|get_string_as_list|get_list_val:2 }}" name="minutes_last"></div>
+                        </td>
+                        <td colspan="3">Are the minutes of the last committee meeting posted for review.</td>
+                    </tr>
+                    <tr>
+                        <td>7.6</td>
+                        <td>
+                            <div class="field-wrap"><input type="text"  value="{{ data.notification|get_string_as_list|get_list_val:0 }}" name="notification"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text"  value="{{ data.notification|get_string_as_list|get_list_val:1 }}" name="notification"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text"  value="{{ data.notification|get_string_as_list|get_list_val:2 }}" name="notification"></div>
+                        </td>
+                        <td colspan="3">Is there emergency notification system functioning.</td>
+                    </tr>
+                    <tr>
+                        <td>7.7</td>
+                        <td>
+                            <div class="field-wrap"><input type="text"  value="{{ data.documentation|get_string_as_list|get_list_val:0 }}" name="documentation"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text"  value="{{ data.documentation|get_string_as_list|get_list_val:1 }}" name="documentation"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text"  value="{{ data.documentation|get_string_as_list|get_list_val:2 }}" name="documentation"></div>
+                        </td>
+                        <td colspan="3">Has an emergency evacuation been conducted within the last six months with
+                            documentation posted advising of results.</td>
+                    </tr>
+                    <tr>
+                        <td>7.8</td>
+                        <td>
+                            <div class="field-wrap"><input type="text"  value="{{ data.areas_maintained|get_string_as_list|get_list_val:0 }}" name="areas_maintained"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text"  value="{{ data.areas_maintained|get_string_as_list|get_list_val:1 }}" name="areas_maintained"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text"  value="{{ data.areas_maintained|get_string_as_list|get_list_val:2 }}" name="areas_maintained"></div>
+                        </td>
+                        <td colspan="3">Are all safety/bulletin board areas maintained and updated.</td>
+                    </tr>
+                    <tr>
+                        <td>7.9</td>
+                        <td>
+                            <div class="field-wrap"><input type="text"  value="{{ data.signage_advising|get_string_as_list|get_list_val:0 }}" name="signage_advising"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text"  value="{{ data.signage_advising|get_string_as_list|get_list_val:1 }}" name="signage_advising"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text"  value="{{ data.signage_advising|get_string_as_list|get_list_val:2 }}" name="signage_advising"></div>
+                        </td>
+                        <td colspan="3">Is there signage advising of the emergency evacuation muster point.</td>
+                    </tr>
+                    <tr>
+                        <td class="td-heading">Deficient Item #</td>
+                        <td class="td-heading" colspan="3">Corrective Action</td>
+                        <td class="td-heading">Assigned to</td>
+                        <td class="td-heading">Date Completed</td>
+                        <td class="td-heading">Verified by</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="field-wrap"><input type="text"  value="{{ data.defi_31|get_string_as_list|get_list_val:0 }}" name="defi_31"></div>
+                        </td>
+                        <td colspan="3">
+                            <div class="field-wrap"><input type="text"  value="{{ data.defi_31|get_string_as_list|get_list_val:1 }}" name="defi_31"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text"  value="{{ data.defi_31|get_string_as_list|get_list_val:2 }}" name="defi_31"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text"  value="{{ data.defi_31|get_string_as_list|get_list_val:3 }}" name="defi_31"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text"  value="{{ data.defi_31|get_string_as_list|get_list_val:4 }}" name="defi_31"></div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="field-wrap"><input type="text"  value="{{ data.defi_32|get_string_as_list|get_list_val:0 }}" name="defi_32"></div>
+                        </td>
+                        <td colspan="3">
+                            <div class="field-wrap"><input type="text"  value="{{ data.defi_32|get_string_as_list|get_list_val:1 }}" name="defi_32"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text"  value="{{ data.defi_32|get_string_as_list|get_list_val:2 }}" name="defi_32"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text"  value="{{ data.defi_32|get_string_as_list|get_list_val:3 }}" name="defi_32"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text"  value="{{ data.defi_32|get_string_as_list|get_list_val:4 }}" name="defi_32"></div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="field-wrap"><input type="text"  value="{{ data.defi_33|get_string_as_list|get_list_val:0 }}" name="defi_33"></div>
+                        </td>
+                        <td colspan="3">
+                            <div class="field-wrap"><input type="text"  value="{{ data.defi_33|get_string_as_list|get_list_val:1 }}" name="defi_33"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text"  value="{{ data.defi_33|get_string_as_list|get_list_val:2 }}" name="defi_33"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text"  value="{{ data.defi_33|get_string_as_list|get_list_val:3 }}" name="defi_33"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text"  value="{{ data.defi_33|get_string_as_list|get_list_val:4 }}" name="defi_33"></div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="field-wrap"><input type="text"  value="{{ data.defi_34|get_string_as_list|get_list_val:0 }}" name="defi_34"></div>
+                        </td>
+                        <td colspan="3">
+                            <div class="field-wrap"><input type="text"  value="{{ data.defi_34|get_string_as_list|get_list_val:1 }}" name="defi_34"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text"  value="{{ data.defi_34|get_string_as_list|get_list_val:2 }}" name="defi_34"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text"  value="{{ data.defi_34|get_string_as_list|get_list_val:3 }}" name="defi_34"></div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"><input type="text"  value="{{ data.defi_34|get_string_as_list|get_list_val:4 }}" name="defi_34"></div>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+        <input type="hidden" value="{{data.id}}" name="draft_id">
+            <input type="hidden" value="Formal-Site-Inspection" name="draft_name">
+        <button type="submit" class="btn main-content-inner-box-export-btn">Update Data</button>
+		</form>
+    </div>
+</div>
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<script type="text/javascript" src="/static/js/draft.js"></script>
