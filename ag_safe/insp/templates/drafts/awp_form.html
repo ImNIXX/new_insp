@@ -8,6 +8,7 @@
 <body>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <link rel="stylesheet" type="text/css" href="/static/css/draft_style.css"><link rel="stylesheet" type="text/css" href="/static/css/style.css">
+
 <div class="header-top">
     <div class="container-category">
         <div class="header-inner">
@@ -23,52 +24,52 @@
     <div class="container-category">
         <form action="update-drafts" method="POST">
             {% csrf_token  %}
-        <div class="ABSP-form-block">
-            <div class="top-link">
-                <h2>Aerial Work Platform (AWP) Pre-Use Inspection Checklist and Operator Qualification Form</h2>
-            </div>
-            <table>
-                <tr>
-                    <td>
-                        <div class="field-wrap"> <label>Date:</label> <input type="date" value="{{data.date}}" name="date"/> </div>
-                    </td>
-                    <td>
-                        <div class="field-wrap"> <label>Aerial device ID#:</label> <input type="text" name="device_id" value="{{data.device_id}}"/> </div>
-                    </td>
-                </tr>
-                <tr>
-                    <td colspan="2">
-                        <label>Unit type:</label>
-                        <div class="single-line-checkbox"> <label>
+            <div class="ABSP-form-block">
+                <div class="top-link">
+                    <h2>Aerial Work Platform (AWP) Pre-Use Inspection Checklist and Operator Qualification Form</h2>
+                </div>
+                <table>
+                    <tr>
+                        <td>
+                            <div class="field-wrap"> <label>Date:</label> <input type="date" value="{{data.date}}" name="date"/> </div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"> <label>Aerial device ID#:</label> <input type="text" name="device_id" value="{{data.device_id}}"/> </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+                            <label>Unit type:</label>
+                            <div class="single-line-checkbox"> <label>
                                 <input type="checkbox" name="unit_type" value="Scissor Lift" {{ data.unit_type|get_string_as_list|match_value:"Scissor Lift" }}>
-                            Scissor Lift</label> </div>
-                        <div class="single-line-checkbox"> <label>
+                                Scissor Lift</label> </div>
+                            <div class="single-line-checkbox"> <label>
                                 <input type="checkbox" name="unit_type" value="Bucket Truck" {{ data.unit_type|get_string_as_list|match_value:"Bucket Truck" }}>
-                            Bucket Truck</label> </div>
-                        <div class="single-line-checkbox"> <label>
+                                Bucket Truck</label> </div>
+                            <div class="single-line-checkbox"> <label>
                                 <input type="checkbox" name="unit_type" value="Telescopic Boom" {{ data.unit_type|get_string_as_list|match_value:"Telescopic Boom" }}>
-                            Telescopic Boom</label> </div>
-                        <div class="single-line-checkbox"> <label>
+                                Telescopic Boom</label> </div>
+                            <div class="single-line-checkbox"> <label>
                                 <input type="checkbox" name="unit_type" value="Other" {{ data.unit_type|get_string_as_list|match_value:"Other" }}>
-                            Other</label> </div>
-                    </td>
-                </tr>
-                <tr>
-                    <td colspan="2">
-                        <div class="field-wrap"> <label>Location of Use:</label> <input type="text" name="location" value="{{data.location}}"/> </div>
-                    </td>
-                </tr>
-            </table>
-            <table class="inspection-tbl responsive-tbl radio-checkbox">
-                <thead>
+                                Other</label> </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+                            <div class="field-wrap"> <label>Location of Use:</label> <input type="text" name="location" value="{{data.location}}"/> </div>
+                        </td>
+                    </tr>
+                </table>
+                <table class="inspection-tbl responsive-tbl radio-checkbox">
+                    <thead>
                     <tr>
                         <th colspan="2">INSPECTION ITEMS AND DESCRIPTION</th>
                         <th>Yes</th>
                         <th>No</th>
                         <th>N/A</th>
                     </tr>
-                </thead>
-                <tbody>
+                    </thead>
+                    <tbody>
                     <tr>
                         <td>1</td>
                         <td>Brakes are operating properly</td>
@@ -220,83 +221,89 @@
                             <div class="field-wrap">
                                 <label>
                                     <h4>Warning</h4>
-                                	<p>Do not use the equipment if any of the above items fail the inspection.</p>
+                                    <p>Do not use the equipment if any of the above items fail the inspection.</p>
                                 </label>
                             </div>
                         </td>
                         <td></td>
                     </tr>
-                </tbody>
-            </table>
-            <table>
-                <tr>
-                    <td>
-                        <div class="field-wrap"> <label>Supervisor Name:</label> <input type="text" name="supervisor_name" value="{{data.supervisor_name}}"/> </div>
-                    </td>
-                    <td>
-                        <div class="field-wrap"> <label>Operator printed name and signature:</label> <input type="text" name="printed_name" value="{{data.printed_name}}"/> </div>
-                    </td>
-                </tr>
-                <tr>
-                    <td colspan="2" class="td-heading">&nbsp;</td>
-                </tr>
-                <tr>
-                    <td colspan="2">
-                        <div class="field-wrap"> <label>Operator Name:</label> <input type="text" name="operat_name" value="{{data.operat_name}}"/> </div>
-                    </td>
-                </tr>
-                <tr>
-                    <td colspan="2">
-                        <div class="field-wrap"> <label>Employed by:</label> <input type="text" name="emp_by" value="{{data.emp_by}}"/> </div>
-                    </td>
-                </tr>
-                <tr>
-                    <td colspan="2">
-                        <div class="field-wrap"> <label>AWP training provided for (equipment make and model):</label> <input type="text" name="AWP" value="{{data.AWP}}"/> </div>
-                    </td>
-                </tr>
-                <tr>
-                    <td colspan="2" class="td-heading">QUALIFICATIONS REQUIRMENTS</td>
-                </tr>
-                <tr>
-                    <td colspan="2">
-                        <p>The following requirements have been confirmed for this operation:</p>
-                        <ul>
-                            <li>Has the required physical and mental abilities to operate the equipment</li>
-                            <li>Has reviewed and demonstrates an understanding of operator's manual, including operating restrictions and hazards</li>
-                            <li>Has reviewed site safety rules and procedures (i.e.: work in the vicinity of power lines)</li>
-                            <li>Understands all phases of setting up and operating the unit</li>
-                            <li>Has received and successfully completed specific written and/or hands-on training and instruction on the equipment to be operated</li>
-                            <li>Has demonstrated proficiency in the safe operation of the AWP to be used</li>
-                        </ul>
-                    </td>
-                </tr>
-                <tr>
-                    <td colspan="2"> <label>Comments or Additional Requirements</label> <textarea name="comments">{{data.comments}}</textarea> </td>
-                </tr>
-                <tr>
-                    <td colspan="2" class="inside-tbl-td">
-                        <table class="inside-tbl border-tbl">
-                            <tr>
-                                <td style="width: 50%">
-                                    <div class="field-wrap"> <label>Employer/trainer representative name:</label> <input type="text" name="representative_name" value="{{data.representative_name}}"/> </div>
-                                </td>
-                                <td>
-                                    <div class="field-wrap"> <label>Signature:</label> <input type="text" name="emp_sign" value="{{data.emp_sign}}"/> </div>
-                                </td>
-                                <td>
-                                    <div class="field-wrap"> <label>Date:</label> <input type="date" name="emp_date" value="{{data.emp_date}}"/> </div>
-                                </td>
-                            </tr>
-                        </table>
-                    </td>
-                </tr>
-            </table>
-        </div>
-            <input type="hidden" value="{{data.id}}" name="draft_id">
+                    </tbody>
+                </table>
+                <table>
+                    <tr>
+                        <td>
+                            <div class="field-wrap"> <label>Supervisor Name:</label> <input type="text" name="supervisor_name" value="{{data.supervisor_name}}"/> </div>
+                        </td>
+                        <td>
+                            <div class="field-wrap"> <label>Operator printed name and signature:</label> <input type="text" name="printed_name" value="{{data.printed_name}}"/> </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2" class="td-heading">&nbsp;</td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+                            <div class="field-wrap"> <label>Operator Name:</label> <input type="text" name="operat_name" value="{{data.operat_name}}"/> </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+                            <div class="field-wrap"> <label>Employed by:</label> <input type="text" name="emp_by" value="{{data.emp_by}}"/> </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+                            <div class="field-wrap"> <label>AWP training provided for (equipment make and model):</label> <input type="text" name="AWP" value="{{data.AWP}}"/> </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2" class="td-heading">QUALIFICATIONS REQUIRMENTS</td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+                            <p>The following requirements have been confirmed for this operation:</p>
+                            <ul>
+                                <li>Has the required physical and mental abilities to operate the equipment</li>
+                                <li>Has reviewed and demonstrates an understanding of operator's manual, including operating restrictions and hazards</li>
+                                <li>Has reviewed site safety rules and procedures (i.e.: work in the vicinity of power lines)</li>
+                                <li>Understands all phases of setting up and operating the unit</li>
+                                <li>Has received and successfully completed specific written and/or hands-on training and instruction on the equipment to be operated</li>
+                                <li>Has demonstrated proficiency in the safe operation of the AWP to be used</li>
+                            </ul>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2"> <label>Comments or Additional Requirements</label> <textarea name="comments">{{data.comments}}</textarea> </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2" class="inside-tbl-td">
+                            <table class="inside-tbl border-tbl">
+                                <tr>
+                                    <td style="width: 50%">
+                                        <div class="field-wrap"> <label>Employer/trainer representative name:</label> <input type="text" name="representative_name" value="{{data.representative_name}}"/> </div>
+                                    </td>
+                                    <td>
+                                        <div class="field-wrap"> <label>Signature:</label> <input type="text" name="emp_sign" value="{{data.emp_sign}}"/> </div>
+                                    </td>
+                                    <td>
+                                        <div class="field-wrap"> <label>Date:</label> <input type="date" name="emp_date" value="{{data.emp_date}}"/> </div>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            {% if messages %}
+            {% for message in messages %}
+              <p class="bg-success draft-success text-white">{{ message }}</p>
+            {% endfor %}
+        {% endif %}
+        <input type="hidden" value="{{data.id}}" name="draft_id">
+<input type="hidden" value="{{data.inspection_id}}" name="inspection_id">
             <input type="hidden" value="Aerial-Work-Platform-AWP-Pre-Use-Inspection-Checklist-and-Operator-Qualification-Form" name="draft_name">
-        <button type="submit" class="btn main-content-inner-box-export-btn">Update Data</button>
-            </form>
+            <button type="submit" class="btn main-content-inner-box-export-btn">Update Data</button>
+        </form>
     </div>
 </div>
 <br>

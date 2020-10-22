@@ -1,6 +1,8 @@
-from django.http import HttpResponse, QueryDict
+from django.http import HttpResponse, HttpResponseRedirect
 from django.contrib import messages
 from django.shortcuts import render, redirect
+from django.urls import reverse
+import urllib
 from ..models import Inspections, Type, CompressedGasCylinder, AccidentInvestigationRCAForm, AWPForm, ConfinedSpaceAuthorization, ConfinedSpaceEntry, DailyExcavation, DailyMaintenance, EarthmovingEquipment, EmergencyRescue, EmployeeAcknowledgment, EnergizedElectrical, EmergencyEvacuation, EquipmentDeficiency, EquipmentInspection, EquipmentOperator, EyewashStation, FormalSiteInspection, FormalSite, FirstAid, FireExtinguisher, GasTest, GasMonitor, GeneralService, GenericSafe, IndustrialForklift, LocationofFirst, LossTimeInjury, MaintenanceRecord, ManagementofChange, MobileEquipment, MonthlyOffice, NewEmployee, QuarterlyOxygen, PersonalLock, PortableLadder, SkidSteer, ShopOffice, SafetyStatistics, ScaffoldInspection, SpotInspection, SubcontractorAcknowledgment, SubcontractorOrientation, TruckDeficiency, UserFitness, VehicleInspection, VehicleInspectionLog, VendorTruck, DraftTables
 
 
@@ -8,6 +10,7 @@ def accident_investigation_rca_form(request):
     draft = AccidentInvestigationRCAForm()
     update_data = {}
     update_data['plants_name'] = draft.plants_name = request.POST.get('plants_name', None)
+    update_data['first_name'] = draft.first_name = request.POST.get('first_name', None)
     update_data['job_title'] = draft.job_title = request.POST.get('job_title', None)
     update_data['address'] = draft.address = request.POST.get('address', None)
     update_data['date_occurrence'] = draft.date_occurrence = request.POST.get('date_occurrence', None)
@@ -211,6 +214,7 @@ def confined_space_authorization(request):
     update_data['time_test_two'] = draft.time_test_two = request.POST.get('time_test_two', None)
     update_data['print_two'] = draft.print_two = request.POST.get('print_two', None)
     update_data['print_three'] = draft.print_three = request.POST.get('print_three', None)
+    update_data['cont_monitoring'] = draft.cont_monitoring = request.POST.get('cont_monitoring', None)
     update_data['atmos'] = draft.atmos = request.POST.getlist('atmos', None)
     update_data['atmos_other'] = draft.atmos_other = request.POST.get('atmos_other', None)
     update_data['detail_freq'] = draft.detail_freq = request.POST.get('detail_freq', None)
@@ -460,7 +464,7 @@ def earth_moving_equipment(request):
     update_data = {}
     update_data['plants_name'] = draft.plants_name = request.POST.get('plants_name', None)
     update_data['equipment_name'] = draft.equipment_name = request.POST.get('equipment_name', None)
-    update_data['equipment'] = draft.equipment = request.POST.get('equipment', None)
+    update_data['equipment'] = draft.equipment = request.POST.getlist('equipment', None)
     update_data['other_specify'] = draft.other_specify = request.POST.get('other_specify', None)
     update_data['equipment_id'] = draft.equipment_id = request.POST.get('equipment_id', None)
     update_data['access_good'] = draft.access_good = request.POST.get('access_good', None)
@@ -505,6 +509,7 @@ def earth_moving_equipment(request):
     update_data['fire_remarks'] = draft.fire_remarks = request.POST.get('fire_remarks', None)
     update_data['frames_good'] = draft.frames_good = request.POST.get('frames_good', None)
     update_data['frames_rejected'] = draft.frames_rejected = request.POST.get('frames_rejected', None)
+    update_data['frames_na'] = draft.frames_na = request.POST.get('frames_na', None)
     update_data['frames_remarks'] = draft.frames_remarks = request.POST.get('frames_remarks', None)
     update_data['fuel_good'] = draft.fuel_good = request.POST.get('fuel_good', None)
     update_data['fuel_rejected'] = draft.fuel_rejected = request.POST.get('fuel_rejected', None)
@@ -557,6 +562,7 @@ def earth_moving_equipment(request):
     update_data['decking_good'] = draft.decking_good = request.POST.get('decking_good', None)
     update_data['decking_rejected'] = draft.decking_rejected = request.POST.get('decking_rejected', None)
     update_data['decking_na'] = draft.decking_na = request.POST.get('decking_na', None)
+    update_data['decking_remarks'] = draft.decking_remarks = request.POST.get('decking_remarks', None)
     update_data['positive_good'] = draft.positive_good = request.POST.get('positive_good', None)
     update_data['positive_rejected'] = draft.positive_rejected = request.POST.get('positive_rejected', None)
     update_data['positive_na'] = draft.positive_na = request.POST.get('positive_na', None)
@@ -1341,6 +1347,7 @@ def gas_test(request):
     update_data['co_ten'] = draft.co_ten = request.POST.get('co_ten', None)
     update_data['other_ten'] = draft.other_ten = request.POST.get('other_ten', None)
     update_data['initials_ten'] = draft.initials_ten = request.POST.get('initials_ten', None)
+    update_data['des_comment'] = draft.des_comment = request.POST.get('des_comment', None)
     draft.inspection_id = request.POST.get('inspection_id', None)
     if request.POST.get('draft_id', None):
         draft_id = request.POST.get('draft_id', None)
@@ -1456,7 +1463,7 @@ def generic_safe(request):
     update_data['Communications'] = draft.Communications = request.POST.get('Communications', None)
     update_data['Safety'] = draft.Safety = request.POST.get('Safety', None)
     update_data['other_confined'] = draft.other_confined = request.POST.get('other_confined', None)
-    update_data['gas_test'] = draft.gas_test = request.POST.get('gas_test', None)
+    update_data['gas_test'] = draft.gas_test = request.POST.getlist('gas_test', None)
     update_data['time_one_o2'] = draft.time_one_o2 = request.POST.get('time_one_o2', None)
     update_data['result_one_o2'] = draft.result_one_o2 = request.POST.get('result_one_o2', None)
     update_data['initials_one_o2'] = draft.initials_one_o2 = request.POST.get('initials_one_o2', None)
@@ -2228,6 +2235,7 @@ def portable_ladder(request):
     update_data = {}
     update_data['plants_name'] = draft.plants_name = request.POST.get('plants_name', None)
     update_data['checklist_ladder'] = draft.checklist_ladder = request.POST.getlist('checklist_ladder', None)
+    update_data['checklist_steps'] = draft.checklist_steps = request.POST.get('checklist_steps', None)
     update_data['checklist_nails'] = draft.checklist_nails = request.POST.get('checklist_nails', None)
     update_data['checklist_split'] = draft.checklist_split = request.POST.get('checklist_split', None)
     update_data['checklist_uprights'] = draft.checklist_uprights = request.POST.get('checklist_uprights', None)
@@ -2244,7 +2252,8 @@ def portable_ladder(request):
     update_data['checklist_wobbly'] = draft.checklist_wobbly = request.POST.get('checklist_wobbly', None)
     update_data['checklist_hinge'] = draft.checklist_hinge = request.POST.get('checklist_hinge', None)
     update_data['checklist_spreaders'] = draft.checklist_spreaders = request.POST.get('checklist_spreaders', None)
-    update_data['checklist_Loose'] = draft.checklist_Loose = request.POST.get('checklist_Loose', None)
+    update_data['checklissubcont_signt_Loose'] = draft.checklist_Loose = request.POST.get('checklist_Loose', None)
+    update_data['checklist_extended'] = draft.checklist_extended = request.POST.get('checklist_extended', None)
     update_data['checklist_extension'] = draft.checklist_extension = request.POST.get('checklist_extension', None)
     update_data['checklist_rope'] = draft.checklist_rope = request.POST.get('checklist_rope', None)
     update_data['checklist_sections'] = draft.checklist_sections = request.POST.get('checklist_sections', None)
@@ -2689,6 +2698,7 @@ def subcontractor_acknowledgment(request):
     update_data['plants_name'] = draft.plants_name = request.POST.get('plants_name', None)
     update_data['name'] = draft.name = request.POST.get('name', None)
     update_data['subcont_sign'] = draft.subcont_sign = request.POST.get('subcont_sign', None)
+    update_data['date'] = draft.date = request.POST.get('date', None)
     update_data['manager_name'] = draft.manager_name = request.POST.get('manager_name', None)
     update_data['management_sign'] = draft.management_sign = request.POST.get('management_sign', None)
     update_data['inspection_id'] = draft.inspection_id = request.POST.get('inspection_id', None)
@@ -2750,8 +2760,8 @@ def subcontractor_orientation(request):
     update_data['wcb_acc_na'] = draft.wcb_acc_na = request.POST.get('wcb_acc_na', None)
     update_data['awarness_done'] = draft.awarness_done = request.POST.get('awarness_done', None)
     update_data['awarness_na'] = draft.awarness_na = request.POST.get('awarness_na', None)
-    update_data['_done'] = draft._done = request.POST.get('_done', None)
-    update_data['_na'] = draft._na = request.POST.get('_na', None)
+    update_data['other_done'] = draft.other_done = request.POST.get('other_done', None)
+    update_data['other_na'] = draft.other_na = request.POST.get('other_na', None)
     update_data['subcont_sign'] = draft.subcont_sign = request.POST.get('subcont_sign', None)
     update_data['trainer_sign'] = draft.trainer_sign = request.POST.get('trainer_sign', None)
     update_data['des_job_training'] = draft.des_job_training = request.POST.get('des_job_training', None)
@@ -2816,8 +2826,7 @@ def user_fitness(request):
         'duration_of_respirator', None)
     update_data['temperature_during_respirator'] = draft.temperature_during_respirator = request.POST.getlist(
         'temperature_during_respirator', None)
-    update_data['atmospheric_pressure'] = draft.atmospheric_pressure = request.POST.getlist('atmospheric_pressure',
-                                                                                            None)
+    update_data['atmospheric_pressure'] = draft.atmospheric_pressure = request.POST.getlist('atmospheric_pressure', None)
     update_data['special_work'] = draft.special_work = request.POST.getlist('special_work', None)
     update_data['mask_type'] = draft.mask_type = request.POST.get('mask_type', None)
     update_data['mask_make'] = draft.mask_make = request.POST.get('mask_make', None)
@@ -2847,6 +2856,7 @@ def vehicle_inspection(request):
     update_data['ext_improvement'] = draft.ext_improvement = request.POST.get('ext_improvement', None)
     update_data['ext_comments'] = draft.ext_comments = request.POST.get('ext_comments', None)
     update_data['int_satisfactory'] = draft.int_satisfactory = request.POST.get('int_satisfactory', None)
+    update_data['int_improvement'] = draft.int_improvement = request.POST.get('int_improvement', None)
     update_data['int_comments'] = draft.int_comments = request.POST.get('int_comments', None)
     update_data['tires_satisfactory'] = draft.tires_satisfactory = request.POST.get('tires_satisfactory', None)
     update_data['tires_improvement'] = draft.tires_improvement = request.POST.get('tires_improvement', None)
@@ -2969,7 +2979,7 @@ def vendor_truck(request):
     update_data['trailer_type'] = draft.trailer_type = request.POST.getlist('trailer_type', None)
     update_data['low_boy'] = draft.low_boy = request.POST.get('low_boy', None)
     update_data['type_equip'] = draft.type_equip = request.POST.get('type_equip', None)
-    update_data['type_equipment'] = draft.type_equipment = request.POST.get('type_equipment', None)
+    update_data['type_equipment'] = draft.type_equipment = request.POST.getlist('type_equipment', None)
     update_data['other_type'] = draft.other_type = request.POST.get('other_type', None)
     update_data['plan'] = draft.plan = request.POST.get('plan', None)
     update_data['rigging_plan'] = draft.rigging_plan = request.POST.get('rigging_plan', None)
@@ -3020,6 +3030,10 @@ def insert_draft_form(request):
 
 
 def view_draft(request):
+    if 'username' in request.session:
+        login_status = 'success'
+    else:
+        return redirect('login')
     drafts_data = {}
     insp_id = request.GET.get('insp_val')
     draft_slug = request.GET.get('draft_name')
@@ -3034,13 +3048,23 @@ def view_draft(request):
     return render(request, draft_page_name, drafts_data)
 
 
+def redirect_params(url, params=None):
+    response = redirect(url)
+    if params:
+        query_string = urllib.urlencode(params)
+        response['Location'] += '?' + query_string
+    return response
+
+
 def update_drafts(request):
     id_here = request.POST.get('draft_id', None)
     draft_name = request.POST.get('draft_name', None)
+    insp_id = request.POST.get('inspection_id', None)
     draft_data = DraftTables.objects.get(draft_name=draft_name)
     fun_name = draft_data.draft_func_name
     return_data = def_name[fun_name](request)
-    # if return_data:
-        # return redirect('view-draft?insp_val=97&draft_name=Maintenance-Record')
-    return HttpResponse('Data updated successfully')
+    if return_data:
+        messages.success(request, 'Draft Update Successfully.')
+        return HttpResponseRedirect('view-draft?insp_val='+insp_id+'&draft_name='+draft_name)
+    return HttpResponse(request)
 

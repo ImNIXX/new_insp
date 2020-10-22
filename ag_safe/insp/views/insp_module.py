@@ -164,8 +164,13 @@ def insp_approve(request):
 
 def insp_search(request):
     search_key = request.POST.get('search_key', None)
-    insp_data = Inspections.objects.filter(title__contains=search_key)
-    print(insp_data.count())
+    role = request.session.get('role')
+    username = request.session.get('username')
+    user_id = request.session.get('user_id')
+    if role == 0:
+        insp_data = Inspections.objects.filter(title__contains=search_key).filter(user_id=user_id)
+    else:
+        insp_data = Inspections.objects.filter(title__contains=search_key).filter(supervisor=username)
     insp_response = {}
     for i in range(insp_data.count()):
         insp_response[i] = {'title': insp_data[i].title, 'date': insp_data[i].datetime, 'category': insp_data[i].category, 'draft_name': insp_data[i].draft_name}
@@ -180,7 +185,21 @@ def insp_filter(request):
     location = request.POST.get('location', None)
     category = request.POST.get('category', None)
     type = request.POST.get('type', None)
-    filter_data = {'operating_area': operating_area, 'facility': facility, 'location': location, 'category': category, 'type': type}
-    asd = list(dict.fromkeys(filter_data))
-    return HttpResponse('Hello')
+    role = request.session.get('role')
+    username = request.session.get('username')
+    user_id = request.session.get('user_id')
+    if role == 0:
+        filter_data = {'operating_area': operating_area, 'facility': facility, 'location': location, 'category': category, 'type': type, 'user_id': user_id}
+    else:
+        filter_data = {'operating_area': operating_area, 'facility': facility, 'location': location, 'category': category, 'type': type, 'supervisor': username}
+    final_data = {}
+    for k in filter_data:
+        if filter_data[k] != '':
+            final_data[k] = filter_data[k]
+    filtered_data = Inspections.objects.filter(**final_data)
+    insp_response = {}
+    for i in range(filtered_data.count()):
+        insp_response[i] = {'title': filtered_data[i].title, 'date': filtered_data[i].datetime,
+                            'category': filtered_data[i].category, 'draft_name': filtered_data[i].draft_name}
+    return JsonResponse(insp_response)
 

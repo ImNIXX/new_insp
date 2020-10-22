@@ -43,6 +43,14 @@ body{
     padding: 20px;
 }
 
+.draft-success{
+    background: green;
+    color: #fff !important;
+    margin-bottom: 10px;
+    padding: 10px !important;
+    font-weight: 600;
+}
+
 /* MODAL */
 
 .modal-dialog{
@@ -732,7 +740,20 @@ ul.main-content-nav-list li .main-content-nav-list-anchor-text:hover{
 }
 
 
+/* EXPORT BUTTON */
 
+button.dt-button{
+    padding: 7px 30px;
+    border: 0;
+    background: #5b922f;
+    color: #ffffff;
+    letter-spacing: 1px;
+    font-size: 16px;
+}
+
+a.paginate_button{
+    padding: 2px 9px !important;
+}
 
 /* #Media
 ================================================== */

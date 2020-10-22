@@ -2,6 +2,7 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <link rel="stylesheet" type="text/css" href="/static/css/draft_style.css">
 <link rel="stylesheet" type="text/css" href="/static/css/style.css">
+<form action="update-drafts" method="POST">
 <div class="header-top">
     <div class="container-category">
         <div class="header-inner">
@@ -15,7 +16,7 @@
 </div>
 <div class="AWP-form RCA-form-pdf">
     <div class="container-category">
-        <form action="update-drafts" method="POST">
+
 			{% csrf_token %}
         <div class="ABSP-form-block">
             <div class="top-link">
@@ -224,11 +225,18 @@
                 </tr>
             </table>
         </div>
-            <input type="hidden" value="{{data.id}}" name="draft_id">
+            {% if messages %}
+            {% for message in messages %}
+              <p class="bg-success draft-success text-white">{{ message }}</p>
+            {% endfor %}
+        {% endif %}
+        <input type="hidden" value="{{data.id}}" name="draft_id">
+<input type="hidden" value="{{data.inspection_id}}" name="inspection_id">
             <input type="hidden" value="Confined-Space-Entry-Log" name="draft_name">
             <button type="submit" class="btn main-content-inner-box-export-btn">Update Data</button>
-		</form>
+
     </div>
 </div>
+    </form>
 <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 <script type="text/javascript" src="/static/js/draft.js"></script>

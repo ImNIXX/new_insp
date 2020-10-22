@@ -87,7 +87,7 @@
 										<div class="col-md-6 inspection_input">
 											<label>Operating area</label>
 											<select name="operating-area" class="filter-insp">
-												<option>Select Operating Area</option>
+												<option value="">Select Operating Area</option>
 												<option value="Alberta Seed Processors">Alberta Seed Processors</option>
 											</select>
 										</div>
@@ -378,8 +378,8 @@
 									<div class="row">
 										<div class="col-md-12">
 											<h3>Inspection Reports</h3>
-											<div class="table-responsive">
-												<table class="table table-bordered">
+											<div class="table-responsive mt-3">
+												<table class="table table-bordered" id="ins_report_table">
 													<thead>
 														<tr>
 															<th>Inspection	</th>
@@ -393,7 +393,7 @@
 														{% for ins_data in inspections %}
 														<tr class="ins_report_{% widthratio ins_data.id 1 9304 %}">
 															<td class="insp_title">{{ ins_data.title }}</td>
-															<td>{{ ins_data.datetime|date:'d-M-Y' }}</td>
+															<td width="17%">{{ ins_data.datetime|date:'d-M-Y' }}</td>
 															<td class="insp_location">{{ ins_data.location }}</td>
 															<td class="draft_name">{{ ins_data.draft_name }}</td>
 															<td>Click Here</td>

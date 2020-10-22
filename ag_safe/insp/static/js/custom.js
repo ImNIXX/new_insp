@@ -541,8 +541,17 @@ $('body').on('change','.filter-insp',function(){
     var filter_form_data = $('#filter-form').serialize();
     $.post('inspection-filter/', {csrfmiddlewaretoken: csrfmiddlewaretoken, operating_area: operating_area, facility: facility, location: location, category: category, type: type })
         .done(function(data){
-            if(data){
-//                alert();
+            response_length = Object.keys(data).length;
+            if(response_length){
+                $('#ins_filter_tbl').html('');
+                for(i=0; i<response_length; i++){
+                let months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+                let current_datetime = new Date(data[i].date);
+                let date_ = current_datetime.getDate() + "-" + months[current_datetime.getMonth()] + "-" + current_datetime.getFullYear();
+                    $('#ins_filter_tbl').append('<tr><td>'+data[i].title+'</td><td>'+date_+'</td><td>'+data[i].category+'</td><td>'+data[i].draft_name+'</td></tr>');
+                }
+            }else{
+                $('#ins_filter_tbl').html('<tr><td colspan="4">No data found</td></tr>');
             }
         });
 })
@@ -569,3 +578,42 @@ $('.supervisor').select2({
     placeholder: "Select Supervisor",
     allowClear: true
 })
+
+ $('#ins_report_table').dataTable({
+    	dom: 'Bfrtip',
+    	 buttons: [
+            {
+                extend: 'excelHtml5',
+                exportOptions: {
+                    columns: [ 0, 1, 2, 3 ]
+                },
+                title: 'Inspection Report'
+            },
+            {
+                extend: 'pdfHtml5',
+                exportOptions: {
+                    columns: [ 0, 1, 2, 3 ]
+                },
+                title: 'Inspection Report',
+                customize: function (doc) {
+					doc.content[1].table.widths =
+				    Array(doc.content[1].table.body[0].length + 1).join('*').split('');
+					doc['styles'].tableHeader = {
+						alignment: 'left',
+						fillColor: '#2d4154',
+						padding: '2px',
+						color: '#ffffff',
+						fontweight: 'bold'
+					}
+				}
+            },
+            {
+                extend: 'print',
+                exportOptions: {
+                    columns: [ 0, 1, 2, 3 ]
+                },
+                title: 'Inspection Report'
+            }
+        ]
+        // buttons: ['excel', 'pdf','print']
+    });
