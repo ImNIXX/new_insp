@@ -35,3 +35,4 @@ urlpatterns = [
     # FILTER INSPECTIONS
     path('inspection-filter/', views.insp_filter, name="inspection-filter"),
 ]
+

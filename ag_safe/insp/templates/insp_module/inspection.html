@@ -391,12 +391,12 @@
 													</thead>
 													<tbody id="ins_report_tbl">
 														{% for ins_data in inspections %}
-														<tr class="ins_report_{% widthratio ins_data.id 1 9304 %}">
+														<tr class="report_insp_common ins_report_{% widthratio ins_data.id 1 9304 %}">
 															<td class="insp_title">{{ ins_data.title }}</td>
 															<td width="17%">{{ ins_data.datetime|date:'d-M-Y' }}</td>
 															<td class="insp_location">{{ ins_data.location }}</td>
 															<td class="draft_name">{{ ins_data.draft_name }}</td>
-															<td>Click Here</td>
+															<td><a target="_blank">Click Here</a></td>
 														</tr>
 														{% endfor %}
 													</tbody>

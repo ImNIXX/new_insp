@@ -53,7 +53,7 @@ body{
 
 /* MODAL */
 
-.modal-dialog{
+#exampleModalCenter .modal-dialog{
     max-width: 1100px;
 }
 
@@ -753,6 +753,9 @@ button.dt-button{
 
 a.paginate_button{
     padding: 2px 9px !important;
+}
+.modal-backdrop {
+  z-index: -1;
 }
 
 /* #Media

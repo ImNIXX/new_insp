@@ -1,8 +1,9 @@
-from django.http import HttpResponse, HttpResponseRedirect
+from django.http import HttpResponse, HttpResponseRedirect, FileResponse
 from django.contrib import messages
 from django.shortcuts import render, redirect
 from django.urls import reverse
 import urllib
+import pdfkit
 from ..models import Inspections, Type, CompressedGasCylinder, AccidentInvestigationRCAForm, AWPForm, ConfinedSpaceAuthorization, ConfinedSpaceEntry, DailyExcavation, DailyMaintenance, EarthmovingEquipment, EmergencyRescue, EmployeeAcknowledgment, EnergizedElectrical, EmergencyEvacuation, EquipmentDeficiency, EquipmentInspection, EquipmentOperator, EyewashStation, FormalSiteInspection, FormalSite, FirstAid, FireExtinguisher, GasTest, GasMonitor, GeneralService, GenericSafe, IndustrialForklift, LocationofFirst, LossTimeInjury, MaintenanceRecord, ManagementofChange, MobileEquipment, MonthlyOffice, NewEmployee, QuarterlyOxygen, PersonalLock, PortableLadder, SkidSteer, ShopOffice, SafetyStatistics, ScaffoldInspection, SpotInspection, SubcontractorAcknowledgment, SubcontractorOrientation, TruckDeficiency, UserFitness, VehicleInspection, VehicleInspectionLog, VendorTruck, DraftTables
 
 
@@ -3030,10 +3031,10 @@ def insert_draft_form(request):
 
 
 def view_draft(request):
-    if 'username' in request.session:
-        login_status = 'success'
-    else:
-        return redirect('login')
+    # if 'username' in request.session:
+    #     login_status = 'success'
+    # else:
+    #     return redirect('login')
     drafts_data = {}
     insp_id = request.GET.get('insp_val')
     draft_slug = request.GET.get('draft_name')
@@ -3067,4 +3068,7 @@ def update_drafts(request):
         messages.success(request, 'Draft Update Successfully.')
         return HttpResponseRedirect('view-draft?insp_val='+insp_id+'&draft_name='+draft_name)
     return HttpResponse(request)
+
+
+
 

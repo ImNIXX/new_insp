@@ -236,7 +236,9 @@ $('#inspection_form').validate({
                     $('#ins_draft_tbl').append('<tr class="ins_draft_'+insp_id+'"><td>'+new_date+'</td><td><a class="ins_draft_title">'+response.title+'</a></td><td class="draft_name"></td></tr><tr><td colspan="3" class="p-0"><div style="display:none" class="add-inspection upd_ins_'+insp_id+'"></div></td></tr>');
                     var ins_action_length = $('#ins_action_tbl tr').length + 1;
                     $('#ins_action_tbl').append('<tr class="ins_action_'+insp_id+'"><td>'+ins_action_length+' </td><td>'+response.title+'</td><td class="draft_name"></td><td></td><td></td><td><i class="fa fa-trash ins_delete"></i></td><td>Not Approved</td></tr>');
-                    $('#ins_report_tbl').append('<tr class="ins_report_'+insp_id+'"><td>'+response.title+'</td><td>'+new_date+'</td><td>'+response.location+'</td><td class="draft_name"></td><td>Click Here</td></tr>');
+                    table = $('#ins_report_table').DataTable();
+                    table.row.add(['<td>'+response.title+'</td>','<td>'+new_date+'</td>','<td>'+response.location+'</td>','<td class="draft_name"></td>','<td>Click Here</td>']).draw(false);
+                    $('#ins_report_table tr').not('.report-inspection-common').addClass('report_insp_common ins_report_'+insp_id);
                     $.ajax({
                         type: 'POST',
                         url : 'inspection-draft/',
@@ -472,7 +474,8 @@ $('body').on('click','.ins_delete',function(){
                     $('.ins_action_'+insp_id).remove();
                     $('.ins_draft_'+insp_id).next().remove();
                     $('.ins_draft_'+insp_id).remove();
-                    $('.ins_report_'+insp_id).remove();
+                    table = $('#ins_report_table').DataTable();
+                    table.rows('.ins_report_'+insp_id).remove().draw();
                 }else{
                     alert('Inspection has approved, You can\'t delete this Inspection');
                 }
@@ -570,6 +573,7 @@ document.getElementById("choose-module").onchange = function() {
         window.location.href = this.value;
     }
 };
+
 
 
 // SELECT OPTION
