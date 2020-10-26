@@ -34,5 +34,7 @@ urlpatterns = [
     path('inspection-search/', views.insp_search, name="inspection-search"),
     # FILTER INSPECTIONS
     path('inspection-filter/', views.insp_filter, name="inspection-filter"),
+    # DOWNLOAD DRAFTS PDF
+    path('draft-pdf/', views.get_draft_pdf, name="draft-pdf"),
 ]
 

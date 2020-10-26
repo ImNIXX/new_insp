@@ -3070,5 +3070,11 @@ def update_drafts(request):
     return HttpResponse(request)
 
 
-
+def get_draft_pdf(request):
+    insp_id = request.GET.get('insp_val')
+    draft_name = request.GET.get('draft_name')
+    pdfkit.from_url('http://127.0.0.1:8000/view-draft?insp_val='+insp_id+'&draft_name='+draft_name, 'file.pdf')
+    filename = 'file.pdf'
+    response = FileResponse(open(filename, 'rb'))
+    return response
 

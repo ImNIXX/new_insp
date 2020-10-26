@@ -574,7 +574,41 @@ document.getElementById("choose-module").onchange = function() {
     }
 };
 
+$('body').on('click','.filter-export-btn',function(){
+    $('#exampleModal').css('display','block');
+    $('#exampleModal').addClass('show');
+})
 
+$('body').on('click','.close-export-modal',function(){
+    $('#exampleModal').css('display','none');
+    $('#exampleModal').removeClass('show');
+})
+
+$('body').on('click','.export_save_btn',function(){
+    if($('#word_export').prop('checked')){
+        ms_word_inspections();
+    }
+    if($('#excel_export').prop('checked')){
+        window.open('data:application/vnd.ms-excel,' + $('#ins_filter_table').html());
+    }
+})
+
+function ms_word_inspections() {
+    var header = "<html xmlns:o='urn:schemas-microsoft-com:office:office' "+
+        "xmlns:w='urn:schemas-microsoft-com:office:word' "+
+        "xmlns='http://www.w3.org/TR/REC-html40'>"+
+        "<head><meta charset='utf-8'><title>Export HTML to Word Document with JavaScript</title></head><body>";
+   var footer = "</body></html>";
+   var sourceHTML = header+document.getElementById("ins_filter_table").innerHTML+footer;
+
+   var source = 'data:application/vnd.ms-word;charset=utf-8,' + encodeURIComponent(sourceHTML);
+   var fileDownload = document.createElement("a");
+   document.body.appendChild(fileDownload);
+   fileDownload.href = source;
+   fileDownload.download = 'document.doc';
+   fileDownload.click();
+   document.body.removeChild(fileDownload);
+}
 
 // SELECT OPTION
 

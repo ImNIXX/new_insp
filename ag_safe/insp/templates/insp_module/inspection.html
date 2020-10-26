@@ -144,7 +144,7 @@
 									<div class="row">
 										<div class="col-md-12 inspection_input">
 											<div class="table-responsive">
-												<table class="table table-bordered">
+												<table class="table table-bordered" id="ins_filter_table">
 													<thead>
 														<tr>
 															<th>Inspection</th>
@@ -168,7 +168,7 @@
 							<div class="main-content-inner-boxes">
 								<div class="main-content-inner-box-export">
 									<h2 class="main-content-inner-box-export-heading">Export to PDF/Word/Excel</h2>
-									<BUTTON class="main-content-inner-box-export-btn" style="outline: none;">Export PDF/Word/Excel</BUTTON>
+									<BUTTON class="main-content-inner-box-export-btn filter-export-btn" style="outline: none;">Export PDF/Word/Excel</BUTTON>
 								</div>
 							</div>
 						</div>
@@ -396,7 +396,7 @@
 															<td width="17%">{{ ins_data.datetime|date:'d-M-Y' }}</td>
 															<td class="insp_location">{{ ins_data.location }}</td>
 															<td class="draft_name">{{ ins_data.draft_name }}</td>
-															<td><a target="_blank">Click Here</a></td>
+															<td><a target="_blank" href="draft-pdf?insp_val={{ins_data.id}}&draft_name={{ins_data.draft_slug}}">Click Here</a></td>
 														</tr>
 														{% endfor %}
 													</tbody>
@@ -455,6 +455,46 @@
 			</div>
 		</div>
 	</section>
+
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+        <button type="button" class="close close-export-modal" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="row">
+			<div class="col-lg-12">
+				<div class="form-check form-check-inline">
+				  <input class="form-check-input" type="radio" name="export_radio" id="pdf_export" value="pdf" checked>
+				  <label class="form-check-label" for="pdf_export">
+					PDF
+				  </label>
+				</div>
+				<div class="form-check form-check-inline">
+				  <input class="form-check-input" type="radio" name="export_radio" id="word_export" value="word">
+				  <label class="form-check-label" for="word_export">
+					Word
+				  </label>
+				</div>
+				<div class="form-check form-check-inline">
+				  <input class="form-check-input" type="radio" name="export_radio" id="excel_export" value="excel">
+				  <label class="form-check-label" for="excel_export">
+					Excel
+				  </label>
+				</div>
+			</div>
+		</div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary export_save_btn">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
 
 <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered" role="document">
