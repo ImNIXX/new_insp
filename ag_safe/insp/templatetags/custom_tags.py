@@ -1,4 +1,3 @@
-import ast
 from django import template
 register = template.Library()
 
